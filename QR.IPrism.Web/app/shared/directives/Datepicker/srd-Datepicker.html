@@ -1,0 +1,18 @@
+﻿<!--<div class="form-group">-->
+<ng-form name="dateinput">
+    <label class="control-label {{labelClass}}">
+        <span class='redText'>{{ required ? '*' : ''}}</span><span><b>{{::label}}</b></span>
+    </label>
+    <div class="input-group Mob_padZero {{fieldClass}} calendar-cntrl"
+         ng-class="{'prmInvalid' : (submitted ||dateinput.{{name}}.$touched) && (dateinput.{{name}}.$invalid|| rangeError)}">
+        <input type="text" tabindex="{{::srdtabindex}}" ng-readonly="true" class="form-control validation datefield" name="{{::name}}"
+               uib-datepicker-options="dateOptions" uib-datepicker-popup="{{format}}" ng-model="model" ng-disabled="disabled"
+               is-open="datePickerIs" ng-required="required" show-button-bar="false" ng-click="datePicker($event)" min-date="min"
+               max-date="max" date-disabled="datedisabled(dtdisabled,date, mode)" show-weeks="false" />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-disabled="disabled" ng-click="datePicker($event)" 
+                    tabindex="{{::srdtabindex}}"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+    </div>
+</ng-form>
+<!--</div>-->

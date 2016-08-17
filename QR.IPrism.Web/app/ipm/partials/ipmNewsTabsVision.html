@@ -1,0 +1,54 @@
+﻿<!--<div class="content_box ourvision" block-ui="ipmvisionMissionBlockUI" ng-controller="ipm.visionMission.controller">
+    <ul id="latestNewsTab" class="nav nav-tabs">
+        <li class="active"><a id="newsOurVisionTab">Our Vision</a></li>
+    </ul>
+    <div class="tab-pane fade in active" id="vision">
+
+
+        <ul rn-carousel rn-carousel-buffered rn-carousel-index="currentSport" class="image blurred" style="height:300px ;text-align:center">
+            <li ng-repeat="item in visionMissionViewModel" ng-click="toggle(item)" ng-class="item.cls">
+                <div class="layer"><img ng-src="data:image/{{item.FileType}};base64,{{item.FileContent}}" /></div>
+               
+            </li>
+        </ul>
+        <button class="left carousel-control" ng-click="currentSport = currentSport - 1" ng-disabled="currentSport == 0">
+            <span class="icon-prev">
+            </span>
+        </button><button class="right carousel-control" ng-click="currentSport = currentSport + 1" ng-disabled="currentSport == sportImages.length - 1">
+            <span class="icon-next"></span>
+        </button>
+
+       
+    </div>
+</div>-->
+
+<div class="content_box padZero link-control" ng-controller="ipm.visionMission.controller">
+    <h1>
+        <i class="icon-flightup"></i>
+        Our Vision
+    </h1>
+
+
+    <!--<ul id="latestNewsTab" class="nav nav-tabs mob-hide">
+        <li class="active"><a href="#vision" data-toggle="tab"><i class="icon-flightup"></i> Our Vision</a></li>
+    </ul>-->
+    <!--<div class="mobile-header-control">
+        <h1>
+            Our Vision
+        </h1>
+    </div>-->
+    <div class="" id="vision">
+
+        <div class="vision-img">
+            <!--<img height="160px" style="display: block; margin-left: auto; margin-right: auto" ng-src="data:image/{{selectedVisionMission.FileType}};base64,{{selectedVisionMission.FileContent}}" />-->
+          
+            <img ng-if=" selectedImage==0" src="../../../Content/css/styles/images/visionmission/vision_pic1.png" style="height:212px; display: block; margin-left: auto; margin-right: auto" class="img-responsive" />
+            <img ng-if="selectedImage==1" src="../../../Content/css/styles/images/visionmission/vision_pic2.png"  style="height: 212px; display: block; margin-left: auto; margin-right: auto" class="img-responsive" />
+
+            <img ng-if="selectedImage==2" src="../../../Content/css/styles/images/visionmission/vision_pic3.png" style="height: 212px; display: block; margin-left: auto; margin-right: auto" class="img-responsive" />
+        </div>
+        <!--<div class="vision-text col-lg-12 col-md-12 col-sm-12">
+            <p>To be Internationally renowned as the world's leading provider of cabin services.</p>
+        </div>-->
+    </div>
+</div>

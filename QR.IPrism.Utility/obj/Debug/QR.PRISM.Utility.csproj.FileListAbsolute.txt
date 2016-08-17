@@ -1,0 +1,24 @@
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\Utility\bin\Debug\QR.PRISM.Utility.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\Utility\bin\Debug\QR.PRISM.Utility.pdb
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\Utility\obj\Debug\ResolveAssemblyReference.cache
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\Utility\obj\Debug\QR.PRISM.Utility.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\Utility\obj\Debug\QR.PRISM.Utility.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\Utility\bin\Debug\QR.PRISM.Utility.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\Utility\bin\Debug\QR.PRISM.Utility.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\Utility\obj\Debug\ResolveAssemblyReference.cache
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\Utility\obj\Debug\QR.PRISM.Utility.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\Utility\obj\Debug\QR.PRISM.Utility.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\Utility\bin\Debug\QR.PRISM.Utility.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\Utility\bin\Debug\QR.PRISM.Utility.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\Utility\obj\Debug\QR.PRISM.Utility.csprojResolveAssemblyReference.cache
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\Utility\obj\Debug\QR.PRISM.Utility.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\Utility\obj\Debug\QR.PRISM.Utility.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\Utility\bin\Debug\QR.PRISM.Utility.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\Utility\bin\Debug\QR.PRISM.Utility.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\Utility\obj\Debug\QR.PRISM.Utility.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\Utility\obj\Debug\QR.PRISM.Utility.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\Utility\bin\Debug\QR.PRISM.Utility.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\Utility\bin\Debug\QR.PRISM.Utility.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\Utility\obj\Debug\QR.PRISM.Utility.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\Utility\obj\Debug\QR.PRISM.Utility.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\Utility\obj\Debug\QR.PRISM.Utility.csprojResolveAssemblyReference.cache

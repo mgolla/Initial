@@ -1,0 +1,337 @@
+﻿
+<div class="container-fluid pull-left" block-ui="ipmcCRFlightCrewsBlockUI" ng-show="$state.current.name === 'kafoulstsState' ||
+                                                                                    $state.current.name === 'kfsearch.kafoudetails' ||
+                                                                                    $state.current.name === 'kfmy.kafoudetails'">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper mob_margzero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero kafouContn">
+            <h1 class="page-tittle">
+                <button class="btn pull-right default_backbtn" title="back to previous page" ng-show="isKFAlrdyEntred" ng-click="BackToKfSearch()">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
+                </button>
+               {{heading}}
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles mob-overflowhid">
+                <div class="row">
+                    <div class="panel-body">
+                        <uib-accordion class="wallOfFame">
+                            <uib-accordion-group is-open="status.wallfmeOpen">
+                                    <uib-accordion-heading>
+                                    Wall of Fame 
+                                    </uib-accordion-heading>
+
+                                <div id="wallOfFameId" class="carousel slide wallOfFame">
+                                        <uib-carousel active="{active:!$index}" interval="5000" no-wrap="noWrapSlides">
+                                            <uib-slide ng-repeat="item in wallOfFame">
+                               
+
+                                                <div class="carousel-caption">
+                                                    <p>
+                                                        <b>{{item.ApproverComments}}</b> <br />
+                                                    -- <span>{{item.ApproverStaffName}}</span>
+                                                    </p>
+                                                </div>
+
+                                            </uib-slide>
+                                        </uib-carousel>
+                                 </div>
+                                
+                                </uib-accordion-group>
+                            </uib-accordion>
+
+                            </div>
+                    </div>
+
+
+                <div class="row martopM15">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <div class=" ">
+                            <div class="btn-group utc-btn-toggle txtLeft padZero" data-toggle="buttons" ng-show="!isKFAlrdyEntred">
+
+                                <label for="individual" class="btn btn-default kof_data_flag" ng:class="{true:'active btn-primary', false:''}[model.crgroup.toUpperCase() == 'INDIVIDUAL']"
+                                       ng-click="categoryChg('individual')">
+                                    <input type="radio" id="individual" name="kfTypeUI" value="individual">
+                                    Individual
+                                </label>
+
+                                <label for="group" class="btn btn-default kof_data_flag" ng:class="{true:'active btn-primary', false:''}[model.crgroup.toUpperCase() == 'GROUP']"
+                                       ng-show="showGrp"
+                                       ng-click="categoryChg('group')">
+                                    <input type="radio" id="group" name="kfTypeUI" value="Group">
+                                    Group
+                                </label>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <div class="row martopM10" ng-show="!isKFAlrdyEntred">
+                                    <uib-accordion>
+                                        <uib-accordion-group is-open="status.flightGridopen">
+                                            <uib-accordion-heading>
+                                                Flights <i class="pull-right " ng-class="{'glyphicon glyphicon-chevron-down': status.flightGridopen, 'glyphicon glyphicon-chevron-right': !status.flightGridopen}"></i>
+                                            </uib-accordion-heading>
+
+                                            <div class="table-responsive dataGrid_styles">
+                                                <div ui-grid="kafouFlightspgrid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(kafouFlightspgrid)" class="grid searchGrid">
+                                                    <div class="watermark" ng-show="!kafouFlightspgrid.data.length">No data available</div>
+                                                </div>
+                                            </div>
+
+
+                                        </uib-accordion-group>
+                                    </uib-accordion>
+                                </div>
+
+                                <div class="row " ng-show="isKFAlrdyEntred || isFlightSelected">
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 kafoufltDetlbl">Flight Details</div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-outline kafoufltDet globalfontbold">
+                                        <div class="row">
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-2">Flight</label>
+                                            <div class="col-lg-2 col-md-2 col-sm-4 read_field_fix  ng-binding">
+                                                {{model.FlightDetails.FlightNumber}} ({{model.FlightDetails.AirCraftFamily}})
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-2">Sector</label>
+                                            <div class="col-lg-2 col-md-2 col-sm-4 read_field_fix  ng-binding">
+                                                {{model.FlightDetails.SectorFrom}} - {{model.FlightDetails.SectorTo}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-2">Aircraft Reg.No</label>
+                                            <div class="col-lg-2 col-md-2 col-sm-4 read_field_fix  ng-binding">
+                                                {{model.FlightDetails.AirCraftRegNo}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-2">
+                                                ATD
+                                            </label>
+                                            <div class="col-lg-2 col-md-2 col-sm-4 read_field_fix  ng-binding">
+                                                {{model.FlightDetails.ActDeptTime | date:"dd-MMM-yyyy (HH:mm)"}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-2">
+                                                ATA
+                                            </label>
+                                            <div class="col-lg-2 col-md-2 col-sm-4 read_field_fix  ng-binding">
+                                                {{model.FlightDetails.ActArrTime | date:"dd-MMM-yyyy (HH:mm)" }}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-2">
+                                                Aircraft Type
+                                            </label>
+                                            <div class="col-lg-2 col-md-2 col-sm-4 read_field_fix  ng-binding">
+                                                {{model.FlightDetails.AirCraftType}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-2">
+                                                Final Destination
+                                            </label>
+                                            <div class="col-lg-2 col-md-2 col-sm-4 read_field_fix  ng-binding">
+                                                {{model.FlightDetails.SectorTo}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-2"
+                                                   ng-show="isKFAlrdyEntred">
+                                                Crew Complement
+                                            </label>
+                                            <div class="col-lg-2 col-md-2 col-sm-4 read_field_fix  ng-binding"
+                                                 ng-show="isKFAlrdyEntred">
+                                                {{model.FlightDetails.CrewComplement}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                            </div>
+                            </div>
+                           </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row martopM15">
+                    <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">-->
+                    <div class="">
+                        <div class="panel-body">
+
+                            <div id="profileTabsContents" class="evrpassgdetTab" ng-show="showKfCrewTab">
+                                <tabset class="tab-animation">
+                                    <tab heading="Crew Details" ng-attr-active="tabs[0].active">
+                                        <div class="col-lg-12 enterKafouCrewDetTab">
+                                            <div class="table-responsive dataGrid_styles martop10">
+                                                <div ui-grid="kafouCrewsgrid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize class="grid searchGrid">
+                                                    <div class="watermark" ng-show="!kafouCrewsgrid.data.length">No data available</div>
+                                                </div>
+                                            </div>
+                                            <div class="martop10 padZero btn-contn" ng-show="!isKFAlrdyEntred">
+                                                <!--<small ng-show="isEnterInValid" class="redText">Please select a crew and click on continue.</small>-->
+                                                <button type="submit" class="btn btn-primary" ng-click="continueEnterKafou()">Continue</button>
+                                            </div>
+                                        </div>
+
+
+                                    </tab>
+
+                                    <tab heading="Enter Kafou" select="CheckIncidentCrews()" id="crdet" ng-if="showEnterKfTab" ng-attr-active="tabs[1].active">
+                                        <ng-form name="kafouform">
+
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 enterKafouEKDetTab">
+
+                                                <div class="row">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading clearfix">
+
+                                                            <h3 class="panel-title">
+                                                                Cabin Crew Form
+
+                                                            </h3>
+                                                        </div>
+
+                                                        <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-class="{'prmInvalid' : isKFCmtnsInvalid}">
+                                                                <div class="col-lg-10 padZero">
+                                                                    <srd-textarea id="kfcmtsId" label="Kafou Comments" label-class="col-lg-1 col-md-1 col-sm-1" field-class="col-lg-12 col-md-12 col-sm-12 recDAccwdth101" submitted="submitted"
+                                                                                  min-length="50" max-length="2000" model="model.KafouCmnts" name="kfcmts" rows="5"
+                                                                                  customtext="(A minimum of 50 characters has to be entered.)" readonly="iskfReadonly"></srd-textarea>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-12 col-md-12 col-sm-12" ng-disabled="iskfReadonly">
+                                                                <label for="ex1" class="attach_txt_Left col-lg-12 col-md-12 col-sm-12 col-xs-12"><span class="redText"></span>QR Values </label>
+                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-class="{'prmInvalid' : isKFQRValInValid}">
+                                                                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 floatLefMin15 qrDropdnWdth">
+                                                                        <ui-select id="qr1" ng-disabled="iskfReadonly" multiple ng-model="model.qrValuesObj" name="qrvalues" required="true"
+                                                                                   close-on-select="true" title="" theme="select2">
+                                                                            <ui-select-match id="qr2" placeholder=" select qr value">
+                                                                                {{$item.QRValue}}
+                                                                            </ui-select-match>
+                                                                            <ui-select-choices id="qr3" repeat="model in qrValuetList | filter: $select.search" style="width:100%">
+                                                                                <div ng-bind-html="model.QRValue | propsFilter : {model : $select.search}"></div>
+                                                                            </ui-select-choices>
+                                                                        </ui-select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 noPadLeft-lg noPadLeft-md">-->
+
+                                                <div class="row">
+
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading clearfix">
+
+                                                            <h3 class="panel-title">
+                                                                Additional Comments & Attachments
+                                                            </h3>
+                                                        </div>
+                                                        <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                                            <div class="col-lg-12 padZero">
+                                                                <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                                                    <div class="col-lg-10 padZero">
+                                                                        <srd-textarea label="Overall Comments" label-class="col-lg-1 col-md-1 col-sm-1" field-class="col-lg-12 col-md-12 col-sm-12 recDAccwdth101" submitted="submitted"
+                                                                                      max-length="2000" model="model.AdditonalCmnts" name="overallcmts" rows="5"
+                                                                                      customtext="(A minimum of 50 characters has to be entered.)" readonly="iskfReadonly"></srd-textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--</div>-->
+
+                                                <div class="row">
+                                                    <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-body">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12" ng-show="!iskfReadonly">
+                                                                <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 attach_txt_Left">
+                                                                    Attachment
+                                                                </label>
+                                                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 fileupload-table">
+                                                                    <srd-fileupload uploader="upload.uploader"></srd-fileupload>
+                                                                    <em class="notes">{{ attachmentNote }}</em>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 clearboth">
+                                                                <div class="container col-lg-9 col-md-9 ">
+                                                                    <table class="table table-striped table-bordered dataTable no-footer blueTHTable" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%;">
+                                                                        <thead>
+                                                                            <tr role="row" class="headerRow">
+                                                                                <th class="sorting_asc" rowspan="1" colspan="1" aria-sort="ascending">
+                                                                                    Existing File(s) Name(s)
+                                                                                </th>
+                                                                                <th class="sorting_asc text-center" rowspan="1" colspan="1" ng-show="!iskfReadonly">
+                                                                                    Action
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr role="row" class="odd" ng-repeat="file in files">
+                                                                                <td class="sorting_1">
+                                                                                    <a href="javascript:void(0);" ng-click="openImage(file)">{{file.FileName}}</a>
+                                                                                </td>
+                                                                                <td class="text-center col-xs-3" ng-show="!iskfReadonly">
+                                                                                    <a href="javascript:void(0);" ng-click="removeDocument(file, $index)">
+                                                                                        <i class="glyphicon glyphicon-trash redText"></i>
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--</div>-->
+                                                <div class="txtRight col-lg-12 col-md-12 col-sm-12 padZero marbottom10" style="position: static;">
+                                                    <br />
+
+                                                    <div class="pull-right">
+                                                        <!--<button class="btn btn-primary" ng-show="iskfReadonly" ng-click="BackToKfSearch()">Back</button>-->
+                                                        <button type="submit" class="btn btn-primary" ng-hide="iskfReadonly" ng-click="SaveKafou(kafouform)">Save</button>
+                                                        <button type="submit" class="btn btn-primary" ng-hide="iskfReadonly" ng-click="SubmitKafou(kafouform)">Submit</button>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </ng-form>
+
+                                    </tab>
+                                </tabset>
+                            </div>
+                            <div class="row">
+                                <div class="pull-right">
+                                    <button class="btn btn-primary" ng-show="iskfReadonly" ng-click="BackToKfSearch()">Back</button>
+                                </div>
+
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

@@ -1,0 +1,10 @@
+﻿<div class="row">
+    <label ng-hide="label===''" class="{{labelClass}}" ng-class="{{required}}==true? 'control-label required':'control-label'">{{label}}</label>
+    <div class="{{fieldClass}}">
+        <select class="form-control validation" ng-model="model" name="{{nameField}}" ng-options="a[valueField] as a[nameField] for a in list" ng-required="{{required}}" ng-change="ngchange({parameter: model})">
+            <option value="0">-- Select --</option>
+            <option value="">{{title}}</option>
+        </select>
+    </div>
+</div>
+

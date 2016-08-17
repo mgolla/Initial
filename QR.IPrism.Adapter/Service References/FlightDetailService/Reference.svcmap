@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1650b141-34b2-4727-8392-f594424e223a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dohqdalt02.qr.qrgrp.local/QHome/Services/DCSInterfaces/FlightDetail.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FlightDetail.xsd" MetadataType="Schema" ID="2b88dc52-6776-4032-8932-523db5f7d931" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Services/DCSInterfaces/FlightDetail.svc?xsd=xsd0" />
+    <MetadataFile FileName="FlightDetail.disco" MetadataType="Disco" ID="ce66fdb6-e16b-47c4-bf06-f3a5941a5f83" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Services/DCSInterfaces/FlightDetail.svc?disco" />
+    <MetadataFile FileName="FlightDetail1.xsd" MetadataType="Schema" ID="e8dcd4ff-d0dd-4a53-bdf7-f57944949fde" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Services/DCSInterfaces/FlightDetail.svc?xsd=xsd1" />
+    <MetadataFile FileName="FlightDetail.wsdl" MetadataType="Wsdl" ID="aebf6308-66e0-40ce-b2b1-4e9a47fd9dbf" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Services/DCSInterfaces/FlightDetail.svc?wsdl" />
+    <MetadataFile FileName="FlightDetail2.xsd" MetadataType="Schema" ID="b4297d28-5cca-49e3-9953-2bd7b4a027ba" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Services/DCSInterfaces/FlightDetail.svc?xsd=xsd2" />
+    <MetadataFile FileName="FlightDetail3.xsd" MetadataType="Schema" ID="1476e8a9-6d66-4c64-936e-786cf0da59a0" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Services/DCSInterfaces/FlightDetail.svc?xsd=xsd3" />
+    <MetadataFile FileName="FlightDetail4.xsd" MetadataType="Schema" ID="f2ffdbf1-ebbf-420e-8ff9-8dbda5a2566b" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Services/DCSInterfaces/FlightDetail.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

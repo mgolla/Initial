@@ -1,0 +1,998 @@
+﻿<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                My Assessment
+            </h1>
+        </div>
+        <!--Left panel-->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero formStyles">
+            <!--Profile-->
+            <!-- Row start -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <h3 class="panel-title">
+                                Assessee Crew <i class="pull-right"></i>
+                            </h3>
+                        </div>
+                        <div class="panel-body detailForm mob_padLeftZero mob_padRightZero" block-ui="ipmhousingNewReqBlockUI">
+                            <ng-form name="AssessmentRequestForm">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Mob_padZero">
+                                    <div class="form-group clearfix assesse_crew">
+                                        <label class="control-label control-label col-lg-2 col-md-4 col-sm-3" for="reqtype">
+                                            Assessee Crew:
+                                        </label>
+                                        <div class="col-lg-10 col-md-6 col-sm-8 minformWidth" ng-class="{'prmInvalid' : submitted && housingRequestForm.requestType.$invalid}">
+                                            XIBRAIM FERNANDES Zever (254875)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Mob_padZero">
+                                    <div class="form-group assesse_crew">
+                                        <label class="control-label col-lg-2 col-md-4 col-sm-3 col-xs-12">
+                                            Choose Action:
+                                        </label>
+                                        <div class="col-lg-10 col-md-6 col-sm-9 col-xs-12 txtLeft">
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optradio">Record Assessment
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optradio">Unable to conduct Assessment
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div ui-view="newrequestview"></div>
+
+                                <!--<div class="txtRight  col-lg-12 col-md-12 col-sm-12">
+            <button type="submit" class="btn btn-primary" title="" ng-click="submitRequest(housingRequestForm)">Submit</button>
+            <button type="submit" class="btn btn-primary" title="" ng-click="clearForm()">Reset</button>
+            <button type="button" class="btn btn-primary" title="" ui-sref="housing.search">Close</button>
+        </div>-->
+                            </ng-form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <h3 class="panel-title">
+                                Assessee Form <i class="pull-right"></i>
+                            </h3>
+                        </div>
+                        <div class="panel-body detailForm   assessment_layout">
+                            <div class="col-lg-12 padZero">
+                                <div class="pull-right"><a href="#" class="guideline_icon"><i></i>Rating Guidelines</a></div>
+                                <h1>Inflight services <span>Performance Review F1</span></h1>
+
+                            </div>
+
+
+
+                            <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Mob_padZero assesmnt_grid1">
+
+                                <div class="row asses_th  hidden-xs">
+                                    <div class="pull-right col-sm-1 text-center"><div class="">Rank</div></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 padZero asses_comp_highlight">
+                                        <h3>Compliance</h3>
+
+
+                                    </div>
+                                    <div class="col-lg-7 col-md-7 col-sm-7 padZero">Description for each guideline</div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="pull-right col-sm-1 text-center"><div class="assesmnt_rank">SEE</div></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 padZero asses_comp_highlight">
+                                        <h3>Significantly Exceeds Expectations</h3>
+                                        100% compliance Exceedings in three or more mesures
+
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-sm-7 padZero">100% compliance Exceedings in three or more mesures, 100% compliance Exceedings in three or more mesures 100% compliance Exceedings in three or more mesures 100% compliance Exceedings in thre</div>
+                                </div>
+                                <div class="row">
+                                    <div class="pull-right col-sm-1 text-center"><div class="assesmnt_rank">SEE</div></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4  padZero asses_comp_highlight">
+                                        <h3>Exceeds Expectations</h3>
+                                        100% compliance Exceedings in three or more mesures
+
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-sm-7 padZero">100% compliance Exceedings in three or more mesures, 100% compliance Exceedings in three or more mesures 100% compliance Exceedings in three or more mesures 100% compliance Exceedings in thre</div>
+                                </div>
+                                <div class="row">
+                                    <div class="pull-right col-sm-1 text-center"><div class="assesmnt_rank">EE</div></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4  padZero asses_comp_highlight">
+                                        <h3>Competent</h3>
+                                        100% compliance Exceedings in three or more mesures
+
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-sm-7 padZero">100% compliance Exceedings in three or more mesures, 100% compliance Exceedings in three or more mesures 100% compliance Exceedings in three or more mesures 100% compliance Exceedings in thre</div>
+                                </div>
+                                <div class="row">
+                                    <div class="pull-right col-sm-1 text-center"><div class="assesmnt_rank">SD</div></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4  padZero asses_comp_highlight">
+                                        <h3>Development Required</h3>
+                                        100% compliance Exceedings in three or more mesures
+
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-sm-7 padZero">100% compliance Exceedings in three or more mesures, 100% compliance Exceedings in three or more mesures 100% compliance Exceedings in three or more mesures 100% compliance Exceedings in thre</div>
+                                </div>
+                                <div class="row">
+                                    <div class="pull-right col-sm-1 text-center"><div class="assesmnt_rank">SEE</div></div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4  padZero asses_comp_highlight">
+                                        <h3>Significantly Development Required</h3>
+                                        100% compliance Exceedings in three or more mesures
+
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-sm-7 padZero">100% compliance Exceedings in three or more mesures, 100% compliance Exceedings in three or more mesures 100% compliance Exceedings in three or more mesures 100% compliance Exceedings in thre</div>
+                                </div>
+                            </div>-->
+                            <!--<div class="asses_staff_info col-lg-12 padZero ">
+
+
+                                <div class="form-group col-lg-3 col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-lg-3  col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Staff No.</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3  col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Designation</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3  col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Sector</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3  col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Flight No.</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3  col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Date</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3  col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Pax Load</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3  col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">A/C Type</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-lg-3  col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Date</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3  col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">Pax Load</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-3  col-md-4">
+                                    <label for="inputEmail3" class="col-sm-3 control-label">A/C Type</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+
+                            </div>-->
+
+
+
+                            <div class="row">
+
+
+                                <div class="col-lg-12 col-md-12 padZero">
+                                    <div class="asses_staff_info">
+                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 inflighttableCol">
+                                            <label for="ex1" class="mini_text">Name</label>
+                                            <label class="dev_lbl_nme_txt">JUAN John Zever HUXXXXXXHKMMM</label>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 inflighttableCol">
+                                            <label for="ex1" class="mini_text">Staff No.</label>
+                                            <label class="label_text">58471</label>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 inflighttableCol">
+                                            <label for="ex1" class="mini_text">Designation</label>
+                                            <label class="label_text">F1</label>
+                                        </div>
+
+                                        <div class="col-lg-2  col-md-2 col-sm-12 col-xs-12 inflighttableCol">
+
+                                            <label for="ex1" class="mini_text">Date</label>
+                                            <label class="label_text sm-label-text">29-Dec-2015</label>
+                                        </div>
+                                        <div class="col-lg-2  col-md-2 col-sm-12 col-xs-12 inflighttableCol">
+
+                                            <label for="ex1" class="mini_text">Work Position</label>
+                                            <label class="label_text">NA</label>
+                                        </div>
+
+                                        <div class="col-lg-4  col-md-4 col-sm-12 col-xs-12 inflighttableCol">
+
+                                            <label for="ex1" class="mini_text">Sector</label>
+                                            <label class="dev_lbl_txt ">DOH-CDN</label>
+                                        </div>
+                                        <div class="col-lg-2  col-md-2 col-sm-12 col-xs-12 inflighttableCol">
+
+                                            <label for="ex1" class="mini_text">Flight No.</label>
+                                            <label class="label_text ">QR 543</label>
+                                        </div>
+                                        <div class="col-lg-2  col-md-2 col-sm-12  col-xs-12 inflighttableCol">
+                                            <label for="ex1" class="mini_text">A/C type</label>
+                                            <label class="label_text">332</label>
+                                        </div>
+                                        <div class="col-lg-3  col-md-3 col-sm-12  col-xs-12 ">
+                                            <label for="ex1" class="mini_text">Pax Load</label>
+                                            <label class="label_text sm-label-text">F-0,J-0,Y-0,Infants-0</label>
+                                        </div><div class="clear"></div>
+                                        <div class="divider"></div>
+
+                                        <div class="col-lg-4  col-md-4 col-sm-12 col-xs-12 inflighttableCol">
+                                            <label for="ex1" class="mini_text">Appraiser</label>
+                                            <label class="dev_lbl_txt">MNFDUHHHurrrrrrrrrrrrttttt GTRS</label>
+                                        </div>
+                                        <div class="col-lg-2  col-md-2 col-sm-12 col-xs-12 inflighttableCol">
+                                            <label for="ex1" class="mini_text">Staff No.</label>
+                                            <label class="label_text ">32547</label>
+                                        </div>
+                                        <div class="divider"></div>
+                                        <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+                                            <label for="ex1" class="mini_text">Reports to PM</label>
+                                            <label class="label_text ">NA</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h5 class="title_h4">
+                                <a href="#objectivesInner" data-toggle="collapse" class="js-tabcollapse-panel-heading collapsed"
+                                   data-parent="" aria-expanded="false"><i class="obj_cuex"></i>Objective(s)</a>
+                            </h5>
+                        </div>
+                        <!--tabs+Accordion-->
+                        <div id="objectivesInner" class="panel-collapse collapse">
+                            
+                            <div id="profileTabsContents" class="oldassesCSDtab">
+                                <tabset class="tab-animation">
+                                    <tab heading="5 STAR CUSTOMER EXPERIENCE">
+                                        <div class="tab-pane fade  in active">
+
+                                            <div class="notification_box">
+                                                <div class="obj_descriptn"><h2>To be globally recorgnized as the safest airline. <span>Cabin crew members are accountable for 100% compliance of safety and security on board every flight.</span></h2></div>
+
+                                                <div class=" Mob_margZero">
+
+                                                    <div class="objectivestable">
+                                                        <div class="row objectivestableheader">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">Competencies</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Rating</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Observation / Findings</div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row objectExceedExp">Exceeds Expectations</div>
+
+                                                        <div class="row martop5 ">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">
+                                                                Display a positive and influential safety culture while raising
+                                                                safety awarness and promoting this amongst peers.
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                                                <input type="checkbox" />
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">
+                                                                Display a positive and influential safety culture while raising
+                                                                safety awarness and promoting this amongst peers.
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                                                <input type="checkbox" />
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </tab>
+
+                                    <tab heading="BRAND AMBASSADOR">
+                                        <div class="tab-pane fade in active">
+
+
+                                            <div class="notification_box">
+                                                <div class="obj_descriptn"><h2>To be globally recorgnized as the safest airline. <span>Cabin crew members are accountable for 100% compliance of safety and security on board every flight.</span></h2></div>
+
+                                                <div class=" Mob_margZero">
+
+                                                    <div class="objectivestable">
+                                                        <div class="row objectivestableheader">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">Competencies</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Rating</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Observation / Findings</div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row objectExceedExp">Exceeds Expectations</div>
+
+                                                        <div class="row martop5 ">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">
+                                                                Display a positive and influential safety culture while raising
+                                                                safety awarness and promoting this amongst peers.
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                                                <input type="checkbox" />
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">
+                                                                Display a positive and influential safety culture while raising
+                                                                safety awarness and promoting this amongst peers.
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                                                <input type="checkbox" />
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </tab>
+
+                                    <tab heading="5 STAR LEADERSHIP">
+                                        <div class="tab-pane fade in active">
+
+                                            <div class="notification_box">
+                                                <div class="obj_descriptn"><h2>To be globally recorgnized as the safest airline. <span>Cabin crew members are accountable for 100% compliance of safety and security on board every flight.</span></h2></div>
+
+                                                <div class=" Mob_margZero">
+
+                                                    <div class="objectivestable">
+                                                        <div class="row objectivestableheader">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">Competencies</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Rating</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Observation / Findings</div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row objectExceedExp">Exceeds Expectations</div>
+
+                                                        <div class="row martop5 ">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">
+                                                                Display a positive and influential safety culture while raising
+                                                                safety awarness and promoting this amongst peers.
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                                                <input type="checkbox" />
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">
+                                                                Display a positive and influential safety culture while raising
+                                                                safety awarness and promoting this amongst peers.
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                                                <input type="checkbox" />
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </tab>
+
+                                    <tab heading="BUSINESS AWARNESS">
+                                        <div class="tab-pane fade in active">
+
+                                            <div class="notification_box">
+                                                <div class="obj_descriptn"><h2>To be globally recorgnized as the safest airline. <span>Cabin crew members are accountable for 100% compliance of safety and security on board every flight.</span></h2></div>
+
+                                                <div class=" Mob_margZero">
+
+                                                    <div class="objectivestable">
+                                                        <div class="row objectivestableheader">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">Competencies</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Rating</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Observation / Findings</div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row objectExceedExp">Exceeds Expectations</div>
+
+                                                        <div class="row martop5 ">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">
+                                                                Display a positive and influential safety culture while raising
+                                                                safety awarness and promoting this amongst peers.
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                                                <input type="checkbox" />
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">
+                                                                Display a positive and influential safety culture while raising
+                                                                safety awarness and promoting this amongst peers.
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                                                <input type="checkbox" />
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </tab>
+
+                                    <tab heading="SAFETY">
+                                        <div class="tab-pane fade in active">
+
+                                            <div class="notification_box">
+                                                <div class="obj_descriptn"><h2>To be globally recorgnized as the safest airline. <span>Cabin crew members are accountable for 100% compliance of safety and security on board every flight.</span></h2></div>
+
+                                                <div class=" Mob_margZero">
+
+                                                    <div class="objectivestable">
+                                                        <div class="row objectivestableheader">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">Competencies</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Rating</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Observation / Findings</div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">Safety Knowledge</div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3 martop5">
+                                                                <select class="form-control obj_dropdown">
+                                                                    <option>Option1</option>
+                                                                    <option>Option2</option>
+                                                                    <option>Option3</option>
+                                                                </select>
+
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row objectExceedExp">Exceeds Expectations</div>
+
+                                                        <div class="row martop5 ">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">
+                                                                Display a positive and influential safety culture while raising
+                                                                safety awarness and promoting this amongst peers.
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                                                <input type="checkbox" />
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row martop5">
+                                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 martop10">
+                                                                Display a positive and influential safety culture while raising
+                                                                safety awarness and promoting this amongst peers.
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                                                                <input type="checkbox" />
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-5">
+                                                                <textarea class="form-control" id="overallcomments"></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </tab>
+
+
+                                </tabset>
+
+                                </div>
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5 class="title_h4">Attachments</h5>
+                            <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12">
+                                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                                    <h5 class="attach_title">Attachment</h5>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                                    <input type="text" class="form-control" />
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                                    <button type="submit" class="btn btn-upload" title="">Upload</button>
+                                    <button type="submit" class="btn btn-upload" title="">Reset</button>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h5 class="attach_doc">Attached Documents</h5>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <!--<input type="text" class="form-control" placeholder="Attached Documents" />-->
+                                    <select name="attachedocs" id="attachdropdown" class="attachdropdown form-control">
+                                        <option value="" class="attachoptions">assestmentlist.png</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5 class="title_h4">* Overall Comments:</h5>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <textarea class="form-control floatLefM15" rows="3" id="overallcomments"></textarea>
+                            </div>
+                            <h5 class="">Character Count:7 (A minimum of 50 characters has to be entered.)</h5>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                            <h5 class="title_h4">
+                                <a href="#idpFormsInner" data-toggle="collapse" class="js-tabcollapse-panel-heading collapsed"
+                                   data-parent="" aria-expanded="false"><i class="obj_cuex"></i>IDP Forms(s)</a>
+                            </h5>
+                        </div>
+                        <div id="idpFormsInner" class="panel-collapse collapse">
+                            <div class="title_idpdevplan">Individual Development Plan</div>
+                            <div class="safetytable">
+                                <div class="saftytabletitle">SAFETY</div>
+                                <div class="row safetytableheader">
+                                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">Category</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Observation</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Expected Results</div>
+                                </div>
+                                <div class="row martop5">
+                                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 martop10">Cabin Monetering</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <textarea class="form-control" id="overallcomments"></textarea>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <textarea class="form-control" id="overallcomments"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row martop5">
+                                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 martop10">Cabin Services</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <textarea class="form-control" id="overallcomments"></textarea>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <textarea class="form-control" id="overallcomments"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="safetytable">
+                                <div class="saftytabletitle">BRAND AMBASSADOR</div>
+                                <div class="row safetytableheader">
+                                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">Category</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Observation</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">Expected Results</div>
+                                </div>
+                                <div class="row martop5">
+                                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 martop10">Cultural Awarness</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <textarea class="form-control" id="overallcomments"></textarea>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <textarea class="form-control" id="overallcomments"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="txtRight martop5 col-lg-12 col-md-12 col-sm-12 ng-scope">
+                <button type="submit" class="btn btn-primary" title="" ng-click="submitRequest(housingRequestForm)">Submit</button>
+                <button type="submit" class="btn btn-primary" title="" ng-click="clearForm()">Reset</button>
+            </div>
+
+
+            <!-- Row end -->
+            <!--tabs+Accordion wrap-->
+        </div>
+        <!--Right panel-->
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        resizeDiv();
+    });
+
+    window.onresize = function (event) {
+        resizeDiv();
+    }
+
+    function resizeDiv() {
+
+        var getHeight = $(window).height()
+
+        //var headerHeight = $('#header_area').height();
+        //var footerHeight = $('.footer').height();
+
+        //var setHeight = getHeight-headerHeight-footerHeight;
+        var setHeight = getHeight - 150;
+
+        $('.content_wrapper').css({ 'min-height': setHeight + 'px' });
+    }
+
+    //$('#profiledetailTab').tabCollapse();
+
+</script>

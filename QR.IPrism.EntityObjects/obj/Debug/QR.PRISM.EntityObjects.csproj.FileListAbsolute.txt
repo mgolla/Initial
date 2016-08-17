@@ -1,0 +1,30 @@
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\EntityObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\EntityObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\EntityObjects\bin\Debug\QR.PRISM.Utility.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\EntityObjects\bin\Debug\QR.PRISM.Utility.pdb
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\EntityObjects\obj\Debug\ResolveAssemblyReference.cache
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\EntityObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\EntityObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\EntityObjects\bin\Debug\QR.PRISM.Utility.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\EntityObjects\bin\Debug\QR.PRISM.Utility.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\EntityObjects\obj\Debug\ResolveAssemblyReference.cache
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\EntityObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\EntityObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\EntityObjects\bin\Debug\QR.PRISM.Utility.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\EntityObjects\bin\Debug\QR.PRISM.Utility.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.csprojResolveAssemblyReference.cache
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\EntityObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\EntityObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.csprojResolveAssemblyReference.cache
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\EntityObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\EntityObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\EntityObjects\obj\Debug\QR.PRISM.EntityObjects.pdb

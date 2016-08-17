@@ -1,0 +1,117 @@
+﻿<style type="text/css">
+    .content_wrapper {
+        overflow: hidden;
+    }
+</style>
+<div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero" ng-controller='ipm.roster.controller'>
+    <div class="applybg_mob"></div>
+    <div class="MyRoster_info" ng-class="{'monthlyRoster_info' : isMonthly()}" id="myroster" block-ui="ipmBlockUIRoster">
+
+        <div class="row sm-pad-10 myroster_header" id="myrostersection">
+            <div id="header_elements">
+                <h1 class="pageTitle" ng-class="{'mobile_pagetitle' : isBackButtonShow()}" ng-show="isNotBackButtonShow()">
+                    <label>MY ROSTER</label>
+                </h1>
+                <!--ng-style="{background:'url(data:image/jpg;base64,{{backgroundImage}}) no-repeat center center'}"    ui-sref="home"  ; no-repeat center top;-->
+                <div class="wk-myrosterLink" ng-class="{'wk-myrosterLink1' : isBackButtonShow()}" ng-show="isBackButtonShow()" ng-click="onClickBackButton()">
+                    <img src="/Content/css/styles/icons/close.png">MY ROSTER
+                    <!--<a ></a>-->
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 noPadding martop20 dateTime">
+
+                    <!--<div class="col-lg-4 col-md-4 col-sm-4 txtLeft padZero">
+                        <div class="weeklykDv" ng-show="isNotBackButtonShow()" ng-class="{'active' : isSelectedRosterType(1)}">
+                            <label class="radio-inline" ng-click="onClickRosterType(1)">
+                                <a ng-click="onClickRosterType(1)">
+                                    <input type="radio" id="weekly" name="optradio" ng-checked="isSelectedRosterType(1)" />
+                                    Default
+                                </a>
+                            </label>
+                        </div>
+                        <div class="monthlyDv" ng-show="isNotBackButtonShow()" ng-class="{'active' : isSelectedRosterType(2)}">
+                            <label class="radio-inline" ng-click="onClickRosterType(2)">
+                                <a ng-click="onClickRosterType(1)">
+                                    <input name="optradio" id="monthly" type="radio" ng-checked="isSelectedRosterType(2)" />
+                                    Monthly
+                                </a>
+                            </label>
+                        </div>
+                    </div>-->
+
+                    <div class="btn-group utc-btn-toggle col-lg-4 col-md-4 col-sm-4 txtLeft padZero myroaster_localBtnmovL" data-toggle="buttons" ng-show="isNotBackButtonShow()" >
+                        <label id="weeklyButton" ng:click="onClickRosterType(1)" class="btn btn-default my_data_flag "
+                               ng-class="{'active btn-primary': isSelectedRosterType(1), 'btn-default' : !isSelectedRosterType(1)}">
+                            <input name="options" type="radio" />Default
+                        </label>
+                        <label ng:click="onClickRosterType(2)" class="btn btn-default my_data_flag"
+                               ng-class="{'active btn-primary': isSelectedRosterType(2), 'btn-default' : !isSelectedRosterType(2)}">
+                            <input name="options" type="radio" />Monthly
+                        </label>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 dateSliderWeek" ng-show="isNotBackButtonShow()">
+                        <ul class="list-inline">
+
+                            <li class="timestamp">
+                                <strong data-ng-model="uctTime" id="currentDateTime"></strong>  <b> UTC</b>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mob-changeTimeZone" id="mob-changeTimeZoneHide" ng-show="isNotBackButtonShow()" ng-if="(rosterViewModel.IsDataLoaded==YesRoster)">
+                        <div class="dropdown" id="dropdownTimeFormat">
+                            <button class="btn down dropdown-toggle" type="button" data-toggle="dropdown"><span id="selectedTimeFormat">LOCAL</span><span class="caret"></span></button>
+                            <ul class="dropdown-menu drop utc-dropdown">
+                                <!--<li data-ng-repeat="itemRdo in TimeFormats"><a ng-click="handleRadioClick(itemRdo)"> {{itemRdo.Text}}</a></li>-->
+                                <li><a ng-click="handleRadioClick(UTCTime)"> UTC </a></li>
+                                <li><a ng-click="handleRadioClick(DohaTime)"> DOHA </a></li>
+                                <li><a ng-click="handleRadioClick(LocalTime)">LOCAL </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 txtRight changeTimeZone">
+                        <!--<div class="col-lg-4 col-md-4 col-sm-4 changeTimeZone txtRight" id="changeTimeZoneHide">-->
+                        <!--data-ng-repeat="itemRdo in TimeFormats"-->
+                        <!--<label class="radio-inline" >
+                            <input type="radio" id="Radio{{itemRdo.Value}}" name="time{{itemRdo.Value}}" ng-model="rosterViewModel.TimeFormat" ng-change="handleRadioClick(itemRdo)" ng-checked="isSelectedTimeFormat(itemRdo.Value)" ng-value="itemRdo.Value" />
+                            {{itemRdo.Text}}
+                        </label>-->
+                        <!--<label class="radio-inline">
+                            <input type="radio" id="Radio1" name="time1" ng-model="filter.TimeFormat" ng-change="handleRadioClick(UTCTime)" ng-checked="isSelectedTimeFormat(UTCTime)" ng-value="UTCTime" />
+                            UTC Time
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="Radio2" name="time2" ng-model="filter.TimeFormat" ng-change="handleRadioClick(DohaTime)" ng-checked="isSelectedTimeFormat(DohaTime)" ng-value="DohaTime" />
+                            DOHA Time
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="Radio3" name="time3" ng-model="filter.TimeFormat" ng-change="handleRadioClick(LocalTime)" ng-checked="isSelectedTimeFormat(LocalTime)" ng-value="LocalTime" />
+                            Local Time
+                        </label>-->
+
+                        <div class="btn-group utc-btn-toggle myroaster_localBtnmovR" data-toggle="buttons" ng-if="(rosterViewModel.IsDataLoaded==YesRoster)">
+                            <label ng:click="handleRadioClick(UTCTime)" class="btn btn-default my_data_flag " ng-class="{'active btn-primary': isSelectedTimeFormat(UTCTime), 'btn-default' : isSelectedTimeFormat(UTCTime)==false}" id="one">
+                                <input name="options" type="radio" ng:click="handleRadioClick(UTCTime)"> UTC  </input>
+                            </label>
+                            <label ng:click="handleRadioClick(DohaTime)" class="btn btn-default my_data_flag" ng-class="{'active btn-primary': isSelectedTimeFormat(DohaTime), 'btn-default' : isSelectedTimeFormat(DohaTime)==false}">
+                                <input name="options" type="radio" ng:click="handleRadioClick(DohaTime)">  DOHA </input>
+                            </label>
+                            <label ng:click="handleRadioClick(LocalTime)" class="btn  my_data_flag" ng-class="{'active btn-primary': isSelectedTimeFormat(LocalTime), 'btn-default' : isSelectedTimeFormat(LocalTime)==false}">
+                                <input name="options" type="radio" ng:click="handleRadioClick(LocalTime)"> LOCAL </input>
+                            </label>
+
+                        </div>
+                    </div>
+
+
+                    <span class="yearstamp" ng-if="rosterViewModel.Range.length >0">  {{rosterViewModel.Range}} </span>
+                </div>
+            </div>
+            <!--<div ui-view="rosterView" class="clearboth">
+            </div>-->
+            <div class="clearboth">
+                <ng-include src="tabRosterContentUrl"></ng-include>
+            </div>
+
+        </div>
+    </div>
+</div>

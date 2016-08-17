@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/QR.Common.UserManagement.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/QR.Common.UserManagement.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QR.Framework.Common" />
+  <xs:import schemaLocation="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="SocialMediaUser">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q1:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LinkedUserId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LoginUserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SocialMediaType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SocialMediaUserId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SocialMediaUser" nillable="true" type="tns:SocialMediaUser" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q2:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessAllowedOutside" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AccountValidTill" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationAdministrator" nillable="true" type="tns:ArrayOfApplicationAdministrator" />
+          <xs:element minOccurs="0" name="ChannelType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Designation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DomainName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Islocked" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastFailedLoginDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastLoginDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxSessionsAllowed" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PasswordExpiryDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PasswordExpiryRequired" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PasswordResetRequired" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Salutation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserAttribute" nillable="true" type="tns:ArrayOfUserAttribute" />
+          <xs:element minOccurs="0" name="UserId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UserLoginAudit" nillable="true" type="tns:ArrayOfUserLoginAudit" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserPasswordHistory" nillable="true" type="tns:ArrayOfUserPasswordHistory" />
+          <xs:element minOccurs="0" name="UserRole" nillable="true" type="tns:ArrayOfUserRole" />
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WrongPasswordAttemptCount" nillable="true" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfApplicationAdministrator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplicationAdministrator" nillable="true" type="tns:ApplicationAdministrator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicationAdministrator" nillable="true" type="tns:ArrayOfApplicationAdministrator" />
+  <xs:complexType name="ApplicationAdministrator">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q3:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UmAplnAdministratorId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ApplicationAdministrator" nillable="true" type="tns:ApplicationAdministrator" />
+  <xs:complexType name="ArrayOfUserAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserAttribute" nillable="true" type="tns:UserAttribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserAttribute" nillable="true" type="tns:ArrayOfUserAttribute" />
+  <xs:complexType name="UserAttribute">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q4:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AttributeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttributeValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsDefault" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserAttributeId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UserId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserAttribute" nillable="true" type="tns:UserAttribute" />
+  <xs:complexType name="ArrayOfUserLoginAudit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserLoginAudit" nillable="true" type="tns:UserLoginAudit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserLoginAudit" nillable="true" type="tns:ArrayOfUserLoginAudit" />
+  <xs:complexType name="UserLoginAudit">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q5:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClientIP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LoginDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LogoutDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UserLoginAudId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserLoginAudit" nillable="true" type="tns:UserLoginAudit" />
+  <xs:complexType name="ArrayOfUserPasswordHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserPasswordHistory" nillable="true" type="tns:UserPasswordHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserPasswordHistory" nillable="true" type="tns:ArrayOfUserPasswordHistory" />
+  <xs:complexType name="UserPasswordHistory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q6:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ResetDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UserPasswordHistoryId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserPasswordHistory" nillable="true" type="tns:UserPasswordHistory" />
+  <xs:complexType name="ArrayOfUserRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserRole" nillable="true" type="tns:UserRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserRole" nillable="true" type="tns:ArrayOfUserRole" />
+  <xs:complexType name="UserRole">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q7:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="AuthenticationMode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="tns:Role" />
+          <xs:element minOccurs="0" name="RoleId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UserLocation" nillable="true" type="tns:ArrayOfUserLocation" />
+          <xs:element minOccurs="0" name="UserPrivilegeId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserRole" nillable="true" type="tns:UserRole" />
+  <xs:complexType name="Role">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q8:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RoleCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RolePermission" nillable="true" type="tns:ArrayOfRolePermission" />
+          <xs:element minOccurs="0" name="UserRole" nillable="true" type="tns:ArrayOfUserRole" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="ArrayOfRolePermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RolePermission" nillable="true" type="tns:RolePermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRolePermission" nillable="true" type="tns:ArrayOfRolePermission" />
+  <xs:complexType name="RolePermission">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q9:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComponentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComponentRoleAccessId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ComponentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DeleteAccessAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExecuteAccessAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReadAccessAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="tns:Role" />
+          <xs:element minOccurs="0" name="RoleId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="WriteAccessAllowed" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RolePermission" nillable="true" type="tns:RolePermission" />
+  <xs:complexType name="ArrayOfUserLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserLocation" nillable="true" type="tns:UserLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserLocation" nillable="true" type="tns:ArrayOfUserLocation" />
+  <xs:complexType name="UserLocation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q10:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DefaultLocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserLocationAccessId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UserPrivilegeId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UserRole" nillable="true" type="tns:UserRole" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserLocation" nillable="true" type="tns:UserLocation" />
+  <xs:complexType name="ArrayOfMenuDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MenuDetail" nillable="true" type="tns:MenuDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMenuDetail" nillable="true" type="tns:ArrayOfMenuDetail" />
+  <xs:complexType name="MenuDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q11:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChannelType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComponentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefaultLocationIndicator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeleteAccessAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayOrder" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MenuCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MenuGroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MenuGroupDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentMenuCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReadAccessAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WriteAccessAllowed" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MenuDetail" nillable="true" type="tns:MenuDetail" />
+  <xs:complexType name="ArrayOfQuickLinkDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QuickLinkDetail" nillable="true" type="tns:QuickLinkDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQuickLinkDetail" nillable="true" type="tns:ArrayOfQuickLinkDetail" />
+  <xs:complexType name="QuickLinkDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q12:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComponentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefaultLocationIndicator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeleteAccessAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DisplayOrder" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentScreenCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuickLinkCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReadAccessAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WriteAccessAllowed" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QuickLinkDetail" nillable="true" type="tns:QuickLinkDetail" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="ArrayOfAdminApplicationsView">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdminApplicationsView" nillable="true" type="tns:AdminApplicationsView" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdminApplicationsView" nillable="true" type="tns:ArrayOfAdminApplicationsView" />
+  <xs:complexType name="AdminApplicationsView">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q13:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Active" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationId" type="xs:int" />
+          <xs:element minOccurs="0" name="ApplicationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DomainName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ServerDetails" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AdminApplicationsView" nillable="true" type="tns:AdminApplicationsView" />
+  <xs:complexType name="ArrayOfCustomUserLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomUserLocation" nillable="true" type="tns:CustomUserLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomUserLocation" nillable="true" type="tns:ArrayOfCustomUserLocation" />
+  <xs:complexType name="CustomUserLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDefault" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomUserLocation" nillable="true" type="tns:CustomUserLocation" />
+  <xs:complexType name="ArrayOfRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Role" nillable="true" type="tns:Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRole" nillable="true" type="tns:ArrayOfRole" />
+  <xs:complexType name="ArrayOfAdminUserConfigDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdminUserConfigDetail" nillable="true" type="tns:AdminUserConfigDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdminUserConfigDetail" nillable="true" type="tns:ArrayOfAdminUserConfigDetail" />
+  <xs:complexType name="AdminUserConfigDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q14:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdminUserConfigHeader" nillable="true" type="tns:AdminUserConfigHeader" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Usertype" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AdminUserConfigDetail" nillable="true" type="tns:AdminUserConfigDetail" />
+  <xs:complexType name="AdminUserConfigHeader">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q15:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdminUserConfigDetail" nillable="true" type="tns:ArrayOfAdminUserConfigDetail" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AdminUserConfigHeader" nillable="true" type="tns:AdminUserConfigHeader" />
+  <xs:complexType name="ArrayOfUserPolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserPolicy" nillable="true" type="tns:UserPolicy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserPolicy" nillable="true" type="tns:ArrayOfUserPolicy" />
+  <xs:complexType name="UserPolicy">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/QR.Framework.Common" base="q16:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FailedAttemptActionType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstLoginPasswordResetReq" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastModifiedDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MaxFailedAttempts" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="PasswordExpiryRequired" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PasswordResetFrequencyType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PasswordResetFrequencyValue" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserPolicy" nillable="true" type="tns:UserPolicy" />
+  <xs:simpleType name="UserProfileActions">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FUllUpdate">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ActivateUser">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="InActivateUser">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="UpdateEmailId">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="UserProfileActions" nillable="true" type="tns:UserProfileActions" />
+  <xs:complexType name="ArrayOfSocialMediaUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SocialMediaUser" nillable="true" type="tns:SocialMediaUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSocialMediaUser" nillable="true" type="tns:ArrayOfSocialMediaUser" />
+</xs:schema>

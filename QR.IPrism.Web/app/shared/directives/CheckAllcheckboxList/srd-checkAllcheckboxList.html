@@ -1,0 +1,10 @@
+﻿<div><div class="col-md-3"> 
+         <label class="control-label col-md-5" ng-class="{{required}}==true? 'required':''">{{label}}</label>     
+         <div ng-class="{highlight: model.length == 0}" class="checkboxContainer">
+             <label><input type="checkbox" id="checkAll" ng-click="checkAll()" ng-model="checked"/>Check All</label>
+             <label ng-repeat="item in list" class="col-md-10 Nopadding">
+                 <input type="checkbox" checklist-model="model" checklist-value="item">{{item.Name}}
+             </label>
+         </div>
+  </div>
+ </div>

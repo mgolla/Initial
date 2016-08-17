@@ -1,0 +1,73 @@
+﻿<div ng-controller='ipm.overviewTab.controller'>
+    <!--chnage-->
+    <div class="row flyerInfo">
+        <div class="col-lg-12">
+            <div class="col-lg-4 col-md-4">
+                <h1>
+                    <em class="etd_dest">{{overviewViewModel.FlightLoad.DepartureName }}</em> <span class="etd">ETD : {{ETDFlight}}</span>
+                </h1>
+            </div>
+            <div class="col-lg-4 col-md-4 overview_sm_cont">
+                <h3 class="flyerName">
+                    <span style="display: block; font-size: 26px; margin-top: 10px; margin-bottom: -14px;
+                                                                color: #A5A5A5; font-weight: bold;">QR {{selectedRosterItem.FlightDisplay}}</span> {{overviewViewModel.FlightLoad.AircraftDesc}}
+                    <i class="icon-flight flight_dir"></i>
+                    ({{overviewViewModel.FlightLoad.AircraftRegNo}})
+                </h3>
+                <div class="travelTime">
+                    <!--. . . . &nbsp;13hr 50min Non-stop&nbsp; {{calculatedBlockHours}} . . . .-->
+                    <span>. . . . &nbsp;{{selectedRosterItem.FlightTravellingTime}}&nbsp; . . . .</span>
+                    
+                </div>
+                <div class="flight_loadtxt">
+                    <span>F({{overviewViewModel.FlightLoad.FirstClassBookedLoad }}/{{overviewViewModel.FlightLoad.FirstClassSeatCount }})</span>&nbsp; &nbsp; <span>J ({{overviewViewModel.FlightLoad.BusinessClassBookedLoad }}/{{overviewViewModel.FlightLoad.BusinessClassSeatCount }}) </span>&nbsp; &nbsp;<span>Y ({{overviewViewModel.FlightLoad.EconomyClassBookedLoad }}/{{overviewViewModel.FlightLoad.EconomyClassSeatCount }})</span>
+                </div>
+                <!--<div class="gray_txt sm-hide mob-hide">
+                    Route: {{overviewViewModel.FlightLoad.RouteFlight}} 
+                </div>-->
+                <div class="gray_txt sm-hide mob-hide" ng-if="overviewViewModel.FlightLoad.LastBatchTime.toString().length>0">
+                    * Load/Capacity last refreshed at {{overviewViewModel.FlightLoad.LastBatchTime | date:"dd-MMM-yyyy H:mm"}}
+                </div>
+                </div>
+            <div class="col-lg-4 col-md-4">
+                <h1>
+                    <em class="eta_dest">{{overviewViewModel.FlightLoad.ArrivalName}}</em><span class="eta">ETA : {{ETAFlight }}</span>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="row extraInfo" style="background:#000;">
+        <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1">
+            <div class=" col-lg-4 col-md-4 col-xs-12">
+                <i class="ovew_bus"></i>
+                <div class="extra_cont">
+
+                    <b class="blueTxt">Scheduled Time: </b>{{overviewViewModel.TransportTripDetail.PickupTime | date:"dd-MMM-yyyy H:mm"  }}
+                    <br />
+                    <b class="blueTxt">Location :</b> {{overviewViewModel.TransportTripDetail.PickupLocation }}
+
+                </div>
+            </div>
+            <div class=" col-lg-4 col-md-4 col-xs-12">
+                <i class="ovew_forecast"></i>
+                <div class="extra_cont">
+
+                    <div class="forecast_block" data-ng-repeat="item in overviewViewModel.WeatherInfos">
+                        <b class="blueTxt">{{item.WeekDay }}</b><br />
+                        {{item.TempLow }}<sup>o</sup> | {{item.TempHigh }}<sup>o</sup>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class=" col-lg-4 col-md-4 col-xs-12">
+                <i class="ovew_exchnge"></i>
+                <div class="extra_cont">
+                    <b class="blueTxt">1 {{overviewViewModel.CurrencyDetail.FromCurrency }} = </b>{{overviewViewModel.CurrencyDetail.ConversionRate }} {{overviewViewModel.CurrencyDetail.ToCurrency }}
+                    <br>
+                    <b class="blueTxt">1 {{overviewViewModel.CurrencyDetail.ToCurrency }} = </b>{{overviewViewModel.CurrencyDetail.InvConversionRate }} {{overviewViewModel.CurrencyDetail.FromCurrency }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

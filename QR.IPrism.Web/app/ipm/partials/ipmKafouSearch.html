@@ -1,0 +1,159 @@
+﻿<div class="container-fluid pull-left" block-ui="ipmkfSearchfilterBlockUI" ng-show="$state.current.name === 'kfsearch'">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero srchKafouCont">
+            <h1 class="page-tittle">
+                Search Kafou
+            </h1>
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles overflow_hide">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Search Request
+                                </h3>
+                            </div>
+                            <div class="panel-body  mob_padLeftZero mob_padRightZero">
+                                <ng-form name="kfSearch">
+
+                                    <div class="col-lg-11 col-md-11 padZero Mob_padZero form-outline col-lg-offset-right-1 col-sm-offset-right-1 ctrlLblAlgn">
+                                        <div class="row">
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3"><span>Staff Number</span></label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9">
+                                                <div class="input-group newCntrl col-sm-12 col-xs-12">
+                                                    <ui-select ng-model="model.selectStaffObj">
+                                                        <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.StaffName}}</ui-select-match>
+                                                        <ui-select-choices repeat="model in autoList | propsFilter: {StaffName: $select.search}"
+                                                                           refresh="refreshStaff($select.search)" refresh-delay="0">
+                                                            <div ng-bind-html="model.StaffName | highlight: $select.search"></div>
+                                                            <small>
+                                                                <strong>Grade: </strong>{{model.StaffGrade}}
+                                                            </small>
+                                                        </ui-select-choices>
+                                                    </ui-select>
+                                                </div>
+                                            </div>
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3"><span>Flight Number </span></label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9">
+                                                <div class="input-group newCntrl">
+                                                    <span class="input-group-addon">QR</span>
+                                                    <input type="text" class="form-control validation qrTxtBxHeight " ng-model="model.FlightNumberUI">
+                                                    <span class="input-group-addon">eg. 264</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <srd-datepicker type="text" name="model.FromDateObj" label="From Date" model="model.FromDateObj" required="false" id="fromdate" field-class="col-lg-4 col-md-4 col-sm-9 fieldfix" label-class="col-lg-2 col-md-2 col-sm-3 "></srd-datepicker>
+
+                                                    <srd-datepicker type="text" name="model.ToDateObj" label="To Date" model="model.ToDateObj" required="false" id="todate"
+                                                                    field-class="col-lg-4 col-md-4 col-sm-9 fieldfix" label-class="col-lg-2 col-md-2 col-sm-3 "></srd-datepicker>
+                                                </div>
+                                            </div>
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                                Sector Form
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 fieldfix">
+                                                <ui-select ng-model="model.SectorFromObj" ng-disabled="disabled">
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in SectorAllFromList | propsFilter: {Desc: $select.search}">
+                                                        <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                                Sector To
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 fieldfix">
+                                                <ui-select ng-model="model.SectorToObj" ng-disabled="disabled">
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in SectorAllToList | propsFilter: {Desc: $select.search}">
+                                                        <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                                Grade
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 fieldfix">
+                                                <ui-select multiple ng-model="model.GradeObj" name="qrvalues" required="true"
+                                                           close-on-select="true" title="Kafou Grade">
+                                                    <ui-select-match placeholder="Select Kafou Grade">{{$item.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in GradeList | filter: $select.search">
+                                                        <div ng-bind-html="model.Text | propsFilter : {model : $select.search}"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+
+                                            </div>
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                                Status
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 fieldfix">
+                                                <ui-select multiple ng-model="model.StatusObj" name="qrvalues" required="true"
+                                                           close-on-select="true" title="Kafou Status">
+                                                    <ui-select-match placeholder="Select Kafou Status">{{$item.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in StatusList | filter: $select.search">
+                                                        <div ng-bind-html="model.Text | propsFilter : {model : $select.search}"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 padZero">
+                                        <div class="pull-right">
+                                            
+                                            <button type="submit" class="btn btn-primary" title=""
+                                                    ng-click="search()">
+                                                Search
+                                            </button>
+                                            <button type="submit" class="btn btn-primary" title=""
+                                                    ng-click="ResetKFSearch()">
+                                                Reset
+                                            </button>
+                                        </div>
+                                    </div>
+                                </ng-form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row end -->
+                <!--<div ui-view="searchview">-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padZero">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="table-responsive dataGrid_styles">
+                                        <div ui-grid="grid" ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(grid)" class="grid searchGrid">
+                                            <div class="watermark" ng-show="!grid.data.length">No data available</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Left panel-->
+        <!--Right panel-->
+    </div>
+</div>
+
+<div id="kfaddeditfrmkfsearch" ui-view="ipmkfaddedit_frmkfSearch_subview"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

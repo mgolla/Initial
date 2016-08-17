@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UsrMgmtSvc" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QR.Framework.Common" />
+      <xsd:import schemaLocation="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/QR.Common.UserManagement.DTO" />
+      <xsd:import schemaLocation="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUsrMgmtSvc_GetMasterDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetMasterDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetMasterSearchByCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterSearchByCodes" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetMasterSearchByCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterSearchByCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_UpdateSocialMediaUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSocialMediaUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_UpdateSocialMediaUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSocialMediaUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_UpdateSocialMediaUser_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q1:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_DeleteSocialMediaUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSocialMediaUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_DeleteSocialMediaUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSocialMediaUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_DeleteSocialMediaUser_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q2:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateSocialMediaUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateSocialMediaUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateSocialMediaUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateSocialMediaUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateSocialMediaUser_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q3:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RenewUserSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenewUserSession" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RenewUserSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenewUserSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_IsUserAuthorized_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserAuthorized" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_IsUserAuthorized_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserAuthorizedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_IsUserAppSessionActive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserAppSessionActive" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_IsUserAppSessionActive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserAppSessionActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetLDAPUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLDAPUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetLDAPUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLDAPUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetLastLoginDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastLoginDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetLastLoginDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastLoginDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_SearchUserLoginDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUserLoginDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_SearchUserLoginDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUserLoginDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserSessionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSessionDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserSessionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSessionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_LoginLite_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginLite" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_LoginLite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginLiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateInstaller_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateInstaller" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateInstaller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateInstallerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserAccessDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccessDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserAccessDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccessDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateIBEUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateIBEUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateIBEUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateIBEUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateIBEUser_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q4:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetAllQuickLinks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuickLinks" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetAllQuickLinks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuickLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetLoggedInUserApplications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggedInUserApplications" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetLoggedInUserApplications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoggedInUserApplicationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetRoleID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleID" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetRoleID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLocations" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_SaveUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_SaveUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_SaveUserRole_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q5:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetApplicationRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationRoles" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetApplicationRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserApplicationRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserApplicationRoles" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserApplicationRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserApplicationRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetAppRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppRoles" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetAppRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetApplicationUserRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetApplicationUserRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUsersForAppRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForAppRoles" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUsersForAppRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForAppRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUsersForApplicationRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForApplicationRoles" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUsersForApplicationRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForApplicationRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetComponentRoleAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComponentRoleAccess" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetComponentRoleAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComponentRoleAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserTypes" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_SaveUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_SaveUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_SaveUserDetails_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q6:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetMultipleUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMultipleUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetMultipleUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMultipleUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetAppUserMasterDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserMasterDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetAppUserMasterDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppUserMasterDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetConfigurationDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigurationDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetConfigurationDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigurationDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserPrivilegeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPrivilegeDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserPrivilegeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPrivilegeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserAttributeDetailsForApp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAttributeDetailsForApp" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserAttributeDetailsForApp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAttributeDetailsForAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetAllUserAttributeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserAttributeDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetAllUserAttributeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserAttributeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserLocationAccessDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLocationAccessDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetUserLocationAccessDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLocationAccessDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetApplicationName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationName" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetApplicationName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetRoleDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetRoleDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_IsUserAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_IsUserAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_SearchUserDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUserDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_SearchUserDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateUserPrivilege_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateUserPrivilege" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateUserPrivilege_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateUserPrivilegeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateUserRoleLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateUserRoleLocation" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateUserRoleLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateUserRoleLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateUserAdminRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateUserAdminRights" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateUserAdminRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateUserAdminRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateRolePermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateRolePermission" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateRolePermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateRolePermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateRole" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ActivateDeActivateRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateDeActivateRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RegisterWebUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterWebUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RegisterWebUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterWebUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RegisterWebUser_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q7:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RetrieveWebUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveWebUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RetrieveWebUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveWebUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RetrieveWebUserPassword_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q8:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RetrieveWebUserAccountDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveWebUserAccountDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RetrieveWebUserAccountDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveWebUserAccountDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_RetrieveWebUserAccountDetails_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q9:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ChangePassword_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q10:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_ResetPassword_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q11:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_UpdateWebUserProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWebUserProfile" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_UpdateWebUserProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWebUserProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_UpdateWebUserProfile_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q12:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateWebUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateWebUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateWebUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateWebUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AuthenticateWebUser_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q13:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_IsUserActive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserActive" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_IsUserActive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_IsUserActive_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q14:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetSocialMediaDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocialMediaDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetSocialMediaDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSocialMediaDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_GetSocialMediaDetails_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q15:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AddSocialMediaUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSocialMediaUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AddSocialMediaUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSocialMediaUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsrMgmtSvc_AddSocialMediaUser_ListOf_ServerValidationErrorFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/QR.Framework.Common" name="detail" element="q16:ArrayOfServerValidationError" />
+  </wsdl:message>
+  <wsdl:portType name="IUsrMgmtSvc">
+    <wsdl:operation name="GetMasterDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQRCommonService/GetMasterDetails" message="tns:IUsrMgmtSvc_GetMasterDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQRCommonService/GetMasterDetailsResponse" message="tns:IUsrMgmtSvc_GetMasterDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterSearchByCodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQRCommonService/GetMasterSearchByCodes" message="tns:IUsrMgmtSvc_GetMasterSearchByCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQRCommonService/GetMasterSearchByCodesResponse" message="tns:IUsrMgmtSvc_GetMasterSearchByCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSocialMediaUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/UpdateSocialMediaUser" message="tns:IUsrMgmtSvc_UpdateSocialMediaUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/UpdateSocialMediaUserResponse" message="tns:IUsrMgmtSvc_UpdateSocialMediaUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/UpdateSocialMediaUserListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_UpdateSocialMediaUser_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSocialMediaUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/DeleteSocialMediaUser" message="tns:IUsrMgmtSvc_DeleteSocialMediaUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/DeleteSocialMediaUserResponse" message="tns:IUsrMgmtSvc_DeleteSocialMediaUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/DeleteSocialMediaUserListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_DeleteSocialMediaUser_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateSocialMediaUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateSocialMediaUser" message="tns:IUsrMgmtSvc_AuthenticateSocialMediaUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateSocialMediaUserResponse" message="tns:IUsrMgmtSvc_AuthenticateSocialMediaUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateSocialMediaUserListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_AuthenticateSocialMediaUser_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenewUserSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RenewUserSession" message="tns:IUsrMgmtSvc_RenewUserSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RenewUserSessionResponse" message="tns:IUsrMgmtSvc_RenewUserSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAuthorized">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/IsUserAuthorized" message="tns:IUsrMgmtSvc_IsUserAuthorized_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/IsUserAuthorizedResponse" message="tns:IUsrMgmtSvc_IsUserAuthorized_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAppSessionActive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/IsUserAppSessionActive" message="tns:IUsrMgmtSvc_IsUserAppSessionActive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/IsUserAppSessionActiveResponse" message="tns:IUsrMgmtSvc_IsUserAppSessionActive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLDAPUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetLDAPUserDetails" message="tns:IUsrMgmtSvc_GetLDAPUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetLDAPUserDetailsResponse" message="tns:IUsrMgmtSvc_GetLDAPUserDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastLoginDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetLastLoginDetails" message="tns:IUsrMgmtSvc_GetLastLoginDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetLastLoginDetailsResponse" message="tns:IUsrMgmtSvc_GetLastLoginDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserLoginDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/SearchUserLoginDetails" message="tns:IUsrMgmtSvc_SearchUserLoginDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/SearchUserLoginDetailsResponse" message="tns:IUsrMgmtSvc_SearchUserLoginDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSessionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserSessionDetails" message="tns:IUsrMgmtSvc_GetUserSessionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserSessionDetailsResponse" message="tns:IUsrMgmtSvc_GetUserSessionDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/Login" message="tns:IUsrMgmtSvc_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/LoginResponse" message="tns:IUsrMgmtSvc_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginLite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/LoginLite" message="tns:IUsrMgmtSvc_LoginLite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/LoginLiteResponse" message="tns:IUsrMgmtSvc_LoginLite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateInstaller">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateInstaller" message="tns:IUsrMgmtSvc_AuthenticateInstaller_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateInstallerResponse" message="tns:IUsrMgmtSvc_AuthenticateInstaller_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/Logout" message="tns:IUsrMgmtSvc_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/LogoutResponse" message="tns:IUsrMgmtSvc_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccessDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserAccessDetails" message="tns:IUsrMgmtSvc_GetUserAccessDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserAccessDetailsResponse" message="tns:IUsrMgmtSvc_GetUserAccessDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateIBEUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateIBEUser" message="tns:IUsrMgmtSvc_AuthenticateIBEUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateIBEUserResponse" message="tns:IUsrMgmtSvc_AuthenticateIBEUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateIBEUserListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_AuthenticateIBEUser_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuickLinks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetAllQuickLinks" message="tns:IUsrMgmtSvc_GetAllQuickLinks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetAllQuickLinksResponse" message="tns:IUsrMgmtSvc_GetAllQuickLinks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUsers" message="tns:IUsrMgmtSvc_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUsersResponse" message="tns:IUsrMgmtSvc_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserDetails" message="tns:IUsrMgmtSvc_GetUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserDetailsResponse" message="tns:IUsrMgmtSvc_GetUserDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedInUserApplications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetLoggedInUserApplications" message="tns:IUsrMgmtSvc_GetLoggedInUserApplications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetLoggedInUserApplicationsResponse" message="tns:IUsrMgmtSvc_GetLoggedInUserApplications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetRoleID" message="tns:IUsrMgmtSvc_GetRoleID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetRoleIDResponse" message="tns:IUsrMgmtSvc_GetRoleID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserLocations" message="tns:IUsrMgmtSvc_GetUserLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserLocationsResponse" message="tns:IUsrMgmtSvc_GetUserLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/SaveUserRole" message="tns:IUsrMgmtSvc_SaveUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/SaveUserRoleResponse" message="tns:IUsrMgmtSvc_SaveUserRole_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/SaveUserRoleListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_SaveUserRole_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetApplicationRoles" message="tns:IUsrMgmtSvc_GetApplicationRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetApplicationRolesResponse" message="tns:IUsrMgmtSvc_GetApplicationRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserApplicationRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserApplicationRoles" message="tns:IUsrMgmtSvc_GetUserApplicationRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserApplicationRolesResponse" message="tns:IUsrMgmtSvc_GetUserApplicationRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetAppRoles" message="tns:IUsrMgmtSvc_GetAppRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetAppRolesResponse" message="tns:IUsrMgmtSvc_GetAppRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUserRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetApplicationUserRoles" message="tns:IUsrMgmtSvc_GetApplicationUserRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetApplicationUserRolesResponse" message="tns:IUsrMgmtSvc_GetApplicationUserRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForAppRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUsersForAppRoles" message="tns:IUsrMgmtSvc_GetUsersForAppRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUsersForAppRolesResponse" message="tns:IUsrMgmtSvc_GetUsersForAppRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForApplicationRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUsersForApplicationRoles" message="tns:IUsrMgmtSvc_GetUsersForApplicationRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUsersForApplicationRolesResponse" message="tns:IUsrMgmtSvc_GetUsersForApplicationRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComponentRoleAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetComponentRoleAccess" message="tns:IUsrMgmtSvc_GetComponentRoleAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetComponentRoleAccessResponse" message="tns:IUsrMgmtSvc_GetComponentRoleAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserTypes" message="tns:IUsrMgmtSvc_GetUserTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserTypesResponse" message="tns:IUsrMgmtSvc_GetUserTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/SaveUserDetails" message="tns:IUsrMgmtSvc_SaveUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/SaveUserDetailsResponse" message="tns:IUsrMgmtSvc_SaveUserDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/SaveUserDetailsListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_SaveUserDetails_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMultipleUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetMultipleUserDetails" message="tns:IUsrMgmtSvc_GetMultipleUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetMultipleUserDetailsResponse" message="tns:IUsrMgmtSvc_GetMultipleUserDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserMasterDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetAppUserMasterDetails" message="tns:IUsrMgmtSvc_GetAppUserMasterDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetAppUserMasterDetailsResponse" message="tns:IUsrMgmtSvc_GetAppUserMasterDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetConfigurationDetails" message="tns:IUsrMgmtSvc_GetConfigurationDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetConfigurationDetailsResponse" message="tns:IUsrMgmtSvc_GetConfigurationDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrivilegeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserPrivilegeDetails" message="tns:IUsrMgmtSvc_GetUserPrivilegeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserPrivilegeDetailsResponse" message="tns:IUsrMgmtSvc_GetUserPrivilegeDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAttributeDetailsForApp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserAttributeDetailsForApp" message="tns:IUsrMgmtSvc_GetUserAttributeDetailsForApp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserAttributeDetailsForAppResponse" message="tns:IUsrMgmtSvc_GetUserAttributeDetailsForApp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserAttributeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetAllUserAttributeDetails" message="tns:IUsrMgmtSvc_GetAllUserAttributeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetAllUserAttributeDetailsResponse" message="tns:IUsrMgmtSvc_GetAllUserAttributeDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLocationAccessDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserLocationAccessDetails" message="tns:IUsrMgmtSvc_GetUserLocationAccessDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetUserLocationAccessDetailsResponse" message="tns:IUsrMgmtSvc_GetUserLocationAccessDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetApplicationName" message="tns:IUsrMgmtSvc_GetApplicationName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetApplicationNameResponse" message="tns:IUsrMgmtSvc_GetApplicationName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetRoleDetails" message="tns:IUsrMgmtSvc_GetRoleDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetRoleDetailsResponse" message="tns:IUsrMgmtSvc_GetRoleDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/IsUserAdmin" message="tns:IUsrMgmtSvc_IsUserAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/IsUserAdminResponse" message="tns:IUsrMgmtSvc_IsUserAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/SearchUserDetails" message="tns:IUsrMgmtSvc_SearchUserDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/SearchUserDetailsResponse" message="tns:IUsrMgmtSvc_SearchUserDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUser" message="tns:IUsrMgmtSvc_ActivateDeActivateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUserResponse" message="tns:IUsrMgmtSvc_ActivateDeActivateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateUserPrivilege">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUserPrivilege" message="tns:IUsrMgmtSvc_ActivateDeActivateUserPrivilege_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUserPrivilegeResponse" message="tns:IUsrMgmtSvc_ActivateDeActivateUserPrivilege_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateUserRoleLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUserRoleLocation" message="tns:IUsrMgmtSvc_ActivateDeActivateUserRoleLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUserRoleLocationResponse" message="tns:IUsrMgmtSvc_ActivateDeActivateUserRoleLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateUserAdminRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUserAdminRights" message="tns:IUsrMgmtSvc_ActivateDeActivateUserAdminRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUserAdminRightsResponse" message="tns:IUsrMgmtSvc_ActivateDeActivateUserAdminRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateRolePermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateRolePermission" message="tns:IUsrMgmtSvc_ActivateDeActivateRolePermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateRolePermissionResponse" message="tns:IUsrMgmtSvc_ActivateDeActivateRolePermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateRole" message="tns:IUsrMgmtSvc_ActivateDeActivateRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateRoleResponse" message="tns:IUsrMgmtSvc_ActivateDeActivateRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterWebUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RegisterWebUser" message="tns:IUsrMgmtSvc_RegisterWebUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RegisterWebUserResponse" message="tns:IUsrMgmtSvc_RegisterWebUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RegisterWebUserListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_RegisterWebUser_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveWebUserPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RetrieveWebUserPassword" message="tns:IUsrMgmtSvc_RetrieveWebUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RetrieveWebUserPasswordResponse" message="tns:IUsrMgmtSvc_RetrieveWebUserPassword_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RetrieveWebUserPasswordListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_RetrieveWebUserPassword_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveWebUserAccountDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RetrieveWebUserAccountDetails" message="tns:IUsrMgmtSvc_RetrieveWebUserAccountDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RetrieveWebUserAccountDetailsResponse" message="tns:IUsrMgmtSvc_RetrieveWebUserAccountDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/RetrieveWebUserAccountDetailsListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_RetrieveWebUserAccountDetails_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ChangePassword" message="tns:IUsrMgmtSvc_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ChangePasswordResponse" message="tns:IUsrMgmtSvc_ChangePassword_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ChangePasswordListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_ChangePassword_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ResetPassword" message="tns:IUsrMgmtSvc_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ResetPasswordResponse" message="tns:IUsrMgmtSvc_ResetPassword_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/ResetPasswordListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_ResetPassword_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebUserProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/UpdateWebUserProfile" message="tns:IUsrMgmtSvc_UpdateWebUserProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/UpdateWebUserProfileResponse" message="tns:IUsrMgmtSvc_UpdateWebUserProfile_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/UpdateWebUserProfileListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_UpdateWebUserProfile_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateWebUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateWebUser" message="tns:IUsrMgmtSvc_AuthenticateWebUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateWebUserResponse" message="tns:IUsrMgmtSvc_AuthenticateWebUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AuthenticateWebUserListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_AuthenticateWebUser_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserActive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/IsUserActive" message="tns:IUsrMgmtSvc_IsUserActive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/IsUserActiveResponse" message="tns:IUsrMgmtSvc_IsUserActive_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/IsUserActiveListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_IsUserActive_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSocialMediaDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetSocialMediaDetails" message="tns:IUsrMgmtSvc_GetSocialMediaDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetSocialMediaDetailsResponse" message="tns:IUsrMgmtSvc_GetSocialMediaDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/GetSocialMediaDetailsListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_GetSocialMediaDetails_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSocialMediaUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AddSocialMediaUser" message="tns:IUsrMgmtSvc_AddSocialMediaUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AddSocialMediaUserResponse" message="tns:IUsrMgmtSvc_AddSocialMediaUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IUsrMgmtSvc/AddSocialMediaUserListOf_ServerValidationErrorFault" name="ListOf_ServerValidationErrorFault" message="tns:IUsrMgmtSvc_AddSocialMediaUser_ListOf_ServerValidationErrorFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUsrMgmtSvc" type="tns:IUsrMgmtSvc">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMasterDetails">
+      <soap:operation soapAction="http://tempuri.org/IQRCommonService/GetMasterDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterSearchByCodes">
+      <soap:operation soapAction="http://tempuri.org/IQRCommonService/GetMasterSearchByCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSocialMediaUser">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/UpdateSocialMediaUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSocialMediaUser">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/DeleteSocialMediaUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateSocialMediaUser">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/AuthenticateSocialMediaUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RenewUserSession">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/RenewUserSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAuthorized">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/IsUserAuthorized" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAppSessionActive">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/IsUserAppSessionActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLDAPUserDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetLDAPUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastLoginDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetLastLoginDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserLoginDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/SearchUserLoginDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSessionDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUserSessionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginLite">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/LoginLite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateInstaller">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/AuthenticateInstaller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccessDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUserAccessDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateIBEUser">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/AuthenticateIBEUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuickLinks">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetAllQuickLinks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoggedInUserApplications">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetLoggedInUserApplications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleID">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetRoleID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLocations">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUserLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserRole">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/SaveUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationRoles">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetApplicationRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserApplicationRoles">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUserApplicationRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppRoles">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetAppRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUserRoles">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetApplicationUserRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForAppRoles">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUsersForAppRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForApplicationRoles">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUsersForApplicationRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComponentRoleAccess">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetComponentRoleAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTypes">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUserTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/SaveUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMultipleUserDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetMultipleUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppUserMasterDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetAppUserMasterDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigurationDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetConfigurationDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrivilegeDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUserPrivilegeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAttributeDetailsForApp">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUserAttributeDetailsForApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserAttributeDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetAllUserAttributeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLocationAccessDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetUserLocationAccessDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationName">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetApplicationName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetRoleDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAdmin">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/IsUserAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/SearchUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateUser">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateUserPrivilege">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUserPrivilege" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateUserRoleLocation">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUserRoleLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateUserAdminRights">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateUserAdminRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateRolePermission">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateRolePermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateDeActivateRole">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/ActivateDeActivateRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterWebUser">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/RegisterWebUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveWebUserPassword">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/RetrieveWebUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveWebUserAccountDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/RetrieveWebUserAccountDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWebUserProfile">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/UpdateWebUserProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateWebUser">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/AuthenticateWebUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserActive">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/IsUserActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSocialMediaDetails">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/GetSocialMediaDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddSocialMediaUser">
+      <soap:operation soapAction="http://tempuri.org/IUsrMgmtSvc/AddSocialMediaUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ListOf_ServerValidationErrorFault">
+        <soap:fault use="literal" name="ListOf_ServerValidationErrorFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UsrMgmtSvc">
+    <wsdl:port name="BasicHttpBinding_IUsrMgmtSvc" binding="tns:BasicHttpBinding_IUsrMgmtSvc">
+      <soap:address location="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

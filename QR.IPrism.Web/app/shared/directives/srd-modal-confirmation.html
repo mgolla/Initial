@@ -1,0 +1,22 @@
+﻿<style>
+    button.ngdialog-button:focus {
+        border: solid black 1px !important;
+    }
+</style>
+
+
+
+
+
+
+
+<div class="ngdialog-message">
+    <h2>
+        <i class="fa fa-question-circle" style=""></i> {{dialogTitle}}
+    </h2>
+    <div class="dialog_content">{{dialogMessage}}</div>
+</div>
+<div class="ngdialog-buttons mt">
+    <button type="button" class="ngdialog-button btn btn-primary" ng-click="closeThisDialog('Cancel');">Cancel</button>
+    <button type="button" class="ngdialog-button btn  btn-primary" ng-click="closeThisDialog('Post');">Ok</button>
+</div>

@@ -1,0 +1,95 @@
+﻿
+<div id="tab-2" class="row" >
+
+    <div class="tabContent container-fluid">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                Station Info
+            </h1>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 station_Info gradientBG formStyles">
+            <div class="panel-body">
+                <form name="myFormStation" novalidate class="form-inline"
+                      data-ng-submit="onClickSearch()">
+                    <div class="form-inline">
+                        <div class="form-group col-lg-2 col-sm-12 noPadLeft-xs">
+                            <label for="uirequestType">
+                                AirportCode
+                            </label>
+                            <ui-select required ng-model="filter.AirportCode">
+                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                <ui-select-choices repeat="model in AirportCodeList | propsFilter: {Text: $select.search}">
+                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+
+
+                        </div>
+                        <div class="form-group col-lg-2 col-sm-12 noPadLeft-xs">
+                            <label for="uirequestType">
+                                City
+                            </label>
+                            <ui-select required ng-model="filter.City">
+                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                <ui-select-choices repeat="model in CitiesAll | propsFilter: {Desc: $select.search}">
+                                    <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+
+
+                        </div>
+                        <!--<div class="form-group col-lg-2 col-sm-12 noPadLeft-xs">
+                            <label for="uirequestType">
+                                Country
+                            </label>
+                            <ui-select required ng-model="filter.City">
+                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                <ui-select-choices repeat="model in CountryList | propsFilter: {Text: $select.search}">
+                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+
+
+                        </div>-->
+
+                        <div class="form-group col-lg-2 col-sm-4">
+                            <srd-datepicker type="text" name="filter.FromDate" label="From Date:" model="filter.ToDate" required="false" id="fromdate"
+                                            field-class="" label-class=""></srd-datepicker>
+                        </div>
+                        <div class="form-group col-lg-2 col-sm-4">
+                            <srd-datepicker type="text" name="filter.ToDate" label="To Date:" model="filter.FromDate" required="false" id="todate"
+                                            field-class="" label-class=""></srd-datepicker>
+                        </div>
+
+                        <div class="form-group col-lg-2 col-sm-4">
+                            <label class="xs-mob-hide disp_block">&nbsp;</label>
+                            <button type="submit" data-ng-show="myFormStation.$valid" class="btn btn-primary pull-sm-right" title="" >Search Stations</button>
+                        </div>
+                    </div>
+                </form>
+</div>
+            <div id="crewflight_info1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="container-fluid" ui-view="uiViewSearchWeather">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--station info END-->
+    </div>
+
+
+
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

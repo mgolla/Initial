@@ -1,0 +1,482 @@
+﻿<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <!-- bs-example-navbar-collapse-1 -->
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1 class="page-tittle">
+                <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack(back)">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
+                </button>
+                <span>Record Assessment</span>
+            </h1>
+
+            <ng-form name="AssessmentRequestForm" class="formStyles">
+                <!--Left panel-->
+                <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero formStyles" block-ui="ipmassessmentBlockUI">
+                    <!--Profile-->
+                    <!-- Row start -->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                            <div class="panel panel-default">
+                                <div class="panel-heading clearfix">
+                                    <h3 class="panel-title">
+                                        Assessee Crew <i class="pull-right"></i>
+                                    </h3>
+                                </div>
+                                <div class="panel-body" block-ui="ipmhousingNewReqBlockUI">
+
+                                    <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Mob_padZero">
+                            <div class="form-group clearfix assesse_crew">
+                                <label class="control-label control-label col-lg-2 col-md-4 col-sm-3 col-xs-12" for="reqtype">
+                                    Assessee Crew:
+                                </label>
+                                <div class="col-lg-10 col-md-6 col-sm-8 col-xs-12 minformWidth">
+                                    {{assesseeStaffName}}
+                                </div>
+                            </div>
+                        </div>-->
+                                    <div class="row">
+                                        <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                            Choose Action
+                                        </label>
+                                        <div class="col-lg-10 col-md-10 col-sm-9 recdAssRadioBlock">
+                                            <div class="radio-inline">
+                                                <input type="radio" ng-disabled="isNullOrEmpty(crewasmntdetails)" ng-model="temp.rdRecAsmt" value="RecAsmt" ng-change="chkRecAsmt()">Record Assessment <span ng-if="assessmentDetail.AssessmentStatus.toString().trim().length > 0 "> - {{assessmentDetail.AssessmentStatus }} </span>
+                                            </div>
+                                            <div class="radio-inline" ng-if="model.vModel.Assessment.IsRecorded!=1">
+                                                <input type="radio" ng-if="model.vModel.Assessment.IsRecorded!=1" ng-disabled="isNullOrEmpty(crewasmntdetails)" ng-model="temp.rdRecAsmt" value="RecNonAsmt" ng-change="chkRecNonAsmt()">Unable to conduct Assessment
+                                            </div>
+
+                                            <!--<div class="btn-group utc-btn-toggle col-lg-4 col-md-4 col-sm-4 txtLeft padZero" data-toggle="buttons">
+                                    <label ng:click="chkRecAsmt()" class="btn btn-default my_data_flag "
+                                           ng-class="{'active btn-primary': temp.rdRecAsmt == 'RecAsmt', 'btn-default' : temp.rdRecAsmt != 'RecAsmt'}">
+                                        <input name="options" type="radio" ng-model="temp.rdRecAsmt" value="RecAsmt" />Record Assessment
+                                    </label>
+                                    <label ng:click="chkRecNonAsmt()" ng-if="model.vModel.Assessment.IsRecorded!=1" class="btn btn-default my_data_flag"
+                                           ng-class="{'active btn-primary': temp.rdRecAsmt == 'RecNonAsmt', 'btn-default' : temp.rdRecAsmt != 'RecNonAsmt'}">
+                                        <input name="options" type="radio" ng-model="temp.rdRecAsmt" value="RecNonAsmt" />Unable to conduct Assessment
+                                    </label>
+                                </div>-->
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 padZero Mob_padZero form-outline globalfontbold">
+                                        <div class="row assesCrewfieldval">
+
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Name</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix ">
+                                                {{assesseeStaffName}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Staff No.</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{assesseeStaffNo}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Designation</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{assesseeGrade}}
+                                            </div>
+
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Date</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{date | date:"dd-MMM-yyyy"}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Work Position</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{workPosition}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Sector</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{sector}}
+                                            </div>
+
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Flight No.</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{flightNumber}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">A/C type</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{acType}}
+                                            </div>
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Pax Load</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{pax_Load_F}}, {{pax_Load_J}}, {{pax_Load_Y}}, {{infants}}
+                                            </div>
+
+
+                                            <!--<div class="col-sm-12 padZero">-->
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Appraiser</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{appraiser}}
+                                            </div>
+
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Staff No.</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{staffNo}}
+                                            </div>
+
+                                            <label for="ex1" class="control-label col-lg-1 col-md-2 col-sm-3">Reports to PM</label>
+                                            <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                {{reportedPM}}
+                                            </div>
+
+                                            <!--</div>-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-show="isInflightShow">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="detailForm assessment_layout martopM15">
+                                        <div class="row">
+                                            <h1 class="page-tittle">Inflight services <span>Performance Review - {{assesseeGrade}}</span></h1>
+                                            <div class="panel-body ">
+                                                <uib-accordion>
+                                                    <uib-accordion-group is-open="status.open">
+                                                        <uib-accordion-heading>
+                                                            OVERALL RATING GUIDELINE <i class="pull-right " ng-class="{'glyphicon glyphicon-chevron-down': status.open, 'glyphicon glyphicon-chevron-right': !status.open}"></i>
+                                                        </uib-accordion-heading>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Mob_padZero assesmnt_grid1">
+
+                                                            <div class="row asses_th">
+                                                                <div class="pull-right col-lg-2 col-md-2 col-sm-2 col-xs-4 text-center"><div class="">Rank</div></div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 padZero asses_comp_highlight">
+                                                                    <h3>Compliance</h3>
+
+
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4 padZero">Description for each guideline</div>
+                                                            </div>
+
+                                                            <div class="row" ng-repeat="item in model.vModel.Assessment.RatingGuidelines">
+                                                                <div class="pull-right col-lg-2 col-md-2 col-sm-2 col-xs-4 text-center"><div class="assesmnt_rank">{{item.Rating}}</div></div>
+                                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 padZero asses_comp_highlight">
+                                                                    <h3>{{item.RatingDescription}}</h3>
+                                                                    <span ng-bind-html="item.ComplianceDesc"></span>
+
+                                                                </div>
+
+                                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4 padZero"> {{item.GuidelineDesc}}</div>
+                                                            </div>
+
+                                                        </div>
+                                                    </uib-accordion-group>
+                                                </uib-accordion>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-show="temp.rdRecAsmt=='RecNonAsmt'">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                            <div class="panel panel-default">
+                                <div class="panel-heading clearfix">
+                                    <h3 class="panel-title">
+                                        Reason For Non-Assessment:
+                                    </h3>
+                                </div>
+                                <div class="panel-body detailForm   assessment_layout">
+                                    <div class="col-lg-12 padZero">
+                                        <h1 class="page-tittle">Reason For Non-Assessment:</span></h1>
+                                    </div>
+
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-4 marLeft15" ng-if="temp.rdRecAsmt=='RecNonAsmt'">
+                                        <label for="uiReasonForRecNonAsmt">
+
+                                        </label>
+
+                                        <div ng-class="{'prmInvalid' : (submitted ||AssessmentRequestForm.notSubmit.$touched) && AssessmentRequestForm.notSubmit.$invalid}">
+                                            <ui-select name="notSubmit" ng-model="temp.reasonForNonSubmission" on-select="onSelectReasonForNonSubmission($model)"
+                                                       ng-disabled="isDisablePage==true" ng-required="true">
+                                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                                <ui-select-choices repeat="reason in reasonForRecNonAsmtList | propsFilter: {Text: $select.search}">
+                                                    <div ng-bind-html="reason.Text | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                        </div>
+                                    </div>
+                                    <div class="row recrdAsses_cmt" ng-if="isLoadNonSubmissionOtherReason==true">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 floatLefMin15">
+                                            <div class="panel">
+                                                <div class="panel-body">
+
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 exceedExpec_Cmt">
+                                                        <srd-textarea label="Other Reason:" label-class=""
+                                                                      field-class="col-lg-12 col-md-12 col-sm-12 " readonly="isDisablePage==true||isEditDisable==true"
+                                                                      submitted="submitted"
+                                                                      customtext="(A minimum of 50 characters has to be entered.)"
+                                                                      min-length="50" max-length="4000" model="temp.reasonForNonSubmissionOther" name="Comments" row="1" required="true"></srd-textarea>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row" ng-show="temp.rdRecAsmt=='RecAsmt'">
+                        <div class="col-lg-12 col-md-12" ng-show="temp.rdRecAsmt=='RecAsmt'">
+                            <div class="panel panel-default">
+
+                                <div class="panel-body">
+
+                                    <div id="objectivesInner">
+                                        <div class="col-lg-12 col-md-12 padZero">
+                                            <!--<h5 class="title_h5">Objective(s)</h5>-->
+                                            <div id="profileTabsContents" class="profile_tabview recordAssesTabView">
+                                                <tabset class="recordAssesTabset tab-animation">
+                                                    <tab heading="{{objective.ObjectiveName}}" ng-repeat="objective in model.vModel.Assessment.Objectives | orderBy:'Rank'"
+                                                         select="onObjectiveTabChange(objective)" class="selectTab">
+                                                        <tab-heading>
+                                                            <div class="oldAss_instflt_hdTit">
+                                                                <img ng-src="data:image/JPEG;base64,{{objective.ObjectiveImage}}">
+                                                                <span>{{objective.ObjectiveName}}</span>
+                                                            </div>
+                                                        </tab-heading>
+                                                        <div class="tab-pane fade  in active">
+
+                                                            <div class="objectivestable infltser_compRow">
+                                                                <div class="row obj_tab_title">
+                                                                    <span>TO BE GLOBALLY RECONIZED AS THE WORLD'S SAFETY AIRLINE</span>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <span>Cabin crew members are accountable for 100% compliance of safety and security on board every flight</span>
+                                                                </div>
+                                                                <div class="row objectivestableheader">
+                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5">Competencies</div>
+                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-2"><span class="redText">*</span>Rating</div>
+                                                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 floatLeftM30">Observation / Findings</div>
+                                                                </div>
+
+                                                                <div class="row mob-word-wrap objectivetableHeadValue" ng-repeat="competency in objective.Competencies | orderBy:'Rank'">
+                                                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12  mob-martop10">
+
+                                                                        <span>{{competency.CompetencyName}}</span>
+                                                                        <button type="button" class="help-icon" popover-title="{{competency.CompetencyName}}" popover-trigger="focus"
+                                                                                uib-popover="{{competency.Description && competency.Description.length > 0 ? competency.Description : '-'}}" ng-hide="isMobile">
+                                                                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12  mob-marTop10" ng-class="{'prmInvalid' : competency.invalidRating}">
+                                                                        <ui-select ng-disabled="isDisablePage==true||isEditDisable==true" required="true"
+                                                                                   ng-model="competency.Rating" id="sel-{{competency.CompetencyId}}" 
+                                                                                   on-select="ratingValidate(objective,competency.CompetencyName, $model)">
+                                                                            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Rating}}</ui-select-match>
+                                                                            <ui-select-choices repeat="model.Rating as  model in model.vModel.Assessment.RatingForDropDown | propsFilter: {Rating: $select.search}">
+                                                                                <div ng-bind-html="model.Rating | highlight: $select.search"></div>
+
+                                                                            </ui-select-choices>
+                                                                        </ui-select>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-12 mob-marLeftM15 noPadRight">
+
+                                                                        <srd-textarea label="" label-class="col-lg-2 col-md-3 col-sm-3" readonly="isDisablePage==true||isEditDisable==true" valid="competency.invalidObs"
+                                                                                      customtext="(A minimum of 50 characters has to be entered.)"
+                                                                                      field-class="col-lg-12 col-md-12 col-sm-12 col-xs-12 noPadRight" submitted="submitted" required="(competency.Rating.toString().trim().length >0  && competency.Rating != COMStatus)"
+                                                                                      id="{{competency.CompetencyId}}"
+                                                                                      min-length="50" max-length="4000" model="competency.Comments" name="competency.CompetencyId" row="1"></srd-textarea>
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="row objectExceedExp">Exceeds Expectations</div>
+                                                                <div class="row martop5 objectivetableHeadValue" ng-repeat="exceedsExpectation in objective.ExceedsExpectations | orderBy:'Rank'">
+                                                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 martop10">
+                                                                        {{exceedsExpectation.CompetencyName}}
+                                                                    </div>
+                                                                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 martop10 mob-marBotm10">
+                                                                        <label class="checkbox-inline">
+                                                                            <input type="checkbox" ng-disabled="isDisablePage==true||isEditDisable==true" ng-model="exceedsExpectation.IsEEChecked" ng-change='chkValidate(exceedsExpectation)'>
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-12 mob-mar-tp10 mob-marLeftM15 noPadRight">
+                                                                        <srd-textarea label="" label-class="" readonly="isDisablePage==true||isEditDisable==true ||  (!(exceedsExpectation.IsEEChecked==true))" valid="exceedsExpectation.invalidObs"
+                                                                                      customtext="(A minimum of 50 characters has to be entered.)"
+                                                                                      id="{{exceedsExpectation.CompetencyId}}"
+                                                                                      field-class="col-lg-12 col-md-12 col-sm-12 col-xs-12 noPadRight" submitted="submitted"
+                                                                                      min-length="50" max-length="4000" model="exceedsExpectation.Comments" name="exceedsExpectation.CompetencyId" row="1"></srd-textarea>
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="row recrdAsses_cmt">
+                                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar-top15 floatLefMin15">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 commentAreaWdth padZero">
+                                                                            <srd-textarea label="Comments:" label-class=""
+                                                                                          field-class="col-lg-12 col-md-12 col-sm-12 recDAccwdth102"
+                                                                                          readonly="isDisablePage==true||isEditDisable==true"
+                                                                                          valid="objective.invalidComment"
+                                                                                          submitted="submitted" id="comment-{{objective.AssessmentObjectiveID}}"
+                                                                                          customtext="(A minimum of 50 characters has to be entered.)"
+                                                                                          min-length="50" max-length="4000" model="objective.Comments" name="Comments" row="1" required="true"></srd-textarea>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+
+                                                        </div>
+                                                    </tab>
+                                                </tabset>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-show="temp.rdRecAsmt=='RecAsmt' || temp.rdRecAsmt=='RecNonAsmt'">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 commentAreaWdth padZero">
+
+                                        <srd-textarea label="Overall Comments:" label-class="col-lg-2 col-md-2 col-sm-2 padZero txtLeft"
+                                                      id="overallcomment"
+                                                      field-class="col-lg-12 col-md-12 col-sm-12 recDAccwdth101" readonly="isDisablePage==true||isEditDisable==true"
+                                                      submitted="submitted" valid="model.vModel.Assessment.InvalidAdditionalComments"
+                                                      customtext="(A minimum of 50 characters has to be entered.)"
+                                                      min-length="50" max-length="2000" model="model.vModel.Assessment.AdditionalComments" name="OverallComment" row="1" required="true"></srd-textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-show="showIDPForm && temp.rdRecAsmt=='RecAsmt'" ng-if=' isEditDisable==true'>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading clearfix">
+                                    <h3 class="panel-title">
+                                        Individual Development Plan<i class="pull-right"></i>
+                                    </h3>
+                                </div>
+                                <div class="panel-body detailForm mob_padLeftZero mob_padRightZero" block-ui="ipmhousingNewReqBlockUI">
+                                    <div ng-repeat="objective in model.vModel.Assessment.Objectives" ng-if='objective.AssmIDPs.length >0 &&  isEditDisable==true'>
+                                        <div class="safetytableRecAssest">
+                                            <div class="saftytabletitle">{{objective.ObjectiveName}}</div>
+                                            <div class="row safetytableheader">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">Category</div>
+                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Observation</div>
+                                                <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-3 col-md-3 col-sm-3 col-xs-4">Expected Results</div>
+                                            </div>
+                                            <div class="row martop5 idpDetvalues" ng-repeat="assmIDP in objective.AssmIDPs" ng-show='objective.ObjectiveName == assmIDP.ObjectiveName '>
+                                                <div class=" col-lg-2 col-md-2 col-sm-2 col-xs-12 mob-mar-tp10 martop10"> {{assmIDP.CompetencyName}}</div>
+                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 mob-mar-tp10 mob-marLeftM15">
+                                                    <srd-textarea label="" label-class="col-lg-1 col-md-1 col-sm-1 mob-txtboxLbl"
+                                                                  field-class="col-lg-11 col-md-11 col-sm-11 col-xs-12 wdth130Per" readonly="isDisablePage==true"
+                                                                  submitted="submitted" valid="assmIDP.invalidObs"
+                                                                  customtext="(A minimum of 50 characters has to be entered.)"
+                                                                  id="idp-{{objective.CompetencyId}}"
+                                                                  min-length="50" max-length="4000" model="assmIDP.Observation" name="assmIDP.Observation" row="1" required="true"></srd-textarea>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6 mob-mar-tp10">
+                                                    <srd-textarea label="" label-class="col-lg-1 col-md-1 col-sm-1 mob-txtboxLbl" readonly="isDisablePage==true"
+                                                                  field-class="col-lg-11 col-md-11 col-sm-11 col-xs-12 wdth130Per" submitted="submitted"
+                                                                  valid="assmIDP.invalidERObs"
+                                                                  id="expidp-{{objective.CompetencyId}}"
+                                                                  customtext="(A minimum of 50 characters has to be entered.)"
+                                                                  min-length="50" max-length="4000" model="assmIDP.ExpectedResult" name="assmIDP.ExpectedResult" row="1" required="true"></srd-textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-show="temp.rdRecAsmt=='RecAsmt'">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default" ng-if="(!isDisablePage)">
+                                <div class="panel-body">
+                                    <h5 class="">Attachments</h5>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                                        <!--<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                            <h5 class="attach_title">Attachment</h5>
+                                        </div>-->
+                                        <div class="col-lg-10 col-md-10 col-sm-10 fileupload-table ">
+                                            <srd-fileupload uploader="model.uploader"></srd-fileupload>
+                                            <em class="notes">{{ attachmentNote }}</em>
+                                        </div>
+                                    </div>
+                                    <div class="container col-lg-6 col-md-9 col-sm-8"
+                                         ng-if="model.vModel.Assessment.Attachments && model.vModel.Assessment.Attachments.length > 0">
+                                        <table class="table table-striped table-bordered dataTable no-footer blueTHTable" cellspacing="0" role="grid" aria-describedby="example_info" style="width: 100%;">
+                                            <thead>
+                                                <tr role="row" class="headerRow">
+                                                    <th class="sorting_asc" aria-controls="example" rowspan="1" colspan="1"
+                                                        aria-label="Request No.: activate to sort column descending">
+                                                        File Name
+                                                    </th>
+                                                    <th class="sorting_asc text-center" rowspan="1" colspan="1" ng-show="!isEditDisable">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr role="row" class="odd" ng-repeat="file in model.vModel.Assessment.Attachments">
+                                                    <td class="sorting_1">
+                                                        <a href="javascript:void(0);" ng-click="openImage(file)">{{file.FileName}}</a>
+                                                    </td>
+                                                    <td ng-show="!isEditDisable" class="text-center col-xs-3">
+                                                        <a href="javascript:void(0);" ng-click="removeDocument(file, $index)">
+                                                            <i class="glyphicon glyphicon-trash redText"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row marbottom10">
+                        <div class="txtRight martop5 col-lg-12 col-md-12 col-sm-12 ng-scope marbottom10">
+                            <button type="submit" class="btn btn-primary" ng-if="temp.rdRecAsmt=='RecAsmt' && isEditDisable==true  &&(! (isDisablePage==true))" ng-show="temp.rdRecAsmt=='RecAsmt' || temp.rdRecAsmt=='RecNonAsmt'" ng-click="onClickEdit()">Edit Assessment</button>
+                            <small ng-show="saveSuccess" class="redText">{{savedate}} </small>
+                            <button type="submit" class="btn btn-primary" ng-if="temp.rdRecAsmt=='RecAsmt' &&(! (isDisablePage==true))" ng-show="temp.rdRecAsmt=='RecAsmt' || temp.rdRecAsmt=='RecNonAsmt'" ng-click="saveAndAutoSave(AssessmentRequestForm)">Save</button>
+                            <button type="submit" class="btn btn-primary" ng-if="(! (isDisablePage==true))" ng-click="submitRequest(AssessmentRequestForm)" ng-show="temp.rdRecAsmt=='RecAsmt' || temp.rdRecAsmt=='RecNonAsmt'" ng-disabled="submitDisable">Submit</button>
+                            <button type="submit" class="btn btn-primary" ng-if="(! (isDisablePage==true))" ng-show="temp.rdRecAsmt=='RecAsmt' || temp.rdRecAsmt=='RecNonAsmt'" ng-click="clearForm()">Reset</button>
+                            <button type="button" class="btn btn-primary" title="back to previous page" ng-click="goBack(back)">
+                                Back
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </ng-form>
+
+        </div>
+    </div>
+</div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setContainerHeight();
+        });
+    </script>

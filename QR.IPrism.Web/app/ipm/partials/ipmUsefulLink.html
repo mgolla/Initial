@@ -1,0 +1,30 @@
+﻿<div id="useful_linksPage" class="content_box padZero extraWdth104per link-control" ng-controller='ipm.link.controller'>
+    <h1>
+        <div class="icon-bg"></div>
+        Useful Links
+    </h1>
+    <div class="tabContent" id="tabContent2" block-ui="ipmlinkBlockUI">
+        <div class="panel-group docu_links_cntrl accordions_link" id="accordionL">
+            <div class="panel panel-default" data-ng-repeat="parentItem in parentLinks">
+                <div class="panel-heading">
+                    <h4 class="panel-title" ng-class="{'active': isGetSelectedTab($index)}">
+                        <a data-toggle="collapse" ng:click="onTabChange($index)" class="accordion-toggle2" data-parent="#accordion{{getLinkName(parentItem)}}" href="#collapse{{getLinkName(parentItem)}}">
+                            {{parentItem}}
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse{{getLinkName(parentItem)}}" class="panel-collapse collapse " ng-class="{' in': isGetSelectedTab($index)}">
+                    <div class="panel-body">
+                        <div class="overflow_Hght_100">
+                            <ul class="accordion_list">
+                                <li data-ng-repeat="childItem in getChildrenLinks(parentItem)"><a href="{{childItem.LinkUrl}}" target="_blank">{{childItem.LinkName}}</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

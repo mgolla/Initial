@@ -1,0 +1,11 @@
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\bin\Release\QA.PRISM.Logging.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\bin\Release\QA.PRISM.Logging.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\bin\Release\log4net.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\bin\Release\Newtonsoft.Json.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\bin\Release\System.Net.Http.Formatting.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\bin\Release\log4net.xml
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\bin\Release\Newtonsoft.Json.xml
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\bin\Release\System.Net.Http.Formatting.xml
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\obj\Release\QR.PRISM.Logging.csprojResolveAssemblyReference.cache
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\obj\Release\QA.PRISM.Logging.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Logging\obj\Release\QA.PRISM.Logging.pdb

@@ -1,0 +1,87 @@
+﻿<div class="container-fluid pull-left" ng-show="$state.current.name === 'notificationAll'">
+    <div class="content_wrapper Mob_margZero">
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            
+            <h1 class="page-tittle">
+                <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack('home')">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+                <span>Notifications</span>
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles mob-overflowhid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+
+                                <h3 class="panel-title">
+                                    <span>Search Request</span>
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero" block-ui="notfblockUI">
+
+                                <div class="col-lg-11 col-md-11 padZero Mob_padZero form-outline col-lg-offset-right-1 col-sm-offset-right-1 ctrlLblAlgn">
+                                    <!--row fix-->
+                                    <div class="row ">
+
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                            <span>Notification Type</span>
+                                        </label>
+                                        <div class="col-lg-4 col-md-4 col-sm-9">
+                                            <ui-select ng-model="model.RequestTypeObj">
+                                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                                <ui-select-choices repeat="model in requestList | propsFilter: {Text: $select.search}">
+                                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <srd-datepicker type="text" name="fromDate" label="From Date" model="model.FromDate" required="false"
+                                                        field-class="col-lg-4 col-md-4 col-sm-9 fieldfix" label-class="col-lg-2 col-md-2 col-sm-3"></srd-datepicker>
+                                        <srd-datepicker type="text" name="ToDate" label="To Date" model="model.ToDate" required="false"
+                                                        field-class="col-lg-4 col-md-4 col-sm-9 fieldfix" label-class="col-lg-2 col-md-2 col-sm-3"></srd-datepicker>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 padZero">
+                                    <div class="pull-right">
+                                        <button type="submit" class="btn btn-primary " title="" ng-click="search()">Search</button>
+                                        <button type="submit" class="btn btn-primary " title="" ng-click="reset()">Reset</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padZero">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="table-responsive dataGrid_styles">
+                                       
+                                        <div ui-grid="grid" ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(grid)" class="grid searchGrid">
+                                            <div class="watermark" ng-show="!grid.data.length">No data available</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pull-left" ui-view="notificationDetails"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

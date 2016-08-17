@@ -1,0 +1,399 @@
+﻿<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper" block-ui="ipmhousingReadonlyBlockUI">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack('searchDelayFlight')">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
+                </button>
+                <span>Search Flight Details</span>
+            </h1>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero formStyles">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading clearfix">
+
+                                    <h3 class="panel-title">
+                                        Flight Details<i class="pull-right"></i>
+                                    </h3>
+                                </div>
+                                <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                    <div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    Flight Number
+                                                </label>
+                                                <div class="col-lg-7  col-sm-8">
+                                                    {{ searchData.FlightNumber }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    Aircraft Reg. No
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{ searchData.AirCraftRegNo }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    Aircraft Type
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{searchData.AirCraftType }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    Sector To
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{searchData.Sector }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    Final Destination
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{searchData.SectorTo }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    Crew Complement
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{searchData.FlightDelay.CrewCount }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    STD (UTC)
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{searchData.ScheduledDeptTime | date:"dd-MMM-yyyy HH:mm" }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    ATD (UTC)
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{searchData.ActualDeptTime | date:"dd-MMM-yyyy HH:mm"}}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    Departure Delay (HH:MM)
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{searchData.departureDelay}}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    STA(UTC)
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{searchData.ScheduledArrTime | date:"dd-MMM-yyyy HH:mm"}}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    ATA (UTC)
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{searchData.ActualArrTime | date:"dd-MMM-yyyy HH:mm"}}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                            <div class="form-group clearfix">
+                                                <label class="control-label col-lg-5 col-sm-4" for="reqtype">
+                                                    Arrival Delay (HH:MM)
+                                                </label>
+                                                <div class="col-lg-7 col-sm-8">
+                                                    {{searchData.arrivalDelay}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!--Profile-->
+                <!-- Row start -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix highlightPanelHeading">
+
+                                <h3 class="panel-title">
+                                    Aircraft Configuration <i class="pull-right"></i>
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-5  col-sm-4">
+                                            First Class
+                                        </label>
+                                        <div class="col-lg-7 col-sm-8">
+                                            {{ searchData.FlightDelay.SeatCapacityFC}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-5  col-sm-4">
+                                            Business Class
+                                        </label>
+                                        <div class="col-sm-8 col-lg-7 ">
+                                            {{ searchData.FlightDelay.SeatCapacityJC }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 Mob_padZero">
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-5  col-sm-4">
+                                            Economy Class
+                                        </label>
+                                        <div class="col-lg-7 col-sm-8">
+                                            {{ searchData.FlightDelay.SeatCapacityYC }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row end -->
+                <!-- Row start -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+
+                                <h3 class="panel-title">
+                                    Load Details<i class="pull-right"></i>
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                <div class="col-lg-6 col-md-9 col-sm-8 col-lg-offset-2 col-md-offset-right-2 col-sm-offset-3">
+                                    <table id="example" class="table table-striped table-bordered dataTable no-footer blueTHTable" cellspacing="0" style="width: 100%;">
+                                        <thead>
+                                            <tr role="row" class="headerRow">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending"
+                                                    style="width: 240px;">
+                                                    Ferry Flight
+                                                </th>
+                                                <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 369px;">
+                                                    First Class
+                                                </th>
+                                                <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 185px;">
+                                                    Business Class
+                                                </th>
+                                                <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" style="width: 185px;">
+                                                    Economy Class
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="odd">
+                                                <td class="sorting_1">
+                                                    Passenger Load
+                                                </td>
+                                                <td class="sorting_1">
+                                                    {{searchData.FlightDelay.PassengerLoadFC == "-1" ? "NA" : searchData.FlightDelay.PassengerLoadFC}}
+                                                </td>
+                                                <td>
+                                                    {{searchData.FlightDelay.PassengerLoadJC == "-1" ? "NA" : searchData.FlightDelay.PassengerLoadJC}}
+                                                </td>
+                                                <td>
+                                                    {{searchData.FlightDelay.PassengerLoadYC == "-1" ? "NA" : searchData.FlightDelay.PassengerLoadYC}}
+                                                </td>
+                                            </tr>
+                                            <tr class="odd">
+                                                <td class="sorting_1">
+                                                    No of Infant Load
+                                                </td>
+                                                <td class="sorting_1">
+                                                    {{searchData.FlightDelay.InfantLoadFC == "-1" ? "NA" : searchData.FlightDelay.InfantLoadFC}}
+                                                </td>
+                                                <td>
+                                                    {{searchData.FlightDelay.InfantLoadJC == "-1" ? "NA" : searchData.FlightDelay.InfantLoadJC}}
+                                                </td>
+                                                <td>
+                                                    {{searchData.FlightDelay.InfantLoadYC == "-1" ? "NA" : searchData.FlightDelay.InfantLoadYC}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+
+                                <h3 class="panel-title">
+                                    Pre-flight Check<i class="pull-right"></i>
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                <div class="col-lg-12 col-md-9 col-sm-8">
+                                    <div class="form-group clearfix">
+                                        <label class="control-label col-lg-4 col-md-4 col-sm-4">
+                                            Grooming Check done by GO?
+                                        </label>
+                                        <div class="col-lg-2 col-md-2 col-sm-2">
+                                            {{ searchData.FlightDelay.IsGroomingCheck }}
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 minformWidth">
+                                            {{ searchData.FlightDelay.GroomingCheckComment }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-9 col-sm-8 col-lg-offset-2 col-md-offset-right-2 col-sm-offset-3">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  Mob_padZero">
+                                        <div class="form-group clearfix">
+                                            <label class="control-label col-lg-4 col-md-4 col-sm-4">
+                                                CSD/CS briefed by BO?
+                                            </label>
+                                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                                {{ searchData.FlightDelay.IsCsdCsBriefed }}
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 minformWidth">
+                                                {{ searchData.FlightDelay.CsdCsBriefedComment }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+
+                                <h3 class="panel-title">
+                                    Crew Work Positions<i class="pull-right"></i>
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                <div class="table-responsive dataGrid_styles">
+                                    <div ui-grid="grid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(grid)" class="grid searchGrid">
+                                        <div class="watermark" ng-show="!grid.data.length">No data available</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+
+                                <h3 class="panel-title">
+                                    Cause For Delay<i class="pull-right"></i>
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                <div class="col-lg-6 col-md-9 col-sm-8 col-lg-offset-2 col-md-offset-right-2 col-sm-offset-3">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  Mob_padZero">
+                                        <div class="form-group clearfix">
+                                            <label class="control-label col-lg-4 col-md-4 col-sm-4">
+                                                Delay Type
+                                            </label>
+                                            <div class="col-lg-8 col-md-8 col-sm-8 minformWidth">
+                                                {{ searchData.FlightDelay.DelayType }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-9 col-sm-8 col-lg-offset-2 col-md-offset-right-2 col-sm-offset-3">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  Mob_padZero">
+                                        <div class="form-group clearfix">
+                                            <label class="control-label col-lg-4 col-md-4 col-sm-4">
+                                                Delay Reason
+                                            </label>
+                                            <div class="col-lg-8 col-md-8 col-sm-8 minformWidth">
+                                                {{ searchData.FlightDelay.FlightDelayCatName }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-9 col-sm-8 col-lg-offset-2 col-md-offset-right-2 col-sm-offset-3">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  Mob_padZero">
+                                        <div class="form-group clearfix">
+                                            <label class="control-label col-lg-4 col-md-4 col-sm-4">
+                                                Comment
+                                            </label>
+                                            <div class="col-lg-8 col-md-8 col-sm-8 minformWidth">
+                                                {{ searchData.FlightDelay.DelayComment }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="txtRight  col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="button" class="btn btn-primary" title="back to previous page" ng-click="goBack('searchDelayFlight')">
+                                        Back
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

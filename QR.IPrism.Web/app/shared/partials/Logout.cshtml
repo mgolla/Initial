@@ -1,0 +1,141 @@
+﻿@{
+    Layout = null;
+}
+@Styles.Render("~/bundles/css")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+<style>
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .Error-navbar-default {
+        background: #610f3f url('/Content/css/styles/icons/headerBG.jpg') repeat-x left top;
+        border: 0px !important;
+        width: 102%;
+        margin-left: -10px;
+    }
+
+    .Error-panel-title {
+        padding: 4px 10px;
+        font-size: 22px;
+        font-weight: bold;
+        margin: 0px;
+        background: #7B786E;
+        color: #fff;
+        margin-top: 20px;
+    }
+
+    .Errornavtop {
+        margin-top: -8px;
+        padding: 7px;
+    }
+
+    .ErrorTxt {
+        margin-top: 20px;
+        font-weight: normal;
+        color: #B11515;
+        padding: 5px;
+        height: 200px;
+        text-align: center;
+        display: block;
+        top: 70;
+        font-size: 32px;
+        position: relative;
+        margin-bottom: 60px;
+    }
+
+    .ErrorlogininfoMenutoggle {
+        display: block !important;
+        float: right;
+        width: 70px;
+        margin-top: -44px;
+        margin-right: 50px;
+    }
+
+    .Error-cont-mar-Mtop {
+        margin-top: -10px;
+    }
+
+    .Error_bdr {
+        border: 1px solid #ccc;
+        background: #f7f1f1;
+    }
+    .btn-ErrorScrnLogin {
+        background: #660033;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+</style>
+@Scripts.Render("~/bundles/bootstrap")
+<script>
+    function onLoginBackClick() {
+        var pathArray = window.location.href.split('/');
+        var protocol = pathArray[0];
+        var host = pathArray[2];
+        var baseURL = protocol + '//' + host;
+        window.location = baseURL;
+    }
+</script>
+<div class="container-fluid pull-left">
+
+    <div class="content_wrapper">
+        <nav class=" Error-navbar-default " id="header_area">
+            <div class="container-fluid">
+                <div class="col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-xs-12 Errornavtop">
+                        <a class="iprism_logo" ng-click="onClickMainMenuLink('home' ,'home')"><img src="/Content/css/styles/icons/iprism_Logo.png" /></a>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="ErrorlogininfoMenutoggle" id="">
+
+
+                        <div class="noPadRight noBorder QrLogo">
+                            <img src="/Content/css/styles/icons/QR_Logo.png" />
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero Error-cont-mar-Mtop">
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                    <div class="">
+                        <div class="clearfix">
+                            <h3 class="Error-panel-title">
+                                Confirmation
+                            </h3>
+                        </div>
+                        <div class="Error_bdr">
+
+                            <div class="ErrorTxt">
+                                <label>You are logged out successfully.</label>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-primary btn-ErrorScrnLogin" onclick="onLoginBackClick()">
+                    <span class="glyphicon glyphicon-log-in"></span> Login
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

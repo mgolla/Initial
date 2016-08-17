@@ -1,0 +1,94 @@
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.pdb
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\ceTe.DynamicPDF.35.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\log4net.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\Oracle.DataAccess.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\OraclePersistanceServiceLib.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\QR.IVRS.WorkflowLibrary.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\QR.PRISM.Utility.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\Microsoft.Practices.Unity.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\QR.PRISM.Utility.pdb
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\QR.IVRS.WorkflowLibrary.pdb
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\OraclePersistanceServiceLib.pdb
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\obj\Debug\ResolveAssemblyReference.cache
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.dll
+D:\PrismReleaseFeb15\Prism_DEV_FEB15\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\ceTe.DynamicPDF.35.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\log4net.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\Oracle.DataAccess.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\OraclePersistanceServiceLib.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\QR.IVRS.WorkflowLibrary.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\QR.PRISM.Utility.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\Microsoft.Practices.Unity.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\QR.PRISM.Utility.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\QR.IVRS.WorkflowLibrary.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\OraclePersistanceServiceLib.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\obj\Debug\ResolveAssemblyReference.cache
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.dll
+D:\PrismTFSServer\0037- PRISM\01_PRISM\04_DEV\SourceDevBase\SourceCode_Prism\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\ceTe.DynamicPDF.35.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\log4net.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.Unity.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\Oracle.DataAccess.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\OraclePersistanceServiceLib.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.IVRS.WorkflowLibrary.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.Utility.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\OraclePersistanceServiceLib.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.IVRS.WorkflowLibrary.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.Utility.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.csprojResolveAssemblyReference.cache
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Enterprise.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\log4net.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.Utility.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Enterprise.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.Utility.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\log4net.xml
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.csprojResolveAssemblyReference.cache
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Enterprise.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\log4net.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.Utility.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Enterprise.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.Utility.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\log4net.xml
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.csprojResolveAssemblyReference.cache
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.pdb

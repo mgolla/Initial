@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>RemoveUnwantedHeaderModule</id>
+    <version>0.2.3</version>
+    <authors>hidori</authors>
+    <owners>hidori</owners>
+    <licenseUrl>https://raw.githubusercontent.com/hidori/RemoveUnwantedHeaderModule/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/hidori/RemoveUnwantedHeaderModule</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>HTTP module, removes unwanted response headers.</description>
+    <copyright>Copyright (c) 2015 Hiroaki SHIBUKI a.k.a. hidori</copyright>
+    <tags>Mjollnir ASP.NET HttpModule</tags>
+  </metadata>
+</package>

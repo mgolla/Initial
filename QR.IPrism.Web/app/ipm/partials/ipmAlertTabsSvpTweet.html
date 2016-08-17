@@ -1,0 +1,22 @@
+﻿<div ng-if="!(isTab)" ng-click="onClickVideoBackButton()">
+    <img src="/Content/css/styles/icons/close.png">Back
+
+</div>
+<div ng-if="isTab" class="tab-pane fade in active overflow_Hght_250" id="svpTweet" block-ui="ipmnotificationAlertSVPBlockUI">
+    <ul class="mobileheader nav nav-tabs ">
+        <li class="active"><a data-toggle="tab"> SVP Tweets</a></li>
+    </ul>
+    <!--<div class="notification_box" data-ng-repeat="item in notificationAlertSVPViewModel">
+        <div class="notif_date">
+            <i>{{getDate(item.DocDate) }}</i>{{getMonthYear(item.DocDate) }}
+        </div>
+        <div class="notif_cont">
+            {{item.DocDesc }}
+
+        </div>
+    </div>-->
+
+</div>
+<div id="AlertTabsUI" ng-show="isTab==false" ui-view="ipmAlertTabsUIView">
+
+</div> 

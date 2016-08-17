@@ -1,0 +1,90 @@
+﻿<style>
+    .playlist {
+        text-align: center;
+        border-top: 1px solid #ccc;
+        background: #f1f1f1;
+    }
+
+    .playlist_pic {
+        background: #fff;
+        border: 1px solid #D7D8DB;
+    }
+
+        .playlist_pic img {
+            margin: 0px auto;
+            padding: 10px;
+        }
+
+    .playlist ul {
+        display: inline-block;
+        list-style: none;
+        margin: 0 auto;
+    }
+
+        .playlist ul li {
+            float: left;
+            margin: 10px;
+        }
+
+            .playlist ul li img {
+                width: 100px;
+                height: 30px;
+            }
+</style>
+
+<div ng-show="isShowVideo" ng-controller="ipm.svpVideo.controller as controller">
+    <!--<div ng-click="onClickVideoBackButton()" class="pull-left marall10">
+        <img src="/Content/css/styles/icons/close.png">Back
+
+    </div>-->
+    <button class="btn pull-right  marall10 " title="back to previous page" ng-click="onClickVideoBackButton()">
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
+    </button>
+
+    <div class="videogular-container">
+        <!--<videogular vg-theme="controller.config.theme.url">
+            <vg-media vg-src="controller.config.sources"
+                      vg-tracks="controller.config.tracks"
+                      vg-native-controls="true">
+            </vg-media>
+        </videogular>-->
+
+        <videogular vg-player-ready="controller.onPlayerReady($API)" vg-responsive="true" vg-complete="controller.onCompleteVideo()" vg-theme="controller.config.theme.url">
+            <vg-media vg-src="controller.config.sources"
+                      vg-tracks="controller.config.tracks" vg-native-controls="true">
+            </vg-media>
+
+            <!--<vg-controls>
+                <vg-play-pause-button></vg-play-pause-button>
+                <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+                <vg-scrub-bar>
+                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                </vg-scrub-bar>
+                <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+                <vg-volume>
+                    <vg-mute-button></vg-mute-button>
+                    <vg-volume-bar></vg-volume-bar>
+                </vg-volume>
+                <vg-fullscreen-button></vg-fullscreen-button>
+            </vg-controls>
+
+            <vg-overlay-play></vg-overlay-play>
+            <vg-buffering></vg-buffering>
+            <vg-poster vg-url='controller.config.plugins.poster'></vg-poster>-->
+        </videogular>
+
+
+    </div>
+    <div id="VideoDesSVP" style="font-weight:bold; text-align:center; padding-bottom:40px;">
+
+    </div>
+</div>
+<!--<div class="playlist">
+
+    <ul>
+        <li data-ng-repeat="item in sVPViewModel">
+            <a ng-click="controller.setVideo($index,{{item}});"><img src="../../../Images/SVP_pic1.png" alt="Image" class="img-responsive"></a>
+        </li>
+    </ul>
+</div>-->
+

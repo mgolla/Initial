@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+    
+}
+<html lang="en">
+<head>
+    <title>IPrism</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style type="text/css">
+        .footer {
+            position: fixed;
+            bottom: 0px;
+        }
+
+        button.btn.btn-lg.btn-primary.btn-block.btn-signin {
+            background: #6B6961 !Important;
+            border-radius: 5px;
+        }
+    </style>
+   
+</head>
+
+<body 
+      class="bodybg" data-ng-app="app.login">
+    <div ui-view="loginview">
+
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="@Url.Content("~/app/shared/directives/Login/login.js")"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿<ng-form name="selectForm">
+    <label class="control-label {{labelClass}}" ng-show="label">
+        <span class='redText'>{{ required ? '*' : ''}}</span><span>{{::label}}</span>
+    </label>
+    <div class="{{fieldClass}} srd-select" ng-class="{'prmInvalid' : (submitted || selectForm.{{name}}.$touched) && selectForm.{{name}}.$invalid}">
+        <ui-select m-select-adapt="list" ng-model="model.Value" ng-required="required" name="{{name}}" on-select="select()">
+            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+            <ui-select-choices repeat="model in list | propsFilter: {Text: $select.search}">
+                <div ng-bind-html="model.Text | highlight: $select.search"></div>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+</ng-form>

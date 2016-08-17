@@ -1,0 +1,288 @@
+﻿
+<div class="container-fluid pull-left" block-ui="ipmEVRMainTablsBlockUI">
+
+    <div class="content_wrapper Mob_margZero">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero evrMainFormCont">
+          
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formStyles">
+                <ng-form name="evrForm">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                            <div class="panel">
+                               
+                                <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                    <ng-form name="evrForm">
+                                        <div class="col-lg-12 col-md-12 padZero Mob_padZero form-outline ">
+
+                                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 evrDetailDropDn">
+                                                <div class="row ">
+                                                    <label for="ex1" class="mini_text col-lg-4 col-md-4 col-sm-4 col-xs-1"><span class="redText">*</span>Report About:</label>
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" ng-class="{'prmInvalid' : submitted && evrForm.reportAbout.$invalid}">
+                                                        <ui-select ng-model="vrInsertUpdate.RprtAbtObj" ng-required="true" name="reportAbout"
+                                                                   on-select="getCategory($model)">
+                                                            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                            <ui-select-choices group-by="grpBydeptNames" repeat="model in ReportAboutList | propsFilter: {Text: $select.search}">
+                                                                <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                            </ui-select-choices>
+                                                        </ui-select>
+                                                    </div>
+                                                    <label for="ex1" class="mini_text col-lg-4 col-md-4 col-sm-4 col-xs-1 "><span class="redText">*</span>Category:</label>
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" ng-class="{'prmInvalid' : submitted && evrForm.category.$invalid}">
+                                                        <ui-select ng-model="vrInsertUpdate.categoryObj" ng-required="true" name="category" on-select="getSubCategory($model)"
+                                                                   ng-disabled="!(CategoryList && CategoryList.length > 0)">
+                                                            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                            <ui-select-choices repeat="model in CategoryList | propsFilter: {Text: $select.search}">
+                                                                <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                            </ui-select-choices>
+                                                        </ui-select>
+                                                    </div>
+                                                    <label for="ex1" class="mini_text col-lg-4 col-md-4  col-sm-4 col-xs-1 "><span class="redText">*</span>Sub Category:</label>
+                                                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" ng-class="{'prmInvalid' : submitted && evrForm.subcategory.$invalid}">
+                                                        <ui-select ng-model="vrInsertUpdate.subCategryObj" ng-required="true" name="subcategory" on-select="getDeptNOwnerDets($model)"
+                                                                   ng-disabled="!(SubCategoryList && SubCategoryList.length > 0)">
+                                                            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                            <ui-select-choices repeat="model in SubCategoryList | propsFilter: {Text: $select.search}">
+                                                                <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                            </ui-select-choices>
+                                                        </ui-select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-7 col-md-8 col-sm-6 col-lg-offset-1 col-md-offset-0 evrFormownercont">
+                                                <div class="row">
+                                                    <label for="ex1" class="mini_text col-lg-2 col-md-3 col-sm-3 col-xs-3">Owner:</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9  col-xs-9">
+                                                        {{Owner}}
+                                                    </div>
+
+                                                    <label for="ex1" class="mini_text col-lg-2 col-md-3 col-sm-3 col-xs-3 clearboth">Non Owner:</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-9  col-xs-9">
+                                                        {{NonOwner}}
+                                                    </div>
+
+                                                </div>
+                                                <div class="row evrDetailDropDn">
+                                                    <label for="ex1" class="mini_text  col-lg-2 col-md-4 sm-8 marbottom5">Add Other Department</label>
+                                                    <div class="col-lg-6 col-md-7 col-sm-7 col-xs-12 ">
+                                                        <ui-select multiple ng-model="vrInsertUpdate.othDeptObj" close-on-select="true" title="Choose a Department">
+                                                            <ui-select-match placeholder="---Select Department---" allow-clear="true">{{$item.Text}}</ui-select-match>
+                                                            <ui-select-choices repeat="model in model.othDeptList | propsFilter: {Text: $select.search}">
+                                                                <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                            </ui-select-choices>
+                                                        </ui-select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </ng-form>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 listckboxcont">
+                                        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                                            <label for="ex1" class="control-label">Criticality:</label>
+                                            <input type="checkbox" ng-model="draftDetails.IsCritical" ng-change="isSelectedChk(draftDetails.IsCritical)"
+                                                   ng-true-value="'Y'" ng-false-value="'N'" />
+                                            <span class="redText">Critical</span>
+                                        </div>
+                                   
+                                        <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                                               
+                                            <div class="cabinDetAlign mob-resize-wdth">
+                                                <label for="ex1" class="control-label"> <span class="redText">*</span> Cabin Class:</label>
+                                                <input id="chkFirstId" type="checkbox" ng-model="draftDetails.IsFirstClass" ng-change="isccFirstChk()"
+                                                       ng-true-value="'Y'" ng-false-value="'N'" ng-disabled="disblFirstClass" ng-show="shwFirstClass" />
+                                                <span ng-show="shwFirstClass">First Class</span>
+                                            </div>
+                                            <div class="cabinDetAlign mob-resize-wdth">
+                                                <input id="chkBusinessId" type="checkbox" ng-model="draftDetails.IsBusinessClass" ng-change="isccBusinessChk()"
+                                                       ng-true-value="'Y'" ng-false-value="'N'" ng-disabled="disblBusinessClass" ng-show="shwBusinessClass" />
+                                                <span ng-show="shwBusinessClass">Business Class</span>
+                                            </div>
+                                            <div class="cabinDetAlign mob-resize-wdth">
+                                                <input id="chkEcomyId" type="checkbox" ng-model="draftDetails.IsEconomyClass" ng-change="isccEconomyChk()"
+                                                       ng-true-value="'Y'" ng-false-value="'N'" ng-disabled="disblEconomyClass" ng-show="shwEconomyClass" />
+                                                <span ng-show="shwEconomyClass">Economy Class</span>
+                                            </div>
+                                            <div class="cabinDetAlign mob-resize-wdth">
+                                                <input id="chkAllId" type="checkbox" ng-model="draftDetails.IsccAll" ng-change="isccAllChk()"
+                                                       ng-true-value="'Y'" ng-false-value="'N'" ng-disabled="disblAllClass" />
+                                                <span>All</span>
+                                            </div>
+                                            <div class="cabinDetAlign mob-resize-wdth">
+                                                <input id="chkNAId" type="checkbox" ng-model="draftDetails.IsccNA" ng-change="isccNAChk()"
+                                                       ng-true-value="'Y'" ng-false-value="'N'" />
+                                                <span>NA</span>
+                                            </div>
+                                       </div>
+
+                                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 listreportckb">
+                                                <label for="ex1" class="control-label">Reported As:</label>
+                                                <input type="checkbox" id="csrId" ng-model="draftDetails.IsCSR" ng-true-value="'Y'" ng-false-value="'N'" />
+                                                <span>CSR</span>
+                                                <input type="checkbox" id="ohsId" ng-model="draftDetails.IsOHS" ng-true-value="'Y'" ng-false-value="'N'" />
+                                                <span>OHS</span>
+                                                <input type="checkbox" id="pmrpoId" ng-model="draftDetails.IsPO" ng-true-value="'Y'" ng-false-value="'N'" />
+                                                <span>PM/PO</span>
+                                            </div>
+
+                                        </div>
+
+                                    <div id="profileTabsContents" class="evrpassgdetTab martop20 evrFormownercont">
+                                        <tabset class="tab-animation">
+                                            <tab heading="Passenger Details">
+                                                <div class="col-lg-12 martop20 padZero">
+                                                    <srd-input type="text" label="FFP Number :" name="FFNo" label-class="col-lg-1 col-md-1 col-sm-2 col-xs-4" field-class="col-lg-2 col-md-2 col-sm-2 col-xs-8"
+                                                               model="model.FFNo" required="false" readonly="false" maxlength="20" regex="(^[a-zA-Z0-9'.\s]{1,20}$)"></srd-input>
+
+                                                    <srd-input type="text" label="Seat Number :" name="SeatNo" label-class="col-lg-2 col-md-2 col-sm-2 col-xs-4" field-class="col-lg-2 col-md-2 col-sm-2 col-xs-8"
+                                                               model="model.SeatNo" required="false" readonly="false" submitted="submitted" maxlength="50" regex="(^[a-zA-Z0-9'.\s]{1,20}$)">
+                                                    </srd-input>
+
+
+                                                    <srd-input type="text" label="Passenger Name :" name="psngrname" label-class="col-lg-2 col-md-2 col-sm-2 col-xs-4" field-class="col-lg-2 col-md-2 col-sm-2 col-xs-8"
+                                                               model="model.PsngrName" required="false" readonly="false" submitted="submitted" maxlength="30" regex="(^[a-zA-Z0-9'.\s]{1,30}$)">
+                                                    </srd-input>
+
+                                                    <button class="btn btn-primary col-lg-1 col-md-1 col-sm-1 col-xs-2" ng-click="AddPassenger()">Add</button>
+
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padZero">
+                                                        <div class="row">
+
+                                                            <!--<div class="panel panel-default">-->
+                                                            <div class="panel-body">
+                                                                <div class="table-responsive dataGrid_styles">
+                                                                    <div ui-grid="passengergrid" ng-style="getTableHeight(passengergrid)" class="grid searchGrid">
+                                                                        <div class="watermark" ng-show="!passengergrid.data.length">No data available</div>
+                                                                        
+                                                                    </div>
+
+                                                                    
+
+                                                                </div>
+                                                            </div>
+                                                            <!--</div>-->
+
+                                                        </div>
+
+                                                        
+
+                                                    </div>
+
+                                                </div>
+                                            </tab>
+                                            <tab heading="Crew Details" select="CheckIncidentCrews()" id="crdet">
+
+                                                <div class="col-lg-12 martop20 padZero ">
+                                                    <div class="table-responsive dataGrid_styles" block-ui="ipmEVRCrewDetsBlockUI">
+                                                        <div ui-grid="grid" ui-grid-resize-columns ui-grid-auto-resize
+                                                             ng-style="getTableHeight(grid)" class="grid searchGrid">
+                                                            <div class="watermark" ng-show="!grid.data.length">No data available</div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </tab>
+                                        </tabset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 padZero clearboth">
+                        <div class="panel panel-default">
+                            <div class="panel-body padleft5 padright5">
+                                <div class="col-lg-4 col-md-4  Mob_padZero">
+                                    <srd-textarea label="Facts" label-class="col-lg-1 col-md-1 col-sm-1 col-xs-1" field-class="col-lg-12 col-md-12 col-sm-12" submitted="submitted"
+                                                  max-length="4000" model="vrInsertUpdate.FactsComment" name="factsEVR" rows="5" required="true"
+                                                  customtext="Fact comments cannot exceed "></srd-textarea>
+                                </div>
+                                <div class="col-lg-4 col-md-4  Mob_padZero">
+                                    <srd-textarea label="Actions" label-class="col-lg-1 col-md-1 col-sm-1 col-xs-1" field-class="col-lg-12 col-md-12 col-sm-12" submitted="submitted"
+                                                  max-length="4000" model="vrInsertUpdate.ActionsComment" name="ActionsEVR" rows="5" required="true"
+                                                  customtext="Action comments cannot exceed "></srd-textarea>
+                                </div>
+                                <div class="col-lg-4 col-md-4  Mob_padZero">
+                                    <srd-textarea label="Result" label-class="col-lg-1 col-md-1 col-sm-1 col-xs-1" field-class="col-lg-12 col-md-12 col-sm-12" submitted="submitted"
+                                                  max-length="4000" model="vrInsertUpdate.ResultComment" name="ResultEVR" rows="5" required="true"
+                                                  customtext="Result comments cannot exceed "></srd-textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 padZero clearboth">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row ReadRow mob-marTop10">
+                                    <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12" for="email">
+                                        Attachment
+                                    </label>
+                                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 fileupload-table">
+                                        <srd-fileupload uploader="model.evrUploader"></srd-fileupload>
+                                        <em class="notes">{{ attachmentNote }}</em>
+                                    </div>
+                                </div>
+                                <div class="row ReadRow mob-marTop10">
+                                    <div class="container col-lg-9 col-md-9 " ng-if="files && files.length > 0">
+                                        <table class="table table-striped table-bordered dataTable no-footer blueTHTable" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%;">
+                                            <thead>
+                                                <tr role="row" class="headerRow">
+                                                    <th class="sorting_asc" rowspan="1" colspan="1" aria-sort="ascending">
+                                                        Existing File(s) Name(s)
+                                                    </th>
+                                                    <th class="sorting_asc text-center" rowspan="1" colspan="1">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr role="row" class="odd" ng-repeat="file in files">
+                                                    <td class="sorting_1">
+                                                        <a href="javascript:void(0);" ng-click="openImage(file)">{{file.DocumentName}}</a>
+                                                    </td>
+                                                    <td class="text-center col-xs-3">
+                                                        <a href="javascript:void(0);" ng-click="removeDocument(file, $index)">
+                                                            <i class="glyphicon glyphicon-trash redText"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="txtRight col-lg-12 col-md-12 col-sm-12 padZero" style="position: static;">
+                        <br />
+
+                        <div class="pull-right">
+                            <label class="wrap_text txtLeft ">
+                                <input type="checkbox" ng-model="draftDetails.IsVrRestricted" ng-true-value="'Y'" ng-false-value="'N'" /> Restrict eVR &nbsp;&nbsp;
+                            </label>
+                            <small ng-show="saveSuccess" class="redText">Successfully saved on : {{savedate | ipmDateTimeFormat}} </small>
+                            <button type="submit" class="btn btn-primary" ng-click="SaveVR()">Save</button>
+                            <button type="submit" class="btn btn-primary" ng-click="SubmitVR(evrForm)">Submit</button>
+                        </div>
+                    </div>
+
+
+                </ng-form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

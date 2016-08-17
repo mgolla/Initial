@@ -1,0 +1,22 @@
+﻿<div id="profileTabsContents" class="profile_tabview">
+    <tabset class="tab-animation">
+        <tab heading="SVP Messages" class="svp-icon" id="SVPMTab" ui-sref="home.svpmessage" select="onNewsTabChange(SVPM)">
+            <!--ui-view="ipmNewsTabsSVPMUIView"-->
+            <div class="tab-pane fade  in active">
+                <ng-include src="'/app/ipm/partials/ipmNewsTabsSVPMessage.html'"></ng-include>
+            </div>
+        </tab>
+        <tab heading="Department News" class="news-icon" ui-sref="home.depnews" select="onNewsTabChange(Department)">
+            <div class="tab-pane fade in active" id="DepartmentTab" ui-view="ipmNewsTabsDepartmentUIView"></div>
+        </tab>
+        <tab heading="Airline News" class="news-icon" select="onNewsTabChange(Airline)" ui-sref="home.airlinenews">
+            <!--ui-view="ipmNewsTabsAirlineUIView" ui-sref="home.airlinenews"  ng-if="isGetNewsSelectedTab(Airline)" -->
+            <!--<ng-include ng-if="isGetNewsSelectedTab(Airline)" src="'/app/ipm/partials/ipmNewsTabsAirlineNewsPage.html'"></ng-include>-->
+
+            <div class="tab-pane fade in active" id="AirlineTab" ui-view="ipmNewsTabsAirlineUIView"> </div>
+        </tab>
+        <tab heading="Monthly IFE Guide" class="calendar-icon" ui-sref="home.ifeguide" select="onNewsTabChange(MonthlyIFE)">
+            <div class="tab-pane fade in active" id="MonthlyIFETab" ui-view="ipmNewsTabsMonthlyIFEUIView"></div>
+        </tab>
+    </tabset>
+</div>

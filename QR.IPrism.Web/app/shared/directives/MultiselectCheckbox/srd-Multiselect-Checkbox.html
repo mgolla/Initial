@@ -1,0 +1,31 @@
+﻿<div class="row form-group multiselectmapping">
+    <div class="col-md-12">
+        <label class="control-label">{{label}}</label>
+        <div class="list-group validation">
+            <div class="list-group-item clearfix">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <span class="checkbox checkbox-primary">
+                            <input type="checkbox" ng-model="checkAllList" ng-change="checkAll(checkAllList)">
+                            <label for=""></label>
+                        </span>
+                    </span>
+                    <input ng-model="searchText" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="clearSearch()">x</button>
+                    </span>
+                </div>
+            </div>
+            <div class="list-group-item clearfix masterlist">
+                <div class="checkboxContainer">
+                    <label class="col-md-8 Nopadding" ng-repeat="list in masterlist | filter:searchText">
+                        <span class="checkbox checkbox-primary">
+                            <input  type="checkbox" checklist-model="modelname" checklist-value="list">
+                            <label>{{list[namefield]}}</label>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿<div class="notification_box" block-ui="ipmCrewMyDocBlockUI">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="table-responsive marall10 Mob_margZero">
+            <table class="table table-bordered table-striped" ng-repeat="singMyDoc in crewMyDocViewModel">
+                <thead>
+                    <tr>
+                        <th>
+                            Crew Records
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="#">{{singMyDoc.FileName}}</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" ng-repeat="singMyDoc in crewMyDocViewModel">
+        <div class="content_box">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center profile_docs">
+                <a href="#"><i class="fa fa-floppy-o fa-2x"></i></a>&nbsp;<a href="#" class="col-lg-offset-1">
+                    <i class="fa fa-print fa-2x"></i>
+                </a>
+            </div>
+            <img ng-if="(!isNullOrEmpty(singMyDoc.FileContent))" ng-src="data:image/JPEG;base64,{{singMyDoc.FileContent}}" class="img-responsive" alt="Profile" />
+            <img ng-if="(isNullOrEmpty(singMyDoc.FileContent))" src="/Content/css/styles/images/imageNotFound.jpg" class="img-responsive" alt="Profile" />
+        </div>
+    </div>
+</div>

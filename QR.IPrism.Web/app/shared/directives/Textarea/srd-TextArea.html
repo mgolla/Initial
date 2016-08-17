@@ -1,0 +1,12 @@
+﻿<ng-form name="textarea">
+
+    <label class="{{labelClass}}" ng-class="{'control-label required': required==true ,'control-label': required!=true  }" ng-show="label && label.length > 0">
+        <span class='redText'>{{ required == 'true' ||required == true ? '*' : ''}}</span><span>{{::label}}</span>
+    </label>
+    <div class="{{fieldClass}}" ng-class="{'prmInvalid' : ((submitted ||textarea.{{name}}.$touched) && textarea.{{name}}.$invalid )||valid}">
+        <textarea spellcheck="true" ng-disabled="{{ngDisabled}}" rows="{{rows}}" name="{{name}}" class="form-control validation" maxlength="{{maxLength}}" minlength="{{minlength}}" ng-maxlength="{{maxLength}}" ng-minlength="{{minlength}}"
+                  ng-trim="false" ng-model="model" ng-change="onChange($event)" ng-required="{{required}}" pattern="{{regex}}" ng-readonly="readonly"></textarea>
+        <div class="text-right"><small>{{ customtext }} {{ maxLength - model.length - (model.length ? model.split("\n").length-1 : 0)}} Chars {{message}}</small></div>
+    </div>
+
+</ng-form>

@@ -1,0 +1,32 @@
+﻿<div ng-if="!(isTab)" ng-click="onClickVideoBackButton()">
+    <img src="/Content/css/styles/icons/close.png">Back
+
+</div>
+<div ng-if="isTab" class="tab-pane fade  in active overflow_Hght_250" id="alerts" block-ui="ipmnotificationAlertSVPBlockUI" ng-controller="ipm.notificationAlert.controller">
+
+    <ul class=" mobileheader nav nav-tabs  mob-hide">
+        <li class="active"><a data-toggle="tab"> Alerts & Notifications</a></li>
+    </ul>
+    <div class="mobile-header-control">
+        <h1>
+            Alerts & Notifications
+        </h1>
+    </div>
+    <div class="notification_box noPadding" data-ng-repeat="item in notificationAlertSVPViewModel">
+        <div class="notif_date">
+            {{getDate(item.DocDate) }}
+        </div>
+        <div class="notif_cont">
+            <b class="pull-right notifi_AN">{{item.Doc}}</b>
+
+            <a ng-click="onSelectedChange(item.DocType,item.FileCode,item.FileId,item.DocId,item.DocDesc,item.Doc, item.Link,item.AlertFolderName)">
+                {{item.DocDesc }}
+            </a>
+            <span>{{item.AlertFolderName }}</span>
+        </div>
+    </div>
+
+</div>
+<div id="AlertTabsUI" ng-show="isTab==false" ui-view="ipmAlertTabsUIView">
+
+</div> 

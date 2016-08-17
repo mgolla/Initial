@@ -1,0 +1,180 @@
+﻿<error errorId="42b9f964-e9f6-48d3-b795-157d5021c764" host="LT0610QT23201" type="System.NullReferenceException" message="Object reference not set to an instance of an object." source="QR.IPrism.DataAccess" detail="System.AggregateException: One or more errors occurred. ---&gt; System.NullReferenceException: Object reference not set to an instance of an object.&#xD;&#xA;   at QR.IPrism.BusinessObjects.Data_Layer.Shared.SharedDao.&lt;CreateAnalyticEntryAsync&gt;d__16.MoveNext() in d:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.DataAccess\Implementation\SharedDao.cs:line 582&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;&#xA;   at QR.IPrism.Adapter.Implementation.SharedAdapter.&lt;CreateAnalyticEntryAsync&gt;d__0.MoveNext() in d:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Adapter\Implementation\SharedAdapter.cs:line 28&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)&#xD;&#xA;   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)&#xD;&#xA;   at System.Threading.Tasks.Task`1.get_Result()&#xD;&#xA;   at QR.IPrism.Web.API.Controllers.Shared.SharedController.PostAnalytics(AnalyticModel analytics) in d:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Web\Controllers\API\Shared\SharedController.cs:line 37&#xD;&#xA;   at lambda_method(Closure , Object , Object[] )&#xD;&#xA;   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.&lt;&gt;c__DisplayClass10.&lt;GetExecutor&gt;b__9(Object instance, Object[] methodParameters)&#xD;&#xA;   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)&#xD;&#xA;   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;&#xA;   at System.Web.Http.Controllers.ApiControllerActionInvoker.&lt;InvokeActionAsyncCore&gt;d__0.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;&#xA;   at System.Web.Http.Controllers.ActionFilterResult.&lt;ExecuteAsync&gt;d__2.MoveNext()&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;&#xA;   at System.Web.Http.Dispatcher.HttpControllerDispatcher.&lt;SendAsync&gt;d__1.MoveNext()&#xD;&#xA;---&gt; (Inner Exception #0) System.NullReferenceException: Object reference not set to an instance of an object.&#xD;&#xA;   at QR.IPrism.BusinessObjects.Data_Layer.Shared.SharedDao.&lt;CreateAnalyticEntryAsync&gt;d__16.MoveNext() in d:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.DataAccess\Implementation\SharedDao.cs:line 582&#xD;&#xA;--- End of stack trace from previous location where exception was thrown ---&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)&#xD;&#xA;   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()&#xD;&#xA;   at QR.IPrism.Adapter.Implementation.SharedAdapter.&lt;CreateAnalyticEntryAsync&gt;d__0.MoveNext() in d:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Adapter\Implementation\SharedAdapter.cs:line 28&lt;---&#xD;&#xA;" user="QR\76647" time="2016-05-15T09:05:07.4693365Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:351&#xD;&#xA;HTTP_CONTENT_TYPE:application/json;charset=UTF-8&#xD;&#xA;HTTP_ACCEPT:application/json, text/plain, */*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_AUTHORIZATION:Negotiate oXcwdaADCgEBoloEWE5UTE1TU1AAAwAAAAAAAABYAAAAAAAAAFgAAAAAAAAAWAAAAAAAAABYAAAAAAAAAFgAAAAAAAAAWAAAABXCiOIGAbEdAAAAD9R0AqOkItXMG6C/DlEPvU+jEgQQAQAAADD4+3TobQEAAAAAAA==&#xD;&#xA;HTTP_COOKIE:mna_ckie=m4ces5iisdom1aq21q34basf; ___i_p_m_p=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&#xD;&#xA;HTTP_HOST:localhost:63532&#xD;&#xA;HTTP_REFERER:http://localhost:63532/Main/Home&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:http://localhost:63532&#xD;&#xA;HTTP_FORGERYVERIFICATIONTOKEN:XxbuxbMRKfTVlKbOOZ4vkjDnMEIgha3R5F+BDIfx2pn9TBfjdeE/rBdFa5jaHb23wdT/lSzwyCabL7OB8mxmRYn2HUDLGHbL&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 351&#xD;&#xA;Content-Type: application/json;charset=UTF-8&#xD;&#xA;Accept: application/json, text/plain, */*&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Authorization: Negotiate oXcwdaADCgEBoloEWE5UTE1TU1AAAwAAAAAAAABYAAAAAAAAAFgAAAAAAAAAWAAAAAAAAABYAAAAAAAAAFgAAAAAAAAAWAAAABXCiOIGAbEdAAAAD9R0AqOkItXMG6C/DlEPvU+jEgQQAQAAADD4+3TobQEAAAAAAA==&#xD;&#xA;Cookie: mna_ckie=m4ces5iisdom1aq21q34basf; ___i_p_m_p=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&#xD;&#xA;Host: localhost:63532&#xD;&#xA;Referer: http://localhost:63532/Main/Home&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36&#xD;&#xA;Origin: http://localhost:63532&#xD;&#xA;ForgeryVerificationToken: XxbuxbMRKfTVlKbOOZ4vkjDnMEIgha3R5F+BDIfx2pn9TBfjdeE/rBdFa5jaHb23wdT/lSzwyCabL7OB8mxmRYn2HUDLGHbL&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/56/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Negotiate" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="QR\76647" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="QR\76647" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="QR\76647" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="351" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/json;charset=UTF-8" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="56" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/56" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/api/analytics/post" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Web\api\analytics\post" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="50123" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/api/analytics/post" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="63532" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/8.0" />
+    </item>
+    <item name="URL">
+      <value string="/api/analytics/post" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="351" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/json;charset=UTF-8" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="application/json, text/plain, */*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_AUTHORIZATION">
+      <value string="Negotiate oXcwdaADCgEBoloEWE5UTE1TU1AAAwAAAAAAAABYAAAAAAAAAFgAAAAAAAAAWAAAAAAAAABYAAAAAAAAAFgAAAAAAAAAWAAAABXCiOIGAbEdAAAAD9R0AqOkItXMG6C/DlEPvU+jEgQQAQAAADD4+3TobQEAAAAAAA==" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="mna_ckie=m4ces5iisdom1aq21q34basf; ___i_p_m_p=uLYQuj8bUB07ci2HMP/vwvGlzccQu4RYKl7I594kavYwHRe+gmj7fzeAKrpfyhFZbEIpqSPLiEgQVEkD0Mix3QV69gx8hfTwx2xLCBTQ3wMt3VUCSolN9EHa53k0yIJO0Io1nLaFEqLyR1ZeS45lH4WvkgmceMh+Z3zue9B7qybW+vNBCVEdYfqYmmB10GINZ6fMbiZnZcX2U1B0UfqVS4BKqmvc9Nn+Ja0vu3G8P2J0WgLNUIvRoUz42Cng6c1T++OBJj1UvF6IlTtJ6VdESoccSTcXJ8kVwJkwh82EkgUG7UQn+GIamrHbvnn90Gr+nAjeXPhyJcOBwaHD1+A4DVYrqVrgZ6cL803XNLMbR1PFCV95jnvbBVbWJNBvgb/2nfK1AE+9Ioo19Ho7JPxLqIhf791eRmpsf0K6QppvH6jFIgps2U6QdoUZtZjbJXX9aDaGzTUjuRYlouc3z24F7yylKF7gCHgttUXTG7FShPO5h270hqapg4cL8zimuXXq5Mmo6U4cK0CEYLLCnnVMBUsrBU4GJod/Um35XqWFeNMvXKp3Tu3iL3qI/1zqBLJD3P/Mj+YPbLusqVXv608pdrina3OBFVbruXpcO0Yfceg4b+2g0O0lmcBpgDdphCsKiKcgYBEy6GalmZV4K78vuTyD9mB1YtfxS8Og3ew6k7+aL88FNZNHgMqBl3i6ksrvve4tZx66/rz6ZsUFyVZBrJNuKN7XXWwLpRae1b74GBnzzeLgSjY1lC7CRDJDo3WcMRNIQd6qYZHhDEGkh1nxZ6ZumKpMh1GtmCq5M+Wd9euXPpiwLZvXSjVGhSvnYbbZpOppGeOQv9wNT1lDZAZcp+mSGV41joFVXUQ6WYilbwj7Y3P09fxi+XU1VVGbEZTybnnUXP8pafm5iYv5AZzsW8pfvim8RDFauWnCAzdOOKhhJaK9iZc0bJN7f6/zZbHdJLwYbY7OWQIGVev5lqzYPrtLY+B4b/sELwmyN4HTy2pSBueptlE3J/5pzZrIUzYrgwAN8e1900DLgTf+HgknqQXNTuoQJhbjHmogBazr9rdvzD6HmedwIjP4wWj/AaqACzrqrd+igfo7DByAkBJrK1cjIxGwGyLy2BCcql4uMBVnwfk+Io+toQb8hfVydjRnkgVUuM9oJgcihpXudj7h/h/d0K6bTMdugvpzCOAiwWnwoCg9IsYXx/sLezauoZ3TP/Zn5MbLCY8MH3yFRAoM2+rwlnaoi5BjH+j1JRKAsVQ3aPoyFM5ULiTz/tMha1yJnZUzHKCmHoiimhnu0ZTlRzt09gRqCmsupdQY4WxdXVU9SPisbjlS31wBSIXl31wJu7EQVOGW2EYe4gB1cHgkSm457fq/9dhdUph3b7pfUmFr48YsgmDiLJv6SVkKe83wlrFPQKQ+dRwJ11NLp7/5KV6a5JxroYkcMnaYAzfISK9A7pO7QeTZu1mvtjVFagHSXkhSVQMI1fKukcJ08JuExz3AdJrvqPC+Rq8t/yp3CLhcmmi8eCDrMaFe5iURWEhkk5r1lubyWKLlSk6UtGjqhasl3a94tIQnl26vA/Y9UKIQPjNtDp+d8V+2haAzFe1aWsgY9zWLPjmiCOPoWUDUqAuDwFFfEVQYrqszHL/9Lm2/3ltTieNjxQIVE+pFAUZbdHkuzQnBn04ohzQP2nssXphEra95yATwSc/ZwcczsJv3RB7MaFWBtNi2bn0GkbDyoEuLX0wxwXIxJhcqs/4gdMR1oywhUvjslyvEPBhnTkp8svlPRQNz6m8nx5l942l8Pn8psBm2j8/rhKYbpgDo8m1mNPIgQCYIOVphAhearVrnTfkf1AWRWnbESethCM0yKJTLpbew8IoAEwHMXbr63AseXjNt56a6UcujlmScAcyckC09WC0t0hiVqJKreC4Fp7gA48Rh9rzGsrGwWO1ffNpKuw3HVf7OMvQtTf/YK3xZAZjQ8uos41exN9Y8Nf0xyXjc/W6lu0wan8oayBCSrVP+9ZiXgu8VC0xiFdZANJs5v195UOSPiDADIdYf+7Xr5Bo2W9QfRcyhtkBgEotx2dgkEN7gD9+HTj40KLl1fm8=" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:63532" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:63532/Main/Home" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="http://localhost:63532" />
+    </item>
+    <item name="HTTP_FORGERYVERIFICATIONTOKEN">
+      <value string="XxbuxbMRKfTVlKbOOZ4vkjDnMEIgha3R5F+BDIfx2pn9TBfjdeE/rBdFa5jaHb23wdT/lSzwyCabL7OB8mxmRYn2HUDLGHbL" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="mna_ckie">
+      <value string="m4ces5iisdom1aq21q34basf" />
+    </item>
+    <item name="___i_p_m_p">
+      <value string="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" />
+    </item>
+  </cookies>
+</error>

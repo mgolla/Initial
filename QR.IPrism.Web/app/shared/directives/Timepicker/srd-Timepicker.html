@@ -1,0 +1,21 @@
+﻿<!--<ng-form name="timeinput">
+    <label class="control-label {{labelClass}}">
+        <span class='redText'>{{ required ? '*' : ''}}</span><span>{{::label}}</span>
+    </label>
+    <div class="input-group Mob_padZero {{fieldClass}}"
+         ng-class="{'prmInvalid' : (submitted ||timeinput.{{name}}.$touched) && (timeinput.{{name}}.$invalid|| rangeError)}">
+        <uib-timepicker ng-model="model" hour-step="hstep" name="{{name}}" minute-step="mstep" ng-required="required" ng-disabled="disabled" show-meridian="ismeridian"></uib-timepicker>
+    </div>
+</ng-form>-->
+
+<ng-form class="timeinput">
+    <label class="control-label {{labelClass}}">
+        <span class='redText'>{{ required ? '*' : ''}}</span><span>{{::label}}</span>
+    </label>
+    <div class='input-group date {{fieldClass}}'>
+        <input type='text' datetimepicker class="form-control input-sm" name="{{name}}" ng-model="model" datetimepicker-options="{{options}}" />
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+</ng-form>

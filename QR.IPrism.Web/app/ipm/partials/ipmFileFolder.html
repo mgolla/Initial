@@ -1,0 +1,52 @@
+﻿<script type="text/ng-template" id="tree_item_renderer.html">
+    <div class="panel panel-default" data-ng-repeat="parentItem in documentViewModel">
+        <div class="panel-heading">
+            <h4 class="panel-title" ng-class="{'active': isDocumentSelectedTab($index)}" ng:click="onDocumentTabChange($index,parentItem)">
+                <a data-toggle="collapse" ng:click="onDocumentTabChange($index,parentItem)" class="accordion-toggle2" data-parent="#accordion{{getDocumentLinkName(parentItem.DocumentName)}}" href="#collapse{{getDocumentLinkName(parentItem.DocumentName)}}">
+                    {{parentItem.DocumentName}}
+                </a>
+            </h4>
+        </div>
+        <div id="collapse{{getDocumentLinkName(parentItem.DocumentName)}}" class="panel-collapse collapse" ng-class="{' in': isDocumentSelectedTab($index)}">
+            <div class="panel-body">
+                <div class="overflow_Hght_100">
+                    <ul class="accordion_list">
+                        <li ng-if="isfolderDocType(childItem.RowType)!=true" data-ng-repeat="childItem in parentItem.childDocuments"><a ng-click="onSelectedChange(childItem.RowType,childItem.FileCode,childItem.FileId,childItem.DocumentId)">{{childItem.DocumentName}}</a></li>
+                        <li ng-if="isfolderDocType(childItem.RowType)" data-ng-repeat="childItem in parentItem.childDocuments" ng-include="'tree_item_renderer.html'"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</script>
+<h1>
+    Folders
+</h1>
+<!-- Accordions -->
+<div class="tabContent" id="tabContent1" block-ui="ipmfileFolderBlockUI">
+    <div class="panel-group docu_links_cntrl accordions_cabin" id="accordion">
+       
+        <div ng-include="'tree_item_renderer.html'"></div>
+            <!--<div class="panel panel-default" data-ng-repeat="parentItem in documentViewModel">
+            <div class="panel-heading">
+                <h4 class="panel-title" ng-class="{'active': isDocumentSelectedTab($index)}" ng:click="onDocumentTabChange($index,parentItem)">
+                    <a data-toggle="collapse" ng:click="onDocumentTabChange($index,parentItem)" class="accordion-toggle2" data-parent="#accordion{{getDocumentLinkName(parentItem.DocumentName)}}" href="#collapse{{getDocumentLinkName(parentItem.DocumentName)}}">
+                        {{parentItem.DocumentName}}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse{{getDocumentLinkName(parentItem.DocumentName)}}" class="panel-collapse collapse" ng-class="{' in': isDocumentSelectedTab($index)}">
+                <div class="panel-body">
+                    <div class="overflow_Hght_100">
+                        <ul class="accordion_list">
+                            <li data-ng-repeat="childItem in parentItem.childDocuments"><a href="#">{{childItem.DocumentName}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+</div>
+</div>

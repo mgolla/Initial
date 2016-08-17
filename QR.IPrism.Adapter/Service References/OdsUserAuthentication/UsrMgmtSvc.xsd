@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/QR.Framework.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/QR.Framework.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfNameValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NameValue" nillable="true" type="tns:NameValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNameValue" nillable="true" type="tns:ArrayOfNameValue" />
+  <xs:complexType name="NameValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnAliasName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColumnValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsHidden" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NameValue" nillable="true" type="tns:NameValue" />
+  <xs:complexType name="ORYXQObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidationErrors" nillable="true" type="tns:ValidationError" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ORYXQObject" nillable="true" type="tns:ORYXQObject" />
+  <xs:complexType name="ValidationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Properties" nillable="true" type="tns:ArrayOfProperty" />
+      <xs:element minOccurs="0" name="TypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationError" nillable="true" type="tns:ValidationError" />
+  <xs:complexType name="ArrayOfProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Property" nillable="true" type="tns:Property" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProperty" nillable="true" type="tns:ArrayOfProperty" />
+  <xs:complexType name="Property">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfError" />
+      <xs:element minOccurs="0" name="ProperyName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Property" nillable="true" type="tns:Property" />
+  <xs:complexType name="ArrayOfError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Error" nillable="true" type="tns:Error" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfError" nillable="true" type="tns:ArrayOfError" />
+  <xs:complexType name="Error">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ErrorMsgParams" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Error" nillable="true" type="tns:Error" />
+  <xs:complexType name="ArrayOfServerValidationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServerValidationError" nillable="true" type="tns:ServerValidationError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServerValidationError" nillable="true" type="tns:ArrayOfServerValidationError" />
+  <xs:complexType name="ServerValidationError">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="IsObject" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ObjectErrors" nillable="true" type="tns:ArrayOfHierarchicalError" />
+      <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServerValidationError" nillable="true" type="tns:ServerValidationError" />
+  <xs:complexType name="ArrayOfHierarchicalError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HierarchicalError" nillable="true" type="tns:HierarchicalError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHierarchicalError" nillable="true" type="tns:ArrayOfHierarchicalError" />
+  <xs:complexType name="HierarchicalError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildErrors" nillable="true" type="tns:ArrayOfHierarchicalError" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ValidationError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HierarchicalError" nillable="true" type="tns:HierarchicalError" />
+  <xs:complexType name="UserContext">
+    <xs:sequence>
+      <xs:element name="_x003C_AppComponentDetails_x003E_k__BackingField" nillable="true" type="tns:ArrayOfAppComponentDetail" />
+      <xs:element name="_x003C_AppSessionID_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ApplicationCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ClientContext_x003E_k__BackingField" nillable="true" type="tns:ArrayOfStringPair" />
+      <xs:element name="_x003C_LocationCode_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_SessionTimeout_x003E_k__BackingField" type="xs:double" />
+      <xs:element name="_x003C_UserFullName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_UserName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_UserType_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserContext" nillable="true" type="tns:UserContext" />
+  <xs:complexType name="ArrayOfAppComponentDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppComponentDetail" nillable="true" type="tns:AppComponentDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAppComponentDetail" nillable="true" type="tns:ArrayOfAppComponentDetail" />
+  <xs:complexType name="AppComponentDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ORYXQObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ApplicationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ApplicationId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ComponentAttribType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComponentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComponentDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ComponentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DefaultLocationIndicator" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeleteAccessAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExecuteAccessAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MethodCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModuleCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ModuleDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Namespace" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReadAccessAllowed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoleCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WriteAccessAllowed" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AppComponentDetail" nillable="true" type="tns:AppComponentDetail" />
+  <xs:complexType name="ArrayOfStringPair">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StringPair" nillable="true" type="tns:StringPair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStringPair" nillable="true" type="tns:ArrayOfStringPair" />
+  <xs:complexType name="StringPair">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeyGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StringPair" nillable="true" type="tns:StringPair" />
+</xs:schema>

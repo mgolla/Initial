@@ -1,0 +1,86 @@
+﻿<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero" block-ui="ipmtransportBlockUI">
+            <h1 class="page-tittle">
+                My Transport
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles">
+                <!--Profile-->
+                <!-- Row start -->
+                <!--<div class="row">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Search Transport
+                                </h3>
+                            </div>
+                            <div class="panel-body mob_padLeftZero mob_padRightZero">
+                                <div class="col-lg-10 col-md-11 padZero Mob_padZero form-outline col-lg-offset-right-1 col-sm-offset-right-1 ctrlLblAlgn">
+                                    <div class="row">
+                                        <srd-datepicker type="text" name="transportSearch.FromDate" label="From Date" model="transportSearch.FromDate"
+                                                        field-class="col-lg-4 col-md-4 col-sm-9 fieldfix" label-class="col-lg-2 col-md-2 col-sm-3" required="false"
+                                                        field-class="" label-class=""></srd-datepicker>
+                                        <srd-datepicker type="text" name="transportSearch.ToDate" label="To Date" model="transportSearch.ToDate"
+                                                        field-class="col-lg-4 col-md-4 col-sm-9 fieldfix" label-class="col-lg-2 col-md-2 col-sm-3" required="false"
+                                                        field-class="" label-class=""></srd-datepicker>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 padZero">
+                                    <div class="pull-right">
+                                        <button type="submit" ng-click="onClickTransportSearch()" class="btn btn-primary pull-sm-right" title="">Search </button>
+                                        <button type="submit" ng-click="Reset()" class="btn btn-primary pull-sm-right"
+                                                title="Reset search filter to default values.">
+                                            Reset
+                                        </button>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>-->
+                <!-- Row end -->
+                <!--row start-->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    <span>  Transport Details</span>
+
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                <div class="col-md-12 col-sm-12 col-xs-12 padZero">
+                                    <div class="table-responsive dataGrid_styles">
+                                        <div ui-grid="grid" ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(grid)" class="grid searchGrid">
+                                            <div class="watermark" ng-show="!grid.data.length">No data available</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--row end-->
+
+            </div>
+        </div>
+        <!--Right panel-->
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

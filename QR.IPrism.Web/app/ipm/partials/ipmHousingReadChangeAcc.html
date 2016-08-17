@@ -1,0 +1,191 @@
+﻿<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack()">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+                <span>Housing Request</span>
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles readchangeAccom">
+
+                <!--Left panel-->
+                <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero padZero formStyles" block-ui="ipmhousingReadonlyBlockUI">
+
+                    <ng-include src="'/app/ipm/partials/ipmHousingCurrentAcc.html'"></ng-include>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading clearfix">
+
+                                    <h3 class="panel-title">
+                                        Request Details - {{ housingdata.RequestNumber }}<i class="pull-right"></i>
+                                    </h3>
+                                </div>
+                                <div class="panel-body  mob_padLeftZero mob_padRightZero">
+                                    <div class="col-lg-6 col-md-8 col-sm-8 col-lg-offset-2  col-sm-offset-3 col-md-offset-2">
+                                        <div class="table-responsive">
+                                            <table id="example" class="table table-striped table-bordered dataTable no-footer blueTHTable" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%;">
+                                                <thead>
+                                                    <tr role="row" class="headerRow">
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending"
+                                                            aria-label="Request No.: activate to sort column descending" style="width: 240px;">
+                                                            Entitlement Year
+                                                        </th>
+                                                        <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                                            aria-label="Request Type: activate to sort column ascending" style="width: 369px;">
+                                                            Entitlement Available
+                                                        </th>
+                                                        <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                                            aria-label="Description: activate to sort column ascending" style="width: 185px;">
+                                                            Last Entitlement used
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr role="row" class="odd">
+                                                        <td class="sorting_1">
+                                                            {{CrewEntitlementDetails.CrewEntitlements[0].EntitlementYear}}
+                                                        </td>
+                                                        <td>
+                                                            {{CrewEntitlementDetails.CrewEntitlements[0].EntitlementAvailable}}
+                                                        </td>
+                                                        <td>
+                                                            {{CrewEntitlementDetails.CrewEntitlements[0].LastUsed | date:"dd-MMM-yyyy"}}
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 padZero Mob_padZero readForm">
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                            Request Type
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{ housingdata.RequestType }}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                            Request Date
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{ housingdata.RequestDate | date:"dd-MMM-yyyy" }}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                            Building Name
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.BuildingDetails.BuildingName}}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                            Flat
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.BuildingDetails.FlatNumber}}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                            Bedroom
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.BuildingDetails.BedroomNo}}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                            Land line
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.LandLineNo}}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                            Nationalities
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.Nationality}}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                            Reason
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.RequestReason}}
+                                        </div>
+
+                                        <div class="col-sm-12 padZero marbottom10">
+                                            <label class="control-label col-lg-2 col-md-2  col-sm-3 " for="reason">
+                                                Additional Info
+                                            </label>
+                                            <div class="col-lg-10 col-md-10 col-sm-8 minformWidth">
+                                                <div class="addinfolbl" ng-repeat="comment in comments">
+                                                    <span><b>{{comment.CreatedBy}}  ({{comment.CreatedDate}}) -</b></span>
+                                                    <span class="addinfomessage" ng-bind-html="comment.Message"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 padZero" ng-if="files && files.length > 0">
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                                Attachments
+                                            </label>
+                                            <div class="col-lg-6 col-md-8 col-sm-8 minformWidth fieldfix">
+                                                <table class="table table-striped table-bordered dataTable no-footer blueTHTable" width="100%" style="width: 100%;">
+                                                    <thead>
+                                                        <tr role="row" class="headerRow">
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1">
+                                                                File Name
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr role="row" class="odd" ng-repeat="file in files">
+                                                            <td class="sorting_1">
+                                                                <a href="javascript:void(0);" ng-click="openImage(file)">{{file.FileName}}</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-12 padZero marbottom10">
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                            &nbsp;
+                                        </label>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 minformWidth fieldfix">
+                                            <label class="wrap_text txtLeft">
+                                                <span class="glyphicon glyphicon-ok"></span>&nbsp;
+                                                {{messages.HOUCHECKED}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="padZero  col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="pull-right">
+                                            <button type="submit" class="btn btn-primary" title="" ng-show="openRequest" ng-click="cancelRequest()">
+                                                Cancel
+                                            </button>
+                                            <button type="button" class="btn btn-primary" title="back to previous page" ng-click="goBack()">
+                                                Back
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->
+                    <!--tabs+Accordion wrap-->
+                </div>
+                <!--Right panel-->
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

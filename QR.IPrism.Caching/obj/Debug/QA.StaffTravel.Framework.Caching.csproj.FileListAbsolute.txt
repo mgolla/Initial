@@ -1,0 +1,13 @@
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\bin\Debug\QA.StaffTravel.Framework.Caching.dll
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\bin\Debug\QA.StaffTravel.Framework.Caching.pdb
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\bin\Debug\Microsoft.ApplicationServer.Caching.Client.dll
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\bin\Debug\Microsoft.ApplicationServer.Caching.Core.dll
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\bin\Debug\QA.StaffTravel.Framework.Logging.dll
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\bin\Debug\log4net.dll
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\bin\Debug\Microsoft.WindowsFabric.Data.Common.dll
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\bin\Debug\Microsoft.WindowsFabric.Common.dll
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\bin\Debug\QA.StaffTravel.Framework.Logging.pdb
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\bin\Debug\log4net.xml
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\obj\Debug\QA.StaffTravel.Framework.Caching.csprojResolveAssemblyReference.cache
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\obj\Debug\QA.StaffTravel.Framework.Caching.dll
+D:\STS\1640_STS\Development\Scratchpad\Framework\QA.StaffTravel.Framework.Caching\obj\Debug\QA.StaffTravel.Framework.Caching.pdb

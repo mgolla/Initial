@@ -1,0 +1,143 @@
+﻿<div class="container-fluid pull-left" block-ui="ipmevrSearchfilterBlockUI" ng-show="$state.current.name === 'evrSearch'">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                Search eVR
+            </h1>
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles mob-overflowhid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                           
+                            <div class="panel-body  mob_padLeftZero mob_padRightZero">
+                                <ng-form name="evrSearch">
+                                    <div class="col-lg-11 col-md-11 padZero Mob_padZero form-outline col-lg-offset-right-1 col-sm-offset-right-1 ctrlLblAlgn">
+                                        <div class="row">
+                                            <srd-input type="text" model="evrAllFilter.evrIdObj" label="eVR ID" name="evrIdObj" label-class="col-lg-2 col-md-2 col-sm-3"
+                                                       field-class="col-lg-4 col-md-4 col-sm-9 marbottom10" required="false" readonly="false"></srd-input>
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3"><span>FlightNumber</span></label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9">
+                                                <div class="input-group newCntrl">
+                                                    <span class="input-group-addon">QR</span>
+                                                    <input type="text" class="form-control validation qrTxtBxHeight" ng-model="evrAllFilter.FlightNumber">
+                                                    <span class="input-group-addon">eg. 264</span>
+                                                </div>
+                                            </div>
+
+                                            <srd-datepicker type="text" name="evrAllFilter.EvrSearchFromDateObj" label="From Date" model="evrAllFilter.EvrSearchFromDateObj" required="false" id="fromdate" field-class="col-lg-4 col-md-4 col-sm-9 fieldfix" label-class="col-lg-2 col-md-2 col-sm-3 "></srd-datepicker>
+
+                                            <srd-datepicker type="text" name="evrAllFilter.EvrSearchToDateObj" label="To Date" model="evrAllFilter.EvrSearchToDateObj" required="false" id="todate"
+                                                            field-class="col-lg-4 col-md-4 col-sm-9 fieldfix" label-class="col-lg-2 col-md-2 col-sm-3 "></srd-datepicker>
+
+
+
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                                Sector Form
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 fieldfix">
+                                                <ui-select ng-model="evrAllFilter.SectorFromObj" ng-disabled="disabled">
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in SectorAllFromList | propsFilter: {Desc: $select.search}">
+                                                        <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                                Sector To
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 fieldfix">
+                                                <ui-select ng-model="evrAllFilter.SectorToObj" ng-disabled="disabled">
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in SectorAllToList | propsFilter: {Desc: $select.search}">
+                                                        <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                                eVR Status
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 fieldfix">
+                                                <ui-select ng-model="evrAllFilter.StatusObj" ng-disabled="disabled" id="uirequestType">
+                                                    <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in VRStatusList | propsFilter: {Text: $select.search}">
+                                                        <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 padZero">
+                                        <div class="pull-right">
+                                            <button type="submit" class="btn btn-primary" title=""
+                                                    ng-click="search()">
+                                                    Search
+                                            </button>
+                                            <button type="submit" class="btn btn-primary" title=""
+                                                    ng-click="ResetEVRSearch()">
+                                                    Reset
+                                            </button>
+                                        </div>
+                                    </div>
+                                </ng-form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row end -->
+                <!--<div ui-view="searchview">-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padZero">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="table-responsive dataGrid_styles" block-ui="ipmevrSearchResBlockUI">
+                                        <div ui-grid="grid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(grid)" class="grid searchGrid">
+                                            <div class="watermark" ng-show="!grid.data.length">No data available</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Left panel-->
+        <!--Right panel-->
+    </div>
+</div>
+
+
+
+
+<div id="profileTabsContents" class="profile_tabview eVRScreentabs" ng-show="$state.current.name != 'evrSearch'">
+    <tabset class="nav nav-tabs nav-tab-evr tab-animation">
+        <div class="evrTabs marLeft15 martop5">
+            <tab active="model.active.evrtop" heading="Flight Details">
+                <tab-heading>
+                    <div>Flight Details</div>
+                </tab-heading>
+                <div class="container-fluid pull-left" ui-view="ipmevrSerachResFlightDetUIView"></div>
+                <!--<div class="tab-pane fade in active" ui-view="ipmevrtopgridUIView"></div>-->
+            </tab>
+            <tab active="model.active.evrtopten" heading="eVR Details">
+                <tab-heading>
+                    <div>eVR Details</div>
+                </tab-heading>
+                <div class="container-fluid pull-left" ui-view="ipmevrSerachResViewUIView"></div>
+            </tab>
+        </div>
+    </tabset>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

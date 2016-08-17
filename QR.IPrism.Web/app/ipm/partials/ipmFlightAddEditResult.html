@@ -1,0 +1,354 @@
+﻿<div class="container-fluid pull-left" block-ui="ipmFlightBlockUI">
+    <div class="content_wrapper">
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack(back)">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
+                </button>
+                <span>Add/Edit Flight</span>
+            </h1>
+
+   
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles">
+                <ng-form name="addEditFlightForm">
+                    <div class="row evrload_panels ">
+                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                            <div class="panel panel-default minhght_340">
+                                <div class="panel-heading clearfix">
+                                    <h3 class="panel-title">
+                                        Flight Details
+
+                                    </h3>
+                                </div>
+                                <div class="panel-body mob_padLeftZero mob_padRightZero">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 padZero Mob_padZero form-outline globalfontbold fltdetlineHgh">
+                                        <div class="row">
+                                           
+                                                <label class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                                    Flight Number
+                                                </label>
+                                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 read_field_fix">
+                                                {{ model.FlightNumber }}
+                                            </div>
+                                            
+                                                <label class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                                    Aircraft Reg. No.
+                                                </label>
+                                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 read_field_fix">
+                                                {{ model.AirCraftRegNo }}
+                                            </div>
+                                           
+                                                <label class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                                    Sector
+                                                </label>
+                                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 read_field_fix">
+                                                {{ model.SectorFrom }} - {{ model.SectorTo }}
+                                            </div>
+                                           
+                                                <label class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                                    Aircraft Type
+                                                </label>
+                                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 read_field_fix">
+                                                {{ model.AirCraftType }}
+                                            </div>
+                                            
+                                                <label class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                                    Final Destination
+                                                </label>
+                                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 read_field_fix">
+                                                {{ model.FlightDelay.FlightRoute }}
+                                            </div>
+                                           
+                                                <label class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                                    Crew Compliment
+                                                </label>
+                                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 read_field_fix">
+                                                {{ model.FlightDelay.CrewCount }}
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 noPadLeft-lg noPadLeft-md">
+                            <div class="panel panel-default minhght_340 preflight_chk">
+                                <div class="panel-heading clearfix highlightPanelHeading">
+                                    <h3 class="panel-title">
+                                        Flight Time<i class="pull-right"></i>
+                                    </h3>
+                                </div>
+                                <div class="panel-body mob_padLeftZero mob_padRightZero globalfontbold">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 padZero Mob_padZero form-outline globalfontbold fltdetlineHgh">
+                                        <div class="row">
+
+                                            <label class="control-label col-lg-5 col-md-6 col-sm-7 col-xs-6">
+                                                Departure Delay (HH:MM)
+                                            </label>
+                                            <div class="col-lg-7 col-md-6 col-sm-5 col-xs-6 read_field_fix">
+                                                {{ model.FlightDelay.DepartureDelayObj}}
+                                            </div>
+
+                                            <label class="control-label col-lg-5 col-md-6 col-sm-7 col-xs-6">
+                                                Arrival Delay (HH:MM)
+                                            </label>
+                                            <div class="col-lg-7 col-md-6 col-sm-5 col-xs-6 read_field_fix">
+                                                {{ model.FlightDelay.ArrivalDelayObj}}
+                                            </div>
+
+                                            <label class="control-label col-lg-5 col-md-6 col-sm-7 col-xs-6">
+                                                STD Date Time(UTC)
+                                            </label>
+                                            <div class="col-lg-7 col-md-6 col-sm-5 col-xs-6 read_field_fix">
+                                                {{ model.ScheduledDeptTime |  date:"dd-MMM-yyyy HH:mm" }}
+                                            </div>
+
+                                            <label class="control-label col-lg-5 col-md-6 col-sm-7 col-xs-6">
+                                                ATD Date Time(UTC)
+                                            </label>
+                                            <div class="col-lg-7 col-md-6 col-sm-5 col-xs-6 read_field_fix">
+                                                {{ model.ActualDeptTime |  date:"dd-MMM-yyyy HH:mm" }}
+                                            </div>
+
+                                            <label class="control-label col-lg-5 col-md-6 col-sm-7 col-xs-6">
+                                                STA Date Time(UTC)
+                                            </label>
+                                            <div class="col-lg-7 col-md-6 col-sm-5 col-xs-6 read_field_fix">
+                                                {{ model.ScheduledArrTime |  date:"dd-MMM-yyyy HH:mm" }}
+                                            </div>
+
+                                            <label class="control-label col-lg-5 col-md-6 col-sm-7 col-xs-6">
+                                                ATA Date Time(UTC)
+                                            </label>
+                                            <div class="col-lg-7 col-md-6 col-sm-5 col-xs-6 read_field_fix">
+                                                 {{ model.ActualArrTime |  date:"dd-MMM-yyyy HH:mm" }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 noPadLeft-lg noPadLeft-md">
+                            <div class="panel panel-default minhght_340 preflight_chk">
+                                <div class="panel-heading clearfix">
+                                    <h3 class="panel-title">
+                                        Aircraft Load Details
+                                    </h3>
+                                </div>
+                                <div class="panel-body detailForm mob_padLeftZero mob_padRightZero globalfontbold">
+                                    <div class="col-lg-12 padZero">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 aircraftLdDetTbHead">
+                                            <span>*First class</span>
+                                            <span>*Business class</span>
+                                            <span>*Economy class</span>
+
+                                        </div>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" class="loadEvr_table">
+                                            <!--<tr>-->
+                                                <!--<th>
+                                                    <input type="checkbox" ng-model="model.IsFerry" ng-change="checked()" class="noMargin" />
+                                                    Ferry Flight
+                                                </th>-->
+                                                <!--<th>*First class</th>
+                                                <th>*Business class</th>
+                                                <th>*Economy class</th>
+                                            </tr>-->
+
+                                           
+                                            <tr>
+                                                <td>Capacity</td>
+                                                <td class="fontstylebold">{{ model.FlightDelay.SeatCapacityFC }}</td>
+                                                <td class="fontstylebold">{{ model.FlightDelay.SeatCapacityJC }}</td>
+                                                <td class="fontstylebold">{{ model.FlightDelay.SeatCapacityYC }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>*Passenger</td>
+                                                <td>
+                                                    <srd-input type="text" label="" name="PassengerLoadFC" submitted="submitted" readonly="model.IsFerry"
+                                                               model="model.FlightDelay.PassengerLoadFC" required="true" maxlength="3" regex="(NA|[0-9]+)"
+                                                               ng-click="clearIfNA('PassengerLoadFC')"></srd-input>
+                                                </td>
+                                                <td>
+                                                    <srd-input type="text" label="" name="PassengerLoadJC" submitted="submitted" readonly="model.IsFerry"
+                                                               model="model.FlightDelay.PassengerLoadJC" required="true" maxlength="3" regex="(NA|[0-9]+)"
+                                                               ng-click="clearIfNA('PassengerLoadJC')"></srd-input>
+                                                </td>
+                                                <td>
+                                                    <srd-input type="text" label="" name="PassengerLoadYC" submitted="submitted" readonly="model.IsFerry"
+                                                               model="model.FlightDelay.PassengerLoadYC" required="true" maxlength="3" regex="(NA|[0-9]+)"
+                                                               ng-click="clearIfNA('PassengerLoadYC')"></srd-input>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>*Infant</td>
+                                                <td>
+                                                    <srd-input type="text" label="" name="InfantLoadFC" submitted="submitted" readonly="model.IsFerry"
+                                                               model="model.FlightDelay.InfantLoadFC" required="true" maxlength="3" regex="(NA|[0-9]+)"
+                                                               ng-click="clearIfNA('InfantLoadFC')"></srd-input>
+                                                </td>
+                                                <td>
+                                                    <srd-input type="text" label="" name="InfantLoadJC" submitted="submitted" readonly="model.IsFerry"
+                                                               model="model.FlightDelay.InfantLoadJC" required="true" maxlength="3" regex="(NA|[0-9]+)"
+                                                               ng-click="clearIfNA('InfantLoadJC')"></srd-input>
+                                                </td>
+                                                <td>
+                                                    <srd-input type="text" label="" name="InfantLoadYC" submitted="submitted" readonly="model.IsFerry"
+                                                               model="model.FlightDelay.InfantLoadYC" required="true" maxlength="3" regex="(NA|[0-9]+)"
+                                                               ng-click="clearIfNA('InfantLoadYC')"></srd-input>
+                                                </td>
+
+                                            </tr>
+                                           
+                                        </table>
+                                    </div>
+                                    <div class="col-lg-12 txtcenter"><br /><br /><div class="txtCenter">'NA' to be entered if a class is not applicable to the flight.</div></div>
+                                    <div class="col-lg-12"><input type="checkbox" ng-model="model.IsFerry" ng-change="checked()" class="noMargin" />
+                                                Ferry Flight</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 noPadLeft-lg padLeft-md-15">
+                            <div class="panel panel-default minhght_340">
+                                <div class="panel-heading clearfix">
+                                    <h3 class="panel-title">
+                                        Pre-flight Check<i class="pull-right"></i>
+                                    </h3>
+                                </div>
+                                <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                    <div class="row">
+                                        <label class="control-label col-lg-12 col-md-12 col-sm-12 col-xs-12 txtLeft">Grooming Check done by GO?</label>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 groomdropdwnwdth">
+                                            <ui-select ng-model="model.groomingCheckObj" ng-required="true" name="groomingCheck" on-select="groomingCheck($model)">
+                                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                                <ui-select-choices repeat="model in lstSelect | propsFilter: {Text: $select.search}">
+                                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                        </div>
+
+                                        <srd-textarea field-class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                                                      submitted="submitted" max-length="500" model="model.FlightDelay.GroomingCheckComment"
+                                                      name="groomingCheckRemarks" readonly="disabledgrooming" rows="1" required="false">
+                                        </srd-textarea>
+                                    </div><div class="row">
+                                        <label class="control-label col-lg-12 col-md-12 col-sm-12col-xs-12 txtLeft">CSD/CS briefed by GO?</label>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 groomdropdwnwdth">
+                                            <ui-select ng-model="model.csdBriefedObj" ng-required="true" name="csdBriefed" on-select="csdBriefedCheck($model)">
+                                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                                <ui-select-choices repeat="model in lstSelect | propsFilter: {Text: $select.search}">
+                                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                        </div><br />
+                                        <srd-textarea field-class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                                                      submitted="submitted" max-length="500" model="model.FlightDelay.CsdCsBriefedComment"
+                                                      name="csdBriefedRemarks" readonly="disabledcsd" rows="1" required="false">
+                                        </srd-textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading clearfix">
+
+                                    <h3 class="panel-title">
+                                        Crew Work Positions<i class="pull-right"></i>
+                                    </h3>
+                                </div>
+                                <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                    <div class="row ctrlLblAlgn">
+                                        <label class="control-label col-lg-1 col-md-1 col-sm-2 col-xs-3 txtLeft">Staff #</label>
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                            <ui-select ng-model="model.selectStaffObj">
+                                                <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.StaffName}}</ui-select-match>
+                                                <ui-select-choices repeat="model in autoList | propsFilter: {StaffName: $select.search}"
+                                                                   refresh="refreshStaff($select.search)" refresh-delay="0">
+                                                    <div ng-bind-html="model.StaffName | highlight: $select.search"></div>
+                                                    <small>
+                                                        <strong>Grade: </strong>{{model.StaffGrade}}
+                                                    </small>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                        </div>
+                                        <div class="col-lg-1 col-md-1 col-sm-2 col-xs-1">
+                                            <button class="btn btn-primary" ng-click="addCrewMember()">Add</button>
+                                        </div>
+                                        <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 padZero">
+                                            <label class="mob-mar-tp10 col-lg-6 col-md-6 col-sm-5 txtLeft" ng-show="pasteFromSection">{{pasteFromDetailsData}}&nbsp;&nbsp;</label>
+                                            <div class="col-lg-5 col-md-5 col-sm-4"><button class="btn btn-primary" ng-click="pasteFrom()" ng-show="pasteFromSection">Paste From</button> </div>
+                                        </div>
+                                    </div>
+                                    <div class="row crewWorkTab martop10">
+                                        <table class="table table-striped table-bordered dataTable no-footer blueTHTable table-responsive" cellspacing="0">
+                                            <thead>
+                                                <tr role="row" class="headerRow">
+                                                    <th class="sorting_asc" rowspan="1" colspan="1">Staff Number</th>
+                                                    <th class="sorting" rowspan="1" colspan="1">Staff Name</th>
+                                                    <th class="sorting" rowspan="1" colspan="1">Staff Grade</th>
+                                                    <th class="sorting" rowspan="1" colspan="1"><span class="redText">*</span> Crew Work Position</th>
+                                                    <th class="sorting" rowspan="1" colspan="1"><span class="redText">*</span>Announcement Language</th>
+                                                    <th class="sorting" rowspan="1" colspan="1">Delete</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr role="row" class="odd" ng-repeat="row in model.FlightCrewsDetail">
+                                                    <td>{{ row.StaffNumber }}</td>
+                                                    <td>{{ row.StaffName | ipmSplit:' (':0}}</td>
+                                                    <td>{{ row.StaffGrade }}</td>
+                                                    <td class="select">
+                                                        <ng-form name="staffForm" ng-class="{'prmInvalid' : staffForm.cwpName.$invalid}">
+                                                            <ui-select ng-required="true" ng-model="row.cwpObj" name="cwpName">
+                                                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                                                <ui-select-choices repeat="model in cwpList | propsFilter: {Text: $select.search}">
+                                                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                                </ui-select-choices>
+                                                            </ui-select>
+                                                        </ng-form>
+                                                    </td>
+                                                    <td class="select">
+                                                        <ui-select ng-model="row.alObj">
+                                                            <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                                            <ui-select-choices repeat="model in AnnLang | propsFilter: {Text: $select.search}">
+                                                                <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                            </ui-select-choices>
+                                                        </ui-select>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void(0);" ng-click="deleteStaff(row)">
+                                                            <i class="glyphicon glyphicon-trash redText"></i>
+                                                        </a>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="txtRight col-lg-12 col-md-12 col-sm-12 padZero" style="position: static;">
+                                <br />
+                                <button type="submit" class="btn btn-primary" ng-show="IsFromEvr == 'fd' || IsFromEvr == 'evr' || IsFromEvr == 'no_evr'" ng-click="submit(addEditFlightForm)">Save And Continue</button>
+                                <button type="submit" class="btn btn-primary" ng-show="IsFromEvr == 'false'" ng-click="submit(addEditFlightForm)">Save</button>
+                                <button type="submit" class="btn btn-primary" ng-show="IsFromEvr == 'false'" ng-click="clearForm(addEditFlightForm)">Reset</button>
+                                <button type="button" class="btn btn-primary" ng-show="IsFromEvr == 'false'" ng-click="goBack(back)">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-form>
+            </div>
+
+
+
+                 
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

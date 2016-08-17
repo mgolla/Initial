@@ -1,0 +1,1562 @@
+
+
+/* ------------------------------------------------------
+------------------------ ROOSTER----------------------- */
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+    margin-left: -17px;
+}
+
+
+
+.MyRoster_info h1.pageTitle {
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.myroster_header {
+    padding: 0px 15px 0px;
+}
+
+.page-tittle {
+    padding: 8px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px;
+    background: #8C8686;
+    color: #fff;
+    margin-top: 5px;
+}
+
+#timestamp {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.dateTime label {
+    font-weight: normal;
+}
+
+
+/*-------rooster Table--------*/
+
+#roster-table {
+}
+
+    #roster-table th {
+        background: #c6c6c6 url('../images/roster_th_bg.png') repeat-x left top;
+        text-align: center;
+        font-weight: normal;
+        font-size: 15px;
+    }
+
+        #roster-table th.todayActv {
+            background: #591d42 url('../images/roster_day_actv.png') repeat-x left top;
+            color: #fff;
+        }
+
+    #roster-table td {
+        text-align: center;
+    }
+
+.roster-List {
+    display: block !important;
+    text-align: center;
+    list-style: none;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #c9c9c9;
+}
+
+.rosterList.col-lg-12 {
+    width: 100%;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.roster-List > li {
+    display: table-cell;
+    list-style: none;
+    border-right: 1px solid #c9c9c9;
+    background: #d7d9d5 url('../images/roster_td_bg.png') repeat-x left bottom;
+    vertical-align: top;
+    min-width: 140px;
+}
+
+    .roster-List > li > ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .roster-List > li > ul > li > ul {
+            margin: 0px;
+            padding: 0px;
+            display: table;
+            width: 100%;
+        }
+
+            .roster-List > li > ul > li > ul > li {
+                display: table-cell;
+                list-style-type: none;
+                cursor: pointer;
+                padding: 10px 0px;
+            }
+
+.roster_date {
+    background: url('../images/roster_th_bg.png') repeat-x left top;
+    padding: 7px;
+    white-space: nowrap;
+}
+
+    .roster_date.actvDate {
+        background: url('../images/roster_day_actv.png') repeat-x left top;
+        color: #fff;
+    }
+
+.roster_Data {
+    color: #9f9f9e;
+    font-weight: bold;
+    /*--background:#d7d9d5 url('../images/roster_td_bg.png') repeat-x left bottom;--*/
+}
+
+    .roster_Data.actvDate {
+        color: #636363;
+    }
+
+    .roster_Data .actvRosterEvent {
+        color: #591e30;
+        background: url('../images/arrow_tip.png') no-repeat center bottom;
+        -webkit-box-shadow: -1px 7px 24px 0px rgba(0, 0, 0, 0.36);
+        -moz-box-shadow: -1px 7px 24px 0px rgba(0, 0, 0, 0.36);
+        box-shadow: -1px 7px 24px 0px rgba(0, 0, 0, 0.36);
+    }
+
+    .roster_Data ul li {
+        border-right: 1px solid #c9c9c9;
+    }
+
+        .roster_Data ul li:last-child {
+            border-right: 0px;
+        }
+/*---magic-----*/
+
+.roster_Data {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.rooster-day-continue {
+    text-align: center;
+}
+
+.roster_Data .rooster-day, .roster_Data .rooster-day-OFF {
+    display: table-cell;
+    padding: 10px 0px;
+    border-left: 1px solid #c9c9c9;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: top;
+}
+
+.roster_Data .rooster-day-OFF {
+    border: 0px;
+    cursor: default;
+}
+
+/*--------------------------------------------------------------
+--------------------------monthly new-------------------------*/
+
+
+
+/*-------------------------------------------------------------
+---------------------monthly_roster----------------------------*/
+
+.monthly_roster .roster-List {
+    display: inline-block;
+}
+
+    .monthly_roster .roster-List > li {
+        float: left;
+        width: 10%;
+        overflow: hidden;
+        display: block;
+    }
+
+.monthly_roster .extra_roster {
+    top: 0px;
+    right: 0px;
+    display: none;
+}
+
+.monthly_roster .roster_Data {
+    display: inherit;
+}
+
+.monthly_roster .actvDate .extra-day,
+.monthly_roster .extra-day {
+    display: block !important;
+    width: 100% !important;
+}
+
+.monthly_roster h1 {
+    display: table-caption;
+    margin: 0px;
+    font-size: 14px;
+    white-space: nowrap;
+    padding: 9px;
+    text-transform: uppercase;
+}
+
+.roster_month_data {
+    /*display: table;*/
+}
+
+.Roster_Monthly .roster-List {
+    display: inline-block;
+}
+
+    .Roster_Monthly .roster-List > li {
+        display: inline-block;
+        float: left;
+        width: 10%;
+    }
+
+.month-fix .roster_Data .rooster-day, .month-fix .roster_Data .rooster-day-OFF {
+    display: block !important;
+    padding: 4px;
+    border-bottom: 1px dotted #ccc;
+    width: 100%;
+    margin: 0 auto;
+    border-left: 0px;
+    cursor: pointer;
+}
+
+.month-fix .roster_Data .flightRoute, .month-fix .rooster-day-OFF .flightRoute {
+    word-spacing: 6px;
+    font-size: 14px !important;
+    color: #787878;
+}
+
+.roster_Data .rooster-day {
+    display: table-cell;
+    padding: 10px 0px;
+    border-left: 1px solid #c9c9c9;
+    cursor: pointer !important;
+    text-align: center;
+    vertical-align: top;
+}
+
+.month-fix .roster_Data .rooster-day {
+    display: block !important;
+    padding: 4px;
+    border-bottom: 1px dotted #ccc;
+    width: 100%;
+    margin: 0 auto;
+    border-left: 0px;
+    cursor: pointer;
+}
+
+.month-fix .roster_Data .flightRoute {
+    word-spacing: 6px;
+    font-size: 14px !important;
+    color: #787878;
+}
+
+.month-fix .actvDate .extra-day {
+    display: block !important;
+}
+
+.roster-List > li.month-fix {
+    background: #f5f5f5;
+}
+
+    .roster-List > li.month-fix.alternate {
+        background: #eaeaea !important;
+    }
+
+.roster_Data h1 {
+    display: table-caption;
+    margin: 0px;
+    font-size: 14px;
+    white-space: nowrap;
+    background: url('../images/roster_th_bg.png') repeat-x left top;
+    padding: 9px;
+    text-transform: uppercase;
+    color: #4c4c4c;
+}
+
+    .roster_Data h1 i {
+        font-style: normal !important;
+    }
+
+.month-fix .roster_Data h1 {
+    font-size: 12px;
+    padding: 8px;
+    color: #712c58;
+}
+
+    .month-fix .roster_Data h1 i {
+        font-style: normal;
+    }
+
+.month-fix .actvDate h1 {
+    color: #fff;
+    font-weight: bold;
+}
+
+.month-fix .roster_Data .actvRosterEvent .flightRoute {
+    color: #702d58;
+}
+
+.roster_Data .flightRoute {
+    font-size: 16px !important;
+    word-spacing: 9999999px;
+    line-height: 22px;
+    display: block;
+    margin: 0px 0px 3px;
+}
+
+.roster_Data .flightNo {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.extra_roster {
+    background: url('../images/plus_bg.png') no-repeat right center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 9px;
+    text-align: right;
+    padding-left: 19px;
+    top: 25px;
+    position: relative;
+    right: 15px;
+    cursor: pointer;
+}
+
+.month-fix .extra_roster {
+    right: inherit;
+    text-align: center;
+    background-position: center;
+    display: none;
+}
+
+.roster_Data .rooster-day:first-child {
+    border-left: 0px !important;
+}
+
+.extra-day {
+    display: none !important;
+}
+
+.actvDate h1 {
+    background: url('../images/roster_day_actv.png') repeat-x left top;
+    color: #fff;
+}
+
+.actvDate .flightRoute {
+    /*-- chnaged as per MOM 27122015
+    background: url('../images/flight_icon_dark.png') no-repeat center;----*/
+}
+
+.actvDate .extra_roster {
+    display: none;
+    opacity: 0;
+}
+
+.actvDate .extra-day {
+    display: table-cell !important;
+}
+
+#back_calendar {
+    display: none;
+    float: right;
+    clear: both;
+}
+
+.otherInfo_area {
+    display: block !important;
+    width: 100% !important;
+    background: #fff !important;
+    height: auto !important;
+    border-top: 1px solid #ccc;
+    padding: 5px !important;
+    text-align: left;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.changeTimeZone {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 23px;
+    margin-top: 11px;
+}
+
+    .changeTimeZone label {
+        font-weight: bold;
+        margin-left: 10px;
+    }
+
+.slide_left {
+    background: url('../images/tab-icons.png') no-repeat -140px -46px;
+    width: 29px;
+    height: 25px;
+    border: 0px;
+}
+
+.slide_right {
+    background: url('../images/tab-icons.png') no-repeat -137px -10px;
+    width: 29px;
+    height: 25px;
+    border: 0px;
+}
+
+.slide_text {
+    position: relative;
+    top: -6px;
+}
+/*---------------------------------------------
+-----------------Overview--------------------------*/
+.overview_info {
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+    .overview_info .box-view {
+        padding: 0px 10px;
+        border-right: 1px solid #DADADA;
+    }
+
+        .overview_info .box-view:last-child {
+            border-right: 0px;
+        }
+
+        .overview_info .box-view h1 {
+            padding: 0px;
+            font-size: 18px;
+            line-height: 50px;
+            text-align: left;
+            margin-top: 0px;
+        }
+
+        .overview_info .box-view i {
+            float: left;
+            padding: 25px;
+        }
+
+            .overview_info .box-view i.ovew_flyer {
+                background: url('../images/tab-icons.png') no-repeat -77px top;
+            }
+
+            .overview_info .box-view i.ovew_bus {
+                background: url('../images/tab-icons.png') no-repeat -77px -43px;
+            }
+
+            .overview_info .box-view i.ovew_forecast {
+                background: url('../images/tab-icons.png') no-repeat -77px -90px;
+            }
+
+            .overview_info .box-view i.ovew_exchnge {
+                background: url('../images/tab-icons.png') no-repeat -77px -140px;
+            }
+
+
+.box-view-cont {
+    font-size: 12px;
+    line-height: 23px;
+    color: #898989;
+    text-align: left;
+}
+
+    .box-view-cont div {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .box-view-cont b {
+        color: #000;
+    }
+
+    .box-view-cont div.forecast_block {
+        padding: 0px 10px;
+    }
+
+        .box-view-cont div.forecast_block:nth-child(1) {
+            padding-left: 0px;
+        }
+
+        .box-view-cont div.forecast_block b {
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+.ovew_flyer_details {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    color: #898989;
+}
+
+    .ovew_flyer_details li {
+        width: 50%;
+        display: inline;
+        float: left;
+        white-space: nowrap;
+        margin-bottom: 10px;
+        line-height: 16px;
+    }
+
+    .ovew_flyer_details > li:nth-child(1), .ovew_flyer_details > li:nth-child(3) {
+        width: 35%;
+    }
+
+    .ovew_flyer_details .flight_load {
+        width: 100%;
+    }
+
+.flight_load ul {
+    margin: 0px !important;
+    padding: 0px !important;
+    list-style: none;
+    margin-top: 7px !important;
+}
+
+    .flight_load ul li {
+        margin-right: 15px;
+        line-height: 18px;
+    }
+
+.flight_load i {
+    padding: 0px 5px !important;
+    border-radius: 50%;
+    color: #fff;
+    margin-right: 4px !important;
+    font-style: normal;
+}
+
+    .flight_load i.f {
+        background: #6d3848;
+    }
+
+    .flight_load i.j {
+        background: #7c7f81;
+    }
+
+    .flight_load i.y {
+        background: #3c687e;
+    }
+
+.ovew_flyer_details li ul li {
+    display: inline;
+    width: auto;
+}
+
+.ovew_flyer_details li b {
+    color: #000;
+}
+
+.flight_icon_sml {
+    width: 19px;
+    height: 16px;
+    background: url('../images/tab-icons.png') no-repeat -38px -147px;
+    padding: 0px !important;
+}
+
+.flight_reg_sml {
+    width: 19px;
+    height: 16px;
+    background: url('../images/tab-icons.png') no-repeat -38px -172px;
+    padding: 0px !important;
+}
+
+/*----------------------------------------------
+---------------------roster Details-----------*/
+#roster_details .tab-content {
+    background: #fff;
+}
+
+#roster_details {
+    display: none;
+    width: 100%;
+}
+
+#roster_details {
+    overflow: hidden;
+    border: 2px solid #873e6b;
+}
+
+.rosterdetailTab {
+    background: #e8e8e8;
+}
+
+.stationhotel_info_box label {
+    display: block;
+    font-weight: normal;
+    line-height: 25px;
+    font-size: 12px;
+    display: table;
+}
+
+    .stationhotel_info_box label span {
+        font-weight: bold;
+        font-size: 12px;
+        width: 120px;
+        display: table-cell;
+    }
+
+    .stationhotel_info_box label i {
+        font-style: normal;
+        display: table-cell;
+    }
+
+.stationhotel_info_box div:nth-child(2) {
+}
+
+.stationhotel_info_box h1 {
+    font-size: 14px;
+    margin: 10px 0px;
+    padding: 0px;
+    /* padding-bottom: 5px; */
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+.stationhotel_info_box ul.resp-tabs-list {
+    margin-left: 0px;
+    border-top: 1px solid #d7d8db;
+    overflow: hidden;
+}
+
+.scrolling_box {
+    height: 250px;
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    font-size: 12px;
+    margin: 0px 0px 15px;
+    background: #f1f1f1;
+    border: 1px solid #d7d8db;
+    padding: 5px;
+}
+
+.stationhotel_info_box .resp-tabs-list li {
+    font-size: 15px;
+}
+
+.mealbox {
+    font-size: 12px;
+}
+
+.printArea {
+    background: #f1f1f1;
+    padding-top: 10px !important;
+}
+
+.scrollup, .scrollupWindow {
+    background: url('../images/tab-icons.png') no-repeat -184px -7px;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 120px;
+    right: 0px;
+    display: none;
+    text-indent: -9999px;
+}
+
+/*--------------------tabs icons------------------*/
+.nav-tabs.iconTab > li.active > a {
+    border: 0px !important;
+    background: #fff !important;
+    border-bottom: 2px solid #fff !important;
+    font-weight: bold;
+}
+
+.nav-tabs.iconTab > li > a {
+    line-height: 200%;
+    padding: 5px 20px;
+    overflow: hidden;
+    color: #5A5A5A;
+}
+
+    .nav-tabs.iconTab > li > a > i {
+        float: left;
+        width: 23px;
+        height: 23px;
+        margin-right: 5px;
+    }
+
+    .nav-tabs.iconTab > li > a b {
+        font-weight: normal;
+    }
+
+i.overview {
+    background: url('../images/tab-icons.png') no-repeat -34px 0px;
+}
+
+i.station {
+    background: url('../images/tab-icons.png') no-repeat -34px -26px;
+}
+
+i.hotel {
+    background: url('../images/tab-icons.png') no-repeat -34px -53px;
+}
+
+i.crew {
+    background: url('../images/tab-icons.png') no-repeat -34px -80px;
+}
+
+i.sos {
+    background: url('../images/tab-icons.png') no-repeat -34px -109px;
+}
+
+
+/*------------------------------------------crew+SOS Accordion header-----------------------------*/
+
+.flightAccord_tab {
+    margin-top: 10px;
+}
+
+    .flightAccord_tab .panel-default > .panel-heading {
+        overflow: hidden;
+    }
+
+        .flightAccord_tab .panel-default > .panel-heading a {
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 190%;
+            text-align: left;
+        }
+
+.sos_show {
+    display: none;
+}
+
+.flightAccord_tab .resp-arrow {
+    top: 5px;
+    position: relative;
+    right: 5px;
+}
+
+.flightAccord_tab h2 {
+    padding: 5px !important;
+}
+
+.flightAccord_tab i.fa {
+    border-radius: 50%;
+    padding: 12px;
+    color: #fff;
+    margin-right: 8px;
+    background-color: #878787;
+    margin-top: 2px;
+}
+
+.flightAccord_tab i.faPlane {
+    background: url('../images/tab-icons.png') no-repeat -193px -55px;
+}
+
+.flightAccord_tab i.fasector {
+    background: url('../images/tab-icons.png') no-repeat -193px -76px;
+}
+
+.flightAccord_tab i.faUTC {
+    background: url('../images/tab-icons.png') no-repeat -193px -97px;
+}
+
+.flightAccord_tab i.faDep {
+    background: url('../images/tab-icons.png') no-repeat -194px -122px;
+}
+
+.flightAccord_tab i.faAriv {
+    background: url('../images/tab-icons.png') no-repeat -193px -145px;
+}
+
+.flightAccord_tab i.faDuration {
+    background: url('../images/tab-icons.png') no-repeat -193px -169px;
+}
+
+.flightAccord_tab h2.resp-accordion {
+    overflow: hidden !important;
+    line-height: 210%;
+    font-size: 14px;
+    color: #878787;
+    opacity: .8;
+    background: #EEEAEB !important;
+}
+
+.flightAccord_tab h2.resp-tab-active {
+    background: #e8e8e8 !important;
+    box-shadow: none;
+    font-weight: bold;
+    color: #4a4a4a;
+    opacity: 1;
+    border: 0px;
+}
+
+.flightAccord_tab .panel-body h2 {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid #cccccc;
+    padding: 0px !important;
+}
+
+    .flightAccord_tab .panel-body h2 span {
+        border-bottom: 2px solid #873e6b;
+        background: url('../images/arrow_tip.png') no-repeat center bottom;
+        display: block;
+        padding-bottom: 11px;
+        width: 125px;
+        text-align: center;
+    }
+
+
+/*--------------------sos tab Contet---------------*/
+.premEconmy_detail {
+    text-align: left !important;
+}
+
+    .premEconmy_detail > div {
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0px;
+    }
+
+.catg_icon i {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.catg_icon ul {
+    display: table;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+    .catg_icon ul li {
+        display: table-cell;
+        text-align: center;
+        padding: 0px 12px;
+        color: #b1b1b1;
+        font-size: 11px;
+        position: relative;
+    }
+
+        .catg_icon ul li i {
+            display: block;
+            width: 60px;
+            height: 32px;
+            margin: 0 auto;
+        }
+
+            .catg_icon ul li i.speakers {
+                background: url('../images/tab-icons.png') no-repeat -323px -9px;
+            }
+
+        .catg_icon ul li.active {
+            color: #000;
+            font-weight: bold;
+        }
+
+            .catg_icon ul li.active i.speakers {
+                background: url('../images/tab-icons.png') no-repeat -264px -9px;
+            }
+
+
+        .catg_icon ul li i.menuCard {
+            background: url('../images/tab-icons.png') no-repeat -321px -58px;
+        }
+
+        .catg_icon ul li.active i.menuCard {
+            background: url('../images/tab-icons.png') no-repeat -263px -54px;
+        }
+
+        .catg_icon ul li i.ameniti {
+            background: url('../images/tab-icons.png') no-repeat -323px -100px;
+        }
+
+        .catg_icon ul li.active i.ameniti {
+            background: url('../images/tab-icons.png') no-repeat -265px -100px;
+        }
+
+        .catg_icon ul li i.comfortP {
+            background: url('../images/tab-icons.png') no-repeat -321px -150px;
+        }
+
+        .catg_icon ul li.active i.comfortP {
+            background: url('../images/tab-icons.png') no-repeat -267px -150px;
+        }
+
+
+        .catg_icon ul li i.comfortB {
+            background: url('../images/tab-icons.png') no-repeat -321px -199px;
+        }
+
+        .catg_icon ul li.active i.comfortB {
+            background: url('../images/tab-icons.png') no-repeat -267px -199px;
+        }
+
+
+        .catg_icon ul li i.bed_fc {
+            background: url('../images/tab-icons.png') no-repeat -439px -11px;
+        }
+
+        .catg_icon ul li.active i.bed_fc {
+            background: url('../images/tab-icons.png') no-repeat -381px -11px;
+        }
+
+        .catg_icon ul li i.bed_jc {
+            background: url('../images/tab-icons.png') no-repeat -437px -47px;
+        }
+
+        .catg_icon ul li.active i.bed_jc {
+            background: url('../images/tab-icons.png') no-repeat -379px -47px;
+        }
+
+        .catg_icon ul li i.din_ATO {
+            background: url('../images/tab-icons.png') no-repeat -433px -96px;
+        }
+
+        .catg_icon ul li.active i.din_ATO {
+            background: url('../images/tab-icons.png') no-repeat -377px -96px;
+        }
+
+        .catg_icon ul li i.din_fcjc {
+            background: url('../images/tab-icons.png') no-repeat -435px -147px;
+        }
+
+        .catg_icon ul li.active i.din_fcjc {
+            background: url('../images/tab-icons.png') no-repeat -380px -147px;
+        }
+
+.prem_FcJcmeal {
+    position: absolute;
+    background: #C8C8C8;
+    left: 0px;
+    top: 8px;
+    right: 0px;
+    width: 19px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    font-size: 9px;
+    color: #676767;
+    height: 19px;
+    line-height: 220%;
+}
+
+.catg_icon ul li.active .prem_FcJcmeal {
+    color: #fff;
+    background: #74395D;
+}
+
+
+.prem_fcmeal {
+}
+
+.prem_jcmeal {
+}
+
+.din_fcjc {
+    position: relative;
+}
+
+    .din_fcjc span {
+        position: absolute;
+    }
+
+.catg_seating_icon {
+    background: #571d41 url('../images/tab-icons.png') no-repeat -233px -12px;
+}
+
+.catg_bed_icon {
+    background: #571d41 url('../images/tab-icons.png') no-repeat -233px -50px;
+}
+
+.catg_dinning_icon {
+    background: #571d41 url('../images/tab-icons.png') no-repeat -235px -91px;
+}
+
+.catg_OtherInfo_icon {
+    background: #571d41 url('../images/tab-icons.png') no-repeat -231px -137px;
+}
+
+
+
+.moreInfo {
+    position: relative;
+    padding: 9PX;
+    top: 8px;
+}
+
+.close_info {
+    position: absolute !important;
+    right: -5px;
+    top: 3px;
+    padding: 0px;
+}
+
+    .close_info i {
+        width: 21px;
+        height: 21px;
+        padding: 2px 6px !important;
+        background: #A2A2A2 !important;
+    }
+
+.adiitonOnfo {
+    font-size: 12px;
+}
+
+.catg_moreInfo_icon {
+    position: relative;
+    left: 23px;
+    line-height: 35px;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.premium_tab {
+}
+
+.economy_tab {
+}
+
+    .economy_tab .catg_seating_icon, .economy_tab .catg_dinning_icon, .economy_tab .catg_bed_icon, .economy_tab .catg_OtherInfo_icon {
+        background-color: #356491;
+    }
+
+.resp-tab-content .economy_tab h2 span {
+    border-bottom-color: #5081b1;
+    background: url('../images/arrow_tip_blue.png') no-repeat center bottom;
+}
+
+
+.economy_tab .catg_icon ul li.active i.speakers {
+    background: url('../images/tab-icons.png') no-repeat -488px -15px;
+}
+
+.economy_tab .catg_icon ul li.active i.menuCard {
+    background: url('../images/tab-icons.png') no-repeat -491px -64px;
+}
+
+.economy_tab .catg_icon ul li.active i.ameniti {
+    background: url('../images/tab-icons.png') no-repeat -491px -106px;
+}
+
+.economy_tab .catg_icon ul li.active i.comfortP {
+    background: url('../images/tab-icons.png') no-repeat -494px -156px;
+}
+
+.economy_tab .catg_icon ul li.active i.comfortB {
+    background: url('../images/tab-icons.png') no-repeat -491px -205px;
+}
+
+.economy_tab .catg_icon ul li.active i.bed_fc {
+    background: url('../images/tab-icons.png') no-repeat -551px -12px;
+}
+
+.economy_tab .catg_icon ul li.active i.bed_jc {
+    background: url('../images/tab-icons.png') no-repeat -550px -48px;
+}
+
+
+.economy_tab .catg_icon ul li i.din_ATO {
+    background: url('../images/tab-icons.png') no-repeat -438px -190px;
+}
+
+.economy_tab .catg_icon ul li.active i.din_ATO {
+    background: url('../images/tab-icons.png') no-repeat -549px -97px;
+}
+
+.economy_tab .catg_icon ul li.active i.din_fcjc {
+    background: url('../images/tab-icons.png') no-repeat -547px -147px;
+}
+
+.economy_tab .catg_icon ul li i.din_snacks {
+    background: url('../images/tab-icons.png') no-repeat -434px -227px;
+}
+
+.economy_tab .catg_icon ul li.active i.din_snacks {
+    background: url('../images/tab-icons.png') no-repeat -546px -193px;
+}
+
+.economy_tab .catg_icon ul li.active .prem_FcJcmeal {
+    color: #fff;
+    background: #5081b1;
+}
+
+
+/*---end---*/
+
+
+.accord_btn {
+    height: 0;
+    width: 0;
+    position: relative;
+    top: 5px;
+    right: 8px;
+}
+
+.accordion-toggle {
+}
+
+    .accordion-toggle:after {
+        font-family: 'FontAwesome';
+        content: "\f078";
+        float: right;
+        width: 0;
+        height: 0;
+        position: relative;
+        right: 13px;
+        color: #595959;
+    }
+
+
+
+
+
+
+
+.close_tabCont {
+}
+
+    .close_tabCont img {
+        cursor: pointer !important;
+        position: relative;
+        top: 10px;
+        right: 10px;
+    }
+
+.dateSlider {
+    clear: both;
+    display: block;
+    float: left;
+}
+
+.gradientBG {
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.dateSliderWeek .list-inline > li, .dateSlider .list-inline > li {
+    padding: 0px;
+}
+/*------------------additional Info---------------------*/
+.addition_info {
+    padding: 0px !important;
+}
+
+    .addition_info h1 {
+        font-size: 13px;
+        margin: 0px;
+        padding: 8px;
+        background: url('../images/sm_roster_bg.png') repeat-x left bottom;
+        font-weight: bold;
+    }
+
+.info_box {
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    background: #eeeeee;
+    margin-bottom: 10px;
+}
+
+.addition_info > div:last-child .info_box {
+    margin-right: 0px;
+}
+
+.info_box label {
+    margin: 5px;
+    display: block;
+    font-weight: normal;
+}
+
+.info_box span {
+    width: 100px;
+    display: inline-block;
+}
+
+.fa-download, .fa-info {
+    color: #464646;
+}
+
+.fa-fw {
+    color: #464646;
+}
+
+
+/*@media (max-width: 768px), only scren and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1023px), not all, not all, not all, only screen and (max-width: 1023px) and (min-resolution: 192dpi), only screen and (max-width: 1023px) and (min-resolution: 2dppx)
+{
+    .MyRoster_info h1.pageTitle{ font-size:16px;}
+  #back_calendar{ position: relative; z-index:999; float: left; top: -3px;}
+    #timestamp{ display: inherit; margin-right:0px; font-size:12px;     margin-bottom: 6px;}
+    .dateTime{ font-size:12px;}
+    .dateSlider{ font-size: 12px;     margin-left: 5px;}
+      .dateSlider_month, .dateSliderWeek{ display: none;}
+.dateTime label{ line-height:190%;     margin-top: -10px !important;}
+      .label_week, .label_month{ position: relative; top:-5px; right:8px;}
+#changeTimeZoneHide{ display: none !important;}      
+.changeTimeZone{ display: none; position: absolute; background: #fff; text-align: left; right:0px; top:46px; z-index:999; border: 1px solid #ccc;}
+ .changeTimeZone label {
+    display: block;
+    text-align: left;
+    padding-right: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    margin: 0px;
+    color: #999;
+}
+ .changeTimeZone label:focus{ background: #f1f1f1;}
+      .dateSlider_month{ display: none;}
+      
+      
+    .pageTitle_h1{ float: left;}
+    
+    h1.mobile_pageTitle label{ display: none;}
+   
+    .rosterdetailTab li a b { display: none;}
+    
+    .rosterdetailTab { display: table; width: 100%;  background: #620d3f;
+    text-align: center;}
+    .rosterdetailTab   li{ width:20%; display: table-cell; float: inherit;}
+    .rosterdetailTab   li  a{     padding: 5px 10px !important;}
+    
+    .rosterdetailTab > li > a > i {    float: inherit !important;
+    display: block;
+    margin: 0 auto !important;}
+    
+    
+    i.overview {
+        background: url('../images/tab-icons.png') no-repeat left 2px !important;
+    }
+    i.station {
+        background: url('../images/tab-icons.png') no-repeat left -21px !important;
+    }
+    i.hotel {
+        background: url('../images/tab-icons.png') no-repeat left -46px !important;
+    }
+     i.crew {
+        background: url('../images/tab-icons.png') no-repeat left -71px !important;
+    }
+     i.sos {
+        background: url('../images/tab-icons.png') no-repeat left -94px !important;
+    }
+    
+    .active i.overview {
+        background: url('../images/tab-icons.png') no-repeat left -117px !important;
+    }
+   .active i.station {
+        background: url('../images/tab-icons.png') no-repeat left -142px !important;
+    }
+  .active i.hotel {
+        background: url('../images/tab-icons.png') no-repeat left -166px !important;
+    }
+    .active i.crew {
+        background: url('../images/tab-icons.png') no-repeat left -191px !important;
+    }
+    .active i.sos {
+        background: url('../images/tab-icons.png') no-repeat left -216px !important;
+    }
+    
+    
+    
+    
+    
+    .roster_date {
+        white-space: normal !important;
+    }
+    .rosterList {
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+    .roster_Data .flightRoute {
+        font-size: 14px !important;
+    }
+    
+    .roster_Data .actvRosterEvent{ }
+    
+    
+    .extra-day {
+        display: table-cell !important;
+    }
+    .extra_roster {
+        display: none;
+    }
+    .actvDate .flightRoute {} .actvDate h1 {
+        background: #5e1542 url('../images/roster_day_actv.png') repeat-x left top !important;
+        vertical-align: middle;
+        color: #fff;
+    }
+    .DeviceRosterData {
+        display: none !important;
+    }
+    .DeviceRosterData.actvDate {
+        display: table-cell !important;
+    }
+    .DeviceRosterData.actvDate h1 {
+        background: none !important;
+        color: #000;
+    }
+    
+    .info_box{ margin:0px; margin-bottom:5px;}
+    
+    
+    
+    .notif_date {
+    display: table-cell;
+    color: #093242;
+    font-size: 12px;
+    text-align: center;
+    border-right: 1px solid #b7babe;
+    white-space: nowrap;}
+    .Dept_newsList i{ display: block;}
+   
+
+ .roster-List > li {
+        display: table-row;
+        list-style: none;
+        padding: 0px 10px;
+      
+    }
+    .roster-List > li > ul > li {
+        display: table;
+        padding: 0px;
+    }
+    .roster-List > li > ul {
+        width: 100%;
+        display: table;
+        text-align: left;
+    }
+    .roster_date {
+        width: 100px;
+    }
+    .roster-List > li > ul > li > ul {
+        width: auto !important;
+    }
+    .roster-List > li > ul > li > ul > li {
+        width: 120px;
+        text-align: center;
+    }
+   
+    
+    
+    .roster_Data h1 {
+        background: none;
+        text-align: center;
+        font-size: 12px;
+        width:15%;
+        white-space: nowrap;
+        display: table-cell;
+        vertical-align: middle;
+             -webkit-box-shadow: -1px 7px 24px 0px rgba(0, 0, 0, 0.36);
+    -moz-box-shadow: -1px 7px 24px 0px rgba(0, 0, 0, 0.36);
+    box-shadow: -1px 7px 24px 0px rgba(0, 0, 0, 0.36);    
+    
+
+    }
+    .roster_Data h1 i.flight_date {
+        display: block;
+        font-size: 25px;
+        font-style: normal !important;
+    }
+    
+    .roster_off{ vertical-align:  middle; text-align: center;}
+    .close_tabCont{ display:none !important;}
+    
+.overview_info{ margin:0px;}
+
+ .catg_icon i.catg_seating_icon, .catg_icon i.catg_bed_icon, .catg_icon i.catg_dinning_icon , .catg_OtherInfo_icon{ display: none;}
+    .catg_icon ul{ display: inline-block; width: auto; margin:0px; padding:0px;}
+.catg_icon ul li{      float: left;
+    text-align: center;
+    padding: 0px 12px 5px;
+    color: #b1b1b1;
+    font-size: 11px;
+    padding-left: 0px;}  
+
+
+.gradientBG .form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.gradientBG  .form-inline .form-control {
+    
+    min-width: 80px
+    vertical-align: middle;
+}
+.gradientBG  .form-inline .input-group {
+        display: flex;
+    vertical-align: middle;
+}
+.gradientBG  .fa-calendar{ position: relative; left:-5px;}
+
+    .rosterList {
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    
+  .xs_form-inline .form-group{display: inline-flex !important;}  
+  .xs_form-inline .form-group label{    line-height: 190%;
+    margin-left: 5px;
+    margin-right: 5px;}
+    .myroster_header{
+	padding-top:10px;
+margin-left:0px;
+margin-right:0px;
+	
+	}
+	
+	.prem_FcJcmeal{ left:-11px;}
+    
+}*/
+
+/*@media (min-width: 769px){*/
+#back_calendar {
+    display: none !important;
+}
+
+.changeTimeZone {
+    display: none;
+}
+
+#changeTimeZoneHide {
+    display: block;
+}
+
+.Time_setting {
+    display: none !important;
+}
+
+.dateSlider {
+    display: none;
+}
+
+.monthly_roster_new {
+}
+
+    .monthly_roster_new .roster-List > li {
+        display: inline-block;
+        float: left;
+        width: 10%;
+        overflow: hidden;
+        min-width: inherit;
+    }
+
+
+
+
+/*}*/
+
+@media print {
+    .roster-List {
+        background: #f5f5f5;
+    }
+
+}
+
+.monthly_cont_box {
+    font-size: 12px;
+}
+
+    .monthly_cont_box h1 {
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 0px;
+    }
+
+.info_box {
+    overflow: hidden;
+    background: #fff;
+    padding: 10px;
+    min-height: 200px;
+    width:94%;
+    margin-left:-1px;
+}
+
+    .info_box h2 {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+.tble_addBorder {
+    border: 1px solid #000;
+    font-size: 12px;
+    font-family: Arial;
+    border-collapse:collapse;
+    margin-top: -20px;
+    margin-bottom: -20px;
+
+}
+
+.landscape table {
+    border-collapse:collapse;
+    padding:2px;
+    font-family:Arial !important;
+}
+.prtscHtlInfTbl{
+    margin-top:-5px;
+   
+}
+.prtscHtlInfTbl table{
+    font-size:12px;
+    font-family:Arial !important;
+}
+.landscape tr td table.tble_addBorder{
+    font-size:10px;
+}
+.landscape tr td table tr td table tr td .info_box h1{font-size:12px;}
+.backgroundgray{margin-top:5px;}
+.landscape{margin-top:-20px;font-family:Arial !important;}
+.landscape .rosterdettbprt tr td h6{margin-top:-20px;font-size:12px;}
+
+  #mainRosterTable {
+    width: 100%;
+    } 
+  .rosterdettbprt{font-family:Arial;}
+
+/*print*/
+@media print and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    .landscape {
+       
+        -ms-transform: rotate(270deg);
+       
+        -webkit-transform: rotate(270deg);
+       
+        transform: rotate(270deg);
+     
+        position: absolute;
+      
+        padding-top:30px;
+        padding-left:5px;
+        bottom:+250px;
+        float: left;
+       left:-150px;
+    }
+   
+
+    #mainRosterTable {
+    width: 125%;
+    }
+}

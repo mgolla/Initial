@@ -1,0 +1,346 @@
+﻿
+<div class="container-fluid pull-left">
+    <div class="content_wrapper Mob_margZero search_station_info" style="overflow: hidden;">
+        <div class="searcharea_bg">
+            <!--<h1 class="pull-left">Search for</h1>-->
+            <div class="searchFiled" block-ui="ipmSearchBlockUI">
+
+                <ul class="search-menu pull-left">
+                    <li>
+                        <a ng:click="model.selectedTab = 'CrewDetails'" tabindex="1" class="" ng-class="{'active': model.selectedTab == 'CrewDetails'}">
+                            <span class="iconsize1 icon-crew pull-left"></span><em>Crew Details</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a ng:click="model.selectedTab = 'SOS'" class="" tabindex="2" ng-class="{'active': model.selectedTab == 'SOS'}">
+                            <span class="iconsize1 icon-sos pull-left"></span><em>Summary of service</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a ng:click="model.selectedTab = 'StationInfo'" class="" tabindex="3" ng-class="{'active': model.selectedTab == 'StationInfo'}">
+                            <span class="iconsize1 icon-station pull-left"></span><em>Station / Hotel Info</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a ng:click="model.selectedTab = 'Documents'" class="" tabindex="4" ng-class="{'active': model.selectedTab == 'Documents'}">
+                            <span class="iconsize1 icon-documents pull-left"></span><em>Manuals</em>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--<div ng-click="onClickHideMenu()" class="ellipses-h "><i class="fa " ng-class="{'fa-chevron-circle-up' : isLoaded==true , 'fa-chevron-circle-down': isLoaded==false}" aria-hidden="true"></i></div>-->
+
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero" ng-show="model.selectedTab == 'CrewDetails'">
+            <h1 class="page-tittle">
+                Crew Details
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles searchfiled_box_wrapper ">
+
+                <!-- Row start -->
+                <div class="row">
+                    <div class="searchfiled_box form_inputs col-lg-12" block-ui="ipmSearchBlockUICrew">
+
+                        <form name="formSectors" novalidate
+                              data-ng-submit="onOpenCrewSearch()" class="">
+                            <div class="col-lg-11 col-md-11 form-outline ctrlLblAlgn">
+                                <div class="row">
+
+                                    <label for="uirequestType" class="col-lg-1 col-md-1 col-sm-3">
+                                        Sector From
+                                    </label>
+                                    <div class="col-lg-2 col-md-2 col-sm-7">
+                                        <ui-select tabindex="1000" ng-model="filter.FromSectorObj" on-select="onChangeFilters($model)">
+                                            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                            <ui-select-choices repeat="model in AirportCodeList | propsFilter: {Desc: $select.search}">
+                                                <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+
+                                    <label for="uirequestType" class="col-lg-1 col-md-1 col-sm-3">
+                                        Sector To
+                                    </label>
+                                    <div class="col-lg-2 col-md-2 col-sm-7">
+                                        <ui-select tabindex="1001" ng-model="filter.ToSectorObj">
+                                            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                            <ui-select-choices repeat="model in AirportCodeList | propsFilter: {Desc: $select.search}">
+                                                <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+
+                                            </ui-select-choices>
+                                        </ui-select>
+
+                                    </div>
+                                    <srd-datepicker srdtabindex="1003" type="text" name="filter.FromDate" label="Date" model="filter.FromDate" field-class="col-lg-2 col-md-2 col-sm-7" label-class="col-lg-1 col-md-1 col-sm-3"
+                                                    field-class="" label-class="lineght_inherit"></srd-datepicker>
+
+                                    <div class="col-lg-3 col-md-3 col-sm-12 padZero">
+                                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-5 col-xs-offset-4"  >
+
+                                            <button tabindex="1005" type="button" class="btn btn-primary pull-sm-right" ng-click="onClickLoadFlights()">Search </button>
+                                            <button tabindex="1006" type="button" class="btn btn-primary pull-sm-right" ng-click="onClickReset()">Reset </button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="noPadLeft crewDropCtrl" ng-show="FlightsCrew && FlightsCrew.length > 0">
+                                        <label for="uirequestType" class="col-lg-1 col-md-1 col-sm-3">
+                                            Flights
+                                        </label>
+                                        <div class="col-lg-2 col-md-2 col-sm-7">
+                                            <ui-select tabindex="1004" ng-model="filter.CrewFlightObj" on-select="onChangeFiltersFlightCrew($model)">
+                                                <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.FlightNumber}}</ui-select-match>
+                                                <ui-select-choices repeat="item in FlightsCrew | propsFilter: {FlightNumber: $select.search}">
+                                                    <div ng-bind-html="item.FlightNumber  | highlight: $select.search"></div>
+
+                                                </ui-select-choices>
+                                            </ui-select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <!-- Row end -->
+                <div class="row">
+                    <div class="flightAccord_tab col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-if="FlightListCrew">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    <div class=" col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                                        <i class="fa faPlane pull-left"></i>Flight {{FlightListCrew.FlightNumber}}
+                                    </div>
+                                    <div class=" col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                                        <i class="fa fasector pull-left"></i>{{FlightListCrew.Sector}}
+                                    </div>
+                                    <div class=" col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                                        <i class="fa faAriv pull-left"></i>
+                                        {{FlightListCrew.ScheduledDeptTime=filter.FromDate | date:"dd-MMM-yyyy "}}
+                                    </div>
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div name={{FlightListCrew.FlightNumber}} ng-include="'/app/ipm/partials/ipmCrewTab.html'"
+                                     ng-controller="ipm.crewInfo.controller"
+                                     ng-if="FlightListCrew" ng-init="searchParmeter=FlightListCrew">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero" ng-show="model.selectedTab == 'SOS'">
+            <h1 class="page-tittle">
+                Summary of Service
+            </h1>
+
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles searchfiled_box_wrapper">
+
+                <div class="row">
+                    <div class="searchfiled_box form_inputs col-lg-12" block-ui="ipmSearchBlockUISOS">
+
+                        <div class="col-lg-11 col-md-11 col-sm-11 form-outline col-lg-offset-right-1 col-sm-offset-right-1 ctrlLblAlgn">
+                            <div class="row">
+                                <label for="uirequestType" class="col-lg-1 col-md-1 col-sm-3">
+                                    Sector From
+                                </label>
+                                <div class="col-lg-2 col-md-2 col-sm-7">
+                                    <ui-select tabindex="1007" required="false" ng-model="filter.FromSectorObj">
+                                        <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                        <ui-select-choices repeat="model in AirportCodeList | propsFilter: {Desc: $select.search}">
+                                            <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+
+                                        </ui-select-choices>
+                                    </ui-select>
+
+                                </div>
+
+
+                                <label for="uirequestType" class="col-lg-1 col-md-1 col-sm-3">
+                                    Sector To
+                                </label>
+                                <div class="col-lg-2 col-md-2 col-sm-7">
+                                    <ui-select tabindex="1008" required="false" ng-model="filter.ToSectorObj">
+                                        <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                        <ui-select-choices repeat="model in AirportCodeList | propsFilter: {Desc: $select.search}">
+                                            <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+
+                                        </ui-select-choices>
+                                    </ui-select>
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-sm-12 padZero">
+                                    <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-5 col-xs-offset-4">
+                                        <button tabindex="1010" type="button" class="btn btn-primary pull-sm-right" ng-click="onClickLoadSOSFlights()">Load Flights </button>
+                                        <button tabindex="1011" type="button" class="btn btn-primary pull-sm-right" ng-click="onClickReset()">Reset </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="" ng-show="FlightsSOS && FlightsSOS.length > 0">
+
+                                    <label for="uirequestType" class="col-lg-1 col-md-1 col-sm-3">
+                                        Flights
+                                    </label>
+                                    <div class="col-lg-2 col-md-2 col-sm-7">
+                                        <ui-select tabindex="1009" ng-model="filter.SosFlightObj" on-select="onChangeFiltersFlightSOS($model)">
+                                            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.FlightNumber}}</ui-select-match>
+                                            <ui-select-choices repeat="item in FlightsSOS | propsFilter: {FlightNumber: $select.search}">
+                                                <div ng-bind-html="item.FlightNumber  | highlight: $select.search"></div>
+
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row end -->
+                <div class="row">
+                    <div class="flightAccord_tab col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-if="FlightListSOS">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    <div class=" col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                                        <i class="fa faPlane pull-left"></i>Flight {{FlightListSOS.FlightNumber}}
+                                    </div>
+                                    <div class=" col-lg-2 col-md-2 col-sm-6 col-xs-5">
+                                        <i class="fa fasector pull-left"></i>{{FlightListSOS.Sector}}
+                                    </div>
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div name={{FlightListSOS.FlightNumber}} ng-include="'/app/ipm/partials/ipmSOSTab.html'"
+                                     ng-controller="ipm.summaryService.controller"
+                                     ng-if="FlightListSOS != null" ng-init="searchParmeter=getPara(FlightListSOS) ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero" ng-show="model.selectedTab == 'StationInfo'">
+            <h1 class="page-tittle">
+                Station / Hotel Info
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles searchfiled_box_wrapper">
+
+                <!-- Row start -->
+                <div class="row">
+                    <div class="searchfiled_box form_inputs col-lg-5">
+                        <div block-ui="ipmSearchBlockUIStation">
+                            <form name="myFormStationss" novalidate class="">
+
+                                <!--test-->
+                                <div class="form-group col-lg-2 col-md-4 col-sm-4">
+                                    <label><b> City</b></label>
+
+                                    <ui-select tabindex="1012" required="false" ng-model="filter.ToSectorObj">
+                                        <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                        <ui-select-choices repeat="model in AirportCodeList | propsFilter: {Desc: $select.search}">
+                                            <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+                                        </ui-select-choices>
+                                    </ui-select>
+
+                                </div>
+                                <div class="form-group col-md-3 col-sm-3 padZero">
+                                    <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-4">
+                                        <label class="xs-mob-hide disp_block">&nbsp;</label>
+                                        <!--data-ng-show="myFormStationss.$valid"-->
+                                        <button tabindex="1013" type="submit" ng-click="onClickStationInoSearch()" class="btn btn-primary pull-sm-right" title="">Search </button>
+                                        <button tabindex="1014" type="button" class="btn btn-primary pull-sm-right" title="" ng-click="onClickReset()">Reset </button>
+                                    </div>
+                                </div>
+
+                            </form>
+                            <!--weather & currency-->
+                            <div class="col-lg-6 col-md-5 col-sm-12 col-xs-12 pull-right">
+                                <div class="col-lg-11 col-lg-offset-1 padZero">
+                                    <div class="  col-lg-7 col-md-7 col-sm-5 col-xs-12">
+                                        <span class="iconsize1 icon-weather pull-left" ng-if="IsLoadStation"></span>
+                                        <ng-include ng-if="IsLoadStation" src="'/app/ipm/partials/ipmWeatherInfo.html'"></ng-include>
+
+                                    </div>
+                                    <div class=" col-lg-4 col-md-4 col-sm-5 col-xs-12">
+                                        <span class="iconsize1 icon-currency pull-left" ng-if="IsLoadStation"></span>
+                                        <ng-include ng-if="IsLoadStation" src="'/app/ipm/partials/ipmCurrencyDetail.html'"></ng-include>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end-->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row end -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div id="profileTabsContents" class="profile_tabview eVRScreentabs" ng-if="IsLoadStation">
+                            <tabset class="nav nav-tabs nav-tab-evr tab-animation srchStationHotInfo">
+                                <div class="evrTabs">
+                                    <tab heading="Station Info">
+                                        <tab-heading>
+                                            <div>Station Info</div>
+                                        </tab-heading>
+                                        <div class="tab-pane fade in active">
+                                            <ng-include ng-if="IsLoadStation" src="'/app/ipm/partials/ipmStationTab.html'"></ng-include>
+                                        </div>
+                                    </tab>
+                                    <tab heading="Hotel Info">
+                                        <tab-heading>
+                                            <div>Hotel Info</div>
+                                        </tab-heading>
+                                        <div class="tab-pane fade in active" block-ui="csdGrid">
+                                            <ng-include ng-if="IsLoadStation" src="'/app/ipm/partials/ipmHotelTab.html'"></ng-include>
+                                        </div>
+                                    </tab>
+                                </div>
+                            </tabset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero" ng-show="model.selectedTab == 'Documents'">
+            <h1 class="page-tittle">
+                Documents
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles searchfiled_box_wrapper">
+
+                <ng-include ng-if="model.selectedTab == 'Documents'" src="'/app/ipm/partials/ipmSearchDocument.html'"></ng-include>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

@@ -1,0 +1,48 @@
+﻿
+
+<div id="tab-3" class="tabContent container-fluid" >
+
+    <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+        <h1 class="page-tittle">
+            Hotel Info
+        </h1>
+
+
+        <div class="col-lg-12 col-md-12 col-sm-12 station_Info gradientBG formStyles">
+            <div class="panel-body">
+                <!--<div ui-grid="grid" ui-grid-pagination class="grid searchGrid"></div>-->
+                <form name="myFormHotel" novalidate class="form-inline"
+                      data-ng-submit="onClickSearch()">
+                    <div class="form-inline">
+                        <div class="form-group col-lg-2 col-sm-12 noPadLeft-xs">
+                            <label for="uirequestType">
+                                City
+                            </label>
+                            <ui-select required ng-model="hotelInfoSearch.City" theme="select2">
+                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                <ui-select-choices repeat="model in CitiesAll | propsFilter: {Text: $select.search}">
+                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+
+
+                        </div>
+                        <div class="form-group col-lg-2 col-sm-4">
+                            <label class="xs-mob-hide disp_block">&nbsp;</label>
+                            <button type="submit" data-ng-show="myFormHotel.$valid" class="btn btn-primary pull-sm-right" title="">Search Hotel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="crewflight_info1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="container-fluid" ui-view="uiViewSearchHotelInfo">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

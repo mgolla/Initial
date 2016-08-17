@@ -1,0 +1,44 @@
+﻿<div class="col-lg-12 col-md-4 col-sm-12 col-xs-12 padZero crew_details marbottom10" block-ui="ipmCrewCareerPathBlockUI">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+
+        <div class="carPath_L">
+            <div class="carpath_R">
+                <div class="carpath_M">
+                    <div class="col-lg-1 col-sm-1 col-xs-1" ng-if="JoinedGrade != 'None'">
+                        <div class="carpath_ind"><b class="grade1">{{JoinedGrade}}</b></div>
+                        <div class="carpath_date">Joined on  <b>{{CrPthJoiningDate | ipmDateFormat}}</b></div>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-1" ng-repeat="singCareerPath in crewCareerPathViewModel" ng-switch on="singCareerPath.ToGrade">
+                        <div class="carpath_ind" ng-switch-when="F1">
+                            <b class="grade1">{{singCareerPath.ToGrade}}</b>
+                        </div>
+                        <div class="carpath_ind" ng-switch-when="F2">
+                            <b class="grade1">{{singCareerPath.ToGrade}}</b>
+                        </div>
+                        <div class="carpath_ind" ng-switch-when="CS">
+                            <b class="grade2">{{singCareerPath.ToGrade}}</b>
+                        </div>
+                        <div class="carpath_ind" ng-switch-when="CSD">
+                            <b class="grade3">{{singCareerPath.ToGrade}}</b>
+                        </div>
+                        <div class="carpath_ind" ng-switch-when="CP">
+                            <b class="grade4">{{singCareerPath.ToGrade}}</b>
+                        </div>
+                        <div class="carpath_ind" ng-switch-when="PO">
+                            <b class="grade5">{{singCareerPath.ToGrade}}</b>
+                        </div>
+                        <div class="carpath_ind" ng-switch-when="LT">
+                            <b class="grade6">{{singCareerPath.ToGrade}}</b>
+                        </div>
+                        <div class="carpath_ind" ng-switch-default>
+                            <b class="grade3">{{singCareerPath.ToGrade}}</b>
+                        </div>
+                        <div class="carpath_date"><b>{{singCareerPath.EffectiveDate | ipmDateFormat}}</b></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ae275fa3-eb28-4d78-8591-6d463b178d96" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="VRDetailsService.wsdl" MetadataType="Wsdl" ID="392acd13-5a5a-4e6e-b995-caf4f2c18ac4" SourceId="1" SourceUrl="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?wsdl" />
+    <MetadataFile FileName="VRDetailsService.xsd" MetadataType="Schema" ID="4a8a0dab-16ed-418b-b550-31299260e261" SourceId="1" SourceUrl="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="VRDetailsService1.xsd" MetadataType="Schema" ID="d44fbee4-bc91-4b16-9991-b7903d620122" SourceId="1" SourceUrl="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="VRDetailsService.disco" MetadataType="Disco" ID="18ec352e-43ea-4ece-8ced-eb8ed238a036" SourceId="1" SourceUrl="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?disco" />
+    <MetadataFile FileName="VRDetailsService2.xsd" MetadataType="Schema" ID="af47c01d-53ae-4a34-abc8-dc052bb9ce9e" SourceId="1" SourceUrl="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="VRDetailsService3.xsd" MetadataType="Schema" ID="958ceaa0-9a52-4b93-9364-4dee54b9e64a" SourceId="1" SourceUrl="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="VRDetailsService4.xsd" MetadataType="Schema" ID="91a424be-d5e9-4cb6-abb4-8e5c3cf38c7e" SourceId="1" SourceUrl="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd4" />
+    <MetadataFile FileName="VRDetailsService5.xsd" MetadataType="Schema" ID="c0b613b4-5e16-42c8-ac12-46b7d26c4811" SourceId="1" SourceUrl="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

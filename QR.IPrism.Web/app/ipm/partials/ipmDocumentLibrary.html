@@ -1,0 +1,41 @@
+﻿
+<div class="content_box padZero documentLinks_contrl extraWdth104per link-control" ng-controller="ipm.document.controller">
+    <h1 ui-sref="doclibfilemg">
+        <div class="icon-bg"></div>
+        Document Library
+    </h1>
+    <div class="tabContent " scrollbar="" id="tabContent1" block-ui="ipmfileFolderBlockUI">
+        <div class="panel-group docu_links_cntrl accordions_cabin" id="accordion">
+
+            <!-- Accordions -->
+            <div class="tabContent" id="tabContent1" block-ui="ipmdocumentBlockUI">
+                <div class="overflow_Hght_250">
+                <div class="panel-group docu_links_cntrl accordions_cabin" id="accordion">
+
+                    <div class="panel panel-default" data-ng-repeat="parentItem in documentViewModel">
+                        <div class="panel-heading">
+
+                            <h4 class="panel-title" ng-class="{'active': isDocumentSelectedTab($index)}" ng:click="onDocumentTabChange($index,parentItem)">
+                                <a>
+                                <span ng:click="onDocumentTabChange($index,parentItem)">
+                                    {{parentItem.DocumentName}} <span ng-if="parentItem.DocumentCount && parentItem.DocumentCount>0">({{parentItem.DocumentCount}})</span>
+                                </span>
+                                </a>
+                            </h4>
+                        </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

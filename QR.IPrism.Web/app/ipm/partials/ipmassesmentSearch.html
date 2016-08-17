@@ -1,0 +1,121 @@
+﻿<div class="container-fluid pull-left" ng-show="$state.current.name === 'srchasmnt'">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                Search Assessment
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero formStyles" block-ui="ipmUSAssessmentBlockUI">
+                <!--Profile-->
+                <!-- Row start -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Search Criteria
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+
+                                    <form role="form" novalidate>
+                                        <div class="col-lg-11 col-md-11 padZero Mob_padZero form-outline col-lg-offset-right-1 col-sm-offset-right-1 ctrlLblAlgn">
+                                            <div class="row">
+                                                <label for="uirequestType" class="col-lg-2 col-md-2 col-sm-3">
+                                                    Staff
+                                                </label>
+                                                <div class="col-lg-4 col-md-4 col-sm-9">
+                                                    <ui-select ng-model="model.StaffNumber" name="selBedroom"
+                                                               on-select="changeStaff($select.selected.StaffGrade)">
+                                                        <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.StaffName}}</ui-select-match>
+                                                        <ui-select-choices repeat="model.StaffNumber as  model in autoList | propsFilter: {StaffName: $select.search}"
+                                                                           refresh="refreshStaff($select.search)" refresh-delay="0">
+                                                            <div ng-bind-html="model.StaffName | highlight: $select.search"></div>
+                                                            <small>
+                                                                <strong>Grade: </strong>{{model.StaffGrade}}
+                                                            </small>
+                                                        </ui-select-choices>
+                                                    </ui-select>
+                                                </div>
+
+
+                                                <label for="uiStatus" class="col-lg-2 col-md-2 col-sm-3 ">
+                                                    Status
+                                                </label>
+                                                <div class="col-lg-4 col-md-4 col-sm-9 ">
+                                                    <ui-select ng-model="model.AssessmentStatusObj" ng-disabled="disabled" id="uiStatus">
+                                                        <ui-select-match placeholder="Select a value in the list">{{$select.selected.Text}}</ui-select-match>
+                                                        <ui-select-choices repeat="model in assmtStatusList | propsFilter: {Text: $select.search}">
+                                                            <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                        </ui-select-choices>
+                                                    </ui-select>
+                                                </div>
+
+                                                <srd-datepicker type="text" name="searchToDate" label="From Date" model="model.FromDate" required="false" id="fromdate"
+                                                                field-class="col-lg-4 col-md-4 col-sm-9" label-class="col-lg-2 col-md-2 col-sm-3 "></srd-datepicker>
+                                                <srd-datepicker type="text" name="searchFromDate" label="To Date" model="model.ToDate" required="false" id="todate"
+                                                                field-class="col-lg-4 col-md-4 col-sm-9" label-class="col-lg-2 col-md-2 col-sm-3 "></srd-datepicker>
+
+                                                <label for="uiStatus" class="col-lg-2 col-md-2 col-sm-3 ">
+                                                    Grade
+                                                </label>
+                                                <div class="col-lg-4 col-md-4 col-sm-9">
+                                                    <ui-select ng-model="model.GradeObj" ng-disabled="disabled" id="uiStatus">
+                                                        <ui-select-match placeholder="Select a value in the list">{{$select.selected.Text}}</ui-select-match>
+                                                        <ui-select-choices repeat="model in gradeList | propsFilter: {Text: $select.search}">
+                                                            <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                        </ui-select-choices>
+                                                    </ui-select>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    <div class="col-sm-12">
+                                            <div class="pull-right">
+                                                <button type="submit" class="btn btn-primary" title="" ng-click="Search()">Search</button>
+                                                <button type="submit" class="btn btn-primary" title="" ng-click="ResetSearch()">Reset</button>
+                                            </div>
+                                            </div>
+                                    </form>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Search Results <i class="pull-right"></i>
+                                </h3>
+                            </div>
+                            <div class="panel-body ">
+                                <div class="table-responsive">
+                                    <div ui-grid="grid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(grid)" class="grid searchGrid">
+                                        <div class="watermark" ng-show="!grid.data.length">No data available</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row end -->
+                <!--tabs+Accordion wrap-->
+            </div>
+            <!--Right panel-->
+        </div>
+    </div>
+</div>
+<div class="container-fluid pull-left" ui-view="srchasmntSubView"></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

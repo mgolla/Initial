@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7CA8850-1A69-44FF-8F3D-3C2774DB8F89}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QR.IPrism.EntityObjects</RootNamespace>
+    <AssemblyName>QR.IPrism.EntityObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>%24/1854_IPrism_Migration/Development/SourceCode/IPRISM/QR.IPrism/QR.IPrism.EntityObjects</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://tfs.qatarairways.com.qa:8080/tfs/cabinservcies</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Module\AssessmentBehaviourEO.cs" />
+    <Compile Include="Module\AssessmentEO.cs" />
+    <Compile Include="Module\AssessmentIDPEO.cs" />
+    <Compile Include="Module\AssessmentSearchEO.cs" />
+    <Compile Include="Module\AssessmentSearchRequestFilterEO.cs" />
+    <Compile Include="Module\BlanketEO.cs" />
+    <Compile Include="Module\BuildingEO.cs" />
+    <Compile Include="Module\CareerPathEO.cs" />
+    <Compile Include="Module\CommonRecognitionEO.cs" />
+    <Compile Include="Module\CompetencyEO.cs" />
+    <Compile Include="Module\CrewEntitlementEO.cs" />
+    <Compile Include="Module\CrewInfoEO.cs" />
+    <Compile Include="Module\CommonFilterEO.cs" />
+    <Compile Include="Module\CrewLocatorEO.cs" />
+    <Compile Include="Module\CrewRecognitionDetailsEO.cs" />
+    <Compile Include="Module\CrewRecognitionEO.cs" />
+    <Compile Include="Module\CrewRecognitionOverviewEO.cs" />
+    <Compile Include="Module\CurrencyDetailEO.cs" />
+    <Compile Include="Module\DepartmentNewsIFEGuideEO.cs" />
+    <Compile Include="Module\DestinationsVisitedEO.cs" />
+    <Compile Include="Module\DocumentEO.cs" />
+    <Compile Include="Module\DocumentFilterEO.cs" />
+    <Compile Include="Module\DutySummaryEO.cs" />
+    <Compile Include="Module\EVRCrewViewEO.cs" />
+    <Compile Include="Module\EVRDraftOutputEO.cs" />
+    <Compile Include="Module\EVRFormMainEO.cs" />
+    <Compile Include="Module\EVRInsertOutputEO.cs" />
+    <Compile Include="Module\EVRListsEO.cs" />
+    <Compile Include="Module\EVRPendingEO.cs" />
+    <Compile Include="Module\EVRRequestFilterEO.cs" />
+    <Compile Include="Module\EVRResultEO.cs" />
+    <Compile Include="Module\FileEO.cs" />
+    <Compile Include="Module\FileFilterEO.cs" />
+    <Compile Include="Module\FlightCrewsEO.cs" />
+    <Compile Include="Module\FlightDelayEO.cs" />
+    <Compile Include="Module\FlightDelayFilterEO.cs" />
+    <Compile Include="Module\FlightDetailsEO.cs" />
+    <Compile Include="Module\FlightInfoEO.cs" />
+    <Compile Include="Module\FlightLoadEO.cs" />
+    <Compile Include="Module\LocationFlightEO.cs" />
+    <Compile Include="Module\HotelInfoEO.cs" />
+    <Compile Include="Module\HotelInfoFilterEO.cs" />
+    <Compile Include="Module\HousingEO.cs" />
+    <Compile Include="Module\HousingGuestEO.cs" />
+    <Compile Include="Module\HousingMovementDetailsEO.cs" />
+    <Compile Include="Module\HousingNotificationEO.cs" />
+    <Compile Include="Module\HousingRequestFilterEO.cs" />
+    <Compile Include="Module\HousingStayOutEO.cs" />
+    <Compile Include="Module\IDPEO.cs" />
+    <Compile Include="Module\LinkEO.cs" />
+    <Compile Include="Module\LocationCrewDetailEO.cs" />
+    <Compile Include="Module\MealEO.cs" />
+    <Compile Include="Module\MyRequestEO.cs" />
+    <Compile Include="Module\MyRequestFilterEO.cs" />
+    <Compile Include="Module\NotificationAlertSVPEO.cs" />
+    <Compile Include="Module\NotificationAlertSVPFilterEO.cs" />
+    <Compile Include="Module\ObjectiveEO.cs" />
+    <Compile Include="Module\OverviewEO.cs" />
+    <Compile Include="Module\OverviewFilterEO.cs" />
+    <Compile Include="Module\QualnVisaEO.cs" />
+    <Compile Include="Module\RatingGuideLineEO.cs" />
+    <Compile Include="Module\RecognisedCrewDetailsEO.cs" />
+    <Compile Include="Module\RosterEO.cs" />
+    <Compile Include="Module\RosterFilterEO.cs" />
+    <Compile Include="Module\EVRInsertUpdateEO.cs" />
+    <Compile Include="Module\RosterViewModelEO.cs" />
+    <Compile Include="Module\SearchCrewRecognitionEO.cs" />
+    <Compile Include="Module\SearchRecognitionRequestEO.cs" />
+    <Compile Include="Module\SearchRecognitionResultEO.cs" />
+    <Compile Include="Module\SOSEO.cs" />
+    <Compile Include="Module\StaffPhoto.cs" />
+    <Compile Include="Module\StationInfoFilterEO.cs" />
+    <Compile Include="Module\SummaryOfServiceEO.cs" />
+    <Compile Include="Module\StationInfoEO.cs" />
+    <Compile Include="Module\SummaryOfServiceFilterEO.cs" />
+    <Compile Include="Module\TrainingHistoryEO.cs" />
+    <Compile Include="Module\TrainingTransportEO.cs" />
+    <Compile Include="Module\TransportTripDetailEO.cs" />
+    <Compile Include="Module\ViewVoyageReportEO.cs" />
+    <Compile Include="Module\ViewVREnterVREO.cs" />
+    <Compile Include="Module\VisionMissionEO.cs" />
+    <Compile Include="Module\EVRCommentsEO.cs" />
+    <Compile Include="Module\EVRPassengerEO.cs" />
+    <Compile Include="Module\VRActionResoultionEO.cs" />
+    <Compile Include="Module\VRIdEO.cs" />
+    <Compile Include="Module\WeatherInfoEO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\AnalyticEO.cs" />
+    <Compile Include="Shared\ClientEO.cs" />
+    <Compile Include="Shared\KeyContactsEO.cs" />
+    <Compile Include="Shared\LookupEO.cs" />
+    <Compile Include="Shared\MenuEO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\MessageEO.cs" />
+    <Compile Include="Shared\NotificationDetailsEO.cs" />
+    <Compile Include="Shared\ResponseEO.cs" />
+    <Compile Include="Shared\RoleEO.cs" />
+    <Compile Include="Shared\SearchCriteriaEO.cs" />
+    <Compile Include="Shared\UserContextEO.cs" />
+    <Compile Include="Shared\UserTokenEO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

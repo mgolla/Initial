@@ -1,0 +1,28 @@
+﻿<div ng-if="!(isTab)" ng-click="onClickVideoBackButton()">
+    <img src="/Content/css/styles/icons/close.png">Back
+
+</div>
+<div ng-if="isTab" class="tab-pane fade in active overflow_Hght_250" id="requests" block-ui="ipmmyRequestBlockUI" ng-controller="ipm.myRequest.controller">
+    <div class="notification_box noPadding" data-ng-repeat="item in myRequestViewModel">
+        <div class="notif_date">
+            {{ getDate(item.RequestedDate) }}
+        </div>
+        <div class="notif_cont">
+            <b ng-class="getClassByStatus(item.ReqestStatus )" class="approved_req pull-right">{{item.ReqestStatus }}</b>
+            <a ng-click="onSelectedChange(item)">
+                {{item.Comment }}
+            </a>
+
+            <span>{{item.RequestType }} </span>
+        </div>
+    </div>
+</div>
+<div id="AlertTabsUI" ng-show="isTab==false" ui-view="ipmAlertTabsUIView">
+
+</div> 
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

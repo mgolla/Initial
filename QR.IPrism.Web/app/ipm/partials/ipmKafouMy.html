@@ -1,0 +1,77 @@
+﻿<div class="container-fluid pull-left" block-ui="ipmKFMyBlockUI" ng-show="$state.current.name === 'kfmy'">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                Search My Kafou
+            </h1>
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles overflow_hide">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Search My Kafou
+                                </h3>
+                            </div>
+                            <div class="panel-body  mob_padLeftZero mob_padRightZero">
+                                <ng-form name="kfMy">
+
+                                    <div class="col-lg-11 col-md-11 padZero Mob_padZero form-outline col-lg-offset-1 col-md-offset-1 col-sm-offset-1 ctrlLblAlgn">
+                                        <div class="row">
+
+                                            <srd-datepicker type="text" name="model.FromDateObj" label="From Date" model="model.FromDateObj" required="false" id="fromdate" field-class="col-lg-4 col-md-4 col-sm-9 fieldfix" label-class="col-lg-1 col-md-2 col-sm-3 "></srd-datepicker>
+
+                                            <srd-datepicker type="text" name="model.ToDateObj" label="To Date" model="model.ToDateObj" required="false" id="todate"
+                                                            field-class="col-lg-4 col-md-4 col-sm-9 fieldfix" label-class="col-lg-1 col-md-2 col-sm-3 "></srd-datepicker>
+
+
+                                            <div class="col-lg-2 col-md-12">
+                                                <div class="pull-right">
+                                                    <button type="submit" class="btn btn-primary" title="" ng-click="search()">Search</button>
+                                                    <button type="submit" class="btn btn-primary" title="" ng-click="ResetKFMy()">Reset</button>
+                                                    <!--<button type="submit" class="btn btn-primary" title=""
+                            ng-click="AddColumn()">
+                        Add Column Dynamically
+                    </button>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row end -->
+                <!--<div ui-view="searchview">-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padZero">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="table-responsive dataGrid_styles">
+                                        <div ui-grid="kfmygrid" ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(kfmygrid)" class="grid searchGrid">
+                                            <div class="watermark" ng-show="!kfmygrid.data.length">No data available</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Left panel-->
+        <!--Right panel-->
+    </div>
+</div>
+
+<div id="kfaddeditfrmkfmy" ui-view="ipmkfaddedit_frmkfMy_subview"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

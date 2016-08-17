@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/QR.Framework.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/QR.Framework.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dohqdalt02.qr.qrgrp.local/QHome/Services/DCSInterfaces/FlightDetail.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ORYXQObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidationErrors" nillable="true" type="tns:ValidationError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ORYXQObject" nillable="true" type="tns:ORYXQObject" />
+  <xs:complexType name="ValidationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Properties" nillable="true" type="tns:ArrayOfProperty" />
+      <xs:element minOccurs="0" name="TypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationError" nillable="true" type="tns:ValidationError" />
+  <xs:complexType name="ArrayOfProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Property" nillable="true" type="tns:Property" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProperty" nillable="true" type="tns:ArrayOfProperty" />
+  <xs:complexType name="Property">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfError" />
+      <xs:element minOccurs="0" name="ProperyName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Property" nillable="true" type="tns:Property" />
+  <xs:complexType name="ArrayOfError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Error" nillable="true" type="tns:Error" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfError" nillable="true" type="tns:ArrayOfError" />
+  <xs:complexType name="Error">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ErrorMsgParams" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Error" nillable="true" type="tns:Error" />
+  <xs:complexType name="ArrayOfServerValidationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServerValidationError" nillable="true" type="tns:ServerValidationError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServerValidationError" nillable="true" type="tns:ArrayOfServerValidationError" />
+  <xs:complexType name="ServerValidationError">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="IsObject" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ObjectErrors" nillable="true" type="tns:ArrayOfHierarchicalError" />
+      <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServerValidationError" nillable="true" type="tns:ServerValidationError" />
+  <xs:complexType name="ArrayOfHierarchicalError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HierarchicalError" nillable="true" type="tns:HierarchicalError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHierarchicalError" nillable="true" type="tns:ArrayOfHierarchicalError" />
+  <xs:complexType name="HierarchicalError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildErrors" nillable="true" type="tns:ArrayOfHierarchicalError" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ValidationError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HierarchicalError" nillable="true" type="tns:HierarchicalError" />
+</xs:schema>

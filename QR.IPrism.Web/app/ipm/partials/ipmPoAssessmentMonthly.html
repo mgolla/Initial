@@ -1,0 +1,138 @@
+﻿<style type="text/css">
+    .content_wrapper {
+        overflow: hidden;
+    }
+</style>
+<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper mob_margzero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack('poasmnt')">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+                <span>Roster Details</span>
+            </h1>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero PoAssess_bg">
+                <!--Profile-->
+                <!-- Row start -->
+                <div class="row">
+                    <div class="yearstamp" id="roasterContent" ng-if="model.rosterViewModelPO.Range.length >0">  {{model.rosterViewModelPO.Range }} </div>
+
+                    <div class="poassesmentRosterDet">
+                        <span class="arrow-left glyphicon glyphicon-chevron-left pull-left" style="left: -18px;top:126px;" ng-click="leftClick()"></span>
+
+                        <div class="row rosterList col-lg-12 monthly_roster_new FullRoster" id="roasterContent" style="min-height:120px; left: 0px;" block-ui="ipmAsmtMonthlyBlockUI">
+                            <ul class="roster-List">
+                                <!--set-height-->
+                                <li ng-repeat="item in model.rosterViewModelPO.Rosters | slice:0:16" ng-class="{'month-fix ': isWideScreen }">
+                                    <ul>
+                                        <li class="roster_Data">
+                                            <h1 ng-click="rosterClick(item)">
+                                                <span><i class="flight_date">{{item.DutyDate.split(' ')[0]}}</i></span>
+                                                <span>{{item.DutyDate.split(' ')[1]}} {{item.DutyDate.split(' ')[2]}}</span>
+                                            </h1>
+
+                                            <div class="rooster-day parent" ng-click="rosterClick(item)">
+                                                <div class="route-info">
+                                                    <span class="flightRoute">{{item.Departure}} {{item.Arrival}}</span>
+                                                    <span class="flightNo" ng-show="item.Flight">QR {{item.Flight}} </span>
+                                                    <div class="flightNo" ng-show="item.Cc" style="border-style:none!important">
+                                                        <span>{{item.Cc}}</span>
+                                                    </div>
+                                                    <div class="" ng-show="item.Flight" style="border-style:none!important">
+                                                        <span>{{ item.StandardTimeDepartureUtc ? item.StandardTimeDepartureUtc.split(' ')[1] : '' }}</span>
+                                                    </div>
+
+                                                    <div ng-show="item.IsOnFlight">
+                                                        <i class="fa fa-arrow-right" ng-show="item.IsOnFlight"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="rooster-day" ng-repeat="itemExtra in item.Rosters" style="border-bottom-style: none !important; border-top: 1px dotted  !important" ng-click="rosterClick(itemExtra,item.Flight)">
+
+                                                <span class="flightRoute" ng-show="itemExtra.Departure">{{itemExtra.Departure}} {{itemExtra.Arrival}}</span>
+                                                <span ng-show="item.Cc && item.IsOnFlight" class="flight-icon"></span>
+                                                <span class="flightNo" ng-show="itemExtra.Flight">QR {{itemExtra.Flight}}</span>
+                                                <div ng-show="itemExtra.Flight" style="border-style:none!important">
+                                                    {{ itemExtra.StandardTimeDepartureUtc ? itemExtra.StandardTimeDepartureUtc.split(' ')[1] : '' }}
+                                                </div>
+                                                <div ng-show="itemExtra.Cc" class="rooster-day-OFF" style="border-style:none!important">
+                                                    <span>{{itemExtra.Cc}}</span>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="roster-List">
+
+                                <li ng-repeat="item in model.rosterViewModelPO.Rosters | slice:16:31" ng-class="{'month-fix ': isWideScreen }">
+                                    <ul>
+
+                                        <li class="roster_Data">
+                                            <h1 ng-click="rosterClick(item)">
+                                                <span><i class="flight_date">{{item.DutyDate.split(' ')[0]}}</i></span>
+                                                <span>{{item.DutyDate.split(' ')[1]}} {{item.DutyDate.split(' ')[2]}}</span>
+                                            </h1>
+
+                                            <div class="rooster-day" ng-click="rosterClick(item)">
+                                                <div class="route-info">
+                                                    <span class="flightRoute">{{item.Departure}}  {{item.Arrival}} </span>
+
+                                                    <span class="flightNo" ng-show="item.Flight">QR {{item.Flight}} </span>
+                                                    <div class="flightNo" ng-show="item.Cc" style="border-style:none!important">
+                                                        <span>{{item.Cc}}</span>
+                                                    </div>
+                                                    <div class="" ng-show="item.Flight" style="border-style:none!important">
+                                                        <span>{{ item.StandardTimeDepartureUtc ? item.StandardTimeDepartureUtc.split(' ')[1] : ''}}</span>
+                                                    </div>
+
+                                                    <div ng-show="item.IsOnFlight">
+                                                        <i class="fa fa-arrow-right" ng-show="item.IsOnFlight"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="rooster-day" ng-repeat="itemExtra in item.Rosters" style="border-bottom-style: none !important; border-top: 1px dotted  !important" ng-click="rosterClick(itemExtra,item.Flight)">
+
+                                                <span class="flightRoute" ng-show="itemExtra.Departure">{{itemExtra.Departure}} {{itemExtra.Arrival}}</span>
+                                                <span ng-show="item.Cc && item.IsOnFlight" class="flight-icon"></span>
+                                                <span class="flightRoute" ng-show="itemExtra.Departure"></span>
+                                                <span class="flightNo" ng-show="itemExtra.Flight">QR {{itemExtra.Flight}}</span>
+                                                <div ng-show="itemExtra.Flight">
+                                                    {{ itemExtra.StandardTimeDepartureUtc ? itemExtra.StandardTimeDepartureUtc.split(' ')[1] : '' }}
+                                                </div>
+                                                <div ng-show="itemExtra.Cc" class="rooster-day-OFF" style="border-style:none!important">
+                                                    <span>{{itemExtra.Cc}}</span>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="txtRight  col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <button type="button" class="btn btn-primary" title="back to previous page" ng-click="goBack('poasmnt')">Back</button>
+                            </div>
+                        </div>
+                        <span class="arrow-right glyphicon glyphicon-chevron-right" style="left: 98%;top:136px;position:absolute;" ng-click="rightClick()"></span>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

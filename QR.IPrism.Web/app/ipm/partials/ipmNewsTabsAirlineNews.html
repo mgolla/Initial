@@ -1,0 +1,119 @@
+﻿
+<div class="tab-pane fade in active overflow_Hght_250 sm_inerWPCont" id="mnthNews" block-ui="ipmairlineNewsBlockUI" ng-controller="AppCtrl">
+    <ul class="mobileheader nav nav-tabs mob-hide">
+        <li class="active"><a data-toggle="tab"> Airline News</a></li>
+    </ul>
+    <div class="mobile-header-control">
+        <h1>
+            Airline News
+        </h1>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 departmentNews padZero mob_webpart">
+        <!--<div class="Dept_newsPic col-lg-4 col-md-4 col-sm-12">
+            <img ng-if="(!isNullOrEmpty(selectedDepartmentNewsIFEGuide.ThumbImage))" ng-src="data:image/{{selectedDepartmentNewsIFEGuide.ImageType}};base64,{{selectedDepartmentNewsIFEGuide.ThumbImage}}" /><br />
+            <a ng-if="(!isNullOrEmpty(selectedDepartmentNewsIFEGuide.NewstTitle))">{{selectedDepartmentNewsIFEGuide.NewstTitle }}</a>
+        </div>
+        <div class="Dept_newsList col-lg-8 col-md-8 col-sm-12">
+            <ul>
+                <li class="current" data-ng-repeat="item in departmentNewsIFEGuideViewModel">
+                    <a ng-click="onDepNSelectedChange(item)">{{item.NewstTitle }}</a> | <i>
+                        Posted on {{item.ValidFrom }}
+                    </i>
+                </li>
+
+            </ul>
+        </div>-->
+        <!--<div id="topNav">
+            <div id="aboutInfo" class="pull-right">
+                <div class="dropdown">
+                    <a id="dropInfo" role="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">About</a>
+                    <div class="dropdown-menu small" aria-labelledby="dropInfo">
+                        <p>Media RSS demo using <a href="http://angularjs.org/" target="_blank">AngularJS</a>, <a href="https://developers.google.com/feed/" target="_blank">Google Feeds API</a>, <a href="http://jquery.com/" target="_blank">jQuery</a> and <a href="http://twitter.github.io/bootstrap/" target="_blank">Twitter bootstrap</a>.</p>
+
+                        <p class="pull-right">
+                            <a href="http://www.wingo.com/angular/rss_demo/" target="_blank">full screen</a><br>
+                            <em>by <a href="http://www.wingo.com/services.html" title="wingo.com">Joseph Oster</a>, April 2013</em><br>
+                            <a href="http://www.wingo.com/services.html" title="wingo.com Web Site Design"><img src="http://www.wingo.com/images/wsb.gif" width="111" height="40" alt="wingo.com Web Site Design" /></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#/choose_feed" class="btn btn-primary pull-right btnPadR" ng-show="ifPathNot('/choose_feed')"><i class="foundicon-edit"></i> change feed</a>
+            <a href="#/" class="btn btn-primary pull-right btnPadR" ng-show="ifPathNot('/')"><i class="foundicon-left-arrow"></i> list</a>
+        </div>-->
+
+
+
+
+        <div id="veil" ng-show="isLoading"></div>
+        <div id="feedLoading" ng-show="isLoading">Loading...</div>
+
+
+        <script type="text/ng-template" id="list_view.html">
+            <div ng-controller="ListCtrl" class="newsListctrl">
+                <h1 ng-cloak><a href="{{feed_result.link}}" target="_blank" ng-bind-html="feed_result.title"></a></h1>
+
+                <p ng-cloak>{{feed_result.description}}</p>
+
+                <div class="list_news" ng-repeat="entry in feed_result.entries" list-done="layoutDone()" ng-cloak>
+                    <!--ng-click="viewDetail(entry)"-->
+                    <a class="pull-left rssThumb" title="view detail" data-toggle="tooltip"><img ng-repeat="thumbnail in mediaOne(entry).thumbnails" ng-src="{{thumbnail.url}}"></a>
+
+                    <!--<a href="{{entry.link}}" target="_blank" title="view at {{feed_result.viewAt}}" data-toggle="tooltip" data-placement="left" class="btn btn-primary pull-right" style="margin: 0 0 5px 10px">View at...</a>-->
+
+                    <h4><a href="" ng-click="viewDetail(entry)" title="view detail" data-toggle="tooltip">{{entry.title}}</a></h4>
+
+                    <p ng-bind-html="entry.contentSnippet"></p>
+
+                    <p class="muted">
+                        Posted: {{entry.publishedDate}} -
+                        <span class="label label-info" ng-repeat="category in entry.categories">{{category}}</span>
+                    </p>
+                </div>
+            </div>
+        </script>
+
+
+        <script type="text/ng-template" id="detail_view.html">
+            <div ng-controller="DetailCtrl">
+                <h3 class="lead">{{currEntry.title}}</h3>
+
+                <div id="vidTagAlert" class="alert alert-error">
+                    <button type="button" class="close" id="btnTagAlert">&times;</button>
+                    <strong>FAIL!</strong> The HTML5 &lt;video&gt; tag does not support .mp4 videos in Chrome and Firefox. Use Internet Explorer or Safari to watch these videos.
+                </div>
+
+                <video id="vPlayer" src="{{mediaOne(currEntry).url}}" controls autoplay ng-show="hasVideo(currEntry)"></video>
+
+                <div class="well well-small">
+                    <p ng-bind-html="currEntry.content"></p>
+
+                    <p class="muted">Posted: {{currEntry.publishedDate}} - <a href="{{currEntry.link}}" target="_blank" class="text-info" ng-click="videoStop()">view at {{feed_result.viewAt}}</a></p>
+                </div>
+            </div>
+        </script>
+
+
+        <script type="text/ng-template" id="choose_feed.html">
+            <div ng-controller="FeedCtrl">
+                <h1>Choose RSS Feed</h1>
+
+                <div class="changeList">
+                    <div class="input-prepend">
+                        <a ng-click="addFeed()" class="btn btn-primary add-on"><i class="foundicon-plus"></i> Add feed</a>
+                        <input type="text" id="inputFeed" ng-model="newFeedUrl" placeholder="new feed url" on-enter="addFeed()">
+                    </div>
+
+                    <div class="btn-group btn-block" ng-repeat="feed in feedList" list-done="layoutDone()">
+                        <a ng-click="chooseFeed($index)" class="btn">{{feed | strip_http}}</a>
+                        <a ng-click="removeFeed($index)" class="btn btn-danger" title="Remove feed" data-toggle="tooltip"><i class="foundicon-remove"></i></a>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <span ng-include="'list_view.html'"></span>
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+D:\CREW\WorkSpace\Development\SourceCode\QR.IPrism\QR.IPrism.Models\bin\Debug\QR.IPrism.Models.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.IPrism\QR.IPrism.Models\bin\Debug\QR.IPrism.Models.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.csprojResolveAssemblyReference.cache
+D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Models\bin\Debug\QR.IPrism.Models.dll
+D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Models\bin\Debug\QR.IPrism.Models.pdb
+D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.dll
+D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.pdb
+D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.csprojResolveAssemblyReference.cache
+D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Models\bin\Debug\QR.IPrism.Models.dll
+D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Models\bin\Debug\QR.IPrism.Models.pdb
+D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.csprojResolveAssemblyReference.cache
+D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.dll
+D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.pdb

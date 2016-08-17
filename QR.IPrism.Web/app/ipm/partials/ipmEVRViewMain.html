@@ -1,0 +1,50 @@
+﻿<div id="profileTabsContents" class="profile_tabview eVRScreentabs evrFltVwVog" ng-show="$state.current.name === 'evrlstsState.evrviewState'">
+    <h1 class="page-tittle">
+        <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack('evrlstsState')">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
+        </button>
+        <span>Flight Details / eVR</span>
+    </h1>
+    <tabset class="nav nav-tabs nav-tab-evr tab-animation">
+        <div class="evrTabs">
+            <tab class="paddbot50" heading="Flight Details" select="onEvrMainTabChange('evrFltDetails')">
+                <tab-heading>
+                    <div>Flight Details</div>
+                </tab-heading>
+                <div class="tab-pane fade in active">
+                    <div ng-include="'/app/ipm/partials/ipmFlightDelayEnterTabDetails.html'" ng-controller="ipm.flightDetails.controller">
+                    </div>
+                </div>
+            </tab>
+            <tab heading="View Voyage Report" select="onEvrMainTabChange('evrVgReport')">
+                <tab-heading>
+                    <div>View Voyage Report</div>
+                </tab-heading>
+                <div class="tab-pane fade in active">
+                    <div ng-include="'/app/ipm/partials/ipmEVRSubmitted.html'" ng-controller="ipm.evrsubmitted.controller">
+                    </div>
+                </div>
+            </tab>
+
+        </div>
+    </tabset>
+</div>
+<div ng-show="$state.current.name === 'evrlstsState.evrviewState.view'" ng-class="eVRScreentabs">
+    <h1 class="page-tittle">
+        <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack('evrlstsState.evrviewState')">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+        </button>
+        <span>Flight Details / eVR / Voyage Report</span>
+    </h1>
+</div>
+<div id="vrdetailsId" ui-view="ipmVRDetailsUIView" ng-show="$state.current.name === 'evrlstsState.evrviewState.view'">
+</div>
+<!--<div class="txtRight col-lg-12 col-md-12 col-sm-12 vwvogbackbtn" style="position: static;" ng-show="$state.current.name === 'evrviewState.details'">
+    <button type="submit" class="btn btn-primary" ng-click="goBack('evrlstsState')">Back</button>
+</div>-->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

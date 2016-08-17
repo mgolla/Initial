@@ -1,0 +1,110 @@
+﻿<!--This is integration of housing-->
+
+<div class="container-fluid pull-left" ng-show="$state.current.name === 'housing'">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper mob_margzero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                Housing Requests
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles mob-overflowhid">
+                <!--Profile-->
+                <!-- Row start -->
+                <div class="row">
+                    <!--<div class="add_plus_btn">
+                        <button type="submit" class="btn btn-primary" title="" >
+                            +
+                        </button>
+                    </div>-->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Search Request
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <form class="" role="form" novalidate>
+
+                                    <div class="col-lg-11 col-md-11 padZero Mob_padZero form-outline col-lg-offset-right-1 col-sm-offset-right-1 ctrlLblAlgn">
+                                        <!--row fix-->
+                                        <div class="row ">
+
+
+                                            <label for="uirequestType" class="col-lg-2 col-md-2 col-sm-3">
+                                                <b>Request Type</b>
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 srd-select">
+                                                <ui-select ng-model="housing.RequestTypeObj">
+                                                    <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in requestList | propsFilter: {Text: $select.search}">
+                                                        <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+                                            <label for="uirequestType" class="col-lg-2 col-md-2 col-sm-3">
+                                                <b>Status</b>
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 srd-select">
+                                                <ui-select ng-model="housing.StatusObj">
+                                                    <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in statusList | propsFilter: {Text: $select.search}">
+                                                        <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+                                            <srd-datepicker type="text" name="housing.searchToDate" label="From Date" model="FromDate" required="false" id="fromdate"
+                                                            field-class="col-lg-4 col-md-4 col-sm-9" label-class="col-lg-2 col-md-2 col-sm-3"></srd-datepicker>
+                                            <srd-datepicker type="text" name="housing.searchFromDate" label="To Date" model="ToDate" required="false" id="todate"
+                                                            field-class="col-lg-4 col-md-4 col-sm-9" label-class="col-lg-2 col-md-2 col-sm-3"></srd-datepicker>
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-12 padZero">
+                                        <div class="pull-right">
+                                            <button type="submit" class="btn btn-primary " title="" ng-click="search()">Search</button>
+                                            <button type="submit" class="btn btn-primary " title="" ng-click="reset()">Reset</button>
+                                            <button type="submit" class="btn btn-primary " title="" ui-sref="housing-create">Create</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row end -->
+                <!--<div ui-view="searchview">-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padZero">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="table-responsive dataGrid_styles" block-ui="ipmhousingBlockUI">
+                                        <div ui-grid="grid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(grid)" class="grid searchGrid">
+                                            <div class="watermark" ng-show="!grid.data.length">No data available</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pull-left" ui-view="hosuingDetailsView"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

@@ -1,0 +1,1882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects.IVRS" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects.IVRS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="VRId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrInstanceId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRId" nillable="true" type="tns:VRId" />
+  <xs:complexType name="ViewVRCrew">
+    <xs:sequence>
+      <xs:element name="ActArrTime" type="xs:dateTime" />
+      <xs:element name="ActDeptTime" type="xs:dateTime" />
+      <xs:element name="Action" nillable="true" type="xs:string" />
+      <xs:element name="AirCraftRegNo" nillable="true" type="xs:string" />
+      <xs:element name="AirCraftType" nillable="true" type="xs:string" />
+      <xs:element name="CSDCSBriefedComment" nillable="true" type="xs:string" />
+      <xs:element name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element name="CrewComments" nillable="true" type="xs:string" />
+      <xs:element name="CrewCount" nillable="true" type="xs:string" />
+      <xs:element name="Facts" nillable="true" type="xs:string" />
+      <xs:element name="FirstName" nillable="true" type="xs:string" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="FlightRoute" nillable="true" type="xs:string" />
+      <xs:element name="Grade" nillable="true" type="xs:string" />
+      <xs:element name="GroomingCheckComment" nillable="true" type="xs:string" />
+      <xs:element name="InfantLoadFC" type="xs:int" />
+      <xs:element name="InfantLoadJC" type="xs:int" />
+      <xs:element name="InfantLoadYC" type="xs:int" />
+      <xs:element name="IsCSDCSBriefed" nillable="true" type="xs:string" />
+      <xs:element name="IsCSR" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassFC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassJC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassYC" nillable="true" type="xs:string" />
+      <xs:element name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFerry" type="xs:boolean" />
+      <xs:element name="IsFromAIMS" nillable="true" type="xs:string" />
+      <xs:element name="IsGroominCheck" nillable="true" type="xs:string" />
+      <xs:element name="IsManuallyEntered" nillable="true" type="xs:string" />
+      <xs:element name="IsNew" nillable="true" type="xs:string" />
+      <xs:element name="IsOHS" nillable="true" type="xs:string" />
+      <xs:element name="IsPO" nillable="true" type="xs:string" />
+      <xs:element name="LastName" nillable="true" type="xs:string" />
+      <xs:element name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element name="PassengerLoadFC" type="xs:int" />
+      <xs:element name="PassengerLoadJC" type="xs:int" />
+      <xs:element name="PassengerLoadYC" type="xs:int" />
+      <xs:element name="ReportAboutName" nillable="true" type="xs:string" />
+      <xs:element name="Result" nillable="true" type="xs:string" />
+      <xs:element name="SeatCapacityFC" type="xs:int" />
+      <xs:element name="SeatCapacityJC" type="xs:int" />
+      <xs:element name="SeatCapacityYC" type="xs:int" />
+      <xs:element name="SectorFrom" nillable="true" type="xs:string" />
+      <xs:element name="SectorTo" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryName" nillable="true" type="xs:string" />
+      <xs:element name="VRAllCrewDetail" nillable="true" type="tns:ArrayOfVRCrewDetail" />
+      <xs:element name="VRCrewDetail" nillable="true" type="tns:ArrayOfVRCrewDetail" />
+      <xs:element name="VRDeptDetail" nillable="true" type="tns:ArrayOfVRDeptDetail" />
+      <xs:element name="VRDocumentDetail" nillable="true" type="tns:ArrayOfVRDocumentDetail" />
+      <xs:element name="VRPassengerDetail" nillable="true" type="tns:ArrayOfVRPassengerDetail" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+      <xs:element name="vrAtDeptList" nillable="true" type="tns:ArrayOfVRActionResolution" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewVRCrew" nillable="true" type="tns:ViewVRCrew" />
+  <xs:complexType name="ArrayOfVRCrewDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRCrewDetail" nillable="true" type="tns:VRCrewDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRCrewDetail" nillable="true" type="tns:ArrayOfVRCrewDetail" />
+  <xs:complexType name="VRCrewDetail">
+    <xs:sequence>
+      <xs:element name="AnnouncementLanguage" nillable="true" type="xs:string" />
+      <xs:element name="CrewPosition" nillable="true" type="xs:string" />
+      <xs:element name="Grade" nillable="true" type="xs:string" />
+      <xs:element name="IsActingCSD" nillable="true" type="xs:string" />
+      <xs:element name="StaffName" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRCrewDetail" nillable="true" type="tns:VRCrewDetail" />
+  <xs:complexType name="ArrayOfVRDeptDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRDeptDetail" nillable="true" type="tns:VRDeptDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRDeptDetail" nillable="true" type="tns:ArrayOfVRDeptDetail" />
+  <xs:complexType name="VRDeptDetail">
+    <xs:sequence>
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="DeptName" nillable="true" type="xs:string" />
+      <xs:element name="DeptType" nillable="true" type="xs:string" />
+      <xs:element name="SectionId" nillable="true" type="xs:string" />
+      <xs:element name="SectionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDeptDetail" nillable="true" type="tns:VRDeptDetail" />
+  <xs:complexType name="ArrayOfVRDocumentDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRDocumentDetail" nillable="true" type="tns:VRDocumentDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRDocumentDetail" nillable="true" type="tns:ArrayOfVRDocumentDetail" />
+  <xs:complexType name="VRDocumentDetail">
+    <xs:sequence>
+      <xs:element name="VrDocContent" nillable="true" type="xs:base64Binary" />
+      <xs:element name="VrDocId" nillable="true" type="xs:string" />
+      <xs:element name="VrDocName" nillable="true" type="xs:string" />
+      <xs:element name="VrDocPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDocumentDetail" nillable="true" type="tns:VRDocumentDetail" />
+  <xs:complexType name="ArrayOfVRPassengerDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRPassengerDetail" nillable="true" type="tns:VRPassengerDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRPassengerDetail" nillable="true" type="tns:ArrayOfVRPassengerDetail" />
+  <xs:complexType name="VRPassengerDetail">
+    <xs:sequence>
+      <xs:element name="FFPNumber" nillable="true" type="xs:string" />
+      <xs:element name="PassengerName" nillable="true" type="xs:string" />
+      <xs:element name="SeatNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRPassengerDetail" nillable="true" type="tns:VRPassengerDetail" />
+  <xs:complexType name="ArrayOfVRActionResolution">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRActionResolution" nillable="true" type="tns:VRActionResolution" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRActionResolution" nillable="true" type="tns:ArrayOfVRActionResolution" />
+  <xs:complexType name="VRActionResolution">
+    <xs:sequence>
+      <xs:element name="Comment" nillable="true" type="xs:string" />
+      <xs:element name="CommentDate" type="xs:dateTime" />
+      <xs:element name="DepartmentName" nillable="true" type="xs:string" />
+      <xs:element name="DeptCode" nillable="true" type="xs:string" />
+      <xs:element name="DeptID" nillable="true" type="xs:string" />
+      <xs:element name="StaffName" nillable="true" type="xs:string" />
+      <xs:element name="VRId" nillable="true" type="xs:string" />
+      <xs:element name="VRNo" type="xs:int" />
+      <xs:element name="VrAtDeptID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRActionResolution" nillable="true" type="tns:VRActionResolution" />
+  <xs:complexType name="ViewVREnterVR">
+    <xs:sequence>
+      <xs:element name="Action" nillable="true" type="xs:string" />
+      <xs:element name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element name="Comments" nillable="true" type="xs:string" />
+      <xs:element name="Facts" nillable="true" type="xs:string" />
+      <xs:element name="FirstName" nillable="true" type="xs:string" />
+      <xs:element name="Grade" nillable="true" type="xs:string" />
+      <xs:element name="IsCSR" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassFC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassJC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassNA" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassYC" nillable="true" type="xs:string" />
+      <xs:element name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element name="IsInfoVr" nillable="true" type="xs:string" />
+      <xs:element name="IsNew" nillable="true" type="xs:string" />
+      <xs:element name="IsNotIfNotReq" nillable="true" type="xs:string" />
+      <xs:element name="IsOHS" nillable="true" type="xs:string" />
+      <xs:element name="IsPO" nillable="true" type="xs:string" />
+      <xs:element name="IsVrRestricted" nillable="true" type="xs:string" />
+      <xs:element name="LastName" nillable="true" type="xs:string" />
+      <xs:element name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutID" nillable="true" type="xs:string" />
+      <xs:element name="Result" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryId" nillable="true" type="xs:string" />
+      <xs:element name="VRCrewEnterVR" nillable="true" type="tns:ArrayOfVRCrewEnterVR" />
+      <xs:element name="VRDeptEnterVR" nillable="true" type="tns:ArrayOfVRDeptEnterVR" />
+      <xs:element name="VRDocEnterVR" nillable="true" type="tns:ArrayOfVRDocument" />
+      <xs:element name="VRPassengerEnterVR" nillable="true" type="tns:ArrayOfVRPassengers" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewVREnterVR" nillable="true" type="tns:ViewVREnterVR" />
+  <xs:complexType name="ArrayOfVRCrewEnterVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRCrewEnterVR" nillable="true" type="tns:VRCrewEnterVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRCrewEnterVR" nillable="true" type="tns:ArrayOfVRCrewEnterVR" />
+  <xs:complexType name="VRCrewEnterVR">
+    <xs:sequence>
+      <xs:element name="CrewDetailsId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRCrewEnterVR" nillable="true" type="tns:VRCrewEnterVR" />
+  <xs:complexType name="ArrayOfVRDeptEnterVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRDeptEnterVR" nillable="true" type="tns:VRDeptEnterVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRDeptEnterVR" nillable="true" type="tns:ArrayOfVRDeptEnterVR" />
+  <xs:complexType name="VRDeptEnterVR">
+    <xs:sequence>
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="DeptNameCode" nillable="true" type="xs:string" />
+      <xs:element name="IsActive" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDeptEnterVR" nillable="true" type="tns:VRDeptEnterVR" />
+  <xs:complexType name="ArrayOfVRDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRDocument" nillable="true" type="tns:VRDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRDocument" nillable="true" type="tns:ArrayOfVRDocument" />
+  <xs:complexType name="VRDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrDocContent" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="VrDocId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrDocName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrDocPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDocument" nillable="true" type="tns:VRDocument" />
+  <xs:complexType name="ArrayOfVRPassengers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRPassengers" nillable="true" type="tns:VRPassengers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRPassengers" nillable="true" type="tns:ArrayOfVRPassengers" />
+  <xs:complexType name="VRPassengers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FFPNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PassengerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SeatNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrPassengerId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRPassengers" nillable="true" type="tns:VRPassengers" />
+  <xs:complexType name="VRDept">
+    <xs:sequence>
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDept" nillable="true" type="tns:VRDept" />
+  <xs:complexType name="ViewVRActionVR">
+    <xs:sequence>
+      <xs:element name="ActArrTime" type="xs:dateTime" />
+      <xs:element name="ActDeptTime" type="xs:dateTime" />
+      <xs:element name="Action" nillable="true" type="xs:string" />
+      <xs:element name="AirCraftRegNo" nillable="true" type="xs:string" />
+      <xs:element name="AirCraftType" nillable="true" type="xs:string" />
+      <xs:element name="AllocatedDate" type="xs:dateTime" />
+      <xs:element name="CSDCSBriefedComment" nillable="true" type="xs:string" />
+      <xs:element name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element name="CrewComments" nillable="true" type="xs:string" />
+      <xs:element name="CrewCount" nillable="true" type="xs:string" />
+      <xs:element name="DeptComments" nillable="true" type="xs:string" />
+      <xs:element name="Facts" nillable="true" type="xs:string" />
+      <xs:element name="FirstName" nillable="true" type="xs:string" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="FlightRoute" nillable="true" type="xs:string" />
+      <xs:element name="Grade" nillable="true" type="xs:string" />
+      <xs:element name="GroomingCheckComment" nillable="true" type="xs:string" />
+      <xs:element name="InfantLoadFC" type="xs:int" />
+      <xs:element name="InfantLoadJC" type="xs:int" />
+      <xs:element name="InfantLoadYC" type="xs:int" />
+      <xs:element name="IsCSDCSBriefed" nillable="true" type="xs:string" />
+      <xs:element name="IsCSR" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassFC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassJC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassNA" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassYC" nillable="true" type="xs:string" />
+      <xs:element name="IsCmmtsShownToCSD" nillable="true" type="xs:string" />
+      <xs:element name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFerry" type="xs:boolean" />
+      <xs:element name="IsFromAIMS" nillable="true" type="xs:string" />
+      <xs:element name="IsGroominCheck" nillable="true" type="xs:string" />
+      <xs:element name="IsManuallyEntered" nillable="true" type="xs:string" />
+      <xs:element name="IsNew" nillable="true" type="xs:string" />
+      <xs:element name="IsOHS" nillable="true" type="xs:string" />
+      <xs:element name="IsPO" nillable="true" type="xs:string" />
+      <xs:element name="LastName" nillable="true" type="xs:string" />
+      <xs:element name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element name="PassengerLoadFC" type="xs:int" />
+      <xs:element name="PassengerLoadJC" type="xs:int" />
+      <xs:element name="PassengerLoadYC" type="xs:int" />
+      <xs:element name="ReportAboutName" nillable="true" type="xs:string" />
+      <xs:element name="Result" nillable="true" type="xs:string" />
+      <xs:element name="SchArrTime" type="xs:dateTime" />
+      <xs:element name="SchDptTime" type="xs:dateTime" />
+      <xs:element name="SeatCapacityFC" type="xs:int" />
+      <xs:element name="SeatCapacityJC" type="xs:int" />
+      <xs:element name="SeatCapacityYC" type="xs:int" />
+      <xs:element name="SectorFrom" nillable="true" type="xs:string" />
+      <xs:element name="SectorTo" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryName" nillable="true" type="xs:string" />
+      <xs:element name="VRAllCrewActionVR" nillable="true" type="tns:ArrayOfVRCrewActionVR" />
+      <xs:element name="VRAssgdDeptActionVR" nillable="true" type="tns:ArrayOfVRAssgdDeptActionVR" />
+      <xs:element name="VRAtDeptActionVR" nillable="true" type="tns:VRAtDeptActionVR" />
+      <xs:element name="VRAvailDeptActionVR" nillable="true" type="tns:ArrayOfVRDeptActionVR" />
+      <xs:element name="VRCommentsHist" nillable="true" type="tns:ArrayOfVRCommentsHist" />
+      <xs:element name="VRCrewActionVR" nillable="true" type="tns:ArrayOfVRCrewActionVR" />
+      <xs:element name="VRDocActionVR" nillable="true" type="tns:ArrayOfVRDocActionVR" />
+      <xs:element name="VRPassengerActionVR" nillable="true" type="tns:ArrayOfVRPassengerActionVR" />
+      <xs:element name="VRRestdDeptActionVR" nillable="true" type="tns:ArrayOfVRDeptActionVR" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewVRActionVR" nillable="true" type="tns:ViewVRActionVR" />
+  <xs:complexType name="ArrayOfVRCrewActionVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRCrewActionVR" nillable="true" type="tns:VRCrewActionVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRCrewActionVR" nillable="true" type="tns:ArrayOfVRCrewActionVR" />
+  <xs:complexType name="VRCrewActionVR">
+    <xs:sequence>
+      <xs:element name="AnnouncementLanguage" nillable="true" type="xs:string" />
+      <xs:element name="CrewPosition" nillable="true" type="xs:string" />
+      <xs:element name="Grade" nillable="true" type="xs:string" />
+      <xs:element name="IsActingCSD" nillable="true" type="xs:string" />
+      <xs:element name="StaffName" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRCrewActionVR" nillable="true" type="tns:VRCrewActionVR" />
+  <xs:complexType name="ArrayOfVRAssgdDeptActionVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRAssgdDeptActionVR" nillable="true" type="tns:VRAssgdDeptActionVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRAssgdDeptActionVR" nillable="true" type="tns:ArrayOfVRAssgdDeptActionVR" />
+  <xs:complexType name="VRAssgdDeptActionVR">
+    <xs:sequence>
+      <xs:element name="DeptCode" nillable="true" type="xs:string" />
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="DeptName" nillable="true" type="xs:string" />
+      <xs:element name="DeptType" nillable="true" type="xs:string" />
+      <xs:element name="SectionId" nillable="true" type="xs:string" />
+      <xs:element name="SectionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRAssgdDeptActionVR" nillable="true" type="tns:VRAssgdDeptActionVR" />
+  <xs:complexType name="VRAtDeptActionVR">
+    <xs:sequence>
+      <xs:element name="AllocatedDate" type="xs:dateTime" />
+      <xs:element name="Comments" nillable="true" type="xs:string" />
+      <xs:element name="IsCmmtsShownToCSD" nillable="true" type="xs:string" />
+      <xs:element name="IsReAssigned" nillable="true" type="xs:string" />
+      <xs:element name="Isdraft" nillable="true" type="xs:string" />
+      <xs:element name="ModifiedDate" type="xs:dateTime" />
+      <xs:element name="RejectReasonDesc" nillable="true" type="xs:string" />
+      <xs:element name="VrAtDeptId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRAtDeptActionVR" nillable="true" type="tns:VRAtDeptActionVR" />
+  <xs:complexType name="ArrayOfVRDeptActionVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRDeptActionVR" nillable="true" type="tns:VRDeptActionVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRDeptActionVR" nillable="true" type="tns:ArrayOfVRDeptActionVR" />
+  <xs:complexType name="VRDeptActionVR">
+    <xs:sequence>
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="DeptName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDeptActionVR" nillable="true" type="tns:VRDeptActionVR" />
+  <xs:complexType name="ArrayOfVRCommentsHist">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRCommentsHist" nillable="true" type="tns:VRCommentsHist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRCommentsHist" nillable="true" type="tns:ArrayOfVRCommentsHist" />
+  <xs:complexType name="VRCommentsHist">
+    <xs:sequence>
+      <xs:element name="Comments" nillable="true" type="xs:string" />
+      <xs:element name="DeptCode" nillable="true" type="xs:string" />
+      <xs:element name="FirstName" nillable="true" type="xs:string" />
+      <xs:element name="LastName" nillable="true" type="xs:string" />
+      <xs:element name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element name="ModifiedDate" type="xs:dateTime" />
+      <xs:element name="VratDeptId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRCommentsHist" nillable="true" type="tns:VRCommentsHist" />
+  <xs:complexType name="ArrayOfVRDocActionVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRDocActionVR" nillable="true" type="tns:VRDocActionVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRDocActionVR" nillable="true" type="tns:ArrayOfVRDocActionVR" />
+  <xs:complexType name="VRDocActionVR">
+    <xs:sequence>
+      <xs:element name="VrDocContent" nillable="true" type="xs:base64Binary" />
+      <xs:element name="VrDocId" nillable="true" type="xs:string" />
+      <xs:element name="VrDocName" nillable="true" type="xs:string" />
+      <xs:element name="VrDocPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDocActionVR" nillable="true" type="tns:VRDocActionVR" />
+  <xs:complexType name="ArrayOfVRPassengerActionVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRPassengerActionVR" nillable="true" type="tns:VRPassengerActionVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRPassengerActionVR" nillable="true" type="tns:ArrayOfVRPassengerActionVR" />
+  <xs:complexType name="VRPassengerActionVR">
+    <xs:sequence>
+      <xs:element name="FFPNumber" nillable="true" type="xs:string" />
+      <xs:element name="PassengerName" nillable="true" type="xs:string" />
+      <xs:element name="SeatNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRPassengerActionVR" nillable="true" type="tns:VRPassengerActionVR" />
+  <xs:complexType name="ViewVRAssignVR">
+    <xs:sequence>
+      <xs:element name="ActArrTime" type="xs:dateTime" />
+      <xs:element name="ActDeptTime" type="xs:dateTime" />
+      <xs:element name="Action" nillable="true" type="xs:string" />
+      <xs:element name="AirCraftRegNo" nillable="true" type="xs:string" />
+      <xs:element name="AirCraftType" nillable="true" type="xs:string" />
+      <xs:element name="CSDCSBriefedComment" nillable="true" type="xs:string" />
+      <xs:element name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element name="CreatedDate" type="xs:dateTime" />
+      <xs:element name="CrewComments" nillable="true" type="xs:string" />
+      <xs:element name="CrewCount" nillable="true" type="xs:string" />
+      <xs:element name="Facts" nillable="true" type="xs:string" />
+      <xs:element name="FirstName" nillable="true" type="xs:string" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="FlightRoute" nillable="true" type="xs:string" />
+      <xs:element name="Grade" nillable="true" type="xs:string" />
+      <xs:element name="GroomingCheckComment" nillable="true" type="xs:string" />
+      <xs:element name="InfantLoadFC" type="xs:int" />
+      <xs:element name="InfantLoadJC" type="xs:int" />
+      <xs:element name="InfantLoadYC" type="xs:int" />
+      <xs:element name="IsCSDCSBriefed" nillable="true" type="xs:string" />
+      <xs:element name="IsCSR" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassFC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassJC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassNA" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassYC" nillable="true" type="xs:string" />
+      <xs:element name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFerry" type="xs:boolean" />
+      <xs:element name="IsFromAIMS" nillable="true" type="xs:string" />
+      <xs:element name="IsGroominCheck" nillable="true" type="xs:string" />
+      <xs:element name="IsManuallyEntered" nillable="true" type="xs:string" />
+      <xs:element name="IsNew" nillable="true" type="xs:string" />
+      <xs:element name="IsOHS" nillable="true" type="xs:string" />
+      <xs:element name="IsPO" nillable="true" type="xs:string" />
+      <xs:element name="LastName" nillable="true" type="xs:string" />
+      <xs:element name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element name="ModifiedDate" type="xs:dateTime" />
+      <xs:element name="PassengerLoadFC" type="xs:int" />
+      <xs:element name="PassengerLoadJC" type="xs:int" />
+      <xs:element name="PassengerLoadYC" type="xs:int" />
+      <xs:element name="ReportAboutId" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutName" nillable="true" type="xs:string" />
+      <xs:element name="Result" nillable="true" type="xs:string" />
+      <xs:element name="SchArrTime" type="xs:dateTime" />
+      <xs:element name="SchDptTime" type="xs:dateTime" />
+      <xs:element name="SeatCapacityFC" type="xs:int" />
+      <xs:element name="SeatCapacityJC" type="xs:int" />
+      <xs:element name="SeatCapacityYC" type="xs:int" />
+      <xs:element name="SectorFrom" nillable="true" type="xs:string" />
+      <xs:element name="SectorTo" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryId" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryName" nillable="true" type="xs:string" />
+      <xs:element name="VRAllCrewAssignVR" nillable="true" type="tns:ArrayOfVRCrewAssignVR" />
+      <xs:element name="VRAssgdDeptAssignVR" nillable="true" type="tns:ArrayOfVRAssgdDeptAssignVR" />
+      <xs:element name="VRCommentsHist" nillable="true" type="tns:ArrayOfVRCommentsHist" />
+      <xs:element name="VRCrewAssignVR" nillable="true" type="tns:ArrayOfVRCrewAssignVR" />
+      <xs:element name="VRDocAssignVR" nillable="true" type="tns:ArrayOfVRDocAssignVR" />
+      <xs:element name="VRPassengerAssignVR" nillable="true" type="tns:ArrayOfVRPassengerAssignVR" />
+      <xs:element name="VRRejectionHist" nillable="true" type="tns:ArrayOfVRRejectionHist" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+      <xs:element name="VrStatusId" nillable="true" type="xs:string" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewVRAssignVR" nillable="true" type="tns:ViewVRAssignVR" />
+  <xs:complexType name="ArrayOfVRCrewAssignVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRCrewAssignVR" nillable="true" type="tns:VRCrewAssignVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRCrewAssignVR" nillable="true" type="tns:ArrayOfVRCrewAssignVR" />
+  <xs:complexType name="VRCrewAssignVR">
+    <xs:sequence>
+      <xs:element name="AnnouncementLanguage" nillable="true" type="xs:string" />
+      <xs:element name="CrewPosition" nillable="true" type="xs:string" />
+      <xs:element name="Grade" nillable="true" type="xs:string" />
+      <xs:element name="IsActingCSD" nillable="true" type="xs:string" />
+      <xs:element name="StaffName" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRCrewAssignVR" nillable="true" type="tns:VRCrewAssignVR" />
+  <xs:complexType name="ArrayOfVRAssgdDeptAssignVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRAssgdDeptAssignVR" nillable="true" type="tns:VRAssgdDeptAssignVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRAssgdDeptAssignVR" nillable="true" type="tns:ArrayOfVRAssgdDeptAssignVR" />
+  <xs:complexType name="VRAssgdDeptAssignVR">
+    <xs:sequence>
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="DeptName" nillable="true" type="xs:string" />
+      <xs:element name="DeptStatus" nillable="true" type="xs:string" />
+      <xs:element name="DeptType" nillable="true" type="xs:string" />
+      <xs:element name="SectionId" nillable="true" type="xs:string" />
+      <xs:element name="SectionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRAssgdDeptAssignVR" nillable="true" type="tns:VRAssgdDeptAssignVR" />
+  <xs:complexType name="ArrayOfVRDocAssignVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRDocAssignVR" nillable="true" type="tns:VRDocAssignVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRDocAssignVR" nillable="true" type="tns:ArrayOfVRDocAssignVR" />
+  <xs:complexType name="VRDocAssignVR">
+    <xs:sequence>
+      <xs:element name="VrDocContent" nillable="true" type="xs:base64Binary" />
+      <xs:element name="VrDocName" nillable="true" type="xs:string" />
+      <xs:element name="VrDocPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDocAssignVR" nillable="true" type="tns:VRDocAssignVR" />
+  <xs:complexType name="ArrayOfVRPassengerAssignVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRPassengerAssignVR" nillable="true" type="tns:VRPassengerAssignVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRPassengerAssignVR" nillable="true" type="tns:ArrayOfVRPassengerAssignVR" />
+  <xs:complexType name="VRPassengerAssignVR">
+    <xs:sequence>
+      <xs:element name="FFPNumber" nillable="true" type="xs:string" />
+      <xs:element name="PassengerName" nillable="true" type="xs:string" />
+      <xs:element name="SeatNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRPassengerAssignVR" nillable="true" type="tns:VRPassengerAssignVR" />
+  <xs:complexType name="ArrayOfVRRejectionHist">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRRejectionHist" nillable="true" type="tns:VRRejectionHist" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRRejectionHist" nillable="true" type="tns:ArrayOfVRRejectionHist" />
+  <xs:complexType name="VRRejectionHist">
+    <xs:sequence>
+      <xs:element name="CreatedDate" type="xs:dateTime" />
+      <xs:element name="DeptCode" nillable="true" type="xs:string" />
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="RejectReasonDesc" nillable="true" type="xs:string" />
+      <xs:element name="StaffName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRRejectionHist" nillable="true" type="tns:VRRejectionHist" />
+  <xs:complexType name="ViewVRSelectFlight">
+    <xs:sequence>
+      <xs:element name="ActArrTime" type="xs:dateTime" />
+      <xs:element name="ActDeptTime" type="xs:dateTime" />
+      <xs:element name="Action" nillable="true" type="xs:string" />
+      <xs:element name="AirCraftRegNo" nillable="true" type="xs:string" />
+      <xs:element name="AirCraftType" nillable="true" type="xs:string" />
+      <xs:element name="CSDCSBriefedComment" nillable="true" type="xs:string" />
+      <xs:element name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element name="CrewComments" nillable="true" type="xs:string" />
+      <xs:element name="CrewCount" nillable="true" type="xs:string" />
+      <xs:element name="Facts" nillable="true" type="xs:string" />
+      <xs:element name="FirstName" nillable="true" type="xs:string" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="FlightRoute" nillable="true" type="xs:string" />
+      <xs:element name="Grade" nillable="true" type="xs:string" />
+      <xs:element name="GroomingCheckComment" nillable="true" type="xs:string" />
+      <xs:element name="InfantLoadFC" type="xs:int" />
+      <xs:element name="InfantLoadJC" type="xs:int" />
+      <xs:element name="InfantLoadYC" type="xs:int" />
+      <xs:element name="IsCSDCSBriefed" nillable="true" type="xs:string" />
+      <xs:element name="IsCSR" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassFC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassJC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassNA" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassYC" nillable="true" type="xs:string" />
+      <xs:element name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFerry" type="xs:boolean" />
+      <xs:element name="IsFromAIMS" nillable="true" type="xs:string" />
+      <xs:element name="IsGroominCheck" nillable="true" type="xs:string" />
+      <xs:element name="IsManuallyEntered" nillable="true" type="xs:string" />
+      <xs:element name="IsNew" nillable="true" type="xs:string" />
+      <xs:element name="IsOHS" nillable="true" type="xs:string" />
+      <xs:element name="IsPO" nillable="true" type="xs:string" />
+      <xs:element name="LastName" nillable="true" type="xs:string" />
+      <xs:element name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element name="NonOwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="OwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="PassengerLoadFC" type="xs:int" />
+      <xs:element name="PassengerLoadJC" type="xs:int" />
+      <xs:element name="PassengerLoadYC" type="xs:int" />
+      <xs:element name="ReportAboutName" nillable="true" type="xs:string" />
+      <xs:element name="ReportImage" nillable="true" type="xs:base64Binary" />
+      <xs:element name="Result" nillable="true" type="xs:string" />
+      <xs:element name="SchArrTime" type="xs:dateTime" />
+      <xs:element name="SchDptTime" type="xs:dateTime" />
+      <xs:element name="SeatCapacityFC" type="xs:int" />
+      <xs:element name="SeatCapacityJC" type="xs:int" />
+      <xs:element name="SeatCapacityYC" type="xs:int" />
+      <xs:element name="SectorFrom" nillable="true" type="xs:string" />
+      <xs:element name="SectorTo" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryName" nillable="true" type="xs:string" />
+      <xs:element name="VRAllCrewAdminVR" nillable="true" type="tns:ArrayOfVRCrewAdminVR" />
+      <xs:element name="VRAssgdDeptAdminVR" nillable="true" type="tns:ArrayOfVRAssgdDeptAdminVR" />
+      <xs:element name="VRCommentsHist" nillable="true" type="tns:ArrayOfVRCommentsHist" />
+      <xs:element name="VRCrewAdminVR" nillable="true" type="tns:ArrayOfVRCrewAdminVR" />
+      <xs:element name="VRDocAdminVR" nillable="true" type="tns:ArrayOfVRDocAdminVR" />
+      <xs:element name="VRPassengerAdminVR" nillable="true" type="tns:ArrayOfVRPassengerAdminVR" />
+      <xs:element name="VRRejectionHist" nillable="true" type="tns:ArrayOfVRRejectionHist" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+      <xs:element name="isadmin" nillable="true" type="xs:string" />
+      <xs:element name="modifiedby" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewVRSelectFlight" nillable="true" type="tns:ViewVRSelectFlight" />
+  <xs:complexType name="ArrayOfVRCrewAdminVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRCrewAdminVR" nillable="true" type="tns:VRCrewAdminVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRCrewAdminVR" nillable="true" type="tns:ArrayOfVRCrewAdminVR" />
+  <xs:complexType name="VRCrewAdminVR">
+    <xs:sequence>
+      <xs:element name="AnnouncementLanguage" nillable="true" type="xs:string" />
+      <xs:element name="CrewPosition" nillable="true" type="xs:string" />
+      <xs:element name="Grade" nillable="true" type="xs:string" />
+      <xs:element name="IsActingCSD" nillable="true" type="xs:string" />
+      <xs:element name="StaffName" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRCrewAdminVR" nillable="true" type="tns:VRCrewAdminVR" />
+  <xs:complexType name="ArrayOfVRAssgdDeptAdminVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRAssgdDeptAdminVR" nillable="true" type="tns:VRAssgdDeptAdminVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRAssgdDeptAdminVR" nillable="true" type="tns:ArrayOfVRAssgdDeptAdminVR" />
+  <xs:complexType name="VRAssgdDeptAdminVR">
+    <xs:sequence>
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="DeptNameCode" nillable="true" type="xs:string" />
+      <xs:element name="DeptType" nillable="true" type="xs:string" />
+      <xs:element name="SectionId" nillable="true" type="xs:string" />
+      <xs:element name="SectionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRAssgdDeptAdminVR" nillable="true" type="tns:VRAssgdDeptAdminVR" />
+  <xs:complexType name="ArrayOfVRDocAdminVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRDocAdminVR" nillable="true" type="tns:VRDocAdminVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRDocAdminVR" nillable="true" type="tns:ArrayOfVRDocAdminVR" />
+  <xs:complexType name="VRDocAdminVR">
+    <xs:sequence>
+      <xs:element name="VrDocContent" nillable="true" type="xs:base64Binary" />
+      <xs:element name="VrDocId" nillable="true" type="xs:string" />
+      <xs:element name="VrDocName" nillable="true" type="xs:string" />
+      <xs:element name="VrDocPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDocAdminVR" nillable="true" type="tns:VRDocAdminVR" />
+  <xs:complexType name="ArrayOfVRPassengerAdminVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRPassengerAdminVR" nillable="true" type="tns:VRPassengerAdminVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRPassengerAdminVR" nillable="true" type="tns:ArrayOfVRPassengerAdminVR" />
+  <xs:complexType name="VRPassengerAdminVR">
+    <xs:sequence>
+      <xs:element name="FFPNumber" nillable="true" type="xs:string" />
+      <xs:element name="PassengerName" nillable="true" type="xs:string" />
+      <xs:element name="SeatNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRPassengerAdminVR" nillable="true" type="tns:VRPassengerAdminVR" />
+  <xs:complexType name="SearchVRForCrew">
+    <xs:sequence>
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="FromDate" type="xs:dateTime" />
+      <xs:element name="OrderBy" nillable="true" type="xs:string" />
+      <xs:element name="PageIndex" type="xs:int" />
+      <xs:element name="PageSize" type="xs:int" />
+      <xs:element name="SectorFrom" nillable="true" type="xs:string" />
+      <xs:element name="SectorTo" nillable="true" type="xs:string" />
+      <xs:element name="SortOrderColumn" nillable="true" type="xs:string" />
+      <xs:element name="ToDate" type="xs:dateTime" />
+      <xs:element name="UserId" nillable="true" type="xs:string" />
+      <xs:element name="VRStatus" nillable="true" type="xs:string" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchVRForCrew" nillable="true" type="tns:SearchVRForCrew" />
+  <xs:complexType name="ArrayOfSearchVRResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchVRResults" nillable="true" type="tns:SearchVRResults" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchVRResults" nillable="true" type="tns:ArrayOfSearchVRResults" />
+  <xs:complexType name="SearchVRResults">
+    <xs:sequence>
+      <xs:element name="ActDeptTime" type="xs:dateTime" />
+      <xs:element name="AircraftRegistrationNumber" nillable="true" type="xs:string" />
+      <xs:element name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element name="CrewPosition" nillable="true" type="xs:string" />
+      <xs:element name="FFPNumber" nillable="true" type="xs:string" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="IsChecked" type="xs:boolean" />
+      <xs:element name="IsCheckedAll" type="xs:boolean" />
+      <xs:element name="NonOwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="OwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="PassengerName" nillable="true" type="xs:string" />
+      <xs:element name="Passengers" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutName" nillable="true" type="xs:string" />
+      <xs:element name="ReportToName" nillable="true" type="xs:string" />
+      <xs:element name="SeatNumber" nillable="true" type="xs:string" />
+      <xs:element name="Sector" nillable="true" type="xs:string" />
+      <xs:element name="SubcategoryName" nillable="true" type="xs:string" />
+      <xs:element name="SubmittedDate" type="xs:dateTime" />
+      <xs:element name="VrComments" nillable="true" type="xs:string" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element name="VrMasterStatusName" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchVRResults" nillable="true" type="tns:SearchVRResults" />
+  <xs:complexType name="VRActionResolutionInput">
+    <xs:sequence>
+      <xs:element name="DeptID" nillable="true" type="xs:string" />
+      <xs:element name="UserType" nillable="true" type="xs:string" />
+      <xs:element name="VRId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRActionResolutionInput" nillable="true" type="tns:VRActionResolutionInput" />
+  <xs:complexType name="SearchVRDeptParm">
+    <xs:sequence>
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="DeptType" nillable="true" type="xs:string" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="OrderByColumn" nillable="true" type="xs:string" />
+      <xs:element name="PageIndex" type="xs:int" />
+      <xs:element name="PageSize" type="xs:int" />
+      <xs:element name="SectorFrom" nillable="true" type="xs:string" />
+      <xs:element name="SectorTo" nillable="true" type="xs:string" />
+      <xs:element name="SortOrder" nillable="true" type="xs:string" />
+      <xs:element name="StaffName" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element name="VrDeptStatusId" nillable="true" type="xs:string" />
+      <xs:element name="VrFromDate" type="xs:dateTime" />
+      <xs:element name="VrMasterStatusId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" nillable="true" type="xs:string" />
+      <xs:element name="VrToDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchVRDeptParm" nillable="true" type="tns:SearchVRDeptParm" />
+  <xs:complexType name="SearchVRAdminParm">
+    <xs:sequence>
+      <xs:element name="AirCraftRegNo" nillable="true" type="xs:string" />
+      <xs:element name="AirCraftType" nillable="true" type="xs:string" />
+      <xs:element name="BusinessClass" nillable="true" type="xs:string" />
+      <xs:element name="CabinClass" nillable="true" type="xs:string" />
+      <xs:element name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element name="CrewComments" nillable="true" type="xs:string" />
+      <xs:element name="CrewPosition" nillable="true" type="xs:string" />
+      <xs:element name="EconomyClass" nillable="true" type="xs:string" />
+      <xs:element name="FFPNumber" nillable="true" type="xs:string" />
+      <xs:element name="FirstClass" nillable="true" type="xs:string" />
+      <xs:element name="FlightFromDate" type="xs:dateTime" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="FlightToDate" type="xs:dateTime" />
+      <xs:element name="IncidentWithCrewID" nillable="true" type="xs:string" />
+      <xs:element name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element name="IsDraft" nillable="true" type="xs:string" />
+      <xs:element name="NAClass" nillable="true" type="xs:string" />
+      <xs:element name="NonOwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="OwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="PassengerName" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutId" nillable="true" type="xs:string" />
+      <xs:element name="ReportToName" nillable="true" type="xs:string" />
+      <xs:element name="SectorFrom" nillable="true" type="xs:string" />
+      <xs:element name="SectorTo" nillable="true" type="xs:string" />
+      <xs:element name="StaffName" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryId" nillable="true" type="xs:string" />
+      <xs:element name="VRFromDate" type="xs:dateTime" />
+      <xs:element name="VRToDate" type="xs:dateTime" />
+      <xs:element name="VrNo" nillable="true" type="xs:string" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchVRAdminParm" nillable="true" type="tns:SearchVRAdminParm" />
+  <xs:complexType name="SearchVRToAssign">
+    <xs:sequence>
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="FromDate" type="xs:dateTime" />
+      <xs:element name="ToDate" type="xs:dateTime" />
+      <xs:element name="VrStatusID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchVRToAssign" nillable="true" type="tns:SearchVRToAssign" />
+  <xs:complexType name="ArrayOfSearchVRForAssign">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchVRForAssign" nillable="true" type="tns:SearchVRForAssign" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchVRForAssign" nillable="true" type="tns:ArrayOfSearchVRForAssign" />
+  <xs:complexType name="SearchVRForAssign">
+    <xs:sequence>
+      <xs:element name="ActDeptTime" type="xs:dateTime" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="IsChecked" type="xs:boolean" />
+      <xs:element name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element name="NonOwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="OwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="StaffName" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchVRForAssign" nillable="true" type="tns:SearchVRForAssign" />
+  <xs:complexType name="FlightUser">
+    <xs:sequence>
+      <xs:element name="FlightDetsID" nillable="true" type="xs:string" />
+      <xs:element name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightUser" nillable="true" type="tns:FlightUser" />
+  <xs:complexType name="ArrayOfDraftVR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DraftVR" nillable="true" type="tns:DraftVR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDraftVR" nillable="true" type="tns:ArrayOfDraftVR" />
+  <xs:complexType name="DraftVR">
+    <xs:sequence>
+      <xs:element name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element name="OwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutID" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutName" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryId" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryName" nillable="true" type="xs:string" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DraftVR" nillable="true" type="tns:DraftVR" />
+  <xs:complexType name="RuleSet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeptId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+      <xs:element name="IsChecked" type="xs:boolean" />
+      <xs:element name="IsCheckedAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReportAboutId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAboutName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RulesetMatchingID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubCategoryId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubcategoryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RuleSet" nillable="true" type="tns:RuleSet" />
+  <xs:complexType name="ArrayOfDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Department" nillable="true" type="tns:Department" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartment" nillable="true" type="tns:ArrayOfDepartment" />
+  <xs:complexType name="Department">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CriticalResponseTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefaultResponseTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentUsers" nillable="true" type="tns:ArrayOfUser" />
+      <xs:element minOccurs="0" name="DeptCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptMailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAddDept" nillable="true" type="xs:string" />
+      <xs:element name="IsChecked" type="xs:boolean" />
+      <xs:element name="IsCheckedAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsInternal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Department" nillable="true" type="tns:Department" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CrewdetailsId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Designation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element name="IsChecked" type="xs:boolean" />
+      <xs:element name="IsCheckedAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoginName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="FlightID">
+    <xs:sequence>
+      <xs:element name="FlightDetsID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightID" nillable="true" type="tns:FlightID" />
+  <xs:complexType name="RuleSetMatching">
+    <xs:sequence>
+      <xs:element name="CategoryID" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutId" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RuleSetMatching" nillable="true" type="tns:RuleSetMatching" />
+  <xs:complexType name="VRInsertUpdate">
+    <xs:sequence>
+      <xs:element name="Action" nillable="true" type="xs:string" />
+      <xs:element name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element name="Comments" nillable="true" type="xs:string" />
+      <xs:element name="Facts" nillable="true" type="xs:string" />
+      <xs:element name="FlightDetsID" nillable="true" type="xs:string" />
+      <xs:element name="IsAdmin" nillable="true" type="xs:string" />
+      <xs:element name="IsCSR" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassFC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassJC" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassNA" nillable="true" type="xs:string" />
+      <xs:element name="IsCabInClassYC" nillable="true" type="xs:string" />
+      <xs:element name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element name="IsInfoVr" nillable="true" type="xs:string" />
+      <xs:element name="IsNew" nillable="true" type="xs:string" />
+      <xs:element name="IsNotIfNotReq" nillable="true" type="xs:string" />
+      <xs:element name="IsOHS" nillable="true" type="xs:string" />
+      <xs:element name="IsPO" nillable="true" type="xs:string" />
+      <xs:element name="IsRuleSetChanged" nillable="true" type="xs:string" />
+      <xs:element name="IsVrRestricted" nillable="true" type="xs:string" />
+      <xs:element name="NODId" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutID" nillable="true" type="xs:string" />
+      <xs:element name="Result" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryId" nillable="true" type="xs:string" />
+      <xs:element name="UserId" nillable="true" type="xs:string" />
+      <xs:element name="VrCrewsId" nillable="true" type="xs:string" />
+      <xs:element name="VrDocument" nillable="true" type="tns:ArrayOfVRDocument" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+      <xs:element name="VrPassengers" nillable="true" type="tns:ArrayOfVRPassengers" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRInsertUpdate" nillable="true" type="tns:VRInsertUpdate" />
+  <xs:complexType name="VRIdNo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrNo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRIdNo" nillable="true" type="tns:VRIdNo" />
+  <xs:complexType name="FlightUserAdmin">
+    <xs:sequence>
+      <xs:element name="FlightDetsID" nillable="true" type="xs:string" />
+      <xs:element name="IsAdmin" nillable="true" type="xs:string" />
+      <xs:element name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightUserAdmin" nillable="true" type="tns:FlightUserAdmin" />
+  <xs:complexType name="ArrayOfViewVRDraft">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewVRDraft" nillable="true" type="tns:ViewVRDraft" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewVRDraft" nillable="true" type="tns:ArrayOfViewVRDraft" />
+  <xs:complexType name="ViewVRDraft">
+    <xs:sequence>
+      <xs:element name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element name="OwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutName" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryName" nillable="true" type="xs:string" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewVRDraft" nillable="true" type="tns:ViewVRDraft" />
+  <xs:complexType name="OverrideCmmtsParam">
+    <xs:sequence>
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="RestdDeptId" nillable="true" type="xs:string" />
+      <xs:element name="UserId" nillable="true" type="xs:string" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverrideCmmtsParam" nillable="true" type="tns:OverrideCmmtsParam" />
+  <xs:complexType name="GetVRForDept">
+    <xs:sequence>
+      <xs:element name="ACRegNo" nillable="true" type="xs:string" />
+      <xs:element name="ACType" nillable="true" type="xs:string" />
+      <xs:element name="ActDeptTime" type="xs:dateTime" />
+      <xs:element name="CategoryID" nillable="true" type="xs:string" />
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="DeptType" nillable="true" type="xs:string" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="IsDraft" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutId" nillable="true" type="xs:string" />
+      <xs:element name="SectorFrom" nillable="true" type="xs:string" />
+      <xs:element name="SectorTo" nillable="true" type="xs:string" />
+      <xs:element name="StaffName" nillable="true" type="xs:string" />
+      <xs:element name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element name="SubcategoryID" nillable="true" type="xs:string" />
+      <xs:element name="UserId" nillable="true" type="xs:string" />
+      <xs:element name="VrDeptStatusId" nillable="true" type="xs:string" />
+      <xs:element name="VrFromDate" type="xs:dateTime" />
+      <xs:element name="VrMasterStatusId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" nillable="true" type="xs:string" />
+      <xs:element name="VrToDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetVRForDept" nillable="true" type="tns:GetVRForDept" />
+  <xs:complexType name="ArrayOfSearchVRForAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchVRForAction" nillable="true" type="tns:SearchVRForAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchVRForAction" nillable="true" type="tns:ArrayOfSearchVRForAction" />
+  <xs:complexType name="SearchVRForAction">
+    <xs:sequence>
+      <xs:element name="ACRegNo" nillable="true" type="xs:string" />
+      <xs:element name="ACType" nillable="true" type="xs:string" />
+      <xs:element name="ActDeptTime" type="xs:dateTime" />
+      <xs:element name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element name="Comments1" nillable="true" type="xs:string" />
+      <xs:element name="Comments2" nillable="true" type="xs:string" />
+      <xs:element name="Comments3" nillable="true" type="xs:string" />
+      <xs:element name="FFPNumber" nillable="true" type="xs:string" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="IsChecked" type="xs:boolean" />
+      <xs:element name="IsCheckedAll" type="xs:boolean" />
+      <xs:element name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element name="IsDraft" nillable="true" type="xs:string" />
+      <xs:element name="NonOwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="NonOwnerDeptSection" nillable="true" type="xs:string" />
+      <xs:element name="OwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="OwnerDeptSection" nillable="true" type="xs:string" />
+      <xs:element name="PassengerName" nillable="true" type="xs:string" />
+      <xs:element name="Passengers" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutName" nillable="true" type="xs:string" />
+      <xs:element name="SeatNumber" nillable="true" type="xs:string" />
+      <xs:element name="Sector" nillable="true" type="xs:string" />
+      <xs:element name="SubcategoryName" nillable="true" type="xs:string" />
+      <xs:element name="TimeLeftToAct" nillable="true" type="xs:string" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrNo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchVRForAction" nillable="true" type="tns:SearchVRForAction" />
+  <xs:complexType name="ViewVRDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Departments" nillable="true" type="tns:ArrayOfDepartment" />
+      <xs:element minOccurs="0" name="TimeLeftToCloseVR" type="xs:double" />
+      <xs:element minOccurs="0" name="VrAllDepartmentDetails" nillable="true" type="tns:ArrayOfVRAtDept" />
+      <xs:element minOccurs="0" name="VrAssgdDept" nillable="true" type="tns:ArrayOfSection" />
+      <xs:element minOccurs="0" name="VrAtDept" nillable="true" type="tns:ArrayOfVRAtDept" />
+      <xs:element minOccurs="0" name="VrAtDeptDetail" nillable="true" type="tns:VRAtDept" />
+      <xs:element minOccurs="0" name="VrCrews" nillable="true" type="tns:ArrayOfVRCrew" />
+      <xs:element minOccurs="0" name="VrDetail" nillable="true" type="tns:VRDetail" />
+      <xs:element minOccurs="0" name="VrDocument" nillable="true" type="tns:ArrayOfVRDocument" />
+      <xs:element minOccurs="0" name="VrPassengers" nillable="true" type="tns:ArrayOfVRPassengers" />
+      <xs:element minOccurs="0" name="VrRejectReason" nillable="true" type="tns:RejectReason" />
+      <xs:element minOccurs="0" name="VrRejectReasonList" nillable="true" type="tns:ArrayOfRejectReason" />
+      <xs:element minOccurs="0" name="VrRestdDept" nillable="true" type="tns:ArrayOfDepartment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewVRDetail" nillable="true" type="tns:ViewVRDetail" />
+  <xs:complexType name="ArrayOfVRAtDept">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRAtDept" nillable="true" type="tns:VRAtDept" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRAtDept" nillable="true" type="tns:ArrayOfVRAtDept" />
+  <xs:complexType name="VRAtDept">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllocatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Department" nillable="true" type="tns:Department" />
+      <xs:element minOccurs="0" name="IsCmmtsShownToCSD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VrAtDeptId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrDeptStatusId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrDeptStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRAtDept" nillable="true" type="tns:VRAtDept" />
+  <xs:complexType name="ArrayOfSection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Section" nillable="true" type="tns:Section" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSection" nillable="true" type="tns:ArrayOfSection" />
+  <xs:complexType name="Section">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Department" nillable="true" type="tns:Department" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+      <xs:element name="IsChecked" type="xs:boolean" />
+      <xs:element name="IsCheckedAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SectionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionUsers" nillable="true" type="tns:ArrayOfUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Section" nillable="true" type="tns:Section" />
+  <xs:complexType name="ArrayOfVRCrew">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRCrew" nillable="true" type="tns:VRCrew" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRCrew" nillable="true" type="tns:ArrayOfVRCrew" />
+  <xs:complexType name="VRCrew">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="VrCrewId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRCrew" nillable="true" type="tns:VRCrew" />
+  <xs:complexType name="VRDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="tns:Category" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Flight" nillable="true" type="tns:Flight" />
+      <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAdmin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCabInClassFC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCabInClassJC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCabInClassYC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsInfoVr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNotIfNotReq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsRuleSetChanged" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsVrRestricted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Middlename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NonOwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PassengerLoadFC" type="xs:int" />
+      <xs:element minOccurs="0" name="PassengerLoadJC" type="xs:int" />
+      <xs:element minOccurs="0" name="PassengerLoadYC" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportAbout" nillable="true" type="tns:ReportAbout" />
+      <xs:element minOccurs="0" name="RowNum" type="xs:int" />
+      <xs:element minOccurs="0" name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubCategory" nillable="true" type="tns:SubCategory" />
+      <xs:element minOccurs="0" name="TimeLeftToAct" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrNo" type="xs:int" />
+      <xs:element minOccurs="0" name="VrStatus" nillable="true" type="tns:VRStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDetail" nillable="true" type="tns:VRDetail" />
+  <xs:complexType name="Category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReportaboutId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
+  <xs:complexType name="Flight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActArrTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActDeptTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AirCraftRegNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AirCraftType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AirCraftTypeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArrivalDelay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CrewCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrewDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CsdCsBriefedComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DelayReportStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartureDelay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayNoVR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayVR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayVRDetail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DraftVRs" type="xs:int" />
+      <xs:element minOccurs="0" name="FlightCrewsDetail" nillable="true" type="tns:ArrayOfFlightCrews" />
+      <xs:element minOccurs="0" name="FlightDelayRptID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlightDetsID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlightRoute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroomingCheckComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InfantLoadFC" type="xs:int" />
+      <xs:element minOccurs="0" name="InfantLoadJC" type="xs:int" />
+      <xs:element minOccurs="0" name="InfantLoadYC" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAdmin" nillable="true" type="xs:string" />
+      <xs:element name="IsChecked" type="xs:boolean" />
+      <xs:element name="IsCheckedAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCsdCsBriefed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsFerry" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFromAIMS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsGroomingCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsManuallyEntered" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ManDetailAvail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NoVR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoVrSubmittedStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PassengerLoadFC" type="xs:int" />
+      <xs:element minOccurs="0" name="PassengerLoadJC" type="xs:int" />
+      <xs:element minOccurs="0" name="PassengerLoadYC" type="xs:int" />
+      <xs:element minOccurs="0" name="ScheArrTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ScheDeptTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SeatCapacityFC" type="xs:int" />
+      <xs:element minOccurs="0" name="SeatCapacityJC" type="xs:int" />
+      <xs:element minOccurs="0" name="SeatCapacityYC" type="xs:int" />
+      <xs:element minOccurs="0" name="Sector" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectorFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectorTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmittedVRs" type="xs:int" />
+      <xs:element minOccurs="0" name="SubmittedVRsbyUser" type="xs:int" />
+      <xs:element minOccurs="0" name="UsersForFlight" nillable="true" type="tns:ArrayOfUser" />
+      <xs:element minOccurs="0" name="VrNotSubmitted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WinWebNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="isDelay" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Flight" nillable="true" type="tns:Flight" />
+  <xs:complexType name="ArrayOfFlightCrews">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlightCrews" nillable="true" type="tns:FlightCrews" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlightCrews" nillable="true" type="tns:ArrayOfFlightCrews" />
+  <xs:complexType name="FlightCrews">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnnounceLang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnnounceLangVal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CabinCrewPosition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CabinCrewPositionVal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CrewDHPosition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlightCrewId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlightDetsId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActingCSD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCheckedActingCSD" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StaffGrade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StaffName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StaffNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightCrews" nillable="true" type="tns:FlightCrews" />
+  <xs:complexType name="ReportAbout">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAboutDepartmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAboutDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAboutID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAboutName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportAbout" nillable="true" type="tns:ReportAbout" />
+  <xs:complexType name="SubCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SubCategoryId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubCategoryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubCategory" nillable="true" type="tns:SubCategory" />
+  <xs:complexType name="VRStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VrStatusID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRStatus" nillable="true" type="tns:VRStatus" />
+  <xs:complexType name="RejectReason">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeptId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RejectReasonDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RejectReasonId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RejectReason" nillable="true" type="tns:RejectReason" />
+  <xs:complexType name="ArrayOfRejectReason">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RejectReason" nillable="true" type="tns:RejectReason" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRejectReason" nillable="true" type="tns:ArrayOfRejectReason" />
+  <xs:complexType name="VRAtDeptUpdate">
+    <xs:sequence>
+      <xs:element name="Comments" nillable="true" type="xs:string" />
+      <xs:element name="DeptType" nillable="true" type="xs:string" />
+      <xs:element name="IsCmmtsShownToCSD" nillable="true" type="xs:string" />
+      <xs:element name="IsCritical" nillable="true" type="xs:string" />
+      <xs:element name="IsDraft" nillable="true" type="xs:string" />
+      <xs:element name="IsRejectStatus" nillable="true" type="xs:string" />
+      <xs:element name="LoggedInDeptId" nillable="true" type="xs:string" />
+      <xs:element name="RestrictedDeptId" nillable="true" type="xs:string" />
+      <xs:element name="TimeLeftToCloseVR" type="xs:double" />
+      <xs:element name="UserId" nillable="true" type="xs:string" />
+      <xs:element name="VRId" nillable="true" type="xs:string" />
+      <xs:element name="VrAtDeptId" nillable="true" type="xs:string" />
+      <xs:element name="VrDeptStatusId" nillable="true" type="xs:string" />
+      <xs:element name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRAtDeptUpdate" nillable="true" type="tns:VRAtDeptUpdate" />
+  <xs:complexType name="ArrayOfDeptIdName">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeptIdName" nillable="true" type="tns:DeptIdName" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeptIdName" nillable="true" type="tns:ArrayOfDeptIdName" />
+  <xs:complexType name="DeptIdName">
+    <xs:sequence>
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="DeptName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeptIdName" nillable="true" type="tns:DeptIdName" />
+  <xs:complexType name="AssignVRList">
+    <xs:sequence>
+      <xs:element name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element name="DeptSection" nillable="true" type="tns:ArrayOfDeptSection" />
+      <xs:element name="IsActive" nillable="true" type="xs:string" />
+      <xs:element name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element name="NonOwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="OwnerDepartment" nillable="true" type="xs:string" />
+      <xs:element name="ReportAboutID" nillable="true" type="xs:string" />
+      <xs:element name="SubCategoryId" nillable="true" type="xs:string" />
+      <xs:element name="UserID" nillable="true" type="xs:string" />
+      <xs:element name="VrId" nillable="true" type="xs:string" />
+      <xs:element name="VrInstanceId" nillable="true" type="xs:string" />
+      <xs:element name="VrStatusID" nillable="true" type="xs:string" />
+      <xs:element name="VrStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssignVRList" nillable="true" type="tns:AssignVRList" />
+  <xs:complexType name="ArrayOfDeptSection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeptSection" nillable="true" type="tns:DeptSection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeptSection" nillable="true" type="tns:ArrayOfDeptSection" />
+  <xs:complexType name="DeptSection">
+    <xs:sequence>
+      <xs:element name="DeptId" nillable="true" type="xs:string" />
+      <xs:element name="DeptType" nillable="true" type="xs:string" />
+      <xs:element name="SectionID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeptSection" nillable="true" type="tns:DeptSection" />
+  <xs:complexType name="FlightIDAdmin">
+    <xs:sequence>
+      <xs:element name="FlightDetsID" nillable="true" type="xs:string" />
+      <xs:element name="IsAdmin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightIDAdmin" nillable="true" type="tns:FlightIDAdmin" />
+  <xs:complexType name="PassengerLoad">
+    <xs:sequence>
+      <xs:element name="PassengerLoadFC" type="xs:int" />
+      <xs:element name="PassengerLoadJC" type="xs:int" />
+      <xs:element name="PassengerLoadYC" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PassengerLoad" nillable="true" type="tns:PassengerLoad" />
+  <xs:complexType name="StaffUserID">
+    <xs:sequence>
+      <xs:element name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StaffUserID" nillable="true" type="tns:StaffUserID" />
+  <xs:complexType name="ArrayOfSectionId">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SectionId" nillable="true" type="tns:SectionId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSectionId" nillable="true" type="tns:ArrayOfSectionId" />
+  <xs:complexType name="SectionId">
+    <xs:sequence>
+      <xs:element name="SectionID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SectionId" nillable="true" type="tns:SectionId" />
+  <xs:complexType name="VRAtDeptId">
+    <xs:sequence>
+      <xs:element name="VrAtDeptId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRAtDeptId" nillable="true" type="tns:VRAtDeptId" />
+  <xs:complexType name="VRActingCS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActingCrewID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActingGrade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrewDetailsId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+      <xs:element name="IsChecked" type="xs:boolean" />
+      <xs:element name="IsCheckedAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StaffGrade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StaffName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StaffNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRActingCS" nillable="true" type="tns:VRActingCS" />
+  <xs:complexType name="ArrayOfVRActingCS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRActingCS" nillable="true" type="tns:VRActingCS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRActingCS" nillable="true" type="tns:ArrayOfVRActingCS" />
+  <xs:complexType name="ReAssignVRParams">
+    <xs:sequence>
+      <xs:element name="DeptID" nillable="true" type="xs:string" />
+      <xs:element name="SectionID" nillable="true" type="xs:string" />
+      <xs:element name="UserID" nillable="true" type="xs:string" />
+      <xs:element name="VrID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReAssignVRParams" nillable="true" type="tns:ReAssignVRParams" />
+  <xs:complexType name="ArrayOfVRCrewFlight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRCrewFlight" nillable="true" type="tns:VRCrewFlight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRCrewFlight" nillable="true" type="tns:ArrayOfVRCrewFlight" />
+  <xs:complexType name="VRCrewFlight">
+    <xs:sequence>
+      <xs:element name="ActArrDate" type="xs:dateTime" />
+      <xs:element name="ActDeptDate" type="xs:dateTime" />
+      <xs:element name="AircraftRegNo" nillable="true" type="xs:string" />
+      <xs:element name="AircraftType" nillable="true" type="xs:string" />
+      <xs:element name="FlightDetsID" nillable="true" type="xs:string" />
+      <xs:element name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element name="Sector" nillable="true" type="xs:string" />
+      <xs:element name="VRCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRCrewFlight" nillable="true" type="tns:VRCrewFlight" />
+  <xs:complexType name="VRDraftDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FlightNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsChecked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCheckedAll" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VR_Crews" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VR_Pass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="comment1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="comment2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="comment3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createddate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flightfromDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flighttoDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="reportabt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sectorTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sectorfrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="staffno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="subcategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="vrmasterstatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="vrno" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRDraftDetails" nillable="true" type="tns:VRDraftDetails" />
+  <xs:complexType name="ArrayOfVRDraftDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRDraftDetails" nillable="true" type="tns:VRDraftDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRDraftDetails" nillable="true" type="tns:ArrayOfVRDraftDetails" />
+  <xs:complexType name="VrCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="DeptID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SectionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VrCount" nillable="true" type="tns:VrCount" />
+  <xs:complexType name="ArrayOfVrCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VrCount" nillable="true" type="tns:VrCount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVrCount" nillable="true" type="tns:ArrayOfVrCount" />
+  <xs:complexType name="VrStatusCountForDept">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeptID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VrMasterStatusId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrMasterStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VrStatusCount" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VrStatusCountForDept" nillable="true" type="tns:VrStatusCountForDept" />
+  <xs:complexType name="ArrayOfVrStatusCountForDept">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VrStatusCountForDept" nillable="true" type="tns:VrStatusCountForDept" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVrStatusCountForDept" nillable="true" type="tns:ArrayOfVrStatusCountForDept" />
+  <xs:complexType name="VrRecouncilationFlightDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACRegNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrewName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FlightDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FlightNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormattedFlightDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SectorFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectorTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StaffNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VrRecouncilationFlightDetail" nillable="true" type="tns:VrRecouncilationFlightDetail" />
+  <xs:complexType name="ArrayOfVrReconcilation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VrReconcilation" nillable="true" type="tns:VrReconcilation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVrReconcilation" nillable="true" type="tns:ArrayOfVrReconcilation" />
+  <xs:complexType name="VrReconcilation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="FieldType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VrReconcilation" nillable="true" type="tns:VrReconcilation" />
+  <xs:complexType name="ArrayOfVrRecouncilationFlightDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VrRecouncilationFlightDetail" nillable="true" type="tns:VrRecouncilationFlightDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVrRecouncilationFlightDetail" nillable="true" type="tns:ArrayOfVrRecouncilationFlightDetail" />
+  <xs:complexType name="VrForDepartmentByTimeline">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Department" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Section" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timeline" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VrForDepartmentByTimeline" nillable="true" type="tns:VrForDepartmentByTimeline" />
+  <xs:complexType name="ArrayOfVrForDepartmentByTimeline">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VrForDepartmentByTimeline" nillable="true" type="tns:VrForDepartmentByTimeline" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVrForDepartmentByTimeline" nillable="true" type="tns:ArrayOfVrForDepartmentByTimeline" />
+  <xs:complexType name="FlightDelayByTimeline">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="FlightDelayReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timeline" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FlightDelayByTimeline" nillable="true" type="tns:FlightDelayByTimeline" />
+  <xs:complexType name="ArrayOfFlightDelayByTimeline">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FlightDelayByTimeline" nillable="true" type="tns:FlightDelayByTimeline" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlightDelayByTimeline" nillable="true" type="tns:ArrayOfFlightDelayByTimeline" />
+  <xs:complexType name="DepartmentPerformanceReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Department" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Section" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartmentPerformanceReport" nillable="true" type="tns:DepartmentPerformanceReport" />
+  <xs:complexType name="ArrayOfDepartmentPerformanceReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DepartmentPerformanceReport" nillable="true" type="tns:DepartmentPerformanceReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartmentPerformanceReport" nillable="true" type="tns:ArrayOfDepartmentPerformanceReport" />
+  <xs:complexType name="VRBreakDownByRptAbt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Department" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReportAbout" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Section" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRBreakDownByRptAbt" nillable="true" type="tns:VRBreakDownByRptAbt" />
+  <xs:complexType name="ArrayOfVRBreakDownByRptAbt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRBreakDownByRptAbt" nillable="true" type="tns:VRBreakDownByRptAbt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRBreakDownByRptAbt" nillable="true" type="tns:ArrayOfVRBreakDownByRptAbt" />
+  <xs:complexType name="VRReportsParent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VRReportsChartsDataProperty" nillable="true" type="tns:ArrayOfVRReportsChartsData" />
+      <xs:element minOccurs="0" name="VRReportsChartsTotalCountProperty" nillable="true" type="tns:ArrayOfVRReportsChartsTotalCount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRReportsParent" nillable="true" type="tns:VRReportsParent" />
+  <xs:complexType name="ArrayOfVRReportsChartsData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRReportsChartsData" nillable="true" type="tns:VRReportsChartsData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRReportsChartsData" nillable="true" type="tns:ArrayOfVRReportsChartsData" />
+  <xs:complexType name="VRReportsChartsData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAbout" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRReportsChartsData" nillable="true" type="tns:VRReportsChartsData" />
+  <xs:complexType name="ArrayOfVRReportsChartsTotalCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VRReportsChartsTotalCount" nillable="true" type="tns:VRReportsChartsTotalCount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVRReportsChartsTotalCount" nillable="true" type="tns:ArrayOfVRReportsChartsTotalCount" />
+  <xs:complexType name="VRReportsChartsTotalCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAbout" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRReportsChartsTotalCount" nillable="true" type="tns:VRReportsChartsTotalCount" />
+  <xs:complexType name="VRReportFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AirCraftType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Grades" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAboutId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAboutName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportDay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SectionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StaffIds" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubCategoryId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VRReportFilter" nillable="true" type="tns:VRReportFilter" />
+  <xs:complexType name="ArrayOfMonthlyWiseDataParm">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonthlyWiseDataParm" nillable="true" type="tns:MonthlyWiseDataParm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonthlyWiseDataParm" nillable="true" type="tns:ArrayOfMonthlyWiseDataParm" />
+  <xs:complexType name="MonthlyWiseDataParm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAbout" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YR" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MonthlyWiseDataParm" nillable="true" type="tns:MonthlyWiseDataParm" />
+  <xs:complexType name="ArrayOfDayWiseDataMonParm">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DayWiseDataMonParm" nillable="true" type="tns:DayWiseDataMonParm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDayWiseDataMonParm" nillable="true" type="tns:ArrayOfDayWiseDataMonParm" />
+  <xs:complexType name="DayWiseDataMonParm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAbout" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DayWiseDataMonParm" nillable="true" type="tns:DayWiseDataMonParm" />
+  <xs:complexType name="VROnSpecificDayParent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="VROnSpecificDayCategoryProperty" nillable="true" type="tns:ArrayOfVROnSpecificDayCategory" />
+      <xs:element minOccurs="0" name="VROnSpecificDayReportProperty" nillable="true" type="tns:ArrayOfVROnSpecificDayReport" />
+      <xs:element minOccurs="0" name="VROnSpecificDaySubCategoryProperty" nillable="true" type="tns:ArrayOfVROnSpecificDaySubCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VROnSpecificDayParent" nillable="true" type="tns:VROnSpecificDayParent" />
+  <xs:complexType name="ArrayOfVROnSpecificDayCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VROnSpecificDayCategory" nillable="true" type="tns:VROnSpecificDayCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVROnSpecificDayCategory" nillable="true" type="tns:ArrayOfVROnSpecificDayCategory" />
+  <xs:complexType name="VROnSpecificDayCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VROnSpecificDayCategory" nillable="true" type="tns:VROnSpecificDayCategory" />
+  <xs:complexType name="ArrayOfVROnSpecificDayReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VROnSpecificDayReport" nillable="true" type="tns:VROnSpecificDayReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVROnSpecificDayReport" nillable="true" type="tns:ArrayOfVROnSpecificDayReport" />
+  <xs:complexType name="VROnSpecificDayReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAbout" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportAboutID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VROnSpecificDayReport" nillable="true" type="tns:VROnSpecificDayReport" />
+  <xs:complexType name="ArrayOfVROnSpecificDaySubCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VROnSpecificDaySubCategory" nillable="true" type="tns:VROnSpecificDaySubCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVROnSpecificDaySubCategory" nillable="true" type="tns:ArrayOfVROnSpecificDaySubCategory" />
+  <xs:complexType name="VROnSpecificDaySubCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubCategoryId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VROnSpecificDaySubCategory" nillable="true" type="tns:VROnSpecificDaySubCategory" />
+  <xs:complexType name="EOEVRActionCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrewDetailsID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Department" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromDate" type="xs:dateTime" />
+      <xs:element name="IsChecked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StaffName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EOEVRActionCount" nillable="true" type="tns:EOEVRActionCount" />
+  <xs:complexType name="ArrayOfEOEVRActionCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EOEVRActionCount" nillable="true" type="tns:EOEVRActionCount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEOEVRActionCount" nillable="true" type="tns:ArrayOfEOEVRActionCount" />
+</xs:schema>

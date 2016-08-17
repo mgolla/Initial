@@ -1,0 +1,13 @@
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\QR.PRISM.Models\bin\Debug\QR.PRISM.Models.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\QR.PRISM.Models\bin\Debug\QR.PRISM.Models.pdb
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\QR.PRISM.Models\obj\Debug\QR.PRISM.Models.csprojResolveAssemblyReference.cache
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\QR.PRISM.Models\obj\Debug\QR.PRISM.Models.dll
+D:\CREW\Code\IPrismMigration\Migration\QR.PRISM.Services\QR.PRISM.Models\obj\Debug\QR.PRISM.Models.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Models\bin\Debug\QR.PRISM.Models.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Models\bin\Debug\QR.PRISM.Models.pdb
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Models\obj\Debug\QR.PRISM.Models.dll
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Models\obj\Debug\QR.PRISM.Models.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Models\bin\Debug\QR.PRISM.Models.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Models\bin\Debug\QR.PRISM.Models.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Models\obj\Debug\QR.PRISM.Models.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Models\obj\Debug\QR.PRISM.Models.pdb

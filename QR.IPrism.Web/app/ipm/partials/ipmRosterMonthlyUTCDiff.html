@@ -1,0 +1,13 @@
+﻿<div class="info_box" ng-controller="ipm.UTCDiff.controller" block-ui="ipmlookupBlockUIUTCDiff">
+    <h1>
+        UTC DIFF
+    </h1>
+    <div class="overflow_Hght_145">
+        <label>
+            <span><b>Port</b></span><b>Time Difference</b>
+        </label>
+        <label ng-repeat="item in lookupViewModelUTCDiff">
+            <span>{{item.Text }}</span> {{item.Value }}
+        </label>
+    </div>
+</div>

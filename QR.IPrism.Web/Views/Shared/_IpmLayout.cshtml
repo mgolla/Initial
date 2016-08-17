@@ -1,0 +1,174 @@
+﻿@{
+    //var codovaversion = "";
+    //var cversion = System.Configuration.ConfigurationSettings.AppSettings["codovaversion"];
+    //if (cversion != null)
+    //{
+    //    codovaversion = cversion.ToString();
+    //}
+    var agent = Request.ServerVariables["HTTP_USER_AGENT"];
+
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   
+    <title>iPrism</title>
+    <link href="@Url.Content("~/Content/ui-grid.css")" rel="stylesheet" type="text/css" />
+  
+    
+
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("~/bundles/modernizr")
+   
+
+    <script type="text/javascript">
+
+
+
+
+        function onLoad() {
+            console.log("=====onLoad======");
+            //console.log(JSON.stringify(navigator.userAgent));
+            document.addEventListener("deviceready", onDeviceReady, false);
+            document.addEventListener("resume", onResume, false);
+            document.addEventListener("pause", onPause, false);
+           
+           
+           
+
+
+            /*========= Cordova is loaded and it is now safe to make calls Cordova methods =========*/
+            function onDeviceReady() {
+
+                console.log("=====onDeviceReady======");
+                alert('onDeviceReady');
+                
+             
+                if (cordova !== undefined) {
+
+                    
+
+                    //try {
+                    //    alert(cordova);
+                    //    alert(cordova.InAppBrowser);
+
+                    //}
+                    //catch (e) {
+                    //    alert(e);
+                    //}
+
+                    /*========= get the app bundle version ie. client version =========*/
+                    cordova.getAppVersion.getVersionNumber(function (version) {
+                        console.log("App Version:" + version);
+                        if (version != 'codovaversion') { }
+                        // alert("App Version:" + version);
+                        //document.getElementById('app_version').innerHTML = '<b>App Version: </b>' + version;
+                    });
+                    /*==========================================*/
+
+                    ///*========= get the device details =========*/
+                    //var model = device.model;
+                    //document.getElementById('device_model').innerHTML = '<b>Device Model: </b>' + model;
+                    //var platform = device.platform;
+                    //document.getElementById('device_platform').innerHTML = '<b>Device Platform: </b>' + platform;
+                    //var uuid = device.uuid;
+                    //document.getElementById('device_uuid').innerHTML = '<b>Device UUID: </b>' + uuid;
+                    /*==========================================*/
+
+                    /*========= get the push notification token =========*/
+                    var push = PushNotification.init({
+                        android: {
+                            /*configure android app id for gcm*/
+                            senderID: "898694512577"
+                        },
+                        ios: {
+                            alert: "true",
+                            badge: "true",
+                            sound: "true"
+                        },
+                        windows: {}
+                    });
+
+                    push.on('registration', function (data) {
+                        // data.registrationId
+                        document.getElementById('push_identifier').innerHTML = '<b>PushNotification Token: </b>' + data.registrationId;
+                    });
+
+                    push.on('notification', function (data) {
+                        // data.message,
+                        // data.title,
+                        // data.count,
+                        // data.sound,
+                        // data.image,
+                        // data.additionalData
+                    });
+
+                    push.on('error', function (e) {
+                        // e.message
+                        alert(e.message);
+                    });
+                    /*==========================================*/
+
+                }
+
+            }
+
+            /*========= Handle the resume event =========*/
+            function onResume() {
+                //console.log("=====onResume======");
+            }
+            /*==========================================*/
+
+            /*========= Handle the pause event =========*/
+            function onPause() {
+                // console.log("=====onPause======");
+            }
+            /*==========================================*/
+
+
+          
+
+        }
+        function openPDF() {
+            alert('pdf');
+            window.open('https://www.qatarairways.com/iwov-resources/temp-docs/press-kit/The%20Story%20of%20Qatar%20Airways%20-%20English.pdf', '_system');
+        }
+
+
+        /*==========================================*/
+    </script>
+
+  
+</head>
+<body class="bodybg">
+     @*onload="onLoad()">*@
+
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+
+    @Scripts.Render("~/bundles/bootstrap")
+    
+    @Scripts.Render("~/bundles/appdependency")
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript" id="idform">
+        var mainModule = angular.module('app.ipm.module');
+        Window.MyApp = {};
+        MyApp.rootPath = '@Url.Content("~")';
+        @RenderSection("jsCode", required: false);
+
+
+    </script>
+    @Scripts.Render("~/bundles/cache")
+
+
+</body>
+</html>

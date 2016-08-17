@@ -1,0 +1,54 @@
+﻿<div class="container-fluid pull-left col-xs-12 padZero" id="divIpmHome">
+    <!-- Main component for a primary marketing message or call to action setHeightMain-->
+    <div class="content_wrapper margin-wrapper" style="min-height: 227px;" setHeightMain>
+        <!--ui-view="ipmHome"-->
+        <div>
+            <ng-include src='"/app/ipm/partials/ipmRoster.html"'></ng-include>
+        </div>
+
+
+        <!------creating HTML------->
+        <!--Alerts,news document, link-->
+        <div class="col-lg-12 col-md-12 col-sm-12 padZero" style="padding: 0px 28px !important;
+                    margin-top: 13px;" ng-if="(!(appSettings.isMobileHeader()))">
+
+            <!--left area-->
+            <div class="col-lg-9 col-md-9 col-sm-12 padZero" style="padding-right: 0px;">
+                <!--ui-view="ipmAlertPageUIView"-->
+                <div class="col-lg-12 col-md-12 col-sm-12 content_box padZero floatLefM15" id="latestUpdates">
+                    <ng-include src='"/app/ipm/partials/ipmAlertTabs.html"'></ng-include>
+
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 padZero floatLefM15" id="Vision_News">
+                    <div class="col-lg-4 col-md-4 col-sm-12 Mob_padZero vision-content">
+                        <ng-include src='"/app/ipm/partials/ipmNewsTabsVision.html"'></ng-include>
+                    </div>
+                    <!--ui-view="ipmNewsPageUIView"-->
+                    <div class="col-lg-8 col-md-8 col-sm-12 padZero Mob_padZero  content_box lower-content">
+                        <ng-include src="'/app/ipm/partials/ipmNewsTabs.html'"></ng-include>
+                    </div>
+                </div>
+            </div>
+
+            <!--right area-->
+            <div class="col-lg-3 col-md-3 col-sm-12 padleft5 Mob_padZero misc_MrgFix padding-left0-md-sm padding-right0-md-sm" style="padding-left: 0px;">
+
+                <div class="col-lg-12 col-md-12 col-sm-12  padZero "
+                     id="document_lib">
+                    <!--ui-view="ipmDocumentLibPageUIView"-->
+                    <ng-include src="'/app/ipm/partials/ipmDocumentLibrary.html'"></ng-include>
+
+
+                </div>
+                <!--ui-view="ipmUsefulLinkPageUIView"-->
+                <div class="col-lg-12 col-md-12 col-sm-12 padZero" id="useful_links">
+                    <ng-include src="'/app/ipm/partials/ipmUsefulLink.html'"></ng-include>
+                </div>
+
+            </div>
+
+        </div>
+        <!--end-->
+
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿
+
+
+
+<div class="tab-pane fade in active sm_inerWPCont" id="svpmsg" block-ui="ipmSVPBlockUI" ng-controller="ipm.svpMessage.controller as controller">
+
+    <div class="mobile-header-control">
+        <h1>
+            SVP Messages
+        </h1>
+    </div>
+
+
+
+
+    <div ng-if="(isShowVideo)">
+        <ng-include src="'/app/ipm/partials/ipmNewsTabsSVPVideo.html'"></ng-include>
+    </div>
+
+
+    <div id="myCarousel2" class="carousel slide" ng-show="(!isShowVideo)">
+        <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+            <uib-slide ng-repeat="item in sVPViewModel" ng-click="onClickSetVideo($index,item);">
+                <img ng-if="(isNotNullOrEmptyOrUndefinedFile(item.THUMBIMAGE.FileName))" src="{{item.THUMBIMAGE.FileName}}" class="svpMsg_img img-responsive" style="margin:auto;">
+                <div class="carousel-caption">
+                    <h4>{{item.DocDesc}}</h4>
+                    
+                </div>
+            </uib-slide>
+        </uib-carousel>
+
+
+        <!--<ol class="carousel-indicators">
+            <li data-ng-repeat="item in sVPViewModel" data-target="#myCarousel2" data-slide-to="{{$index}}" ng-class="{'active': isGetVideoSelectedTab($index)}" ></li>
+
+        </ol>
+        <div class="carousel-inner">
+
+            <div data-ng-repeat="item in sVPViewModel" class="item " ng-class="{'active': isGetVideoSelectedTab($index)}">
+                <div ng-click="onClickSetVideo($index,item);" class="fill" ng-if="(isNotNullOrEmptyOrUndefinedFile(item.THUMBIMAGE.FileName))">
+
+                  
+                    <img ng-if="(isNotNullOrEmptyOrUndefinedFile(item.THUMBIMAGE.FileName))" src="/content/css/styles/images/svp/{{item.THUMBIMAGE.FileName}}" style="" class="svpMsg_img img-responsive" />
+               
+
+                </div>
+            </div>
+
+        </div>
+        <span class="left carousel-control" href="#myCarousel2" ng-non-bindable data-slide="prev" ng-click="onClickPrevious()">
+            <span class="icon-prev">
+            </span>
+        </span><span class="right carousel-control" id="videoNext" ng-non-bindable href="#myCarousel2" data-slide="next" ng-click="onClickNext()">
+            <span class="icon-next"></span>
+        </span>-->
+    </div>
+
+</div>

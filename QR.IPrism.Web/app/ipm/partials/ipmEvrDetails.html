@@ -1,0 +1,335 @@
+﻿<div class="container-fluid pull-left" block-ui="ipmeVRDetsReadonlyBlockUI">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <div class="col-lg-12 col-md-12 col-sm-12 evrDetailsFormList">
+            <h1 class="page-tittle">
+                <!--<button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack(back)">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                </button>-->
+                <span>eVR Details</span>
+            </h1>
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel">
+                            <div class="panel-body" block-ui="ipmFlightdelayBlockUI">
+                                <ng-form name="flightDelay">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 padZero Mob_padZero form-outline">
+
+
+
+                                        <!--row fix-->
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body eVRDetails_listFont">
+                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-outline globalfontbold">
+                                                            <div class="row">
+                                                                <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                    eVR ID
+                                                                </label>
+                                                                <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                    {{ evrNo }}
+                                                                </div>
+
+                                                                <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                    eVR Status
+                                                                </label>
+                                                                <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                    {{ evrstatus }}
+                                                                </div>
+
+                                                                <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                    Critical
+                                                                </label>
+                                                                <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                    {{ IsCritical == 'Y' ? 'Yes' : 'No' }}
+                                                                </div>
+
+                                                                <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                    Staff
+                                                                </label>
+                                                                <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                    {{ StaffNumber }}
+                                                                </div>
+
+                                                                <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                    Staff Name
+                                                                </label>
+                                                                <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                    {{ StaffName }}
+                                                                </div>
+
+                                                                <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                    Grade
+                                                                </label>
+                                                                <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                    {{ Grade }}
+                                                                </div>
+
+                                                                <div id="NoVRFalseId" ng-show="(VrStatusName | uppercase) !== 'NO VR'" class="clearboth">
+
+                                                                    <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                        CSR
+                                                                    </label>
+                                                                    <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                        {{ IsCSR == 'Y' ? 'Yes' : 'No' }}
+                                                                    </div>
+
+                                                                    <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                        OHS
+                                                                    </label>
+                                                                    <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                        {{ IsOHS == 'Y' ? 'Yes' : 'No' }}
+                                                                    </div>
+
+                                                                    <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                        PM/PO
+                                                                    </label>
+                                                                    <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                        {{  IsPO == 'Y' ? 'Yes' : 'No' }}
+                                                                    </div>
+
+                                                                    <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                        Report About
+                                                                    </label>
+                                                                    <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                        {{ ReportAboutName }}
+                                                                    </div>
+
+                                                                    <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                        Category
+                                                                    </label>
+                                                                    <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                        {{ CategoryName }}
+                                                                    </div>
+
+                                                                    <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                        Sub Category
+                                                                    </label>
+                                                                    <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                        {{ SubCategoryName }}
+                                                                    </div>
+
+                                                                    <label class="control-label col-lg-1 col-md-2 col-sm-3">
+                                                                        Cabin Class
+                                                                    </label>
+                                                                    <div class="col-lg-3 col-md-4 col-sm-9 read_field_fix">
+                                                                        {{ IsCabInClassFC == 'Y' ? 'First Class,' : '' }}
+                                                                        {{ IsCabInClassJC == 'Y' ? 'Business Class,' : '' }}
+                                                                        {{ IsCabInClassYC == 'Y' ? 'Economy Class' : '' }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div id="NoVRFalseId" ng-show="(VrStatusName | uppercase) !== 'NO VR'">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body">
+
+                                                        <div id="profileTabsContents" class="evrpassgdetTab martop20">
+                                                            <tabset class="tab-animation">
+
+                                                                <tab heading="Assigned Departments">
+
+                                                                    <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 padZero">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="panel ">
+
+
+                                                                                    <div class="panel-body">
+                                                                                        <div class="table-responsive dataGrid_styles">
+                                                                                            <div ui-grid="deptgrid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize
+                                                                                                 ng-style="getTableHeight(deptgrid)" class="grid displayGrid">
+                                                                                                <div class="watermark" ng-show="!deptgrid.data.length">No data available</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </tab>
+
+                                                                <tab heading="Passenger Details">
+
+                                                                    <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 padZero marLeft15">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="panel ">
+
+                                                                                    <div class="panel-body">
+                                                                                        <div class="table-responsive dataGrid_styles">
+                                                                                            
+                                                                                            <div ui-grid="passengergrid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize
+                                                                                                 ng-style="getTableHeight(passengergrid)" class="grid displayGrid">
+                                                                                                <div class="watermark" ng-show="!passengergrid.data.length">No data available</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </tab>
+
+
+
+                                                                <tab heading="Attached Documents">
+                                                                    <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 padZero">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="panel ">
+
+                                                                                    <div class="panel-body">
+                                                                                        <div class="table-responsive dataGrid_styles">
+                                                                                            <div ui-grid="attachmentgrid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize
+                                                                                                 ng-style="getTableHeight(attachmentgrid)" class="grid displayGrid">
+                                                                                                <div class="watermark" ng-show="!attachmentgrid.data.length">No data available</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </tab>
+                                                                <tab heading="Crew Details">
+                                                                    <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 padZero marLeft15">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="panel ">
+
+                                                                                    <div class="panel-body">
+                                                                                        <div class="table-responsive dataGrid_styles">
+                                                                                            <div ui-grid="crewdetailsgrid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize
+                                                                                                 ng-style="getTableHeight(crewdetailsgrid)" class="grid displayGrid">
+                                                                                                <div class="watermark" ng-show="!crewdetailsgrid.data.length">No data available</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </tab>
+
+                                                                <tab heading="Action Resolution">
+
+                                                                    <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12 padZero">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="panel">
+
+                                                                                    <div class="panel-body">
+                                                                                        <div class="table-responsive dataGrid_styles">
+                                                                                            <div ui-grid="actionResgrid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize
+                                                                                                 ng-style="getTableHeight(actionResgrid)" class="grid searchGrid">
+                                                                                                <div class="watermark" ng-show="!actionResgrid.data.length">No data available</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </tab>
+
+                                                            </tabset>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 eVR_details">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <span class="page-title">
+                                                            Comments
+                                                        </span>
+                                                    </div>
+                                                    <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+
+                                                        <div class="row" ng-if="FactsComment">
+                                                            <srd-textarea label="Facts" label-class="col-lg-1 col-md-1 col-sm-1" field-class="col-lg-9 col-md-9 col-sm-9"
+                                                                          submitted="submitted" max-length="4000" model="FactsComment" name="factsEVR"
+                                                                          rows="5" customtext="Fact comments cannot exceed"
+                                                                          max-length="500" required="false" readonly="true"></srd-textarea>
+                                                        </div>
+                                                        <div class="row" ng-if="ActionsComment">
+                                                            <srd-textarea label="Actions" label-class="col-lg-1 col-md-1 col-sm-1"
+                                                                          field-class="col-lg-9 col-md-9 col-sm-9" submitted="submitted"
+                                                                          max-length="4000" model="ActionsComment" name="ActionsEVR" rows="5"
+                                                                          customtext="Action comments cannot exceed"
+                                                                          max-length="500" required="false" readonly="true"></srd-textarea>
+                                                        </div>
+                                                        <div class="row" ng-if="ResultComment">
+                                                            <srd-textarea label="Result" label-class="col-lg-1 col-md-1 col-sm-1"
+                                                                          field-class="col-lg-9 col-md-9 col-sm-9" submitted="submitted"
+                                                                          max-length="4000" model="ResultComment" name="ResultEVR" rows="5"
+                                                                          customtext="Result comments cannot exceed "
+                                                                          max-length="500" required="false" readonly="true"></srd-textarea>
+                                                        </div>
+                                                        <div class="row" ng-if="CrewComments">
+                                                            <srd-textarea label="Comment" label-class="col-lg-1 col-md-1 col-sm-1"
+                                                                          field-class="col-lg-9 col-md-9 col-sm-9" submitted="submitted"
+                                                                          max-length="4000" model="CrewComments" name="CrewCommentEVR" rows="5"
+                                                                          customtext="Result comments cannot exceed "
+                                                                          max-length="500" required="false" readonly="true"></srd-textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="NoVRTrueId" ng-show="(VrStatusName | uppercase) == 'NO VR'">
+                                            <div class="row">
+                                                <srd-textarea label="Comment" label-class="col-lg-1 col-md-3 col-sm-3"
+                                                              field-class="col-lg-9 col-md-9 col-sm-9" submitted="submitted"
+                                                              model="CrewComments" name="CrewCommentsEVR" rows="5"
+                                                              max-length="22" required="false" readonly="true"></srd-textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="panel-body">
+                                                <button class="btn btn-primary pull-right-lg" ng-click="goBack(back)">Back</button>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </ng-form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

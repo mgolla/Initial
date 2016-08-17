@@ -1,0 +1,190 @@
+﻿
+<nav class="navbar navbar-default navbar-fixed-top" id="header_area">
+    <div class="container-fluid">
+        <div class="navbar-header headerNav col-xs-12">
+            <button type="button" class="navbar-toggle collapsed pull-left toggle-action main-toggle col-xs-1" id="mainNavbarButton" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-9">
+                <a class="iprism_logo" ng-click="onClickMainMenuLink('home' ,'home')"><img src="/Content/css/styles/icons/iprism_Logo.png" /></a>
+            </div>
+
+            <button type="button" class="navbar-toggle dot-toggle col-xs-1 zIndex999" data-toggle="collapse" id="menutoggleButton" onclick=" onClickMenu();" data-target="#logininfo_menutoggle">
+                <span class="dots-icon"></span>
+
+            </button>
+
+        </div>
+        <div class="search_home shiwB-990" ng-click="onClickMainMenuLink('home' ,'home')">
+            <a ng-click="onClickMainMenuLink('home','home')" class="nav-icon" style=""></a>
+        </div>
+
+        <div class="search  shiwB-990">
+            <a ng-click="onClickMainMenuLink('ips' ,'search')" class="nav-icon" role="button"></a>
+        </div>
+
+
+
+        <div>
+            <div class="loginInfo pull-right collapse navbar-collapse icon-toggle" id="logininfoMenutoggle">
+
+
+                <div data-toggle="tooltip" title="Alerts" class="alerts_update">
+                    <i class="fa fa-bell fa-2x"></i>
+                    <div class="alert_count" ng-show="alertCounter>0">
+                        {{alertCounter}}
+                    </div>
+                </div>
+                <div title="Contacts" class="locationMarker submenuicon">
+                    <span role="button" ui-sref="IvrMain" class="glyphicon glyphicon-phone-alt"  ></span>
+                </div>
+                <div title="Search" class="search mob-hide hide-990">
+                    <a ng-click="onClickMainMenuLink('ips' ,'search')" class="nav-icon" role="button"></a>
+                </div>
+                <div title="Crew Locator" class="locationMarker submenuicon" ng-if="crewProfile.IsAdmin">
+                    <span ng-click="onClickMainMenuLink('crewlocator' , 'crewlocator')" class="glyphicon glyphicon-map-marker" role="button"></span>
+                </div>
+
+                <div title="E-mail" class="mail submenuicon">
+                    <a id="headermail" target="_blank" href="{{MyMailURL}}" class="nav-icon" role="button"></a>
+                </div>
+                <!--<div title="setting" class="settings submenuicon">
+                    <a id="headersettings" target="_blank" href="#" class="nav-icon" role="button"></a>
+                </div>-->
+                <div title="Help" class="info submenuicon">
+                    <a id="headerinfo" target="_blank" href="{{HelpDocument}}" class="nav-icon" role="button"></a>
+                </div>
+                <div title="AQD" class="aqd submenuicon">
+                    <a id="headeraqd" target="_blank" href="{{AQDURL}}" class="nav-icon" role="button"></a>
+                </div>
+                <div title="Alerts" style="position: relative;" class="dropdown submenuicon alert-bell-icon">
+                    <a ng-click="onClickAlertBell()" class="dropdown-toggle alertbell nav-icon" data-toggle="dropdown" aria-expanded="false">
+                        <span class="alert_count" ng-show="alertCounter>0">{{alertCounter}}</span>
+                    </a>
+                    <ul class="dropdown-menu custom-menu  bounceInDown alertbellpopup" style="visibility: visible;">
+                        <li>
+                            <h3 class="notification_box_title">Alerts & Notifications</h3>
+                            <div class="overflow_Hght_250 mob_overflow_Hght_250">
+
+                                <!--ng-click="onSelectedChange(item.DocType,item.FileCode,item.FileId,item.DocId,item.DocDesc)"-->
+                                <div class=" notification_box" data-ng-repeat="item in alertNotificationViewModel">
+
+
+                                    <div class="notif_cont">
+                                        <b class="pull-right notifi_AN">{{item.Doc}}</b>
+
+                                        <a ng-click="onSelectedChange(item.Doc,item.DocType,item.FileCode,item.FileId,item.DocId,item.DocDesc ,item.Link)">
+                                            {{item.DocDesc }}
+                                        </a>
+                                        <span>{{item.AlertFolderName }}</span>
+                                    </div>
+                                    <div class="notif_date">
+                                        {{item.DocDate.toString().split(' ')[0] }} {{item.DocDate.toString().split(' ')[1] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown profile">
+                    <span class="dropdown-toggle profilePic" data-toggle="dropdown"
+                          aria-expanded="false" ng-click="profileExpClick()">
+                        <srd-image src="crewProfile.CrewPhotoUrl" cls="img-circle thumb_profile" alt="Profile pic"></srd-image>
+                        <img src="/content/css/styles/images/arrow.png" class="profile_tip">
+                    </span>
+                    <ul class="dropdown-menu custom-menu  bounceInDown profilepicpopup" style="visibility: visible;">
+
+                        <li class="user-header clsUsrHdr">
+                            <srd-image src="crewProfile.CrewPhotoUrl" cls="img-circle thumb_profile" alt="Profile pic" width="120" height="120"></srd-image>
+                            <p class="user-details">
+                                <strong>{{crewProfile.StaffName}}</strong><br>
+                                <br>
+                            </p>
+                        </li>
+
+
+                        <li class="user-header clsImprntHdr" style="display:none" ng-if="crewProfile.IsAdmin">
+                            <div class="row ImperContainer">
+                                <div class="titlebackImper"><h4>Impersonate</h4></div>
+                                <div class="col-lg-10 col-md-10 col-sm-10 martop20">Staff Number:</div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 martop10"><input type="text" ng-model="crewProfile.ImpersonatedBy" class="form-control" /></div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 martop10"><button class="btn btn-primary" ng-click="onImpersonateSignInClick()">Sign-in</button><button class="btn btn-primary" ng-click="onImpersonateCancelClick()">Cancel</button></div>
+                            </div>
+                        </li>
+
+                        <li class="user-body">
+                            <div class="col-xs-12 text-center">
+                                <span ng-click="onClickCrewProfile('cpPersonaldetails.details')" class="links_text">My Profile</span>
+                            </div>
+                            <div class="col-xs-12 text-center">
+                                <span ng-click="onClicklogOff()" class="links_text">Logout</span>
+                            </div>
+                            <div class="col-xs-12 text-center" ng-if="crewProfile.IsAdmin">
+                                <span ng-click="onImpersonateClick()" class="links_text">Impersonate</span>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="noPadRight noBorder QrLogo">
+                    <img src="/Content/css/styles/icons/QR_Logo.png" />
+                </div>
+                <input type="hidden" value="0" id="isMenuSelected" />
+
+            </div>
+
+            <!--/.nav-collapse -->
+        </div>
+
+    </div>
+    <div class="menu-part">
+        <div class="">
+            <div id="navbar" class="navbar-collapse collapse main-menu-nav">
+                <ul class="nav navbar-nav">
+                    <li class="home" ng-click="onClickMainMenuLink('home', 'home')">
+                        <!--ui-sref="home"-->
+                        <span ng-click="onClickMainMenuLink('home', 'home')"></span>
+                    </li>
+
+                    <li class="dropdown " ng-repeat="menu in menuList" ng-if="checkIsMobile(menu.IsMobileLink)">
+                        <a ng-if="(!(isSrefNotNullOrEmptyOrUndefined(menu.Sref)))" ui-sref-active="active" class="dropdown-toggle {{menu.IconClass}}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            {{menu.MenuName}} <span class="caret"></span>
+                        </a>
+                        <a ng-if="isSrefNotNullOrEmptyOrUndefined(menu.Sref)" ng-click="onClickMainMenuLink(menu.Sref ,menu.MenuName)">  {{menu.MenuName}} </a>
+                        <ul class="dropdown-menu fixdropdown">
+                            <li ng-repeat="submenu in menu.SubMenus" ng-show="checkIsMobile(submenu.IsMobileLink)">
+                                <a ui-sref-active="active" ng-click="onClickMainMenuLink(submenu.Sref ,menu.MenuName )">{{submenu.MenuName}}</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<script type="text/ng-template" id="warning-dialog.html">
+
+    <div class="ngdialog-message">
+        <h2>
+            <i class="fa fa-question-circle" style=""></i> {{timoutDialogTitle}}
+        </h2>
+        <div class="dialog_content">
+            <h2>
+                {{timeOutDialogMessage}}
+            </h2>
+            <div class="dialog_content" idle-countdown="countdown" ng-init="countdown=5"><progressbar max="5" value="5" animate="false" class="progress-striped active">{{countdown}} second(s).</progressbar></div>
+        </div>
+
+    </div>
+</script>

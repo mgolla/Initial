@@ -1,0 +1,197 @@
+﻿<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack()">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+                <span>Housing Request</span>
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles">
+
+                <!--Left panel-->
+                <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero padZero formStyles" block-ui="ipmhousingReadonlyBlockUI">
+
+                    <ng-include src="'/app/ipm/partials/ipmHousingCurrentAcc.html'"></ng-include>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading clearfix">
+                                    <h3 class="panel-title">
+                                        Request Details - {{ housingdata.RequestNumber }}<i class="pull-right"></i>
+                                    </h3>
+                                </div>
+                                <div class="panel-body  mob_padLeftZero mob_padRightZero">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-8 col-sm-8 col-lg-offset-2  col-sm-offset-3 col-md-offset-2">
+                                            <div class="table-responsive">
+
+                                                <table id="example" class="table table-striped table-bordered dataTable no-footer blueTHTable" cellspacing="0" role="grid" aria-describedby="example_info" style="width: 100%;">
+                                                    <thead>
+                                                        <tr role="row" class="headerRow">
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending"
+                                                                aria-label="Request No.: activate to sort column descending">
+                                                                Entitlement Year
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                                                aria-label="Request Type: activate to sort column ascending">
+                                                                Entitlement Available
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                                                aria-label="Description: activate to sort column ascending">
+                                                                Last Entitlement used
+                                                            </th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                                                aria-label="Description: activate to sort column ascending">
+                                                                Balance
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr role="row" class="odd">
+                                                            <td class="sorting_1">
+                                                                {{housingEntitlements.currentYear}}
+                                                            </td>
+                                                            <td>
+                                                                {{housingEntitlements.Setup_days}} days -  {{housingEntitlements.Setup_slots}} slots
+                                                            </td>
+                                                            <td>
+                                                                {{housingEntitlements.Used_No_of_days}} days -  {{housingEntitlements.Used_No_of_slots}} slots
+                                                            </td>
+                                                            <td>
+                                                                {{housingEntitlements.Setup_days - housingEntitlements.Used_No_of_days}} days -
+                                                                {{housingEntitlements.Setup_slots - housingEntitlements.Used_No_of_slots}} slots
+                                                            </td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td class="sorting_1">
+                                                                {{housingEntitlements.nextYear}}
+                                                            </td>
+                                                            <td>
+                                                                {{housingEntitlements.Setup_days}} days -  {{housingEntitlements.Setup_slots}} slots
+                                                            </td>
+                                                            <td>{{housingEntitlements.Next_No_of_days}} days - {{housingEntitlements.Next_No_of_slots}} slots</td>
+                                                            <td>
+                                                                {{housingEntitlements.Setup_days - housingEntitlements.Next_No_of_days}} days -
+                                                                {{housingEntitlements.Setup_slots - housingEntitlements.Next_No_of_slots}} slots
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 padZero Mob_padZero readForm">
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                            Request Type
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{ housingdata.RequestType }}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2  col-sm-3 " for="reqtype">
+                                            Request Date
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{ housingdata.RequestDate | date:"dd-MMM-yyyy" }}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3 " for="reqtype">
+                                            Relation
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.Guests.RelationType}}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2  col-sm-3 " for="reqtype">
+                                            Guest Name
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.Guests.GuestName}}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2  col-sm-3 " for="reqtype">
+                                            From Date
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.Guests.CheckinDate | date:"dd-MMM-yyyy" }}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2  col-sm-3 " for="reqtype">
+                                            To Date
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.Guests.CheckoutDate | date:"dd-MMM-yyyy" }}
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2  col-sm-3 " for="reqtype">
+                                            No. of Days
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                            {{housingdata.Guests.NoOfDays}}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 padZero">
+                                        <label class="control-label col-lg-2 col-md-2  col-sm-3" for="reason">
+                                            Additional Info
+                                        </label>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 minformWidth">
+                                            <div ng-repeat="comment in comments">
+                                                <span><b>{{comment.CreatedBy}}  ({{comment.CreatedDate}}) -</b></span>
+                                                <span ng-bind-html="comment.Message"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="container" ng-if="files && files.length > 0">
+                                            <table id="example" class="table table-striped table-bordered dataTable no-footer blueTHTable" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%;">
+                                                <thead>
+                                                    <tr role="row" class="headerRow">
+                                                        <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending"
+                                                            aria-label="Request No.: activate to sort column descending" style="width: 240px;">
+                                                            File Name
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr role="row" class="odd" ng-repeat="file in files">
+                                                        <td class="sorting_1">
+                                                            <a href="javascript:void(0);" ng-click="openImage(file)">{{file.FileName}}</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="padZero  col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="pull-right">
+
+                                            <button type="button" class="btn btn-primary" title="back to previous page" ng-click="goBack()">
+                                                Back
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->
+                    <!--tabs+Accordion wrap-->
+                </div>
+                <!--Right panel-->
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

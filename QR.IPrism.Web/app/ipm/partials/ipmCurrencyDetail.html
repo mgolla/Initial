@@ -1,0 +1,33 @@
+﻿<!--<div id="tab-2" class="row" ng-controller='ipm.currencyDetail.controller'>-->
+
+    <!--<div class="tabContent container-fluid">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                Currency Details
+            </h1>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padZero">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="table-responsive dataGrid_styles" >
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>-->
+    <!--<div ui-grid="grid" ui-grid-pagination class="grid searchGrid"></div>
+</div>-->
+
+<div class="extra_cont" ng-controller='ipm.currencyDetail.controller'>
+    <b class="blueTxt">1 {{CurrencyDetail.FromCurrency }} = </b>{{CurrencyDetail.ConversionRate }} {{CurrencyDetail.ToCurrency }}
+    <br>
+    <b class="blueTxt">1 {{CurrencyDetail.ToCurrency }} = </b>{{CurrencyDetail.InvConversionRate }} {{CurrencyDetail.FromCurrency }}
+</div>

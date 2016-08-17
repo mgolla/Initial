@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50555FAD-8B91-48B7-BC7B-928C5DBD70BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QR.IPrism.Adapter</RootNamespace>
+    <AssemblyName>QR.IPrism.Adapter</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Analyzers">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Analyzers.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Core">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.FastVectorHighlighter">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.FastVectorHighlighter.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Highlighter">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Highlighter.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Memory">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Queries">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Queries.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Regex">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Regex.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SimpleFacetedSearch">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.SimpleFacetedSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Snowball">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Snowball.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SpellChecker">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.SpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\Enums.cs" />
+    <Compile Include="Helper\RecursiveJoinExtensions.cs" />
+    <Compile Include="Implementation\AssessmentAdapter.cs" />
+    <Compile Include="Implementation\AssessmentListAdapter.cs" />
+    <Compile Include="Implementation\AssessmentSearchAdapter.cs" />
+    <Compile Include="Implementation\CrewProfileAdapter.cs" />
+    <Compile Include="Implementation\DashboardAdapter.cs" />
+    <Compile Include="Implementation\EmployeeAdapter.cs" />
+    <Compile Include="Helper\AutoMapperConfiguration.cs" />
+    <Compile Include="Helper\LookupTypeCodes.cs" />
+    <Compile Include="Implementation\EVRAdapter.cs" />
+    <Compile Include="Implementation\FlightAddEditAdapter.cs" />
+    <Compile Include="Implementation\FlightDelayAdapter.cs" />
+    <Compile Include="Implementation\FlightLoadAdapter.cs" />
+    <Compile Include="Implementation\HousingAdapter.cs" />
+    <Compile Include="Implementation\KafouAdapter.cs" />
+    <Compile Include="Implementation\LookupAdapter.cs" />
+    <Compile Include="Implementation\OverviewAdapter.cs" />
+    <Compile Include="Implementation\POAssessmentAdapter.cs" />
+    <Compile Include="Implementation\RosterAdapter.cs" />
+    <Compile Include="Implementation\SearchAdapter.cs" />
+    <Compile Include="Interfaces\IAssessmentAdapter.cs" />
+    <Compile Include="Interfaces\IAssessmentListAdapter.cs" />
+    <Compile Include="Interfaces\IAssessmentSearchAdapter.cs" />
+    <Compile Include="Interfaces\ICrewProfileAdapter.cs" />
+    <Compile Include="Interfaces\IDashboardAdapter.cs" />
+    <Compile Include="Interfaces\IEmployeeAdapter.cs" />
+    <Compile Include="Interfaces\IEVRAdapter.cs" />
+    <Compile Include="Interfaces\IFlightAddEditAdapter.cs" />
+    <Compile Include="Interfaces\IFlightDelayAdapter.cs" />
+    <Compile Include="Interfaces\IHousingAdapter.cs" />
+    <Compile Include="Interfaces\IKafouAdapter.cs" />
+    <Compile Include="Interfaces\ILookupAdapter.cs" />
+    <Compile Include="Interfaces\IOverviewAdapter.cs" />
+    <Compile Include="Interfaces\IPOAssessmentAdapter.cs" />
+    <Compile Include="Interfaces\IRosterAdapter.cs" />
+    <Compile Include="Interfaces\ISearchAdapter.cs" />
+    <Compile Include="Interfaces\ISharedAdapter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Implementation\SharedAdapter.cs" />
+    <Compile Include="Service References\FlightDetailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OdsUserAuthentication\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ProxyVRDetails\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\FlightDetailService\FlightDetail.wsdl" />
+    <None Include="Service References\FlightDetailService\FlightDetail.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FlightDetailService\FlightDetail1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FlightDetailService\FlightDetail2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FlightDetailService\FlightDetail3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FlightDetailService\FlightDetail4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FlightDetailService\QR.PRISM.Adapter.FlightDetailService.Flight.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FlightDetailService\QR.PRISM.Adapter.FlightDetailService.Passenger.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.AdminApplicationsView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.AdminUserConfigDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.CustomUserLocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.MenuDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.QuickLinkDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.Role.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.RolePermission.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.SocialMediaUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.UserAttribute.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.UserContext.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.UserLocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.UserLoginAudit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.UserPolicy.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\QR.PRISM.Adapter.OdsUserAuthentication.UserRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\UsrMgmtSvc.wsdl" />
+    <None Include="Service References\OdsUserAuthentication\UsrMgmtSvc.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\UsrMgmtSvc1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\UsrMgmtSvc2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\UsrMgmtSvc3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OdsUserAuthentication\UsrMgmtSvc4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.DayWiseDataMonParm.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.Department.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.DepartmentPerformanceReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.DeptIdName.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.DraftVR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.EOEVRActionCount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.FlightDelayByTimeline.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.GetNextVRIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.getVROnSpecificDayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.GetVrsForDeptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.GetVrsForDeptWeb_ActionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.GetVrsForDeptWeb_InfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.MonthlyWiseDataParm.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.PassengerLoad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.SearchVRDeptResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.SearchVRForAction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.SearchVRForAssign.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.SearchVRResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.SearchVRResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.SectionId.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.ViewVRActionVR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.ViewVRAssignVR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.ViewVRCrew.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.ViewVRDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.ViewVRDraft.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.ViewVREnterVR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.ViewVRSelectFlight.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VRActingCS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VRActionResolution.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VRBreakDownByRptAbt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VRCommentsHist.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VrCount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VRCrewFlight.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VRDeptEnterVR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VRDraftDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VrForDepartmentByTimeline.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VRIdNo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VROnSpecificDayCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VROnSpecificDayParent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VROnSpecificDayReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VROnSpecificDaySubCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VrReconcilation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VrRecouncilationFlightDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VRReportFilter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VRReportsParent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\QR.IPrism.Adapter.ProxyVRDetails.VrStatusCountForDept.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProxyVRDetails\VRDetailsService.wsdl" />
+    <None Include="Service References\ProxyVRDetails\VRDetailsService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProxyVRDetails\VRDetailsService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProxyVRDetails\VRDetailsService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProxyVRDetails\VRDetailsService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProxyVRDetails\VRDetailsService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProxyVRDetails\VRDetailsService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FlightDetailService\" />
+    <WCFMetadataStorage Include="Service References\OdsUserAuthentication\" />
+    <WCFMetadataStorage Include="Service References\ProxyVRDetails\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OdsUserAuthentication\UsrMgmtSvc.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OdsUserAuthentication\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OdsUserAuthentication\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OdsUserAuthentication\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FlightDetailService\FlightDetail.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FlightDetailService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FlightDetailService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FlightDetailService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QR.IPrism.DataAccess\QR.IPrism.DataAccess.csproj">
+      <Project>{9d131c0f-d5b0-40b0-8c50-5a5094d38959}</Project>
+      <Name>QR.IPrism.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QR.IPrism.EntityObjects\QR.IPrism.EntityObjects.csproj">
+      <Project>{c7ca8850-1a69-44ff-8f3d-3c2774db8f89}</Project>
+      <Name>QR.IPrism.EntityObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QR.IPrism.Models\QR.IPrism.Models.csproj">
+      <Project>{a2b4e670-229f-445f-86f4-55387f50f183}</Project>
+      <Name>QR.IPrism.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QR.IPrism.Utility\QR.IPrism.Utility.csproj">
+      <Project>{d3c34a12-b1e9-41bb-b971-18ff1ee9c7fc}</Project>
+      <Name>QR.IPrism.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProxyVRDetails\VRDetailsService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProxyVRDetails\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProxyVRDetails\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProxyVRDetails\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

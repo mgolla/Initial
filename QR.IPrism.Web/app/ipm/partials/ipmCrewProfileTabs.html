@@ -1,0 +1,16 @@
+﻿<div id="profileTabsContents" class="profile_tabview">
+    <tabset class="tab-animation prfqualVisaCont">
+        <tab heading="Destinations Visited" ui-sref="cpPersonaldetails.details.dstvst" select="onCrewTabChange('DST')">
+            <div class="tab-pane fade  in active" id="destivisitId" ui-view="ipmDestVstdUIView"></div>
+        </tab>
+        <!--<tab heading="My Documents" ui-sref="cpPersonaldetails.details.mydoc" select="onCrewTabChange('MyDoc')">
+            <div class="tab-pane fade in active" id="mydocId" ui-view="ipmMyDocUIView"></div>
+        </tab>
+        <tab heading="IDP" ui-sref="cpPersonaldetails.details.idp" select="onCrewTabChange('IDP')">
+            <div class="tab-pane fade in active" id="idpId" ui-view="ipmIDPUIView"></div>
+        </tab>-->
+        <tab heading="Qualification & Visa" ui-sref="cpPersonaldetails.details.ql" select="onCrewTabChange('QAL')">
+            <div class="tab-pane fade in active " id="quald" ui-view="ipmQualnVisaUIView"></div>
+        </tab>
+    </tabset>
+</div>

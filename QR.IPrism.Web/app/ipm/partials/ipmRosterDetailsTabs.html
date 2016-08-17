@@ -1,0 +1,26 @@
+﻿<div ng-controller="ipm.rosterDetailTabs.controller">
+    <ul id="rosterdetailTab" class="nav nav-tabs rosterdetailTab iconTab">
+        <li ng-show="(isTraining == false)" ng-class="{'active': isSelectedRDTab(Overview)}">
+            <a id="overViewTab" ng:click="onRDTabChange(Overview)">
+                <i class="overview"></i>
+                <b>Overview</b>
+            </a>
+        </li>
+        <li ng-show="(isTraining == false)" ng-class="{'active': isSelectedRDTab(CrewDet)}"><a ng:click="onRDTabChange(CrewDet)" data-toggle="tab"><i class="crew"></i><b>Crew Details</b></a></li>
+        <li ng-show="(isTraining == false)" ng-class="{'active': isSelectedRDTab(SOS)}"><a ng:click="onRDTabChange(SOS)" data-toggle="tab"><i class="sos"></i><b>Summary of Service</b></a></li>
+        <li ng-show="(isTraining == false)" ng-class="{'active': isSelectedRDTab(StationInfo)}"><a ng:click="onRDTabChange(StationInfo)" data-toggle="tab"><i class="hotel"></i><b>Station Info</b></a></li>
+        <li ng-show="(isTraining == false)" ng-class="{'active': isSelectedRDTab(Hotel)}"><a ng:click="onRDTabChange(Hotel)"><i class="station"></i><b> Hotel Info </b></a></li>
+
+        <li ng-show="(isTraining == true)" ng-class="{'active': isSelectedRDTab(Training)}"><a ng:click="onRDTabChange(Training)"><i class="station"></i><b> Training Details </b></a></li>
+        <li class="pull-right close_tabCont  noBorder">
+            <img ng-click="closeTabContentClick()" src="/content/css/styles/icons/close.png" class="closeTabContent">
+        </li>
+    </ul>
+    <div id="Div2" class="tab-content">
+        <div class="tab-pane fade active in"  id="overview_tab">
+            <div >
+                <ng-include src="selectedRDetailURL"></ng-include>
+            </div>
+        </div>
+    </div>
+</div>

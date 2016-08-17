@@ -1,0 +1,96 @@
+﻿<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack('housing')">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+                <span>Create Housing Request</span>
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles">
+                <!--Profile-->
+                <!-- Row start -->
+                <ng-include src="'/app/ipm/partials/ipmHousingCurrentAcc.html'"></ng-include>
+
+                <!-- Row end -->
+                <!-- Row start -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    <span>  Request Details <i class="pull-right"></i></span>
+                                    <i class="pull-right">All Fields marked with <span class="redText">*</span> are mandatory.</i>
+                                </h3>
+                            </div>
+                            <div class="panel-body" block-ui="ipmhousingNewReqBlockUI">
+                                <ng-form name="housingRequestForm">
+
+                                    <div class="col-lg-12 col-md-12 form-outline padZero">
+
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                            Request Type
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9">
+                                            <ui-select ng-model="RequestTypeObj" id="reqtype" ng-required="true"
+                                                       on-select="changeRequestType($model)" name="requestType" ng-disabled="disabled">
+                                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                                <ui-select-choices repeat="model in requestList | propsFilter: {Text: $select.search}">
+                                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                            </ui-select>
+                                        </div>
+                                        <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                            Request Date
+                                        </label>
+                                        <div class="col-lg-2 col-md-4 col-sm-9 ">
+                                            {{ requestDate | date:'dd-MMM-yyyy'}}
+                                        </div>
+                                    </div>
+                                    <!--<div class="txtRight  col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="housingBack">
+                <button type="button" class="btn btn-primary">Back</button>
+            </div>-->
+
+
+                                    <div ui-view="newrequestview" class="form-horizontal"></div>
+
+                                </ng-form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row end -->
+                <!--tabs+Accordion wrap-->
+            </div>
+        </div>
+        <!--Right panel-->
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        resizeDiv();
+    });
+
+    window.onresize = function (event) {
+        resizeDiv();
+    }
+
+    function resizeDiv() {
+
+        var getHeight = $(window).height()
+
+        //var headerHeight = $('#header_area').height();
+        //var footerHeight = $('.footer').height();
+
+        //var setHeight = getHeight-headerHeight-footerHeight;
+        var setHeight = getHeight - 130;
+
+        $('.content_wrapper').css({ 'min-height': setHeight + 'px' });
+    }
+
+</script>

@@ -1,0 +1,112 @@
+﻿<style>
+    @media (min-width: 1200px) {
+        .videogular-container {
+            width: 1170px !important;
+            height: 658.125px !important;
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+        .videogular-container {
+            width: 940px !important;
+            height: 528.75px !important;
+        }
+
+
+            .videogular-container.audio {
+                width: 940px !important;
+                height: 50px !important;
+            }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .videogular-container {
+            width: 728px !important;
+            height: 409.5px !important;
+        }
+
+            .videogular-container.audio {
+                width: 728px !important;
+                height: 50px !important;
+            }
+    }
+
+    .playlist {
+        text-align: center;
+        border-top: 1px solid #ccc;
+        background: #f1f1f1;
+    }
+
+    .playlist_pic {
+        background: #fff;
+        border: 1px solid #D7D8DB;
+    }
+
+        .playlist_pic img {
+            margin: 0px auto;
+            padding: 10px;
+        }
+
+    .playlist ul {
+        display: inline-block;
+        list-style: none;
+        margin: 0 auto;
+    }
+
+        .playlist ul li {
+            float: left;
+            margin: 10px;
+        }
+
+            .playlist ul li img {
+                width: 100px;
+                height: 30px;
+            }
+</style>
+<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper">
+        <div class="tab-pane fade in active" id="svpmsg" block-ui="ipmSVPBlockUI" ng-controller="ipm.file.controller as controller">
+
+            <div class="videogular-container">
+                <videogular vg-player-ready="controller.onPlayerReady($API)" vg-responsive="true" vg-complete="controller.onCompleteVideo()" vg-theme="controller.config.theme.url">
+                    <vg-media vg-src="controller.config.sources"
+                              vg-tracks="controller.config.tracks" vg-native-controls="true">
+                    </vg-media>
+
+                    <!--<vg-controls>
+                        <vg-play-pause-button></vg-play-pause-button>
+                        <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+                        <vg-scrub-bar>
+                            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                        </vg-scrub-bar>
+                        <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+                        <vg-volume>
+                            <vg-mute-button></vg-mute-button>
+                            <vg-volume-bar></vg-volume-bar>
+                        </vg-volume>
+                        <vg-fullscreen-button></vg-fullscreen-button>
+                    </vg-controls>
+
+                    <vg-overlay-play></vg-overlay-play>
+                    <vg-buffering></vg-buffering>
+                    <vg-poster vg-url='controller.config.plugins.poster'></vg-poster>-->
+                </videogular>
+            </div>
+            <div id="VideoDes" style="font-weight:bold; text-align:center">
+
+            </div>
+            <!--<div class="playlist">
+
+                <ul>
+                    <li data-ng-repeat="item in sVPViewModel">
+                        <a ng-click="controllerFile.setVideo($index,{{item}});"><img src="../../../Images/SVP_pic1.png" alt="Image" class="img-responsive"></a>
+                    </li>
+                </ul>
+            </div>-->
+            <!--<a ng-click="onOpenFileClick('DOCUMENTS',8)" style="line-height:20px">Menu</a>
+            <a ng-click="onOpenVideoClick('DOCUMENTS',8,'Greeting2016_Crew.mp4','mp4')" style="line-height:20px">Video</a>
+            <embed ng-src="{{content}}" style="width:200px;height:200px;"></embed>-->
+        </div>
+    </div>
+</div>

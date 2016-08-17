@@ -1,0 +1,605 @@
+﻿<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                Add/Edit Flight
+            </h1>
+        </div>
+        <!--Left panel-->
+        <div class="col-lg-12 col-md-12 col-sm-12 formStyles">
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <span class="editfltNotespan">Note:Search for-(Flight Number and ATD Date) or (ATD Date and Sector From-Sector To)</span>
+                            <h5 class="title_h4">Search Flight</h5>
+                            <div class="col-lg-offset-1 col-md-offset-1 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                        <label class="control-label"><span>FlightNumber:</span></label>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 mob-martop5">
+                                        <span class="">QR</span>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 mob-edfltQRegalign">
+                                        <span class="">eg. 264</span>
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <label class="control-label"><span>Sector From:</span></label>
+                                    </div>
+
+                                    <div class="col-md-offset-1 col-lg-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                                        <select class="form-control">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                        <label class="control-label"><span>ATD Date:</span></label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-8 mob-martop5">
+                                            <div class='input-group date' id='datetimepicker1'>
+                                                <input type='text' class="form-control" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                        <label class="control-label"><span>Sector To:</span></label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-8">
+                                        <select class="form-control">
+                                            <option>--Select--</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 edtFlightBtn">
+                                <button type="submit" class="btn editFltBtn">Search</button>
+                                <button type="submit" class="btn editFltBtn">Reset Search Result</button>
+                                <button type="submit" class="btn editFltBtn">New</button>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 form_inputs">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 editFlt_pagTitle">
+                                <span class="editfltNoteRec">Total 1 records found</span>
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 polistpagin">
+                                    <span>Displaying page 1 of 1</span>
+                                    <ul class="pagination">
+                                        <li><a class="active" href="#">1</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="">
+                                <div class="martop5 row col-lg-12 col-md-12 col-sm-12 col-xs-8 editFlt_tabHeader">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 mob-martop5">Flight Number</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 mob-martop5">STD(UTC)</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 mob-martop5 floatLefM15">ATD(UTC)</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 mob-martop5">Sector</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 mob-martop5">Aircraft Reg. No.</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 mob-martop5">Aircraft Type</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 mob-martop5"></div>
+                                </div>
+                                <div class="martop5 marLRZero row">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 mob-martop5"><input type="radio" /><span>QR871</span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 mob-martop5">04-Apr-2016(15:50)</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 mob-martop5 floatLefM15">04-Apr-2016(16:13)</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 mob-martop5">PVM-DOH</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 mob-martop5">A7-BAI</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 mob-martop5">77W</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 mob-martop5 mob-close"><span class="fa fa-times"></span></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <span class="editfltNotespan">Note:Search for-(Flight Number and ATD Date) or (ATD Date and Sector From-Sector To)</span>
+                            <h5 class="title_h4">Flight Details</h5>
+                            <div class="col-lg-offset-1 col-md-offset-1 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                        <label class="control-label"><span>*FlightNumber:</span></label>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 mob-martop5">
+                                        <span class="">QR</span>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3 mob-edfltQRegalign">
+                                        <span class="">eg. 264</span>
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                        <label class="control-label"><span>*Sector From:</span></label>
+                                    </div>
+
+                                    <div class="col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                                        <select class="form-control">
+                                            <option>PVG</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                        <label class="control-label"><span>*Aircraft Type:</span></label>
+                                    </div>
+
+                                    <div class="col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-lg-4 col-md-4 col-sm-4 col-xs-8">
+                                        <select class="form-control">
+                                            <option>77W</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <label class="control-label"><span>*Crew Complement:</span></label>
+                                    </div>
+
+                                    <div class="col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-lg-4 col-md-4 col-sm-5 col-xs-6">
+                                        <span>CS:1</span>
+                                        <span>F1:1</span>
+                                        <span>F2:10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                        <label class="control-label"><span>Aircraft Reg. No.:</span></label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-8">
+                                        <input type='text' class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                        <label class="control-label"><span>Sector To:</span></label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-8">
+                                        <select class="form-control">
+                                            <option>DOH</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                                        <label class="control-label"><span>Final Destination:</span></label>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-8">
+                                        <select class="form-control">
+                                            <option>DOH</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5 class="title_h4">Aircraft Configuration</h5>
+                            <span class="editfltNotespan">Note:'NA' to be entered if a class is not Applicable to the flight</span>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12"><span>*First Class:</span></div>
+                                    <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12"><span>*Business Class:</span></div>
+                                    <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12"><span>*Economy Class:</span></div>
+                                    <div class="col-lg-7 col-md-7 col-sm-10 col-xs-12">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            
+                            <h5 class="title_h4">Flight Time</h5>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 editFlt_fltTime">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>Note:</span></div>
+                                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-5"><span>Departure Delay(HH:MM) : 00:23</span></div>
+                                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-5"><span>Arrival Delay(HH:MM) : 00:23</span></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="row">
+                                    
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                                        <span class="">*STD Date :</span>
+                                    </div>
+                                    <div class="col-lg-offset-2 col-md-offset-2 col-lg-5 col-md-5 col-sm-8 col-xs-8">
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                                        <span class="">*ATD Date :</span>
+                                    </div>
+                                    <div class="col-lg-offset-2 col-md-offset-2 col-lg-5 col-md-5 col-sm-8 col-xs-8">
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                                        <span class="">*STA Date :</span>
+                                    </div>
+                                    <div class="col-lg-offset-2 col-md-offset-2 col-lg-5 col-md-5 col-sm-8 col-xs-8">
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                                        <span class="">*ATA Date :</span>
+                                    </div>
+                                    <div class="col-lg-offset-2 col-md-offset-2 col-lg-5 col-md-5 col-sm-8 col-xs-8">
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mob-martop5">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <span class="">*STD Time(UTC) :</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-8 col-xs-8 mob-martop5">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <span class="">*ATD Time(UTC) :</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-8 col-xs-8 mob-martop5">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <span class="">*STA Time(UTC) :</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-8 col-xs-8 mob-martop5">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                                        <span class="">*ATA Time(UTC) :</span>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-8 col-xs-8 mob-martop5">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5 class="title_h4">Load Details</h5>
+                            <span class="editfltNotespan">Note:'NA' to be entered if a class is not Applicable to the flight</span>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <input type="checkbox"/>
+                                        <span>Ferry Flight</span>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 martop10">
+                                        <span>*Passenger Load:</span>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 martop10">
+                                        <span>*No. of Infant Load:</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><span>*First Class:</span></div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 martop10">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 martop10">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><span>*Business Class:</span></div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 martop10">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 martop10">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><span>*Economy Class:</span></div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 martop10">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 martop10">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5 class="title_h4">Pre-Flight Check</h5>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <span>*Grooming Check done by GO?:</span>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <select class="form-control">
+                                                <option>NA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <span>*Grooming Check done by GO?:</span>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 martop5">
+                                            <select class="form-control">
+                                                <option>NA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                           <span>Remarks:</span>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                            <span>Remarks:</span>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 martop5">
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 form_inputs">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h5 class="title_h4">Crew Work Positions</h5>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edFlt_crewWrkPos">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-3">
+                                        <span>Staff#:</span>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-9">
+                                        <input type="text" class="form-control"/>
+                                    </div>
+                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 mob-martop5">
+                                    <button type="submit" class="btn">Add</button>
+                                    <button type="submit" class="btn">Paste Form</button>
+                                </div>
+
+                            </div>
+
+                            <div class="editFlt_table">
+                                <div class="row martop5 editFlt_tabHeader">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Staff Number</div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Staff Name</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Staff Grade</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">*Crew Work Position</div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">*Announcement Language</div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                                </div>
+                                <div class="row martop5">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>20771</span></div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="crweworkposNameSpan">XXCATJETANMS JedxX JedJean Ann xCatejamin</span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-1 floatLefM15"><span>CS</span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <select>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <select>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 "><span class="fa fa-times"></span></div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>29535</span></div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="crweworkposNameSpan">XXMS JedxX Judrexxxxfei xm </span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-1 floatLefM15"><span>CS</span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <select>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <select>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span class="fa fa-times"></span></div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>44629</span></div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="crweworkposNameSpan">XXTOLDIMS chexdferee Toldersm</span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-1 floatLefM15"><span>CS</span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <select>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <select>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span class="fa fa-times"></span></div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>49742</span></div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="crweworkposNameSpan">XXMS JidxXJidJiem xm</span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-1 floatLefM15"><span>CS</span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <select>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <select>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span class="fa fa-times"></span></div>
+                                </div>
+                                <div class="row martop10">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>67245</span></div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span class="crweworkposNameSpan">XXCATJETANMS JedxX JedJean Ann xCatejamin</span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-1 floatLefM15"><span>CS</span></div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <select>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        <select>
+                                            <option>NA</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"><span class="fa fa-times"></span></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 edtFlightBtn">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary">Reset</button>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!--Right panel-->
+    </div>
+</div>

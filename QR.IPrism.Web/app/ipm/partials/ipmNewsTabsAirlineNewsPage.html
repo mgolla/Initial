@@ -1,0 +1,42 @@
+﻿ <!--<ng-include ng-controller="ipm.airlineNewsSection.controller" src="'/app/ipm/partials/ipmNewsTabsAirlineNewsSection.html'"></ng-include>-->
+
+<div class="tab-pane fade in active sm_inerWPCont" id="deptNews" ng-controller="ipm.airlineNewsPage.controller">
+
+    <div class="tab-pane fade in active" id="deptNews">
+        <ul class="mobileheader nav nav-tabs mob-hide">
+            <li class="active"><a data-toggle="tab"> Airline News</a></li>
+        </ul>
+        
+        <div class="mobile-header-control">
+            <h1>
+                Airline News
+            </h1>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 departmentNews" block-ui="ipmdepartmentNewsIFEGuideBlockUI">
+
+            <div class="Dept_newsList col-lg-12 col-md-12 col-sm-12 padleft5">
+
+                <div class=" ng-scope dpnewsList_item" ng-repeat="item in departmentNewsIFEGuideViewModel">
+                    <!--<a href="" class="pull-left rssThumb" data-toggle="{{item.Tooltip}}">
+
+                        <img ng-if="(isNullOrEmpty(item.ImageSrc))" src="{{item.ImageSrc}}" />
+                    </a>-->
+
+
+                    <a href="{{item.Link}}" target="_blank" data-toggle="{{item.Tooltip}}" data-placement="left" class=" pull-right" style="margin: 0 0 5px 10px" data-original-title="view at www.ted.com"><i class="fa fa-external-link" aria-hidden="true"></i></a>
+
+                    <h2 class="title"><span data-toggle="{{item.Tooltip}}" class="ng-binding" data-original-title="view detail">{{item.Title}}</span></h2>
+
+                    <p ng-bind-html="item.Description" class="ng-binding"></p>
+
+                    <p class="muted ng-binding">
+                        {{PostedDate}}
+                        <span class="label label-info ng-scope ng-binding"></span>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

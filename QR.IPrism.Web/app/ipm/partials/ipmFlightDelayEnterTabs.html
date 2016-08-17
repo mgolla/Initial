@@ -1,0 +1,21 @@
+﻿<div id="profileTabsContents" class="profile_tabview eVRScreentabs enterfltdelayTabs" block-ui="ipmFlightDelayTabBlockUI">
+    <h1 class="page-tittle">
+        <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack('enterFlightDelay')">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
+        </button>
+        <span>Enter Flight Delay</span>
+    </h1>
+    <tabset class="nav nav-tabs nav-tab-evr tab-animation">
+        <div class="evrTabs">
+            <tab heading="Flight Details">
+                <div class="tab-pane fade in active" ng-include="'/app/ipm/partials/ipmFlightDelayEnterTabDetails.html'"></div>
+            </tab>
+            <!--<tab heading="Delay Cause">
+            <div class="tab-pane fade in active" ng-include="'/app/ipm/partials/ipmFlightDelayEnterTabCause.html'"></div>
+            </tab>-->
+            <tab heading="Delay Cause" ui-sref="enterFlightDelay.enterFlightDelaytab.cause" select="onFlgDlyTabChange('DelayCause')">
+                <div class="tab-pane fade in active" ui-view="flgDlyCause"></div>
+            </tab>
+        </div>
+    </tabset>
+</div>

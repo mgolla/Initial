@@ -1,0 +1,99 @@
+﻿<div class="col-lg-12 form-outline padZero" ng-show="housingEntitlements.IsCrewEntitled">
+
+    <div class="col-sm-12 padZero">
+        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="building">
+            <span class="redText">*</span><span>Detail Request</span>
+        </label>
+        <div class="col-lg-2 col-md-4 col-sm-9" ng-class="{'prmInvalid' : submitted && housingRequestForm.requestdet.$invalid}">
+            <ui-select ng-model="model.stayoutRequestdetObj" ng-required="true" ng-disabled="disableBuilding" name="requestdet"
+                       on-select="changeStayoutReqDetails($model)">
+                <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                <ui-select-choices repeat="model in stayOutRequestType | propsFilter : {Text : $select.search}">
+                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+
+        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="flat">
+            <span class="redText">*</span><span>Reason</span>
+        </label>
+        <div class="col-lg-2 col-md-4 col-sm-9 col-lg-offset-right-4 " ng-class="{'prmInvalid' : submitted && housingRequestForm.selReason.$invalid}">
+            <ui-select ng-model="model.ReasonObj" id="reason" ng-required="true" name="selReason" on-select="changeStayoutReason($model)">
+                <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                <ui-select-choices repeat="model in ReasonList | propsFilter : {Text : $select.search}">
+                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+
+    <div class="col-sm-12 padZero">
+        <srd-datepicker type="text" name="fromdate" label="From Date" label-class="control-label col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marbottom10"
+                        model="model.FromDate" required="!disabledFromDate" id="fromdate" min="viewmodel.fromMindate" disabled="disabledFromDate"
+                        submitted="submitted" max="viewmodel.fromMaxdate" range-error="rangeError" dtdisabled="disableSpecificDates"></srd-datepicker>
+
+        <srd-datepicker type="text" name="todate" label="To Date" label-class="control-label col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marbottom10"
+                        model="model.ToDate" required="!disabledToDate" id="todate" min="viewmodel.toMindate" disabled="disabledToDate"
+                        submitted="submitted" max="viewmodel.toMaxdate" range-error="rangeError"></srd-datepicker>
+      
+        <srd-input type="text" label="Building/Hotel Name" name="building" label-class="control-label col-lg-2 col-md-2 col-sm-3" required="true"
+                   field-class="col-lg-2 col-md-4 col-sm-9 marbottom10" model="model.BuildingDetails.BuildingName" submitted="submitted" maxlength="150"></srd-input>
+
+        <srd-input type="text" label="Area Name" name="area" label-class="control-label col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marbottom10" model="model.BuildingDetails.Area" required="true" submitted="submitted" maxlength="40"></srd-input>
+        
+        <srd-input type="text" label="Street name" name="old" label-class="control-label col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marbottom10" model="model.BuildingDetails.StreetNo" required="true" submitted="submitted" maxlength="40">
+        </srd-input>
+
+        <srd-input type="text" label="Postbox " label-class="control-label col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marbottom10"
+                   name="postbox" model="model.BuildingDetails.PostBoxNo" required="true" submitted="submitted" maxlength="10" isnumber="true">
+        </srd-input>
+        <srd-input type="text" label="Mobile " label-class="control-label col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marbottom10"
+                   model="model.MobileNo" required="true" submitted="submitted" name="mobile" maxlength="8" isnumber="true">
+        </srd-input>
+
+        <srd-input type="text" label="Landline " label-class="control-label col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marbottom10"
+                   model="model.LandLineNo" required="false" submitted="submitted" name="landline" maxlength="8" isnumber="true">
+        </srd-input>
+
+        <label class="control-label col-lg-2 col-md-2 col-sm-3">
+            <span class="redText">*</span><span>Relatives</span>
+        </label>
+        <div class="col-lg-2 col-md-4 col-sm-9" ng-class="{'prmInvalid' : submitted && housingRequestForm.selRelation.$invalid}">
+            <ui-select multiple ng-model="model.StayOutCrewRelationObj" ng-required="true" ng-disabled="disable" name="selRelation">
+                <ui-select-match placeholder="Relationship" allow-clear="true">
+                    {{$item.Relationship}} ({{$item.GuestName}})
+                </ui-select-match>
+                <ui-select-choices repeat="model in GuestList | propsFilter : {Relationship : $select.search}">
+                    {{model.Relationship}}({{model.GuestName}})
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="col-sm-12 padZero">
+            <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                <span class="redText">*</span>Attachment
+            </label>
+            <div class="col-lg-7 col-md-10 col-sm-9 fileupload-table  col-lg-offset-right-3">
+                <srd-fileupload uploader="uploader"></srd-fileupload>
+                <em class="notes">{{ attachmentNote }}</em>
+            </div>
+
+            <srd-textarea label="Additional Info" label-class="control-label col-lg-2 col-md-2 col-sm-3"
+                          field-class="col-lg-7 col-md-10 col-sm-9 col-lg-offset-right-3" submitted="submitted"
+                          max-length="4000" model="model.AdditionalInfo" name="additionalInfo" row="5" required="true"></srd-textarea>
+        </div>
+    </div>
+
+
+
+    <!--<div class="row" ng-show="invalidAttachment">
+        <label class="col-lg-2 col-md-3 col-sm-3 mob-hide"></label>
+        <div class="col-lg-6 col-md-9 col-sm-9 redText">{{ messages.HOUATTACHMENTSO }}</div>
+    </div>-->
+</div>
+<div class="padZero  col-lg-12 col-md-12 col-sm-12">
+    <div class="pull-right">
+        <button type="submit" class="btn btn-primary" title="" ng-show="housingEntitlements.IsCrewEntitled" ng-click="submitRequest(housingRequestForm)">Submit</button>
+        <button type="submit" class="btn btn-primary" title="" ng-show="housingEntitlements.IsCrewEntitled" ng-click="clearForm(housingRequestForm)">Reset</button>
+        <button type="button" class="btn btn-primary" title="" ui-sref="housing">Back</button>
+    </div>
+</div>

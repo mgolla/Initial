@@ -1,0 +1,31 @@
+﻿<div class="">
+    <span class="btn fileinput-button">
+        <i class="glyphicon glyphicon-plus"></i>
+        <span>Add files...</span>
+        <input type="file" nv-file-select="" uploader="uploader" ng-model="model" name="upload" multiple>
+    </span>
+    <em class="notes">Attach only xlsx, docx, pptx, jpg, jpeg, pdf files with max. size 5MB</em>
+</div>
+
+<div class="">
+    <table class="table">
+        <thead>
+            <tr>
+                <th width="50%">Name</th>
+                <th ng-show="uploader.isHTML5">Size</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in uploader.queue">
+                <td><strong>{{ item.file.name }}</strong></td>
+                <td ng-show="uploader.isHTML5" nowrap>{{ fileSize(item.file.size) }}</td>
+                <td class="text-center">
+                    <a href="javascript:void(0);" ng-click="item.remove()">
+                        <i class="glyphicon glyphicon-trash redText"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

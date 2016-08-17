@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2B4E670-229F-445F-86F4-55387F50F183}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QR.IPrism.Models</RootNamespace>
+    <AssemblyName>QR.IPrism.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Module\AirlinesNewsModel.cs" />
+    <Compile Include="Module\AssessmentBehaviourModel.cs" />
+    <Compile Include="Module\CommonRecognitionModel.cs" />
+    <Compile Include="Module\CrewLocatorModel.cs" />
+    <Compile Include="Module\CrewRecognitionDetailsModel.cs" />
+    <Compile Include="Module\CrewRecognitionModel.cs" />
+    <Compile Include="Module\CrewRecognitionOverviewModel.cs" />
+    <Compile Include="Module\DutySummaryModel.cs" />
+    <Compile Include="Module\EVRCrewViewModel.cs" />
+    <Compile Include="Module\EVRPendingModel.cs" />
+    <Compile Include="Module\AssessmentIDPModel.cs" />
+    <Compile Include="Module\AssessmentModel.cs" />
+    <Compile Include="Module\AssessmentSearchModel.cs" />
+    <Compile Include="Module\AssessmentSearchRequestFilterModel.cs" />
+    <Compile Include="Module\BlanketModel.cs" />
+    <Compile Include="Module\BuildingModel.cs" />
+    <Compile Include="Module\CareerPathModel.cs" />
+    <Compile Include="Module\CompetencyModel.cs" />
+    <Compile Include="Module\CrewEntitlementModel.cs" />
+    <Compile Include="Module\CommonFilterModel.cs" />
+    <Compile Include="Module\CrewInfoModel.cs" />
+    <Compile Include="Module\CurrencyDetailModel.cs" />
+    <Compile Include="Module\DepartmentNewsIFEGuideModel.cs" />
+    <Compile Include="Module\DestinationsVisitedModel.cs" />
+    <Compile Include="Module\DocumentFilterModel.cs" />
+    <Compile Include="Module\DocumentModel.cs" />
+    <Compile Include="Module\EVRDraftOutputModel.cs" />
+    <Compile Include="Module\EVRInsertOutputModel.cs" />
+    <Compile Include="Module\EVRListsModel.cs" />
+    <Compile Include="Module\EVRReportMainModel.cs" />
+    <Compile Include="Module\EVRPassengerModel.cs" />
+    <Compile Include="Module\EVRInsertUpdateModel.cs" />
+    <Compile Include="Module\EVRResultModel.cs" />
+    <Compile Include="Module\EVRRequestFilterModel.cs" />
+    <Compile Include="Module\FileFilterModel.cs" />
+    <Compile Include="Module\FileModel.cs" />
+    <Compile Include="Module\FlightCrewsModel.cs" />
+    <Compile Include="Module\FlightDelayModel.cs" />
+    <Compile Include="Module\FlightDelayFilterModel.cs" />
+    <Compile Include="Module\FlightDetailsModel.cs" />
+    <Compile Include="Module\FlightInfoModel.cs" />
+    <Compile Include="Module\FlightLoadFilter.cs" />
+    <Compile Include="Module\FlightLoadModel.cs" />
+    <Compile Include="Module\FliterModel.cs" />
+    <Compile Include="Module\LocationCrewDetailModel.cs" />
+    <Compile Include="Module\LocationFlightModel.cs" />
+    <Compile Include="Module\RecognisedCrewDetailsModel.cs" />
+    <Compile Include="Module\SearchCrewRecognitionModel.cs" />
+    <Compile Include="Module\SearchFilterModel.cs" />
+    <Compile Include="Module\SearchModel.cs" />
+    <Compile Include="Module\SearchRecognitionRequestModel.cs" />
+    <Compile Include="Module\SearchRecognitionResultModel.cs" />
+    <Compile Include="Module\ViewVoyageReportModel.cs" />
+    <Compile Include="Module\ViewVREnterModel.cs" />
+    <Compile Include="Module\VRActionResoultionModel.cs" />
+    <Compile Include="Module\VRIdModel.cs" />
+    <Compile Include="Shared\KeyContactsModel.cs" />
+    <Compile Include="Shared\SearchCriteriaModel.cs" />
+    <Compile Include="ViewModels\AssessmentPOViewModel.cs" />
+    <Compile Include="ViewModels\HeaderViewModule.cs" />
+    <Compile Include="Module\HotelInfoFilterModel.cs" />
+    <Compile Include="Module\HotelInfoModel.cs" />
+    <Compile Include="Module\HousingGuestModel.cs" />
+    <Compile Include="Module\HousingModel.cs" />
+    <Compile Include="Module\HousingMovementDetailsModel.cs" />
+    <Compile Include="Module\HousingNotificationModel.cs" />
+    <Compile Include="Module\HousingRequestFilterModel.cs" />
+    <Compile Include="Module\HousingStayOutModel.cs" />
+    <Compile Include="Module\IDPModel.cs" />
+    <Compile Include="Module\LinkModel.cs" />
+    <Compile Include="Module\MealModel.cs" />
+    <Compile Include="Module\MyRequestFilterModel.cs" />
+    <Compile Include="Module\MyRequestModel.cs" />
+    <Compile Include="Module\NotificationAlertSVPFilterModel.cs" />
+    <Compile Include="Module\NotificationAlertSVPModel.cs" />
+    <Compile Include="Module\ObjectiveModel.cs" />
+    <Compile Include="Module\OverviewFilterModel.cs" />
+    <Compile Include="Module\OverviewModel.cs" />
+    <Compile Include="Module\RatingGuideLineModel.cs" />
+    <Compile Include="Module\RosterModel.cs" />
+    <Compile Include="Module\RosterFilterModel.cs" />
+    <Compile Include="Module\SOSModel.cs" />
+    <Compile Include="Module\StationInfoFilterModel.cs" />
+    <Compile Include="Module\StationInfoModel.cs" />
+    <Compile Include="Module\SummaryOfServiceFilterModel.cs" />
+    <Compile Include="Module\SummaryOfServiceModel.cs" />
+    <Compile Include="Module\SummaryServiceModel.cs" />
+    <Compile Include="Module\QualnVisaModel.cs" />
+    <Compile Include="Module\TrainingHistoryModel.cs" />
+    <Compile Include="Module\TrainingTransportModel.cs" />
+    <Compile Include="Module\TransportTripDetailModel.cs" />
+    <Compile Include="Module\VisionMissionModel.cs" />
+    <Compile Include="Module\WeatherInfoModel.cs" />
+    <Compile Include="Shared\AnalyticModel.cs" />
+    <Compile Include="Module\EmployeeModel.cs" />
+    <Compile Include="Module\HousingMovementModel.cs" />
+    <Compile Include="Shared\ClientModel.cs" />
+    <Compile Include="Shared\LookupModel.cs" />
+    <Compile Include="Shared\LookupSearchModel.cs" />
+    <Compile Include="Shared\MenuModel.cs" />
+    <Compile Include="Shared\MessageModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\NotificationDetailsModel.cs" />
+    <Compile Include="Shared\ResponseModel.cs" />
+    <Compile Include="Shared\RoleModel.cs" />
+    <Compile Include="Shared\UserContextModel.cs" />
+    <Compile Include="Shared\UserTokenModel.cs" />
+    <Compile Include="ViewModels\AssessmentViewModel.cs" />
+    <Compile Include="ViewModels\CrewInfoViewModule.cs" />
+    <Compile Include="ViewModels\CurrencyDetailViewModule.cs" />
+    <Compile Include="ViewModels\DepartmentNewsIFEGuideViewModule.cs" />
+    <Compile Include="ViewModels\DocumentViewModule.cs" />
+    <Compile Include="ViewModels\FileViewModule.cs" />
+    <Compile Include="ViewModels\FlightLoadViewModule.cs" />
+    <Compile Include="ViewModels\HotelInfoViewModule.cs" />
+    <Compile Include="ViewModels\HousingMovementDetailsViewModule.cs" />
+    <Compile Include="ViewModels\LinkViewModule.cs" />
+    <Compile Include="ViewModels\MyRequestViewModule.cs" />
+    <Compile Include="ViewModels\NotificationAlertSVPViewModule.cs" />
+    <Compile Include="ViewModels\OverviewViewModule.cs" />
+    <Compile Include="ViewModels\RosterViewModel.cs" />
+    <Compile Include="ViewModels\SearchViewModel.cs" />
+    <Compile Include="ViewModels\StationInfoViewModule.cs" />
+    <Compile Include="ViewModels\SummaryOfServiceViewModule.cs" />
+    <Compile Include="ViewModels\SummaryServiceViewModule.cs" />
+    <Compile Include="ViewModels\TrainingHistoryViewModule.cs" />
+    <Compile Include="ViewModels\TrainingTransportViewModule.cs" />
+    <Compile Include="ViewModels\TransportTripDetailViewModule.cs" />
+    <Compile Include="ViewModels\VisionMissionViewModule.cs" />
+    <Compile Include="ViewModels\WeatherInfoViewModule.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

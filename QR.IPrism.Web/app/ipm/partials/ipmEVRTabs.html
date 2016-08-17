@@ -1,0 +1,34 @@
+﻿<div id="profileTabsContents" class="profile_tabview eVRScreentabs" block-ui="ipmEVRTablsBlockUI">
+    <h1 class="page-tittle">
+        <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="evrBackfrmTabs('evrlstsState')">
+            <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
+        </button>
+        <span>Enter eVR</span>
+    </h1>
+    <tabset class="nav nav-tabs nav-tab-evr tab-animation">
+        <div class="evrTabs marLeft15 martop5">
+            <tab active="model.active.FD" heading="Flight Details">
+                <tab-heading>
+                    <div>Flight Details</div>
+                </tab-heading>
+                <div ng-include="'/app/ipm/partials/ipmFlightDelayEnterTabDetails.html'" ng-controller="ipm.flightDetails.controller"></div>
+            </tab>
+            <tab active="model.active.evrForm" heading="eVR Forms">
+                <tab-heading>
+                    <div>eVR Forms</div>
+                </tab-heading>
+                <div ng-include="'/app/ipm/partials/ipmEVRMain.html'" ng-if="evrTabModel.evrReqFeilds!=null" ng-controller="ipm.evrmain.controller" ng-init="evrReqFeilds=evrTabModel.evrReqFeilds">
+                </div>
+            </tab>
+            <tab active="model.active.evrDraft" heading="{{evrDraftheading}}">
+                <tab-heading>
+                    <div>{{evrDraftheading}}</div>
+                </tab-heading>
+                <div ng-include="'/app/ipm/partials/ipmEVRDrafts.html'" ng-controller="ipm.evrdraft.controller">
+                </div>
+            </tab>
+        </div>
+       
+    </tabset>
+
+</div>

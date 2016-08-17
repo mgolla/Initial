@@ -1,0 +1,127 @@
+﻿<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                Record Unscheduled Crew Assessments
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero formStyles" block-ui="ipmUSAssessmentBlockUI">
+                <!--Profile-->
+                <!-- Row start -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Search Criteria
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <form role="form" novalidate data-ng-submit="onClickrecordAssessment()">
+                                    <div class="col-lg-11 col-md-11 padZero Mob_padZero form-outline col-lg-offset-right-1 col-sm-offset-right-1 ctrlLblAlgn">
+                                        <div class="row">
+                                            <label for="uirequestType" class="col-lg-2 col-md-2 col-sm-3">
+                                                Crew Search
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9">
+                                                <ui-select required ng-model="data.StaffNumberObj" name="selBedroom">
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.StaffName}}</ui-select-match>
+                                                    <ui-select-choices repeat="  model in autoList | propsFilter: {StaffName: $select.search}"
+                                                                       refresh="refreshStaff($select.search)" refresh-delay="0">
+                                                        <div ng-bind-html="model.StaffName | highlight: $select.search"></div>
+                                                        <small>
+                                                            <strong>Grade: </strong>{{model.StaffGrade}}
+                                                        </small>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+                                            <label for="uirequestType" class="col-lg-2 col-md-2 col-sm-3">
+                                                Flight Number
+                                            </label>
+
+                                            <div class="input-group col-lg-4 col-md-4 col-sm-9">
+                                                <span class="input-group-addon">QR</span>
+                                                <input type="text" required class="form-control validation qrTxtBxHeight" ng-model="assessmentSearchModel.FlightNo">
+                                                <span class="input-group-addon">eg. 264</span>
+                                            </div>
+
+
+                                            <label for="uiStatus" class="col-lg-2 col-md-2 col-sm-3">
+                                                Sector From
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9">
+                                                <ui-select required ng-model="assessmentSearchModel.SectorFromObj" ng-disabled="disabled">
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in sectorFromList | propsFilter: {Desc: $select.search}">
+                                                        <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+                                            <label for="uiStatus" class="col-lg-2 col-md-2 col-sm-3">
+                                                Sector To
+                                            </label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9">
+                                                <ui-select required ng-model="assessmentSearchModel.SectorToObj" ng-disabled="disabled">
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in sectorToList | propsFilter: {Desc: $select.search}">
+                                                        <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+                                            <srd-datepicker required type="text" name="data.FlightDateObj" label="Flight Date" model="data.FlightDateObj" id="flightdate"
+                                                            field-class="col-lg-4 col-md-4 col-sm-9" label-class="col-lg-2 col-md-2 col-sm-3"></srd-datepicker>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 padZero">
+                                        <div class="pull-right">
+                                            <button type="submit" class="btn btn-primary" title="">Record Assessment</button>
+                                            <button type="button" class="btn btn-primary" title="" ng-click="Reset()">Reset</button>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                Saved Assessments <i class="pull-right"></i>
+                            </div>
+                            <div class="panel-body ">
+                                <div class="table-responsive">
+                                    <!--<srd-grid gridapi="grid.gridApi" columndefs="grid.columnDefs" srdgridsource="grid.data"></srd-grid>-->
+                                    <div ui-grid="gridSavedUnscheduleAssmt" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(gridSavedUnscheduleAssmt)" class="grid searchGrid">
+                                        <div class="watermark" ng-show="!gridSavedUnscheduleAssmt.data.length">No data available</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Row end -->
+                <!--tabs+Accordion wrap-->
+            </div>
+            <!--Right panel-->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

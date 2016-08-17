@@ -1,0 +1,1 @@
+D:\Workplace\1854_IPrism_Migration\Development\SourceCode\QR.PRISM.Services\QR.PRISM.Caching\obj\Release\QR.PRISM.Caching.csprojResolveAssemblyReference.cache

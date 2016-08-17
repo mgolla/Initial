@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2b7ab99d-f89b-4d7b-bf1a-db154f5fd7ea" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UsrMgmtSvc.wsdl" MetadataType="Wsdl" ID="3607965d-44c9-47f3-9fe7-a297cd026985" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?wsdl" />
+    <MetadataFile FileName="UsrMgmtSvc.xsd" MetadataType="Schema" ID="bd1ffb9a-4d8a-40e8-b41a-3402b5c55cba" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd2" />
+    <MetadataFile FileName="UsrMgmtSvc1.xsd" MetadataType="Schema" ID="f8007b48-c7e5-4113-adc1-b28a15ae7a56" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd3" />
+    <MetadataFile FileName="UsrMgmtSvc2.xsd" MetadataType="Schema" ID="692858f6-7b48-4b88-a685-c48fe85cd512" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd0" />
+    <MetadataFile FileName="UsrMgmtSvc3.xsd" MetadataType="Schema" ID="ca35c6c0-4c77-4772-b645-c4fc54c6a1a2" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd1" />
+    <MetadataFile FileName="UsrMgmtSvc.disco" MetadataType="Disco" ID="520ac793-f01a-4fe4-aaee-61bc7d274196" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?disco" />
+    <MetadataFile FileName="UsrMgmtSvc4.xsd" MetadataType="Schema" ID="969cd119-34fb-4cd3-bdd7-c83ba9829d16" SourceId="1" SourceUrl="http://dohqdalt02.qr.qrgrp.local/QHome/Framework/UserMgmt/UsrMgmtSvc.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

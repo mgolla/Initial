@@ -1,0 +1,15 @@
+﻿
+<div class="info_box" ng-controller="ipm.codeExplanations.controller" block-ui="ipmlookupBlockUIcodeEx">
+    <h1>
+        Code Explanations
+    </h1>
+    <div class="overflow_Hght_145">
+        <label>
+            <span><b>Code</b></span><b>Description</b>
+        </label>
+        <label ng-repeat="item in lookupViewModelCodeEx">
+            <span>{{item.Text }}</span> {{item.Value }}
+        </label>
+    </div>
+
+</div>

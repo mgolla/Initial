@@ -1,0 +1,490 @@
+﻿<div ng-controller='ipm.monthlyRoster.controller'>
+
+    <div class="row rosterList col-lg-12 monthly_roster_new FullRoster" id="roasterContent" style="min-height:120px">
+
+
+        <span class="arrow-left glyphicon glyphicon-chevron-left" aria-hidden="true" ng:click="previousButtonClickHandler()"></span>
+
+
+
+        <div class="row pg-cnt">
+
+            <!--main table-->
+            <div class="roster_flexible" id="monthlyRoster1" >
+
+                <div class="roster_flexible_cell col-sm-12 col-xs-12" id="rostercell{{item.TempID}}" ng-class="{'month-fix ': isWideScreen ,'rosterlistitemdisplay ': isSelectedMobileRoster(item.TempID), ' DeviceRosterData' : isclickedMobileRoster(item.TempID), 'today': isSelected(item.TempID)}"
+                     name="liRoster{{$index}}" data-ng-repeat="item in rosterViewModel.Rosters | slice:0:16">
+                    <!--<div class="roster_flexible_cell_inner" ng-class="{ 'activatedrosterlistul ' : isclickedMobileRoster(item.TempID)}">-->
+                    <!--<div class="roster_Data" ng-class="{' actvRoster' : isSelectedMobile(item.TempID),'actvDate' : isSelected(item.TempID)}">-->
+                    <div class="roster_Data" ng-class="{'actvDateMar activatedatermvshad actvRoster  ' : isclickedMobileRoster(item.TempID),'rosteractive  actvRosterEvent' : isSelected(item.TempID),'actvDate':isSelectedRosterLoad(item.TempID) }">
+                        <h1 ng:click="rosterDayClickHandlerMonthly(item,item.TempID,item.TempID,'One',$index,false,item.TempID)">
+                            <div ng-class="{'roster_Datah1flightdate' : isclickedMobileRoster(item.TempID)}">
+                                <div class="cal-date" ng-class="{'roster_Datah1flightdate' : isclickedMobileRoster(item.TempID)}">{{SplitDate(item.DutyDate,0)}}</div>
+                                <div class="cal-day" ng-class="{'roster_Datah1flightdate' : isclickedMobileRoster(item.TempID)}">{{ item.DutyDateActualDateName }}</div>
+                            </div>
+                            <div class="cal-month" ng-class="{'roster_Datah1flightdate' : isclickedMobileRoster(item.TempID)}">{{SplitDate(item.DutyDate,1)}} {{SplitDate(item.DutyDate,2)}}</div>
+                        </h1>
+                        <div class="roster_flexible_cell_data">
+                            <!--data-->
+                            <div class="rooster-day" id="roosterDay{{item.TempID}}" ng-class="{'cur_def' : (isroosterDayOFF(item)),'actvRosterEvent' : isclickedRosterEventMobile(item.TempID)}" ng:click="rosterDayClickHandlerMonthly(item,item.TempID,item.TempID,'One',$index,false,item.TempID)">
+                                <div class="route-info">
+                                    <span class="flightRoute">{{item.Departure}}</span>
+                                    <span ng-if="(isNotNullOrEmptyOrUndefined(item.Departure))" class="flightRoute">-</span>
+                                    <!--<span ng-if="(isNotNullOrEmptyOrUndefined(item.Departure))" class="flight-icon">-</span>-->
+                                    <span class="flightRoute">{{item.Arrival}}</span>
+
+
+                                    <span class="flightNo" ng-if="isNotNullOrEmptyOrUndefined(item.Flight)">QR {{item.FlightDisplay}} </span>
+                                    <div class=" rooster-day-OFF" ng-if="isNotNullOrEmptyOrUndefined(item.Cc)" style="border-style:none!important">
+                                        <span>{{item.Cc}}</span>
+                                    </div>
+
+                                    <div ng-if="item.IsOnFlight">
+                                        <i class="fa fa-arrow-right" ng-if="item.IsOnFlight"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="extra_roster" ng-if="item.CountOfExtraRosters>0" ng:click="rosterDayClickHandlerMonthly(item,item.TempID,item.TempID,'One',$index,false,item.TempID)" style="border-style:none!important">
+                                <span class="glyphicon glyphicon-plus "></span> {{item.CountOfExtraRosters}}
+                            </div>
+                            <div class="rooster-day extra-day" ng-class="{'actvRosterEvent' : isclickedRosterEventMobile(itemExtra.TempID)}" data-ng-repeat="itemExtra in item.Rosters" style="border-bottom-style: none !important;" ng:click="rosterDayClickHandlerMonthly(itemExtra,item.TempID,itemExtra.TempID,1,$parent.$index)">
+                                <div class="route-info">
+                                    <span class="flightRoute" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Departure)">{{itemExtra.Departure}} </span>
+                                    <span ng-if="(isNotNullOrEmptyOrUndefined(itemExtra.Departure))" class="flightRoute">-</span>
+                                    <!--<span ng-if="(!(isNotNullOrEmptyOrUndefined(item.Cc))) && (!(item.IsOnFlight))" class="flight-icon"></span>-->
+                                    <span class="flightRoute" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Departure)">{{itemExtra.Arrival}}</span>
+                                    <span class="flightNo" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)">QR {{itemExtra.Flight}}</span>
+                                    <div ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Cc)" class="rooster-day-OFF" style="border-style:none!important">
+                                        <span>{{itemExtra.Cc}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!--main table-->
+            <div class="roster_flexible" id="monthlyRoster2" >
+
+                <div class="roster_flexible_cell col-sm-12 col-xs-12" ng-class="{'month-fix': isWideScreen ,'rosterlistitemdisplay': isSelectedMobileRoster(item.TempID), ' DeviceRosterData' : isclickedMobileRoster(item.TempID), 'today': isSelected(item.TempID)}"
+                     id="rostercell{{item.TempID}}" name="liRoster{{$index}}" data-ng-repeat="item in rosterViewModel.Rosters | slice:16:31">
+                    <!--<div class="roster_flexible_cell_inner" ng-class="{ 'activatedrosterlistul ' : isclickedMobileRoster(item.TempID)}">-->
+                    <div class="roster_Data" ng-class="{' actvRoster' : isSelectedMobile(item.TempID),'actvDate':isSelectedRosterLoad(item.TempID) }">
+                        <h1 ng:click="rosterDayClickHandlerMonthly(item,item.TempID,item.TempID,'One',$index+16,false,item.TempID)">
+                            <!--<i class=" flight_date" ng-class="{'roster_Datah1flightdate' : isclickedMobileRoster(item.TempID)}">
+                {{SplitDate(item.DutyDate,0)}}
+            </i> {{ item.DutyDateActualDateName }} {{SplitDate(item.DutyDate,1)}} {{SplitDate(item.DutyDate,2)}}-->
+
+                            <div ng-class="{'roster_Datah1flightdate' : isclickedMobileRoster(item.TempID)}">
+                                <div class="cal-date" ng-class="{'roster_Datah1flightdate' : isclickedMobileRoster(item.TempID)}">{{SplitDate(item.DutyDate,0)}}</div>
+                                <div class="cal-day" ng-class="{'roster_Datah1flightdate' : isclickedMobileRoster(item.TempID)}">{{ item.DutyDateActualDateName }}</div>
+                            </div>
+                            <div class="cal-month" ng-class="{'roster_Datah1flightdate' : isclickedMobileRoster(item.TempID)}">{{SplitDate(item.DutyDate,1)}} {{SplitDate(item.DutyDate,2)}}</div>
+                        </h1>
+                        <div class="roster_flexible_cell_data">
+                            <!--data-->
+                            <div class="rooster-day" id="roosterDay{{item.TempID}}" ng:click="rosterDayClickHandlerMonthly(item,item.TempID,item.TempID,'One',$index+16,false,item.TempID)" ng-class="{'cur_def' : (isroosterDayOFF(itemExtra)),'actvRosterEvent' : isclickedRosterEventMobile(item.TempID)}">
+                                <div class="route-info">
+                                    <span class="flightRoute">{{item.Departure}}</span>
+                                    <!--<span ng-if="(!(isNotNullOrEmptyOrUndefined(item.Cc))) && (!(item.IsOnFlight))" class="flight-icon"></span>-->
+                                    <span ng-if="(isNotNullOrEmptyOrUndefined(item.Departure))" class="flightRoute">-</span>
+                                    <span class="flightRoute">{{item.Arrival}}</span>
+
+
+                                    <span class="flightNo" ng-if="isNotNullOrEmptyOrUndefined(item.Flight)">QR {{item.FlightDisplay}} </span>
+                                    <div ng-class="{'rooster-day-OFF' : isroosterDayOFF(item)}" ng-if="isNotNullOrEmptyOrUndefined(item.Cc)" style="border-style:none!important">
+                                        <span>{{item.Cc}}</span>
+                                    </div>
+
+                                    <div ng-if="item.IsOnFlight">
+                                        <i class="fa fa-arrow-right" ng-if="item.IsOnFlight"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="extra_roster" ng-if="item.CountOfExtraRosters>0" ng:click="rosterDayClickHandlerMonthly(item,item.TempID,item.TempID,'One',$index+16,false,item.TempID)" style="border-style:none!important">
+                                <span class="glyphicon glyphicon-plus "></span> {{item.CountOfExtraRosters}}
+                            </div>
+                            <div class="rooster-day extra-day" ng-class="{'actvRosterEvent' : isclickedRosterEventMobile(itemExtra.TempID)}" data-ng-repeat="itemExtra in item.Rosters" style="border-bottom-style: none !important;" ng:click="rosterDayClickHandlerMonthly(itemExtra,item.TempID,itemExtra.TempID,1,$parent.$index+16)">
+                                <div class="route-info">
+                                    <span class="flightRoute" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Departure)">{{itemExtra.Departure}} </span>
+                                    <span ng-if="(isNotNullOrEmptyOrUndefined(itemExtra.Departure))" class="flightRoute">-</span>
+                                    <!--<span ng-if="(!(isNotNullOrEmptyOrUndefined(item.Cc))) && (!(item.IsOnFlight))" class="flight-icon"></span>-->
+                                    <span class="flightRoute" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Departure)">{{itemExtra.Arrival}}</span>
+                                    <span class="flightNo" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)">QR {{itemExtra.Flight}}</span>
+                                    <div ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Cc)" class="rooster-day-OFF" style="border-style:none!important">
+                                        <span>{{itemExtra.Cc}}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="rooster-day extra-day" ng-class="{'actvRosterEvent' : isclickedRosterEventMobile(itemExtra.TempID)}" data-ng-repeat="itemExtra in item.Rosters" style="border-bottom-style: none !important; border-top: 1px dotted  !important" ng:click="rosterDayClickHandlerMonthly(itemExtra,item.TempID,itemExtra.TempID,1,$parent.$index+16)">
+
+                <span class="flightRoute" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Departure)">{{itemExtra.Departure}} </span>
+
+                <span ng-if="(isNotNullOrEmptyOrUndefined(item.Departure))" class="flightRoute">-</span>
+                <span class="flightRoute" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Departure)">{{itemExtra.Arrival}}</span>
+                <span class="flightNo" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)">QR {{itemExtra.FlightDisplay}}</span>
+                <div ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Cc)" ng-class="{'rooster-day-OFF' : isroosterDayOFF(itemExtra)}" style="border-style:none!important">
+                    <span>{{itemExtra.Cc}}</span>
+                </div>
+            </div>-->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="roster_flexible_cell col-sm-12 col-xs-12 hidden-xs hidden-sm" ng-show="(rosterViewModel.IsDataLoaded==YesRoster)" ng-class="{'month-fix': isWideScreen }" data-ng-repeat="item in extraRosters"><div class="roster_Data"></div></div>
+
+
+            </div>
+
+            <div id="roster_details" style="display:none" >
+                <div class="extraRosters">
+                    <div ng-class="{'active' : isSelectedChild(selectedRosterItemParent.TempID)}" ng:click="rosterDayClickHandlerMonthly(selectedRosterItemParent,selectedRosterItemParent.TempID,selectedRosterItemParent.TempID,1,selectedRosterItemParentIndex, false,selectedRosterItemParent.TempID)">
+                        <span ng-if="selectedRosterItemParent.Departure!=null && selectedRosterItemParent.Departure!=''">{{selectedRosterItemParent.Departure}} - {{selectedRosterItemParent.Arrival}} </span>
+                        <span ng-if="selectedRosterItemParent.Cc!=null && selectedRosterItemParent.Cc!=''">{{selectedRosterItemParent.Cc}}  </span>
+
+                    </div>
+
+                    <div ng-class="{'active' : isSelectedChild(itemExtra.TempID)}" data-ng-repeat="itemExtra in selectedRosterItemParent.Rosters" ng:click="rosterDayClickHandlerMonthly(itemExtra,selectedRosterItemParent.TempID,itemExtra.TempID,1,selectedRosterItemParentIndex, true, itemExtra.TempID)">
+
+                        <span ng-if="itemExtra.Departure!=null && itemExtra.Departure!=''">{{itemExtra.Departure}} - {{itemExtra.Arrival}} </span>
+                        <span ng-if="itemExtra.Cc!=null && itemExtra.Cc!=''">{{itemExtra.Cc}}  </span>
+
+                    </div>
+                </div>
+
+                <div>
+                    <ng-include ng-if="isRosterLoaded" src="rosterDetailsUrl"></ng-include>
+                </div>
+            </div>
+        </div>
+        <span class="arrow-right glyphicon glyphicon-chevron-right" aria-hidden="true" ng:click="nextButtonClickHandler()"></span>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 stationhotel_info_box padZero" ng-if="(rosterViewModel.IsDataLoaded==NoRoster)">
+        <h1 style="text-align: center !important;">
+            Roster informations not available !
+        </h1>
+    </div>
+
+    <div class="col-lg-12 col-md-12 cols-sm-12 padZero" style="margin-right:9px; margin-top:8px;" ng-if="(rosterViewModel.IsDataLoaded==YesRoster)" ng-show="(!isBackButtonShow())">
+        <div class="otherInfo_area">
+            <!--additional info-->
+            <a name="additionalInfo"></a>
+            <div id="monthlyDetail" class="col-lg-12 col-md-12 col-sm-12 addition_info padZero">
+                <div class="col-lg-3 col-md-3 col-sm-12 padZero" id="CodeExSection">
+                    <ng-include ng-if="isRosterLoaded" src="'/app/ipm/partials/ipmRosterMonthlyCodeExplanation.html'"></ng-include>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 padZero" id="FlightInSection">
+                    <ng-include ng-if="isRosterLoaded" src="'/app/ipm/partials/ipmRosterMonthlyFlightIndicator.html'"></ng-include>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 padZero" id="UTCDiffSection">
+                    <ng-include ng-if="isRosterLoaded" src="'/app/ipm/partials/ipmRosterMonthlyUTCDiff.html'"></ng-include>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 padZero" id="BlockHrsSection">
+                    <div class="info_box">
+                        <h1>
+                            Monthly Block Hrs
+                        </h1>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padZero block-hrs-ui">
+                            <!--<div class="col-lg-7"><img src="/Content/css/styles/images/iPRISM_blockHrs_graph.jpg" /></div>-->
+                            <div class="col-lg-12" ng-show="BlockedHoursActual>0">
+                                Total<br />
+                                <!--<h2> {{BlockedHours |setDecimal:2}} <i ng-if="(BlockedHours)<2">hr</i><i ng-if="(BlockedHours)>1">hrs</i></h2>-->
+                                <h2>
+                                    {{BlockedHours }}
+                                </h2>
+                                <!--<label class="blckhrs_table"><span>Days OFF</span> 10</label>
+                                <label class="blckhrs_table"><span>Turnarounds</span> 10</label>
+                                <label class="blckhrs_table"><span>layovers</span> 10</label>-->
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--end-->
+            <a name="printRoster"></a>
+            <div class="col-lg-12 col-md-12 col-sm-12 printArea padZero" ng-if="!(isMobile)">
+
+                <div class="col-lg-6 col-md-6 col-sm-8 padZero">
+                    Please select from the following to be included in the Roster print out:<br />
+                    <label>
+                        <input type="checkbox" class="minalign_Fix1" ng-checked="insertHotel==true" ng:click="onClickHotelInfo()" />
+                        Hotel Info
+                    </label>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-4 txtRight padright8">
+
+                    <input type="button" value="Print" ng-click="printToCart(insertHotel)" class="btn btn-primary btn-print" />
+                </div>
+            </div>
+            <!--<div style="display:none; height:0px">
+                <div class="col-lg-12 col-md-12 col-sm-12 printArea" id="hotelInfoDetails">
+
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <div id="pnlPrintDetailedRoster" style="display:none; height:0px" ng-if="!(isMobile)&& (rosterViewModel.IsDataLoaded==YesRoster)">
+        <div class="landscape">
+            <table id="mainRosterTable" width="100%" class="rosterdettbprt">
+                <tbody>
+                    <tr style="margin-top:-20px;">
+                        <td align="center">
+                            <h5>DETAILED ROSTER</h5>
+                            <h6><span id="AllTimesUTCTextLbl"></span></h6>
+
+                        </td>
+                    </tr>
+
+                    <tr style="margin-top:-20px;font-size:12px;">
+                        <td>
+                            <b>Name:</b><span id="NameLbl"> {{crewProfile.StaffName}}</span> &nbsp;&nbsp;&nbsp; <b>Staff ID:</b> <span id="StaffIDLbl"> {{crewProfile.StaffNumber}} </span> &nbsp;&nbsp;&nbsp; <b>Grade:</b>
+                            <span id="GradeLbl">{{crewProfile.Grade}}</span>
+
+                        </td>
+
+
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td valign="top">
+                            <table width="100%" border="1" cellpadding="0" style="font-size:11px; text-align: center;" class="tble_addBorder">
+                                <tbody>
+                                    <tr>
+                                        <td data-ng-repeat="item in rosterViewModel.Rosters " valign="top" class="tble_addBorder">
+                                            <!--roster date-->
+                                            <span>
+                                                <span>{{SplitDate(item.DutyDate,0)}}</span>
+                                            </span>
+                                            <br>
+                                            <span>
+
+                                                <span>{{ item.DutyDateActualDateName }}</span>
+
+                                            </span>
+                                            <!--end-->
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td data-ng-repeat="item in rosterViewModel.Rosters " valign="top" align="center" style="min-width:30px;padding-top:5px" class="tble_addBorder">
+                                            <!--roster data-->
+                                            <table border="0" style="font-size:11px; text-align: center;" align="center">
+                                                <tbody>
+
+                                                    <tr ng-if="item.IsOnFlight">
+                                                        <td align="center" class="">
+                                                            <span>
+                                                                <i class="glyphicon glyphicon-arrow-right" ng-if="item.IsOnFlight"></i>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="isNotNullOrEmptyOrUndefined(item.Cc)">
+                                                        <td align="center" class="">
+                                                            <span>
+                                                                {{item.Cc}}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="isNotNullOrEmptyOrUndefined(item.Flight)">
+                                                        <td align="center">
+                                                            <span>
+                                                                QR{{item.FlightDisplay}}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="isNotNullOrEmptyOrUndefined(item.Flight) || (isNotNullOrEmptyOrUndefined(item.Cc) && isNotNullOrEmptyOrUndefined(item.Address1Training)) ">
+                                                        <td align="center">
+                                                            <span ng-if='selectedTimeFormat==UTCTime'>
+                                                                {{item.StandardTimeDepartureUtc.toString().split(' ')[1]}}
+                                                                <!--{{(item.StandardTimeDepartureUtc) | date:"H:mm" }}-->
+                                                            </span>
+                                                            <span ng-if='selectedTimeFormat==DohaTime'>
+                                                                {{item.StandardTimeDepartureDoha.toString().split(' ')[1]}}
+
+                                                            </span>
+                                                            <span ng-if='selectedTimeFormat==LocalTime'>
+                                                                {{item.StandardTimeDepartureLocal.toString().split(' ')[1]}}
+
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="isNotNullOrEmptyOrUndefined(item.Flight)">
+                                                        <td align="center">
+                                                            <span>
+                                                                {{item.Departure}}-{{item.Arrival}}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="(isNotNullOrEmptyOrUndefined(item.Cc) && isNotNullOrEmptyOrUndefined(item.Address1Training))">
+                                                        <td align="center">
+                                                            <span>
+                                                                To
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="isNotNullOrEmptyOrUndefined(item.Flight) || (isNotNullOrEmptyOrUndefined(item.Cc) && isNotNullOrEmptyOrUndefined(item.Address1Training))">
+                                                        <td align="center">
+                                                            <span ng-if='selectedTimeFormat==UTCTime'>
+                                                                {{item.StandardTimeArrivalUtc.toString().split(' ')[1]}}
+                                                                <!--{{convertToDateTime(item.StandardTimeArrivalUtc ) | date:"H:mm" }}-->
+                                                            </span>
+                                                            <span ng-if='selectedTimeFormat==DohaTime'>
+                                                                {{item.StandardTimeArrivalDoha.toString().split(' ')[1]}}
+                                                                <!--{{convertToDateTime(item.StandardTimeArrivalLocal ) | date:"H:mm" }}-->
+                                                            </span>
+                                                            <span ng-if='selectedTimeFormat==LocalTime'>
+                                                                {{item.StandardTimeArrivalLocal.toString().split(' ')[1]}}
+                                                                <!--{{convertToDateTime(item.StandardTimeArrivalDoha ) | date:"H:mm" }}-->
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                            <table data-ng-repeat="itemExtra in item.Rosters" border="0" style="font-size:11px; text-align: center;">
+                                                <tbody>
+                                                    <tr ng-if="item.CountOfExtraRosters>0">
+                                                        <td align="center">
+                                                            <span ng-if="item.CountOfExtraRosters>0">........</span>
+                                                            <br ng-if="item.CountOfExtraRosters>0" />
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Cc)">
+                                                        <td align="center">
+                                                            <span>
+                                                                {{itemExtra.Cc}}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)">
+                                                        <td align="center">
+                                                            <span>
+                                                                QR{{itemExtra.FlightDisplay}}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)||(isNotNullOrEmptyOrUndefined(itemExtra.Cc) && isNotNullOrEmptyOrUndefined(itemExtra.Address1Training)   )">
+                                                        <td align="center">
+                                                            <span ng-if='selectedTimeFormat==UTCTime'>
+                                                                {{itemExtra.StandardTimeDepartureUtc.toString().split(' ')[1]}}
+                                                                <!--{{convertToDateTime(itemExtra.StandardTimeDepartureUtc) | date:"H:mm" }}-->
+                                                            </span>
+                                                            <span ng-if='selectedTimeFormat==DohaTime'>
+                                                                {{itemExtra.StandardTimeDepartureDoha.toString().split(' ')[1]}}
+                                                                <!--{{convertToDateTime(itemExtra.StandardTimeDepartureDoha) | date:"H:mm" }}-->
+                                                            </span>
+                                                            <span ng-if='selectedTimeFormat==LocalTime'>
+                                                                {{itemExtra.StandardTimeDepartureLocal.toString().split(' ')[1]}}
+                                                                <!--{{convertToDateTime(itemExtra.StandardTimeDepartureLocal) | date:"H:mm" }}-->
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)">
+                                                        <td align="center">
+                                                            <span>
+                                                                {{itemExtra.Departure}}-{{itemExtra.Arrival}}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="(isNotNullOrEmptyOrUndefined(itemExtra.Cc) && isNotNullOrEmptyOrUndefined(itemExtra.Address1Training))">
+                                                        <td align="center">
+                                                            <span>
+                                                                To
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight) || (isNotNullOrEmptyOrUndefined(itemExtra.Cc) && isNotNullOrEmptyOrUndefined(itemExtra.Address1Training))">
+                                                        <td align="center">
+                                                            <span ng-if='selectedTimeFormat==UTCTime'>
+                                                                {{itemExtra.StandardTimeArrivalUtc.toString().split(' ')[1]}}
+                                                                <!--{{convertToDateTime(itemExtra.StandardTimeArrivalUtc ) | date:"H:mm" }}-->
+                                                            </span>
+                                                            <span ng-if='selectedTimeFormat==DohaTime'>
+                                                                {{itemExtra. StandardTimeArrivalDoha .toString().split(' ')[1]}}
+                                                                <!--{{convertToDateTime(itemExtra.StandardTimeArrivalLocal ) | date:"H:mm" }}-->
+                                                            </span>
+                                                            <span ng-if='selectedTimeFormat==LocalTime'>
+                                                                {{itemExtra.StandardTimeArrivalLocal.toString().split(' ')[1]}}
+                                                                <!--{{convertToDateTime(itemExtra.StandardTimeArrivalDoha ) | date:"H:mm" }}-->
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                            <!--end-->
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td data-ng-repeat="item in rosterViewModel.Rosters " valign="top" class="tble_addBorder">
+                                            <!--roster date-->
+                                            <span>
+                                                <!--<span>{{(item.BTime/60)|setDecimal:2}}</span>-->
+                                                <span>{{item.FlightTravellingTime}}</span>
+
+                                            </span>
+                                            <!--<br>
+                                            <span>
+
+                                                <span ng-if="(item.BTime/60)<2">hr</span><span ng-if="(item.BTime/60)>1">s</span>
+                                            </span>-->
+                                            <!--end-->
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0" class="backgroundgray" width="100%" height="100%">
+
+                                <tbody>
+                                    <tr style="padding-top:10px;">
+                                        <td>
+                                            <table align="left" border="0" cellpadding="2" cellspacing="0" width="100%" class="monthly_cont_box">
+                                                <tbody>
+                                                    <tr>
+                                                        <td valign="top" width="25%" id="CodeExTd"></td>
+                                                        <td valign="top" width="25%" id="FlightInTd"></td>
+                                                        <td valign="top" width="25%" id="UTCDiffTd"></td>
+                                                        <td valign="top" width="25%" id="BlockHrsTd"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr ng-if="insertHotel">
+                        <td style="">
+                            <div>
+                                <ng-include ng-if="isRosterLoaded" src="'/app/ipm/partials/ipmRosterMonthlyPrintHotelInfo.html'" ng-if="insertHotel"></ng-include>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

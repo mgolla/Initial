@@ -1,0 +1,27 @@
+﻿<div class="tab-pane fade in active" id="IFEguide" block-ui="ipmIFEguideBlockUI" ng-controller="ipm.iFEGuide.controller">
+    <ul  class="mobileheader nav nav-tabs mob-hide">
+        <li class="active"><a data-toggle="tab"> Monthly IFE Guide</a></li>
+    </ul>
+    <div class="mobile-header-control">
+        <h1>
+            Monthly IFE Guide
+        </h1>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 departmentNews mob_webpart">
+        <div class="Dept_newsPic col-lg-4 col-md-4 col-sm-12">
+            <img ng-if="(!isNullOrEmpty(selectedDepartmentNewsIFEGuide.ThumbImage))" ng-src="data:image/{{selectedDepartmentNewsIFEGuide.ImageType}};base64,{{selectedDepartmentNewsIFEGuide.ThumbImage}}" style=" cursor:pointer" ng-click="onSelectedChange(selectedDepartmentNewsIFEGuide.DocType,selectedDepartmentNewsIFEGuide.FileCode,selectedDepartmentNewsIFEGuide.FileId,'')" /><br />
+            <img ng-if="selectedDepartmentNewsIFEGuide!=null && (isNullOrEmpty(selectedDepartmentNewsIFEGuide.ThumbImage))" src="/Content/css/styles/images/click.png" style=" max-height: 178px; cursor: pointer;" ng-click="onSelectedChange(selectedDepartmentNewsIFEGuide.DocType,selectedDepartmentNewsIFEGuide.FileCode,selectedDepartmentNewsIFEGuide.FileId,selectedDepartmentNewsIFEGuide.DocFileName)" />
+            <a ng-if="(!isNullOrEmpty(selectedDepartmentNewsIFEGuide.NewstTitle))" ng-click="onSelectedChange(selectedDepartmentNewsIFEGuide.DocType,selectedDepartmentNewsIFEGuide.FileCode,selectedDepartmentNewsIFEGuide.FileId,selectedDepartmentNewsIFEGuide.DocFileName)">{{selectedDepartmentNewsIFEGuide.NewstTitle }}</a>
+        </div>
+        <div class="Dept_newsList col-lg-8 col-md-8 col-sm-12">
+            <ul>
+                <li class="current" data-ng-repeat="item in departmentNewsIFEGuideViewModel">
+                    <a ng-click="onDepNSelectedChange(item)">{{item.NewstTitle }}</a> | <i>
+                        Posted on {{item.ValidFrom }}
+                    </i>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

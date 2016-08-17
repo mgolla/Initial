@@ -1,0 +1,203 @@
+﻿<div class="col-lg-12 col-md-12 col-sm-12 ">
+    <h1 class="page-tittle">
+        Swap Room Notification
+    </h1>
+
+    <!--Left panel-->
+    <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero formStyles">
+        <!--Profile-->
+        <!-- Row start -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body mob_padLeftZero mob_padRightZero minHightAuto">
+                        <div class="col-lg-12 col-md-12 col-sm-12 padZero Mob_padZero readForm">
+
+                            <label class="control-label col-lg-2 col-md-2  col-sm-3" for="email">
+                                Notification ID
+                            </label>
+                            <div class="col-lg-2 col-md-4 col-sm-3">
+                                {{ model.Notification.Id }}
+                            </div>
+                            <label class="control-label col-lg-2 col-md-2  col-sm-3" for="email">
+                                Notification Date
+                            </label>
+                            <div class="col-lg-2 col-md-4 col-sm-3">
+                                {{ model.Notification.Date | date:"dd-MMM-yyyy" }}
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading clearfix highlightPanelHeading">
+
+
+
+                        <h3 class="panel-title">
+                            My Accommodation <i class="pull-right"></i>
+                        </h3>
+                    </div>
+                    <div class="panel-body mob_padLeftZero mob_padRightZero">
+                        <div class="col-lg-12 col-md-12 col-sm-12 padZero Mob_padZero readForm">
+
+                            <label class="control-label col-lg-2 col-md-2 col-sm-3" for="email">
+                                Building Name
+                            </label>
+                            <div class="col-lg-2 col-md-4 col-sm-9">
+                                {{ model.ExistingAcc.BuildingDetails.BuildingName }}
+                            </div>
+
+                            <label class="control-label col-lg-2 col-md-2 col-sm-3" for="email">
+                                Flat
+                            </label>
+                            <div class="col-lg-2 col-md-4 col-sm-9">
+                                {{ model.ExistingAcc.BuildingDetails.FlatNumber }}
+                            </div>
+
+                            <label class="control-label col-lg-2 col-md-2 col-sm-3" for="email">
+                                Bedroom
+                            </label>
+                            <div class="col-lg-2 col-md-4 col-sm-9">
+                                {{ model.ExistingAcc.BuildingDetails.BedroomNo }}
+                            </div>
+
+                            <label class="control-label col-lg-2 col-md-2 col-sm-3" for="email">
+                                Address
+                            </label>
+                            <div class="col-lg-2 col-md-4 col-sm-9">
+                                {{ model.ExistingAcc.BuildingDetails.Area }}
+                            </div>
+
+
+                            <label class="control-label col-lg-2 col-md-2 col-sm-3" for="email">
+                                Staying Since
+                            </label>
+                            <div class="col-lg-2 col-md-4 col-sm-9">
+                                {{ model.ExistingAcc.Guests.CheckinDate|date:'dd-MMM-yyyy' }}
+                            </div>
+                            <label class="control-label col-lg-2 col-md-2 col-sm-3" for="email">
+                                Housing Officer
+                            </label>
+                            <div class="col-lg-2 col-md-4 col-sm-9">
+                                {{ model.ExistingAcc.BuildingDetails.HouseIncharge }}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                <div class="panel panel-default">
+                    <div class="panel-heading clearfix">
+                        <h3 class="panel-title">
+                            Initiator Details <i class="pull-right"></i>
+                        </h3>
+                    </div>
+                    <div class="panel-body mob_padLeftZero mob_padRightZero">
+                        <ng-form name="swapForm">
+                            <div class="panel-body mob_padLeftZero mob_padRightZero">
+                                <div class="col-lg-12 col-md-12 col-sm-12 padZero Mob_padZero readForm">
+
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                        Initiated by
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9">
+                                        {{  model.RequestDetails.StaffName}} - ({{ model.RequestDetails.StaffNo}})
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                        Reason for swap
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9">
+                                        {{  model.RequestDetails.RequestReason }}
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                        Building Name
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9">
+                                        {{ model.InitiatorAcc.BuildingDetails.BuildingName }}
+                                    </div>
+
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                        Flat
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9">
+                                        {{ model.InitiatorAcc.BuildingDetails.FlatNumber }}  &nbsp;
+                                    </div>
+
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                        Bedroom
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9">
+                                        {{ model.InitiatorAcc.BuildingDetails.BedroomNo}}  &nbsp;
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                        Address
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9">
+                                        {{ model.InitiatorAcc.BuildingDetails.Area }} &nbsp;
+                                    </div>
+
+
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                        Staying Since
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9">
+                                        {{ model.InitiatorAcc.Guests.CheckinDate |date:'dd-MMM-yyyy' }}  &nbsp;
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reqtype">
+                                        Housing Officer
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9 col-lg-offset-right-4">
+                                        {{  model.InitiatorAcc.BuildingDetails.HouseIncharge }}  &nbsp;
+                                    </div>
+
+                                    <srd-textarea label="Additional Info" label-class="control-label col-lg-2 col-md-2  col-sm-3"
+                                                  field-class="col-lg-4 col-md-3 col-sm-3" submitted="submitted"
+                                                  max-length="4000" model="model.Message" name="additionalInfo" row="5" required="true"></srd-textarea>
+
+                                    <div class="col-lg-12 padZero marbottom10">
+                                        <label class="">
+                                            &nbsp;
+                                        </label>
+                                        <div class="col-lg-10 col-md-10 col-sm-8 minformWidth fieldfix">
+                                            <label class="wrap_text txtLeft">
+                                                <span class="redText">**</span>&nbsp;
+                                                {{messages.HOUCHECKED}}
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="txtRight  col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="submit" class="btn btn-primary" title="" ng-click="approve(swapForm,'Y')">
+                                        Approve
+                                    </button>
+                                    <button type="submit" class="btn btn-primary" title="" ng-click="approve(swapForm,'N')">
+                                        Regret
+                                    </button>
+                                </div>
+                            </div>
+                        </ng-form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row end -->
+<!-- Row start -->
+

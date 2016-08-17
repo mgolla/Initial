@@ -1,0 +1,12 @@
+﻿<ng-form name="forminput">
+    <label class="control-label {{labelClass}}" ng-show="label">
+        <span class='redText'>{{ required ? '*' : ''}}</span><span>{{::label}}</span>
+    </label>
+    <div class="{{fieldClass}}" ng-class="{'prmInvalid' : (submitted || forminput.{{name}}.$touched) && forminput.{{name}}.$invalid}">
+        <input tabindex="{{tabindex}}" type="{{type}}" autocomplete="off" id="{{id}}" ng-model="model" name="{{name}}" class="form-control validation" ng-required="required" pattern="{{regex}}"
+               placeholder="{{placeholder}}"
+               maxlength="{{maxlength}}" ng-maxlength="maxlength" ng-disabled="disabled" ng-readonly="readonly"
+               uib-data-tooltip="Value should be minimum of {{minlength}} and maximum of {{maxlength}} characters"
+               uib-data-tooltip-placement="top" uib-data-tooltip-trigger="mouseenter" uib-data-tooltip-enable="!((model.length > minlength)|| (model.length < maxlength))" />
+    </div>
+</ng-form>

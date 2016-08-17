@@ -1,0 +1,13 @@
+﻿<div class="info_box" ng-controller='ipm.flightIndicator.controller' block-ui="ipmlookupBlockUIflightIndi">
+    <h1>
+        Flight Indicator
+    </h1>
+    <div class="overflow_Hght_145">
+        <label>
+            <span><b>Code</b></span><b>Description</b>
+        </label>
+        <label ng-repeat="item in lookupViewModelflightIndi">
+            <span>{{item.Value }} </span> {{item.Text }}
+        </label>
+    </div>
+</div>

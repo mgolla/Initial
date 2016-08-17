@@ -1,0 +1,169 @@
+﻿
+
+<div class="col-lg-12 padZero">
+
+    <div class="col-lg-7 col-md-9 col-sm-9 col-lg-offset-2 col-md-offset-2 ">
+        <div class="table-responsive">
+            <table id="example" class="table table-striped table-bordered dataTable no-footer blueTHTable" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%;">
+                <thead>
+                    <tr role="row" class="headerRow">
+                        <th class="sorting_asc noWrap" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                        Request No.
+                    : activate to sort column descending" style="width: 240px;">
+                            Entitlement Year
+                        </th>
+                        <th class="sorting noWrap" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                        Request Type
+                    : activate to sort column ascending" style="width: 320px;">
+                            Entitlement Available
+                        </th>
+                        <th class="sorting noWrap" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="
+                        Description
+                    : activate to sort column ascending" style="">
+                            Last Entitlement used
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr role="row" class="odd">
+                        <td class="sorting_1">
+                            {{CrewEntitlementDetails.CrewEntitlements[0].EntitlementYear}}
+                        </td>
+                        <td>
+                            {{CrewEntitlementDetails.CrewEntitlements[0].EntitlementAvailable}}
+                        </td>
+                        <td>
+                            {{CrewEntitlementDetails.CrewEntitlements[0].LastUsed | date:"dd-MMM-yyyy"}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12 col-md-12 padZero  form-outline globalfontbold" ng-show="housingEntitlements.IsCrewEntitled">
+    <!--row fix-->
+    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reason">
+        <span class="redText">*</span><span>Reason</span>
+    </label>
+    <div class="col-lg-2 col-md-4 col-sm-9 col-lg-offset-right-8 col-md-offset-right-6" ng-class="{'prmInvalid' : (submitted ||housingRequestForm.selReason.$touched) && housingRequestForm.selReason.$invalid}">
+        <ui-select ng-model="model.ReasonObj" id="reason" ng-required="true" name="selReason" on-select="changeReason($model)">
+            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+            <ui-select-choices repeat="model in ReasonList">
+                <div ng-bind-html="model.Text | highlight: $select.search"></div>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+
+    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="building">
+        <span class="redText">*</span><span>Building Name</span>
+    </label>
+    <div class="col-lg-2 col-md-4 col-sm-9" ng-class="{'prmInvalid' : submitted && housingRequestForm.selBuilding.$invalid}">
+        <ui-select ng-model="model.BuildingObj" ng-required="true" ng-disabled="disableBuilding" name="selBuilding"
+                   on-select="changeBuilding($model)" id="building">
+            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.BuildingName}}</ui-select-match>
+            <ui-select-choices repeat="model in viewmodel.BuildingList | unique:'BuildingDetailSid' | orderBy:'BuildingName'
+                                    | propsFilter : {BuildingName : $select.search}">
+                <div ng-bind-html="model.BuildingName | highlight: $select.search"></div>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+
+
+    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="flat">
+        <span class="redText">*</span>  <span>Flat</span>
+    </label>
+    <div class="col-lg-2 col-md-4 col-sm-9" ng-class="{'prmInvalid' : (submitted || housingRequestForm.selFlat.$touched) && housingRequestForm.selFlat.$invalid}">
+        <ui-select ng-model="model.FlatObj" ng-required="true" ng-disabled="disableFlat"
+                   on-select="changeFlat($model)" id="flat" name="selFlat">
+            <ui-select-match placeholder="--Select--" allow-clear="true">
+                {{$select.selected.FlatNumber}} &nbsp;
+                {{ $select.selected.FlatType && $select.selected.FlatType != "Standard" ? "- (" + $select.selected.FlatType + ")" : ""  }}
+            </ui-select-match>
+            <ui-select-choices repeat="model in viewmodel.FlatList | unique:'FlatId'| orderBy:'FlatNumber' | propsFilter: {FlatNumber: $select.search}">
+                <div>
+                    <span ng-bind-html="model.FlatNumber | highlight: $select.search"></span>
+                    <span>{{ model.FlatType && model.FlatType != "Standard" ? "- (" + model.FlatType + ")" : ""  }}</span>
+                </div>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+
+    <label class="control-label col-lg-2 col-md-2 col-sm-3" for="flat">
+        <span class="redText">*</span><span>Bedroom</span>
+    </label>
+    <div class="col-lg-2 col-md-4 col-sm-9" ng-class="{'prmInvalid' : (submitted ||housingRequestForm.selBedroom.$touched) && housingRequestForm.selBedroom.$invalid}">
+        <ui-select ng-model="model.BedroomObj" ng-required="true" ng-disabled="disableBedroom"
+                   id="bedroom" name="selBedroom">
+            <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.BedroomNo}}</ui-select-match>
+            <ui-select-choices repeat="model in viewmodel.BedroomList | unique:'BedroomNo' | orderBy:'BedroomNo' | propsFilter: {BedroomNo: $select.search}">
+                <div ng-bind-html="model.BedroomNo | highlight: $select.search"></div>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+
+    <srd-input type="text" label="Landline" name="landline" label-class="col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marg_bt_7" model="model.LandLineNo" required="false" readonly="true"></srd-input>
+
+    <srd-input type="text" label="Nationalities" name="nationalities" label-class="col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marg_bt_7" model="model.Nationality" required="false" readonly="true" submitted="submitted">
+    </srd-input>
+
+    <label class="control-label col-lg-2 col-md-2 col-sm-3">Facilities</label>
+    <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix martop5">{{model.BuildingFacilities}}</div>
+
+    <div class="col-lg-12 padZero clearboth" ng-show="showFriendStaffId">
+        <label class="control-label col-lg-2 col-md-2 col-sm-3">
+            <span class="redText">*</span><span>Friends</span>
+        </label>
+        <div class="col-lg-5 col-md-4 col-sm-9" ng-class="{'prmInvalid' : (submitted ||housingRequestForm.friendsstaffid.$touched) && housingRequestForm.friendsstaffid.$invalid}">
+            <ui-select ng-model="model.FriendStaffIdObj" ng-required="showFriendStaffId" name="friendsstaffid">
+                <ui-select-match placeholder="Select a value in the list" allow-clear="true">{{$select.selected.StaffName}}</ui-select-match>
+                <ui-select-choices repeat="model in Friends">
+                    <div ng-bind-html="model.StaffName | highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+
+    <div class="col-lg-12 padZero clearboth">
+        <label class="control-label  col-lg-2 col-md-2 col-sm-3" for="email">
+            Attachment
+        </label>
+        <div class="col-lg-7 col-md-10 col-sm-9 fileupload-table  col-lg-offset-right-3">
+            <srd-fileupload uploader="uploader"></srd-fileupload>
+        </div>
+
+        <srd-textarea label="Additional Info" label-class=" col-lg-2 col-md-2 col-sm-3"
+                      field-class="col-lg-7 col-md-10 col-sm-9 col-lg-offset-right-3" submitted="submitted"
+                      max-length="4000" model="model.AdditionalInfo" name="additionalInfo" rows="5" required="true"></srd-textarea>
+
+
+        <div class="control-label col-lg-2 col-md-2 col-sm-3">
+
+        </div>
+        <div class="col-lg-7 col-md-10 col-sm-9 col-lg-offset-right-3 fieldfix">
+            <!--<div class="checkbox checkbox-text">-->
+            <label class="wrap_text txtLeft"><input type="checkbox" ng-required="true" ng-model="viewmodel.checked"> {{messages.HOUCHECKED}}</label>
+            <!--</div>-->
+        </div>
+
+    </div>
+
+
+    <div class="row ReadRow">
+        <label class="col-lg-2 col-md-2 col-sm-3 mob-hide">
+
+        </label>
+        <div class="col-lg-7 col-md-10 col-sm-9 redText" ng-show="submitted && !viewmodel.checked">
+            {{ messages.HOUERROR02}}
+        </div>
+    </div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 padZero" style="position: static;">
+    <div class="pull-right">
+        <button type="submit" class="btn btn-primary" title="" ng-show="housingEntitlements.IsCrewEntitled" ng-click="submitRequest(housingRequestForm)">
+            Submit
+        </button>
+        <button type="submit" class="btn btn-primary" title="" ng-show="housingEntitlements.IsCrewEntitled" ng-click="clearForm(housingRequestForm)">Reset</button>
+        <button type="button" class="btn btn-primary" title="" ui-sref="housing">Back</button>
+    </div>
+</div>

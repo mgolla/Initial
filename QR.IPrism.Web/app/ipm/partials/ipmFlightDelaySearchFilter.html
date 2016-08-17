@@ -1,0 +1,130 @@
+﻿<div class="container-fluid pull-left" block-ui="ipmFlightdelayBlockUI" ng-show="$state.current.name === 'searchDelayFlight'">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero">
+        <!-- bs-example-navbar-collapse-1 -->
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                Search Flight Delay
+            </h1>
+
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles mob-overflowhid evRfltSearch-delay">
+                <div class="row ">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs ">
+                        <div class="panel panel-default">
+                            <!--<div class="panel-heading clearfix">
+
+                        <h3 class="panel-title">
+                            <span>Search Flight Delay <i class="pull-right"></i></span>
+                        </h3>
+                    </div>-->
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                <ng-form name="flightDelay">
+                                    <div class="col-lg-11 col-md-11 padZero Mob_padZero form-outline col-lg-offset-right-1 col-md-offset-right-1 col-sm-offset-right-1 ctrlLblAlgn">
+                                        <!--row fix-->
+
+                                        <div class="row">
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3"><span>FlightNumber</span></label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9">
+                                                <div class="input-group newCntrl">
+                                                    <span class="input-group-addon">QR</span>
+                                                    <input type="text" class="form-control validation qrTxtBxHeight" ng-model="model.FlightNumber">
+                                                    <span class="input-group-addon">eg. 264</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row ">
+                                            <label class=" control-label col-lg-2 col-md-2 col-sm-3">Delay Type</label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9" ng-class="{'prmInvalid' : (submitted || flightDelay.delayType.$touched) && flightDelay.delayType.$invalid}">
+                                                <ui-select ng-model="model.DelayTypeObj" name="delayType">
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in DelayTypeList | propsFilter: {Text: $select.search}">
+                                                        <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+                                            <label class="col-lg-2 col-md-2 col-sm-3">Delay Reason</label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 marbottom10" ng-class="{'prmInvalid' : (submitted || flightDelay.delayReason.$touched) && flightDelay.delayReason.$invalid}">
+                                                <ui-select multiple ng-model="model.DelayReasonObj" name="delayReason">
+
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$item.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in DelayTypeReason | propsFilter: {Text: $select.search}">
+                                                        <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+
+                                            <srd-datepicker type="text" name="moveoutdate" label="From Date" field-class="col-lg-4 col-md-4 col-sm-9" label-class="col-lg-2 col-md-2 col-sm-3" model="model.FromDateObj" required="false" id="fromdate" min="mindate" submitted="submitted"></srd-datepicker>
+
+                                            <srd-datepicker type="text" name="moveoutdate4" label="To Date" field-class="col-lg-4 col-md-4 col-sm-9" label-class="col-lg-2 col-md-2 col-sm-3" model="model.ToDateObj" required="false" min="mindate" submitted="submitted"></srd-datepicker>
+
+
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3">Sector From</label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 marbottom10 srd-select" ng-class="{'prmInvalid' : (submitted ||flightDelayForm.SectorFrom.$touched) && flightDelayForm.SectorFrom.$invalid}">
+                                                <ui-select ng-model="model.SectorFromObj" ng-required="false" name="SectorFrom">
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in SectorList | propsFilter: {Desc: $select.search}">
+                                                        <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+                                            <label class="control-label col-lg-2 col-md-2 col-sm-3">Sector To</label>
+                                            <div class="col-lg-4 col-md-4 col-sm-9 marbottom10 srd-select" ng-class="{'prmInvalid' : (submitted ||flightDelayForm.SectorTo.$touched) && flightDelayForm.SectorTo.$invalid}">
+                                                <ui-select ng-model="model.SectorToObj" ng-required="false" name="SectorTo">
+                                                    <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                                                    <ui-select-choices repeat="model in SectorList | propsFilter: {Desc: $select.search}">
+                                                        <div ng-bind-html="model.Desc | highlight: $select.search"></div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+
+                                            <srd-textarea label="Comments" label-class="col-lg-2 col-md-2 col-sm-3"
+                                                          field-class="col-lg-4 col-md-4 col-sm-9 marbottom10" submitted="submitted"
+                                                          max-length="500" model="model.DelayComment" name="additionalInfo" rows="2" required="false"></srd-textarea>
+
+                                        </div>
+                                    </div>
+                                        <div class="col-lg-12 padZero">
+                                            <div class="pull-right">
+                                                <button type="submit" class="btn btn-primary" ng-click="search(flightDelay)">Search</button>
+                                                <button type="submit" class="btn btn-primary" ng-click="clearForm(flightDelay)">Reset</button>
+                                            </div>
+                                        </div>
+                                </ng-form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padZero">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 ">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="table-responsive dataGrid_styles">
+                                        <div ui-grid="grid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(grid)" class="grid searchGrid">
+                                            <div class="watermark" ng-show="!grid.data.length">No data available</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Right panel-->
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pull-left" ui-view="searchSubview"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

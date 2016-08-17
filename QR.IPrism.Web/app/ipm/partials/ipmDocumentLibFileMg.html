@@ -1,0 +1,37 @@
+﻿<div class="content_wrapper Mob_margZero ng-scope">
+    <!-- bs-example-navbar-collapse-1 -->
+    <!--<div ng-click="onClickBackLink('home')">
+        <img src="/Content/css/styles/icons/close.png">Back
+
+    </div>-->
+    <button class="btn pull-right "  style="color:black!important" title="Back " ng-click="onClickBackLink('home')">
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back
+    </button>
+    <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero ">
+        <h1 class="page-tittle hidden-sm hidden-xs" ui-sref="doclibfilemg">
+            Document Library
+        </h1>
+        <div class="documentLinks_contrl link-control hidden-lg hidden-md">
+            <h1 ui-sref="doclibfilemg">
+                <div class="icon-bg"></div>
+                Document Library
+            </h1>
+        </div>
+
+        <!--Left panel-->
+        <div class="col-lg-12 col-md-12 col-sm-12 formStyles">
+
+            <div class="tabContent" id="tabContent1" block-ui="ipmfileFolderBlockUI">
+                <angular-filemanager></angular-filemanager>
+            </div>
+         
+        </div>
+    </div>
+    <!--Right panel-->
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

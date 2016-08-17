@@ -1,0 +1,90 @@
+﻿<div class="col-lg-12 col-md-12 col-sm-12 padZero  form-outline " ng-show="housingEntitlements.IsCrewEntitled">
+    <!--row fix-->
+    <div class="col-sm-12 padZero">
+        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="building">
+            <span class="redText">*</span>   Building Name
+        </label>
+        <div class="col-lg-2 col-md-4 col-sm-9" ng-class="{'prmInvalid' : submitted && housingRequestForm.selBuilding.$invalid}">
+            <ui-select ng-model="model.BuildingObj" ng-required="true" ng-disabled="disableBuilding" name="selBuilding"
+                       on-select="changeBuilding($model)" id="building">
+                <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.BuildingName}}</ui-select-match>
+                <ui-select-choices repeat="model in viewmodel.BuildingList | unique:'BuildingDetailSid' | orderBy:'BuildingName'
+                                    | propsFilter : {BuildingName : $select.search}">
+                    <div ng-bind-html="model.BuildingName | highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+
+        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="flat">
+            <span class="redText">*</span><span>Flat</span>
+        </label>
+        <div class="col-lg-2 col-md-4 col-sm-9" ng-class="{'prmInvalid' : (submitted || housingRequestForm.selFlat.$touched) && housingRequestForm.selFlat.$invalid}">
+            <ui-select ng-model="model.FlatObj" ng-required="true" ng-disabled="disableFlat"
+                       on-select="changeFlat($model)" id="flat" name="selFlat">
+                <ui-select-match placeholder="--Select--" allow-clear="true">
+                    {{$select.selected.FlatNumber}} &nbsp;
+                    {{ $select.selected.FlatType && $select.selected.FlatType != "Standard" ? "- (" + $select.selected.FlatType + ")" : ""  }}
+                </ui-select-match>
+                <ui-select-choices repeat="model in viewmodel.FlatList | unique:'FlatId'| orderBy:'FlatNumber' | propsFilter: {FlatNumber: $select.search}">
+                    <div>
+                        <span ng-bind-html="model.FlatNumber | highlight: $select.search"></span>
+                        <span>{{ model.FlatType &&  model.FlatType != "Standard" ? "- (" + model.FlatType + ")" : ""  }}</span>
+                    </div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+
+        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="flat">
+            <span class="redText">*</span><span>Bedroom</span>
+        </label>
+        <div class="col-lg-2 col-md-4 col-sm-9 " ng-class="{'prmInvalid' : (submitted ||housingRequestForm.selBedroom.$touched) && housingRequestForm.selBedroom.$invalid}">
+            <ui-select ng-model="model.BedroomObj" ng-required="true" ng-disabled="disableBedroom"
+                       id="bedroom" name="selBedroom">
+                <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.BedroomNo}}</ui-select-match>
+                <ui-select-choices repeat="model in viewmodel.BedroomList | unique:'BedroomNo' | orderBy:'BedroomNo' | propsFilter: {BedroomNo: $select.search}">
+                    <div ng-bind-html="model.BedroomNo | highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+
+        <label class="control-label col-lg-2 col-md-2 col-sm-3">Facilities</label>
+        <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">{{model.BuildingFacilities}}</div>
+
+        <srd-input type="text" label="Landline" name="landline" label-class="control-label col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marbottom10" model="model.LandLineNo" required="false" readonly="true"></srd-input>
+
+        <srd-input type="text" label="Nationalities" name="nationalities" label-class="control-label col-lg-2 col-md-2 col-sm-3" field-class="col-lg-2 col-md-4 col-sm-9 marbottom10" model="model.Nationality" required="false" readonly="true" submitted="submitted">
+        </srd-input>
+
+        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="reason">
+            <span class="redText">*</span><span>Reason</span>
+        </label>
+        <div class="col-lg-2 col-md-4 col-sm-9 marbottom10" ng-class="{'prmInvalid' : (submitted ||housingRequestForm.selReason.$touched) && housingRequestForm.selReason.$invalid}">
+            <ui-select ng-model="model.ReasonObj" id="reason" ng-required="true" name="selReason" on-select="changeReason($model)">
+                <ui-select-match placeholder="--Select--" allow-clear="true">{{$select.selected.Text}}</ui-select-match>
+                <ui-select-choices repeat="model in ReasonList">
+                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+    <div class="col-sm-12 padZero">
+        <label class="control-label col-lg-2 col-md-2 col-sm-3" for="email">
+            Attachment
+        </label>
+        <div class="col-lg-6 col-md-9 col-sm-9 fileupload-table">
+            <srd-fileupload uploader="uploader"></srd-fileupload>
+        </div>
+    </div>
+    <div class="col-sm-12 padZero">
+        <srd-textarea label="Additional Info" label-class="control-label col-lg-2 col-md-2 col-sm-3"
+                      field-class="col-lg-6 col-md-9 col-sm-9" submitted="submitted"
+                      max-length="4000" model="model.AdditionalInfo" name="additionalInfo" rows="5" required="true"></srd-textarea>
+    </div>
+</div>
+<div class="txtRight col-lg-12 col-md-12 col-sm-12" style="position: static;">
+    <button type="submit" class="btn btn-primary" title="" ng-show="housingEntitlements.IsCrewEntitled" ng-click="submitRequest(housingRequestForm)">
+        Submit
+    </button>
+    <button type="submit" class="btn btn-primary" title="" ng-show="housingEntitlements.IsCrewEntitled" ng-click="clearForm(housingRequestForm)">Reset</button>
+    <button type="button" class="btn btn-primary" title="" ui-sref="housing">Back</button>
+</div>

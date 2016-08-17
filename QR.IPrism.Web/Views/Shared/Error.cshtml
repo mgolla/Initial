@@ -1,0 +1,23 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+<script>
+    function onLoginBackClick() {
+        var pathArray = window.location.href.split('/');
+        var protocol = pathArray[0];
+        var host = pathArray[2];
+        var baseURL = protocol + '//' + host;
+        window.location = baseURL;
+    }
+</script>
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+<div class="row">
+    <button type="button" class="btn center-block" onclick="onLoginBackClick()">
+        <span class="glyphicon glyphicon-log-in"></span> Login
+    </button>
+</div>
+

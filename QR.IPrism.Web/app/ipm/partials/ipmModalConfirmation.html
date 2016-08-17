@@ -1,0 +1,16 @@
+﻿<style>
+    button.ngdialog-button:focus {
+        border: solid black 1px !important;
+    }
+    .btn-primary:hover {
+        background: #55193d;
+    }
+</style>
+
+<div class="ngdialog-message">
+    <h2><i class="fa fa-info-circle" style=""></i> {{dialogTitle}}</h2>
+    <div class="dialog_content" ng-bind-html="dialogMessage"></div>
+</div>
+<div class="ngdialog-buttons mt">
+    <button type="button" class="ngdialog-button btn  btn-primary" ng-click="closeThisDialog('Post');">OK</button>
+</div>

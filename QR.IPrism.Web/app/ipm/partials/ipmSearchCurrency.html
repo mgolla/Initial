@@ -1,0 +1,98 @@
+﻿
+<div id="tab-2" class="row">
+
+    <div class="tabContent container-fluid">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                Currency Search
+            </h1>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 station_Info gradientBG formStyles">
+            <div class="panel-body">
+                <form name="myFormStation" novalidate class="form-inline"
+                      data-ng-submit="onClickSearch()">
+                    <div class="form-inline">
+                        <div class="form-group col-lg-2 col-sm-12 noPadLeft-xs">
+                            <label for="uirequestType">
+                                AirportCode
+                            </label>
+                            <ui-select required ng-model="filter.AirportCode" theme="select2">
+                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                <ui-select-choices repeat="model in AirportCodeList | propsFilter: {Text: $select.search}">
+                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+
+
+                        </div>
+                        <div class="form-group col-lg-2 col-sm-12 noPadLeft-xs">
+                            <label for="uirequestType">
+                                City
+                            </label>
+                            <ui-select required ng-model="filter.City" theme="select2">
+                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                <ui-select-choices repeat="model in CitiesAll | propsFilter: {Text: $select.search}">
+                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+
+
+                        </div>
+                        <div class="form-group col-lg-2 col-sm-12 noPadLeft-xs">
+                            <label for="uirequestType">
+                                Country
+                            </label>
+                            <ui-select required ng-model="filter.Country" theme="select2">
+                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                <ui-select-choices repeat="model in CountryList | propsFilter: {Text: $select.search}">
+                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+
+
+                        </div>
+                        <div class="form-group col-lg-2 col-sm-12 noPadLeft-xs">
+                            <label for="uirequestType">
+                                CurrencyCode
+                            </label>
+                            <ui-select required ng-model="filter.Currency" theme="select2">
+                                <ui-select-match placeholder="--Select--">{{$select.selected.Text}}</ui-select-match>
+                                <ui-select-choices repeat="model in CurrencyCodeList | propsFilter: {Text: $select.search}">
+                                    <div ng-bind-html="model.Text | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+
+
+                        </div>
+                        <div class="form-group col-lg-2 col-sm-4">
+                            <label class="xs-mob-hide disp_block">&nbsp;</label>
+                            
+                            <button type="submit" class="btn btn-primary pull-sm-right" title="">Search </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="crewflight_info1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="container-fluid" ui-view="uiViewSearchCurrency">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+</div>
+
+
+
+

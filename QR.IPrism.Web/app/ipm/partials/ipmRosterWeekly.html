@@ -1,0 +1,92 @@
+﻿<div  ng-controller="ipm.weeklyRoster.controller">
+    <!--scrollbar="scrollbarWeekly"-->
+    <div class="row rosterList col-lg-12 weekRoster" id="roasterContent" style="min-height:120px" ng-if="(rosterViewModel.IsDataLoaded==YesRoster)">
+        <span class="arrow-left glyphicon glyphicon-chevron-left" aria-hidden="true" ng:click="onClickLeft()"></span>
+
+        <!--ng:click="previousButtonClickHandler()"-->
+        <div class="row pg-cnt">
+            <!--main table-->
+            <div class="roster_flexible">
+
+                <div class="roster_flexible_cell col-sm-12 col-xs-12" id="rostercell{{item.TempID}}" data-ng-repeat="item in rosterViewModel.Rosters" ng-class="{'split-view' : item.CountOfExtraRosters>0, 'rosterlistitemdisplay DeviceRosterData' : isclickedMobileRoster(item.TempID), 'no-Border' : isSelected(item.TempID) , 'rosterlistitemdisplay': isSelectedMobileRoster(item.TempID)}">
+                    <!--<div class="roster_flexible_cell_inner" ng-class="{ 'activatedrosterlistul ' : isclickedMobileRoster(item.TempID)}">-->
+                    <div class="roster_Data" ng-class="{'actvDateMar activatedatermvshad actvRoster  ' : isclickedMobileRoster(item.TempID),'rosteractive  actvRosterEvent' : isSelected(item.TempID),'actvDate':isSelectedRosterLoad(item.TempID)}">
+                        <h1 ng:click="rosterDayClickHandler(item,item.TempID,item.TempID)" ng-class="{'roster_Datah11' : isclickedMobileRoster(item.TempID)}">
+                            <i class=" flight_date" ng-class="{'roster_Datah1flightdate' : isclickedMobileRoster(item.TempID)}">
+                                {{SplitDate(item.DutyDate,0)}}
+                            </i> {{SplitDate(item.DutyDate,1)}} {{SplitDate(item.DutyDate,2)}}
+                        </h1>
+                        <div class="roster_flexible_cell_data">
+
+
+                            <div class="rooster-day-OFF" ng-if="item.IsOnFlight">
+                                <i class="fa fa-arrow-right" ng-if="item.IsOnFlight"></i>
+                            </div>
+
+
+                            <!--actvRosterEvent ,isclickedRosterEventMobile-->
+                            <div id="roosterDay{{item.TempID}}" ng:click="rosterDayClickHandler(item,item.TempID,item.TempID)" class="rooster-day"
+                                 ng-if=" (!(item.IsOnFlight))"
+                                 ng-class="{'defaultActive rosteractive  ' : isSelected(item.TempID),'cur_def' : (isroosterDayOFF(item) ),'actvRosterEvent' : isSelectedRosterEvent(item.TempID),' weekly_roster_details' :isSelectedRosterEvent(item.TempID)}">
+                                <div class="route-info" ng-if="isNotNullOrEmptyOrUndefined(item.Flight)">
+                                    <span class="flightRoute">{{item.Departure}}</span>
+                                    <span class="flight-icon"></span>
+                                    <span class="flightRoute">{{item.Arrival}} </span>
+                                </div>
+                                <div ng-if="isNotNullOrEmptyOrUndefined(item.Cc)" ng:click="rosterDayClickHandler(item,item.TempID,item.TempID)">
+                                    <span class="roster-off-data">{{item.Cc}}</span>
+                                </div>
+                                <div class="flightNo">
+                                    <span ng-if="isNotNullOrEmptyOrUndefined(item.Flight)">QR {{item.FlightDisplay}} </span>
+                                    <div class="extra_roster" ng-if="item.Rosters.length>0">
+                                        <span class="glyphicon glyphicon-plus "></span>
+                                        {{item.CountOfExtraRosters}}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--actvRosterEvent-->
+                            <div id="roosterDay{{itemExtra.TempID}}" ng:click="rosterDayClickHandler(itemExtra,item.TempID,itemExtra.TempID)" class="rooster-day extra-day" data-ng-repeat="itemExtra in item.Rosters"
+                                 ng-class="{' weekly_roster_details' :isSelectedRosterEvent(itemExtra.TempID),'actvRosterEvent' : isSelectedRosterEvent(itemExtra.TempID),'cur_def' : isroosterDayOFF(itemExtra)}">
+                                <div class="route-info" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)">
+                                    <span class="flightRoute" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)">{{itemExtra.Departure}}</span>
+                                    <span class="flight-icon" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)"></span>
+                                    <span class="flightRoute" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)">{{itemExtra.Arrival}}</span>
+                                </div>
+                                <div class="flightNo" ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Flight)">
+                                    QR{{itemExtra.FlightDisplay}}
+                                </div>
+
+                                <div ng-if="isNotNullOrEmptyOrUndefined(itemExtra.Cc)" ng:click="rosterDayClickHandler(itemExtra,item.TempID,itemExtra.TempID)">
+                                    <span class="roster-off-data">{{itemExtra.Cc}}</span>
+                                </div>
+                                <div class="rooster-day-OFF" ng-if="itemExtra.IsOnFlight">
+                                    <i class="fa fa-arrow-right" ng-if="itemExtra.IsOnFlight"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <span class="arrow-right glyphicon glyphicon-chevron-right" aria-hidden="true" ng:click="onClickRight()"></span>
+        <!--ng:click="nextButtonClickHandler()"ui-view="rosterDetailedView"-->
+        <div id="roster_details" ng-show="isRosterDetailShow()">
+            <ng-include src="rosterDetailsUrl"></ng-include>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 stationhotel_info_box padZero" ng-if="(rosterViewModel.IsDataLoaded==NoRoster)">
+        <h1 style="text-align: center !important;">
+            Roster informations not available !
+        </h1>
+    </div>
+</div>
+
+

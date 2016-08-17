@@ -1,0 +1,278 @@
+﻿<div class="container-fluid pull-left">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="content_wrapper Mob_margZero" block-ui="ipmEVRSingleFlightDetBlockUI">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <!--<h1 class="page-tittle"> {{heading}} </h1>-->
+            <!--</div>-->
+            <!--Left panel-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 formStyles">
+                <div class="row evrload_panels ">
+
+                    <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-default minhght_310">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Flight Details
+
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero globalfontbold">
+                                <div class="row col-lg-12 col-md-12 col-sm-6">
+
+                                    <label for="ex1" class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">Flight Number:</label>
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 evr_fltDet_ftBld">
+                                        {{ model.FlightNumber }}
+                                    </div>
+
+                                </div>
+                                <div class="row col-lg-12 col-md-12 col-sm-6">
+                                    <label for="ex1" class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        Aircraft Reg. No.
+                                    </label>
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 evr_fltDet_ftBld">
+                                        {{ model.AirCraftRegNo }}
+                                    </div>
+                                </div>
+                                <div class="row col-lg-12 col-md-12 col-sm-6">
+                                    <label for="ex1" class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        Sector
+                                    </label>
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 evr_fltDet_ftBld">
+                                        {{ model.SectorFrom }} - {{ model.SectorTo }}
+                                    </div>
+                                </div>
+                                <!--<div class="row">
+                <label for="ex1" class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                    Sector To
+                </label>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                    {{ model.SectorTo }}
+                </div>
+            </div>-->
+                                <div class="row col-lg-12 col-md-12 col-sm-6">
+                                    <label for="ex1" class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        Aircraft Type
+                                    </label>
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 evr_fltDet_ftBld">
+                                        {{ model.AirCraftType }}
+                                    </div>
+                                </div>
+                                <div class="row col-lg-12 col-md-12 col-sm-6">
+                                    <label for="ex1" class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                        Final Destination
+                                    </label>
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 evr_fltDet_ftBld">
+                                        {{ model.FlightDelay.FlightRoute }}
+                                    </div>
+                                </div>
+                                <div class="row col-lg-12 col-md-12 col-sm-6">
+                                    <label for="ex1" class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5 ">
+                                        Crew Compliment
+                                    </label>
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 evr_fltDet_ftBld">
+                                        {{ model.FlightDelay.CrewCount }}
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                    <!--flight time-->
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 noPadLeft-lg noPadLeft-md ">
+                        <div class="panel panel-default minhght_310">
+                            <div class="panel-heading clearfix highlightPanelHeading">
+                                <h3 class="panel-title">
+                                    Flight Time<i class="pull-right"></i>
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero globalfontbold">
+
+                                <div class="row">
+                                    <label class="control-label col-lg-6 col-md-6 col-sm-5 col-xs-6">
+                                        STD Date Time(UTC) :
+                                    </label>
+                                    <div class="col-lg-6 col-md-6 col-sm-7 col-xs-6 evr_fltDet_ftBld">
+                                        &nbsp;&nbsp; {{ model.ScheduledDeptTime |  date:"dd-MMM-yyyy HH:mm" }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-lg-6 col-md-6 col-sm-5 col-xs-6">
+                                        ATD Date Time(UTC) :
+                                    </label>
+                                    <div class="col-lg-6 col-md-6 col-sm-7 col-xs-6 evr_fltDet_ftBld">
+                                        &nbsp;&nbsp; {{ model.ActualDeptTime |  date:"dd-MMM-yyyy HH:mm" }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-lg-6 col-md-6 col-sm-5 col-xs-6">
+                                        STA Date Time(UTC) :
+                                    </label>
+                                    <div class="col-lg-6 col-md-6 col-sm-7 col-xs-6 evr_fltDet_ftBld">
+                                        &nbsp;&nbsp; {{ model.ScheduledArrTime |  date:"dd-MMM-yyyy HH:mm" }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="control-label col-lg-6 col-md-6 col-sm-5 col-xs-6">
+                                        ATA Date Time(UTC) :
+                                    </label>
+                                    <div class="col-lg-6 col-md-6 col-sm-7 col-xs-6 evr_fltDet_ftBld">
+                                        &nbsp;&nbsp; {{ model.ActualArrTime |  date:"dd-MMM-yyyy HH:mm" }}
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--end-->
+                    <!--aircraft load detail-->
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 noPadLeft-lg noPadLeft-md">
+                        <div class="panel panel-default minhght_310">
+                            <div class="panel-heading clearfix">
+
+                                <h3 class="panel-title">
+                                    Aircraft Load Details
+
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero globalfontbold">
+                                <div class="col-lg-12 padZero">
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0" class="loadEvr_table">
+                                        <tr>
+                                            <th>
+                                                <input type="checkbox" ng-model="model.IsFerry" ng-change="checked()" ng-disabled="isReadOnly" class="noMargin" />
+                                                Ferry Flight
+                                            </th>
+                                            <th>First class</th>
+                                            <th>Business class</th>
+                                            <th>Economy class</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Capacity</td>
+                                            <td class="fontstylebold">{{ model.FlightDelay.SeatCapacityFC }}</td>
+                                            <td class="fontstylebold">{{ model.FlightDelay.SeatCapacityJC }}</td>
+                                            <td class="fontstylebold">{{ model.FlightDelay.SeatCapacityYC }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Passenger</td>
+                                            <td class="fontstylebold">
+                                                {{model.FlightDelay.PassengerLoadFC == "-1" ? "NA" : model.FlightDelay.PassengerLoadFC}}
+                                            </td>
+                                            <td class="fontstylebold">
+                                                <label class="label_text"> {{model.FlightDelay.PassengerLoadJC == "-1" ? "NA" : model.FlightDelay.PassengerLoadJC}}</label>
+                                            </td>
+                                            <td class="fontstylebold">
+                                                <label class="label_text">{{model.FlightDelay.PassengerLoadYC == "-1" ? "NA" : model.FlightDelay.PassengerLoadYC}}</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Infant</td>
+                                            <td class="fontstylebold">
+                                                <label class="label_text"> {{model.FlightDelay.InfantLoadFC == "-1" ? "NA" : model.FlightDelay.InfantLoadFC}}</label>
+                                            </td>
+                                            <td class="fontstylebold">
+                                                <label class="label_text"> {{model.FlightDelay.InfantLoadJC == "-1" ? "NA" : model.FlightDelay.InfantLoadJC}}</label>
+                                            </td>
+                                            <td class="fontstylebold">
+                                                <label class="label_text"> {{model.FlightDelay.InfantLoadYC == "-1" ? "NA" : model.FlightDelay.InfantLoadYC}}</label>
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--end-->
+                    <!--pre flight chk-->
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 noPadLeft-lg padLeft-md-15">
+                        <div class="panel panel-default minhght_310 preflight_chk">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Pre-flight Check<i class="pull-right"></i>
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero globalfontbold">
+                                <div class="row col-lg-12 col-md-6 col-sm-6">
+                                    <div class="col-lg-10 col-md-6 col-sm-10 col-xs-10">
+                                        <label for="ex1" class="mini_text">Grooming Check done by GO?</label>
+                                    </div>
+                                    <div class="col-lg-2 col-md-1 col-sm-2 col-xs-2 tb-ckbalign evr_fltDet_ftBld">
+                                        {{ model.FlightDelay.IsGroomingCheck }}
+
+                                    </div>
+                                    <div class="col-lg-12 col-md-8 col-sm-12 col-xs-2 minformWidth evr_fltDet_txtArea">
+                                        {{ model.FlightDelay.GroomingCheckComment }}
+                                    </div>
+                                </div>
+                                <div class="row col-lg-12 col-md-6 col-sm-6">
+                                    <div class="col-lg-10 col-md-6 col-sm-10  col-xs-10">
+                                        <label for="ex1" class="mini_text">CSD/CS briefed by BO?</label>
+
+                                    </div>
+                                    <div class="col-lg-2 col-md-1 col-sm-2 col-xs-2 tb-ckbalign evr_fltDet_ftBld">
+                                        {{ model.FlightDelay.IsCsdCsBriefed}}
+                                    </div>
+                                    <div class="col-lg-12 col-md-8 col-sm-12 col-xs-2 minformWidth evr_fltDet_txtArea">
+                                        {{ model.FlightDelay.CsdCsBriefedComment }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end-->
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+
+                                <h3 class="panel-title">
+                                    Crew Work Positions<i class="pull-right"></i>
+                                </h3>
+                            </div>
+                            <div class="panel-body detailForm mob_padLeftZero mob_padRightZero">
+                                <div class="table-responsive dataGrid_styles">
+                                    <div ui-grid="grid" ui-grid-pagination ui-grid-resize-columns ui-grid-auto-resize ng-style="getTableHeight(grid)" class="grid searchGrid">
+                                        <div class="watermark" ng-show="!grid.data.length">No data available</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

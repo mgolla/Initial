@@ -1,0 +1,27 @@
+﻿<div id="profileTabsContents" class="profile_tabview eVRScreentabs" block-ui="ipmEVRTablsBlockUI" ng-show="$state.current.name === 'evrlstsState'">
+    <tabset class="nav nav-tabs nav-tab-evr tab-animation">
+        <div class="evrTabs marLeft15 martop5">
+            <tab active="model.active.evrtop" select="onEvrTabChange('evrtop')" heading="Flight Details">
+                <tab-heading>
+                    <div>Flight Details</div>
+                </tab-heading>
+                <ng-include src="selectedEvrURL"></ng-include>
+                <!--<div class="tab-pane fade in active" ui-view="ipmevrtopgridUIView"></div>-->
+            </tab>
+            <tab active="model.active.evrtopten" select="onEvrTabChange('evrtopten')" heading="eVRs of Last Ten Flights Operated">
+                <tab-heading>
+                    <div>eVRs of Last Ten Flights Operated</div>
+                </tab-heading>
+                <ng-include src="selectedEvrURL"></ng-include>
+                <!--<div class="tab-pane fade in active" id="evrtoptenId" ui-view="ipmevrtoptenUIView"></div>-->
+            </tab>
+        </div>
+    </tabset>
+</div>
+<div ui-view="uiViewEvrDetails"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

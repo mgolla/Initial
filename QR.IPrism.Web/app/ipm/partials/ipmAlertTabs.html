@@ -1,0 +1,50 @@
+﻿<!--<ul id="latestUpdatesTab" class="nav nav-tabs">
+   
+    <li ng-class="{'active': isGetSelectedTab(Alerts)}"><a ng:click="onAlertTabChange(Alerts)"><i class="icon-alert"></i> Alerts & Notifications</a></li>
+    <li ng-class="{'active': isGetSelectedTab(MyRequest)}"><a ng:click="onAlertTabChange(MyRequest)"><i class="icon-request"></i> My Request</a></li>
+    <li ng-class="{'active': isGetSelectedTab(SVPT)}"><a ng:click="onAlertTabChange(SVPT)"><i class="icon-tweet"></i> SVP Tweets</a></li>
+</ul>
+<div id="myTabContent" class="tab-content" >
+    
+    
+        
+        <ng-include src="tabAlertContentUrl"></ng-include>
+    
+     
+   
+</div>-->
+<div id="profileTabsContents" class="profile_tabview" ng-controller="ipm.alertTabs.controller">
+    <tabset class="tab-animation">
+        <tab heading="Alerts & Notifications" class="alert-icon" id="AlertsTab" ui-sref="home.notification" select="onAlertTabChange(Alerts)">
+           
+            <!--ui-view="ipmAlertTabAlertsUIView"-->
+            <div class="tab-pane fade  in active">
+               
+                <ng-include src="'/app/ipm/partials/ipmAlertTabsNotification.html'"></ng-include>
+
+            </div>
+        </tab>
+        <tab heading="My Request" class="request-icon"  select="onAlertTabChange(MyRequest)">
+            <!-- ui-sref="home.myrequest" <div class="tab-pane fade in active" id="MyRequest" ui-view="ipmAlertTabMyRequestUIView"></div>-->
+            <ng-include ng-if="isGetSelectedTab(MyRequest)" src="'/app/ipm/partials/ipmAlertTabsMyRequest.html'"></ng-include>
+            
+        </tab>
+        <tab heading="View All" class="request-icon viewAllfloatrgt" ui-sref="notificationAll">
+            <tab-heading>
+                <!--<div>Alerts & Notifications</div>-->
+                <button ng-show="isGetSelectedTab(Alerts)" type="button" ui-sref="notificationAll" class="btn btn-default btn-viewall  pull-right"><i class="fa fa-bell" aria-hidden="true"></i>
+
+                View Notifications</button>
+            </tab-heading>
+        </tab>
+        <!-- btn-link <tab heading="SVP Tweets" class="tweet-icon" ui-sref="home.svptweet" select="onAlertTabChange(SVPT)">
+            <div class="tab-pane fade in active" id="SVPT" ui-view="ipmAlertTabSVPTUIView"></div>
+        </tab>-->
+
+    </tabset>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

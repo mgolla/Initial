@@ -1,0 +1,2247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="VRDetailsService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IVRDetailsService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" />
+      <xsd:import schemaLocation="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects.Common" />
+      <xsd:import schemaLocation="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects.IVRS" />
+      <xsd:import schemaLocation="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IVRDetailsService_AddIVRSAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddIVRSAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AddIVRSAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddIVRSAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AddIVRSAttachment_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q1:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeleteIVRSAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIVRSAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeleteIVRSAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIVRSAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeleteIVRSAttachment_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q2:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailCrew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailCrew" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailCrew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailCrewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailCrew_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q3:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailEnterVR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailEnterVR" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailEnterVR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailEnterVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailEnterVR_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q4:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailActionVR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailActionVR" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailActionVR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailActionVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailActionVR_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q5:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailAssignVR_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailAssignVR" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailAssignVR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailAssignVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailAssignVR_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q6:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailAdmin_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q7:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsActionVREligible_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsActionVREligible" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsActionVREligible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsActionVREligibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsActionVREligible_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q8:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsAssigned_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAssigned" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsAssigned_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAssignedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsAssigned_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q9:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchVR_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchVR" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchVR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchVR_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q10:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetActionResolutions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActionResolutions" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetActionResolutions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActionResolutionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetActionResolutions_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q11:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchVRDept_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchVRDept" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchVRDept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchVRDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchVRDept_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q12:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AdvanceSearchVR_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdvanceSearchVR" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AdvanceSearchVR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdvanceSearchVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AdvanceSearchVR_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q13:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AdvanceSearchVRPass_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdvanceSearchVRPass" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AdvanceSearchVRPass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdvanceSearchVRPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AdvanceSearchVRPass_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q14:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AdvanceSearchVRForComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdvanceSearchVRForComments" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AdvanceSearchVRForComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdvanceSearchVRForCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AdvanceSearchVRForComments_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q15:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetCriticalVRForAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCriticalVRForAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetCriticalVRForAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCriticalVRForAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetCriticalVRForAlerts_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q16:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetRuleSetFailingAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleSetFailingAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetRuleSetFailingAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleSetFailingAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetRuleSetFailingAlerts_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q17:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetRejectedVRAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRejectedVRAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetRejectedVRAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRejectedVRAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetRejectedVRAlerts_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q18:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetSuddenSurgeVRAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuddenSurgeVRAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetSuddenSurgeVRAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuddenSurgeVRAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetSuddenSurgeVRAlerts_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q19:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetFlightDelayCSAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlightDelayCSAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetFlightDelayCSAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlightDelayCSAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetFlightDelayCSAlerts_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q20:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetLessCrewVRAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLessCrewVRAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetLessCrewVRAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLessCrewVRAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetLessCrewVRAlerts_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q21:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchVRToAssign_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchVRToAssign" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchVRToAssign_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchVRToAssignResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchVRToAssign_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q22:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDraftVRForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDraftVRForUser" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDraftVRForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDraftVRForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDraftVRForUser_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q23:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDeptForSubCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeptForSubCategory" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDeptForSubCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeptForSubCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDeptForSubCategory_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q24:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetUsersForFlight_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForFlight" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetUsersForFlight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersForFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetUsersForFlight_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q25:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetOtherDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherDepartments" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetOtherDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetOtherDepartments_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q26:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_InsertVoyageReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVoyageReport" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_InsertVoyageReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVoyageReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_InsertVoyageReport_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q27:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeleteVR_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVR" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeleteVR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeleteVR_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q28:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateVoyageReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVoyageReport" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateVoyageReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVoyageReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateVoyageReport_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q29:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForFlight_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrsForFlight" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForFlight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrsForFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForFlight_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q30:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_CloseVR_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseVR" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_CloseVR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_CloseVR_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q31:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_OverRideCommentsVisibility_InputMessage">
+    <wsdl:part name="parameters" element="tns:OverRideCommentsVisibility" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_OverRideCommentsVisibility_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OverRideCommentsVisibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_OverRideCommentsVisibility_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q32:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForDept_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrsForDept" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForDept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrsForDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForDept_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q33:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForDeptWeb_Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrsForDeptWeb_Info" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForDeptWeb_Info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrsForDeptWeb_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForDeptWeb_Info_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q34:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForDeptWeb_Action_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrsForDeptWeb_Action" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForDeptWeb_Action_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrsForDeptWeb_ActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrsForDeptWeb_Action_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q35:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetNextVRID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextVRID" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetNextVRID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextVRIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetNextVRID_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q36:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailForDept_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailForDept" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailForDept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRDetailForDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRDetailForDept_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q37:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateVRAtDept_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVRAtDept" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateVRAtDept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVRAtDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateVRAtDept_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q38:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SaveVRAtDept_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVRAtDept" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SaveVRAtDept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVRAtDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SaveVRAtDept_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q39:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetRestdDeptCmmtsForDept_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRestdDeptCmmtsForDept" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetRestdDeptCmmtsForDept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRestdDeptCmmtsForDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetRestdDeptCmmtsForDept_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q40:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_CloseVRAtAssign_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseVRAtAssign" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_CloseVRAtAssign_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseVRAtAssignResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_CloseVRAtAssign_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q41:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AssignVoyageReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssignVoyageReport" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AssignVoyageReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssignVoyageReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_AssignVoyageReport_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q42:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsEnterVrForFlight_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsEnterVrForFlight" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsEnterVrForFlight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsEnterVrForFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsEnterVrForFlight_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q43:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetPassengerLoad_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassengerLoad" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetPassengerLoad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassengerLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetPassengerLoad_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q44:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetSectionForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSectionForUser" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetSectionForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSectionForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetSectionForUser_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q45:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetAllSectionComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSectionComments" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetAllSectionComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSectionCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetAllSectionComments_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q46:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsRejectionTimeExceeded_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsRejectionTimeExceeded" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsRejectionTimeExceeded_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsRejectionTimeExceededResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsRejectionTimeExceeded_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q47:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchActingCrew_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchActingCrew" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchActingCrew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchActingCrewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_SearchActingCrew_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q48:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateActingCrew_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActingCrew" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateActingCrew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateActingCrewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateActingCrew_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q49:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_InsertActingCrew_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertActingCrew" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_InsertActingCrew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertActingCrewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_InsertActingCrew_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q50:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeleteActingCrew_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActingCrew" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeleteActingCrew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActingCrewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeleteActingCrew_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q51:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_ReAssignVR_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReAssignVR" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_ReAssignVR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReAssignVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_ReAssignVR_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q52:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRLastTenFlight_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRLastTenFlight" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRLastTenFlight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRLastTenFlightResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRLastTenFlight_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q53="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q53:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetLastTenVRs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastTenVRs" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetLastTenVRs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastTenVRsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetLastTenVRs_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q54:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateClosedVRComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClosedVRComments" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateClosedVRComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateClosedVRCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_UpdateClosedVRComments_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q55:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsGroomingUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsGroomingUser" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsGroomingUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsGroomingUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsGroomingUser_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q56="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q56:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetAllVrsForDeptWeb_Action_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVrsForDeptWeb_Action" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetAllVrsForDeptWeb_Action_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVrsForDeptWeb_ActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetAllVrsForDeptWeb_Action_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q57:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetAllVrsForDeptWeb_Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVrsForDeptWeb_Info" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetAllVrsForDeptWeb_Info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllVrsForDeptWeb_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetAllVrsForDeptWeb_Info_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q58:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeactivateVR_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateVR" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeactivateVR_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeactivateVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_DeactivateVR_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q59="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q59:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDraftVRDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDraftVRDetails" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDraftVRDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDraftVRDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDraftVRDetails_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q60:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrCount" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrCount_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q61="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q61:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrStatusCountForDept_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrStatusCountForDept" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrStatusCountForDept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrStatusCountForDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrStatusCountForDept_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q62="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q62:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrReconcilation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrReconcilation" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrReconcilation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrReconcilationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrReconcilation_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q63="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q63:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrReconcilationFlightDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrReconcilationFlightDetails" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrReconcilationFlightDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrReconcilationFlightDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrReconcilationFlightDetails_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q64="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q64:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrForDepartmentByTimeline_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrForDepartmentByTimeline" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrForDepartmentByTimeline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrForDepartmentByTimelineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrForDepartmentByTimeline_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q65="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q65:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetFlightDelayByTimeline_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlightDelayByTimeline" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetFlightDelayByTimeline_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFlightDelayByTimelineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetFlightDelayByTimeline_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q66="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q66:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDepartmentPerformanceReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentPerformanceReport" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDepartmentPerformanceReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentPerformanceReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetDepartmentPerformanceReport_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q67="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q67:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrBreakDownByRptAbt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrBreakDownByRptAbt" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrBreakDownByRptAbt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVrBreakDownByRptAbtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVrBreakDownByRptAbt_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q68="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q68:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsVRModified_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsVRModified" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsVRModified_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsVRModifiedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_IsVRModified_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q69="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q69:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_CriticalVRSendMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:CriticalVRSendMail" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_CriticalVRSendMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CriticalVRSendMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_CriticalVRSendMail_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q70="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q70:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getMonthlyWiseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMonthlyWiseData" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getMonthlyWiseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMonthlyWiseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getMonthlyWiseData_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q71="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q71:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getMonthlyWiseDataParm_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMonthlyWiseDataParm" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getMonthlyWiseDataParm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMonthlyWiseDataParmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getMonthlyWiseDataParm_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q72="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q72:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseDataParm_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDayWiseDataParm" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseDataParm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDayWiseDataParmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseDataParm_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q73="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q73:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseData_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDayWiseData" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDayWiseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseData_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q74="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q74:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseDataMon_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDayWiseDataMon" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseDataMon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDayWiseDataMonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseDataMon_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q75="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q75:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseDataMonParm_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDayWiseDataMonParm" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseDataMonParm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDayWiseDataMonParmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getDayWiseDataMonParm_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q76="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q76:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVROnSpecificDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVROnSpecificDay" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVROnSpecificDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVROnSpecificDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVROnSpecificDay_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q77="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q77:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVROnSpecificDayParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVROnSpecificDayParam" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVROnSpecificDayParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVROnSpecificDayParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVROnSpecificDayParam_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q78="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q78:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getCategoriesParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoriesParam" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getCategoriesParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoriesParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getCategoriesParam_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q79="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q79:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVROnSpecificReportabout_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVROnSpecificReportabout" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVROnSpecificReportabout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVROnSpecificReportaboutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVROnSpecificReportabout_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q80="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q80:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getSubCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSubCategory" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getSubCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSubCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getSubCategory_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q81="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q81:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVRDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVRDetails" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVRDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVRDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVRDetails_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q82="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q82:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getSubCategoriesParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSubCategoriesParam" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getSubCategoriesParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSubCategoriesParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getSubCategoriesParam_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q83="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q83:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVRDetailsParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVRDetailsParam" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVRDetailsParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVRDetailsParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_getVRDetailsParam_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q84="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q84:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRActionCountDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRActionCountDetails" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRActionCountDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVRActionCountDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVRDetailsService_GetVRActionCountDetails_PrismFaultExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q85="http://schemas.datacontract.org/2004/07/QR.PRISM.EntityObjects" name="detail" element="q85:PrismFaultException" />
+  </wsdl:message>
+  <wsdl:portType name="IVRDetailsService">
+    <wsdl:operation name="AddIVRSAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/AddIVRSAttachment" message="tns:IVRDetailsService_AddIVRSAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/AddIVRSAttachmentResponse" message="tns:IVRDetailsService_AddIVRSAttachment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/AddIVRSAttachmentPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_AddIVRSAttachment_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIVRSAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/DeleteIVRSAttachment" message="tns:IVRDetailsService_DeleteIVRSAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/DeleteIVRSAttachmentResponse" message="tns:IVRDetailsService_DeleteIVRSAttachment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/DeleteIVRSAttachmentPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_DeleteIVRSAttachment_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailCrew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailCrew" message="tns:IVRDetailsService_GetVRDetailCrew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailCrewResponse" message="tns:IVRDetailsService_GetVRDetailCrew_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailCrewPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVRDetailCrew_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailEnterVR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailEnterVR" message="tns:IVRDetailsService_GetVRDetailEnterVR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailEnterVRResponse" message="tns:IVRDetailsService_GetVRDetailEnterVR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailEnterVRPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVRDetailEnterVR_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailActionVR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailActionVR" message="tns:IVRDetailsService_GetVRDetailActionVR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailActionVRResponse" message="tns:IVRDetailsService_GetVRDetailActionVR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailActionVRPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVRDetailActionVR_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailAssignVR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailAssignVR" message="tns:IVRDetailsService_GetVRDetailAssignVR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailAssignVRResponse" message="tns:IVRDetailsService_GetVRDetailAssignVR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailAssignVRPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVRDetailAssignVR_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailAdmin" message="tns:IVRDetailsService_GetVRDetailAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailAdminResponse" message="tns:IVRDetailsService_GetVRDetailAdmin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailAdminPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVRDetailAdmin_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsActionVREligible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/IsActionVREligible" message="tns:IVRDetailsService_IsActionVREligible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/IsActionVREligibleResponse" message="tns:IVRDetailsService_IsActionVREligible_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/IsActionVREligiblePrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_IsActionVREligible_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAssigned">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/IsAssigned" message="tns:IVRDetailsService_IsAssigned_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/IsAssignedResponse" message="tns:IVRDetailsService_IsAssigned_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/IsAssignedPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_IsAssigned_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchVR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/SearchVR" message="tns:IVRDetailsService_SearchVR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/SearchVRResponse" message="tns:IVRDetailsService_SearchVR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/SearchVRPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_SearchVR_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActionResolutions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetActionResolutions" message="tns:IVRDetailsService_GetActionResolutions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetActionResolutionsResponse" message="tns:IVRDetailsService_GetActionResolutions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetActionResolutionsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetActionResolutions_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchVRDept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/SearchVRDept" message="tns:IVRDetailsService_SearchVRDept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/SearchVRDeptResponse" message="tns:IVRDetailsService_SearchVRDept_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/SearchVRDeptPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_SearchVRDept_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdvanceSearchVR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/AdvanceSearchVR" message="tns:IVRDetailsService_AdvanceSearchVR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/AdvanceSearchVRResponse" message="tns:IVRDetailsService_AdvanceSearchVR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/AdvanceSearchVRPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_AdvanceSearchVR_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdvanceSearchVRPass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/AdvanceSearchVRPass" message="tns:IVRDetailsService_AdvanceSearchVRPass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/AdvanceSearchVRPassResponse" message="tns:IVRDetailsService_AdvanceSearchVRPass_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/AdvanceSearchVRPassPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_AdvanceSearchVRPass_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdvanceSearchVRForComments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/AdvanceSearchVRForComments" message="tns:IVRDetailsService_AdvanceSearchVRForComments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/AdvanceSearchVRForCommentsResponse" message="tns:IVRDetailsService_AdvanceSearchVRForComments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/AdvanceSearchVRForCommentsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_AdvanceSearchVRForComments_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCriticalVRForAlerts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetCriticalVRForAlerts" message="tns:IVRDetailsService_GetCriticalVRForAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetCriticalVRForAlertsResponse" message="tns:IVRDetailsService_GetCriticalVRForAlerts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetCriticalVRForAlertsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetCriticalVRForAlerts_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleSetFailingAlerts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetRuleSetFailingAlerts" message="tns:IVRDetailsService_GetRuleSetFailingAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetRuleSetFailingAlertsResponse" message="tns:IVRDetailsService_GetRuleSetFailingAlerts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetRuleSetFailingAlertsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetRuleSetFailingAlerts_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRejectedVRAlerts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetRejectedVRAlerts" message="tns:IVRDetailsService_GetRejectedVRAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetRejectedVRAlertsResponse" message="tns:IVRDetailsService_GetRejectedVRAlerts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetRejectedVRAlertsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetRejectedVRAlerts_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuddenSurgeVRAlerts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetSuddenSurgeVRAlerts" message="tns:IVRDetailsService_GetSuddenSurgeVRAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetSuddenSurgeVRAlertsResponse" message="tns:IVRDetailsService_GetSuddenSurgeVRAlerts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetSuddenSurgeVRAlertsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetSuddenSurgeVRAlerts_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightDelayCSAlerts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetFlightDelayCSAlerts" message="tns:IVRDetailsService_GetFlightDelayCSAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetFlightDelayCSAlertsResponse" message="tns:IVRDetailsService_GetFlightDelayCSAlerts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetFlightDelayCSAlertsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetFlightDelayCSAlerts_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLessCrewVRAlerts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetLessCrewVRAlerts" message="tns:IVRDetailsService_GetLessCrewVRAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetLessCrewVRAlertsResponse" message="tns:IVRDetailsService_GetLessCrewVRAlerts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetLessCrewVRAlertsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetLessCrewVRAlerts_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchVRToAssign">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/SearchVRToAssign" message="tns:IVRDetailsService_SearchVRToAssign_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/SearchVRToAssignResponse" message="tns:IVRDetailsService_SearchVRToAssign_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/SearchVRToAssignPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_SearchVRToAssign_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftVRForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetDraftVRForUser" message="tns:IVRDetailsService_GetDraftVRForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetDraftVRForUserResponse" message="tns:IVRDetailsService_GetDraftVRForUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetDraftVRForUserPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetDraftVRForUser_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptForSubCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetDeptForSubCategory" message="tns:IVRDetailsService_GetDeptForSubCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetDeptForSubCategoryResponse" message="tns:IVRDetailsService_GetDeptForSubCategory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetDeptForSubCategoryPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetDeptForSubCategory_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForFlight">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetUsersForFlight" message="tns:IVRDetailsService_GetUsersForFlight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetUsersForFlightResponse" message="tns:IVRDetailsService_GetUsersForFlight_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetUsersForFlightPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetUsersForFlight_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherDepartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetOtherDepartments" message="tns:IVRDetailsService_GetOtherDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetOtherDepartmentsResponse" message="tns:IVRDetailsService_GetOtherDepartments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetOtherDepartmentsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetOtherDepartments_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertVoyageReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/InsertVoyageReport" message="tns:IVRDetailsService_InsertVoyageReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/InsertVoyageReportResponse" message="tns:IVRDetailsService_InsertVoyageReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/InsertVoyageReportPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_InsertVoyageReport_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/DeleteVR" message="tns:IVRDetailsService_DeleteVR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/DeleteVRResponse" message="tns:IVRDetailsService_DeleteVR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/DeleteVRPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_DeleteVR_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVoyageReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateVoyageReport" message="tns:IVRDetailsService_UpdateVoyageReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateVoyageReportResponse" message="tns:IVRDetailsService_UpdateVoyageReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateVoyageReportPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_UpdateVoyageReport_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrsForFlight">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForFlight" message="tns:IVRDetailsService_GetVrsForFlight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForFlightResponse" message="tns:IVRDetailsService_GetVrsForFlight_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForFlightPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVrsForFlight_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseVR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/CloseVR" message="tns:IVRDetailsService_CloseVR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/CloseVRResponse" message="tns:IVRDetailsService_CloseVR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/CloseVRPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_CloseVR_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OverRideCommentsVisibility">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/OverRideCommentsVisibility" message="tns:IVRDetailsService_OverRideCommentsVisibility_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/OverRideCommentsVisibilityResponse" message="tns:IVRDetailsService_OverRideCommentsVisibility_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/OverRideCommentsVisibilityPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_OverRideCommentsVisibility_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrsForDept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForDept" message="tns:IVRDetailsService_GetVrsForDept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForDeptResponse" message="tns:IVRDetailsService_GetVrsForDept_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForDeptPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVrsForDept_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrsForDeptWeb_Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForDeptWeb_Info" message="tns:IVRDetailsService_GetVrsForDeptWeb_Info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForDeptWeb_InfoResponse" message="tns:IVRDetailsService_GetVrsForDeptWeb_Info_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForDeptWeb_InfoPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVrsForDeptWeb_Info_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrsForDeptWeb_Action">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForDeptWeb_Action" message="tns:IVRDetailsService_GetVrsForDeptWeb_Action_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForDeptWeb_ActionResponse" message="tns:IVRDetailsService_GetVrsForDeptWeb_Action_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrsForDeptWeb_ActionPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVrsForDeptWeb_Action_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextVRID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetNextVRID" message="tns:IVRDetailsService_GetNextVRID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetNextVRIDResponse" message="tns:IVRDetailsService_GetNextVRID_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetNextVRIDPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetNextVRID_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailForDept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailForDept" message="tns:IVRDetailsService_GetVRDetailForDept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailForDeptResponse" message="tns:IVRDetailsService_GetVRDetailForDept_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRDetailForDeptPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVRDetailForDept_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVRAtDept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateVRAtDept" message="tns:IVRDetailsService_UpdateVRAtDept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateVRAtDeptResponse" message="tns:IVRDetailsService_UpdateVRAtDept_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateVRAtDeptPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_UpdateVRAtDept_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVRAtDept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/SaveVRAtDept" message="tns:IVRDetailsService_SaveVRAtDept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/SaveVRAtDeptResponse" message="tns:IVRDetailsService_SaveVRAtDept_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/SaveVRAtDeptPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_SaveVRAtDept_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestdDeptCmmtsForDept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetRestdDeptCmmtsForDept" message="tns:IVRDetailsService_GetRestdDeptCmmtsForDept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetRestdDeptCmmtsForDeptResponse" message="tns:IVRDetailsService_GetRestdDeptCmmtsForDept_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetRestdDeptCmmtsForDeptPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetRestdDeptCmmtsForDept_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseVRAtAssign">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/CloseVRAtAssign" message="tns:IVRDetailsService_CloseVRAtAssign_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/CloseVRAtAssignResponse" message="tns:IVRDetailsService_CloseVRAtAssign_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/CloseVRAtAssignPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_CloseVRAtAssign_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignVoyageReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/AssignVoyageReport" message="tns:IVRDetailsService_AssignVoyageReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/AssignVoyageReportResponse" message="tns:IVRDetailsService_AssignVoyageReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/AssignVoyageReportPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_AssignVoyageReport_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsEnterVrForFlight">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/IsEnterVrForFlight" message="tns:IVRDetailsService_IsEnterVrForFlight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/IsEnterVrForFlightResponse" message="tns:IVRDetailsService_IsEnterVrForFlight_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/IsEnterVrForFlightPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_IsEnterVrForFlight_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPassengerLoad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetPassengerLoad" message="tns:IVRDetailsService_GetPassengerLoad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetPassengerLoadResponse" message="tns:IVRDetailsService_GetPassengerLoad_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetPassengerLoadPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetPassengerLoad_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSectionForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetSectionForUser" message="tns:IVRDetailsService_GetSectionForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetSectionForUserResponse" message="tns:IVRDetailsService_GetSectionForUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetSectionForUserPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetSectionForUser_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSectionComments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetAllSectionComments" message="tns:IVRDetailsService_GetAllSectionComments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetAllSectionCommentsResponse" message="tns:IVRDetailsService_GetAllSectionComments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetAllSectionCommentsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetAllSectionComments_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsRejectionTimeExceeded">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/IsRejectionTimeExceeded" message="tns:IVRDetailsService_IsRejectionTimeExceeded_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/IsRejectionTimeExceededResponse" message="tns:IVRDetailsService_IsRejectionTimeExceeded_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/IsRejectionTimeExceededPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_IsRejectionTimeExceeded_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchActingCrew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/SearchActingCrew" message="tns:IVRDetailsService_SearchActingCrew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/SearchActingCrewResponse" message="tns:IVRDetailsService_SearchActingCrew_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/SearchActingCrewPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_SearchActingCrew_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActingCrew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateActingCrew" message="tns:IVRDetailsService_UpdateActingCrew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateActingCrewResponse" message="tns:IVRDetailsService_UpdateActingCrew_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateActingCrewPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_UpdateActingCrew_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertActingCrew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/InsertActingCrew" message="tns:IVRDetailsService_InsertActingCrew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/InsertActingCrewResponse" message="tns:IVRDetailsService_InsertActingCrew_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/InsertActingCrewPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_InsertActingCrew_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActingCrew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/DeleteActingCrew" message="tns:IVRDetailsService_DeleteActingCrew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/DeleteActingCrewResponse" message="tns:IVRDetailsService_DeleteActingCrew_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/DeleteActingCrewPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_DeleteActingCrew_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReAssignVR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/ReAssignVR" message="tns:IVRDetailsService_ReAssignVR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/ReAssignVRResponse" message="tns:IVRDetailsService_ReAssignVR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/ReAssignVRPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_ReAssignVR_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVRLastTenFlight">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRLastTenFlight" message="tns:IVRDetailsService_GetVRLastTenFlight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRLastTenFlightResponse" message="tns:IVRDetailsService_GetVRLastTenFlight_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRLastTenFlightPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVRLastTenFlight_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastTenVRs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetLastTenVRs" message="tns:IVRDetailsService_GetLastTenVRs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetLastTenVRsResponse" message="tns:IVRDetailsService_GetLastTenVRs_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetLastTenVRsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetLastTenVRs_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClosedVRComments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateClosedVRComments" message="tns:IVRDetailsService_UpdateClosedVRComments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateClosedVRCommentsResponse" message="tns:IVRDetailsService_UpdateClosedVRComments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/UpdateClosedVRCommentsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_UpdateClosedVRComments_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsGroomingUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/IsGroomingUser" message="tns:IVRDetailsService_IsGroomingUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/IsGroomingUserResponse" message="tns:IVRDetailsService_IsGroomingUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/IsGroomingUserPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_IsGroomingUser_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVrsForDeptWeb_Action">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetAllVrsForDeptWeb_Action" message="tns:IVRDetailsService_GetAllVrsForDeptWeb_Action_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetAllVrsForDeptWeb_ActionResponse" message="tns:IVRDetailsService_GetAllVrsForDeptWeb_Action_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetAllVrsForDeptWeb_ActionPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetAllVrsForDeptWeb_Action_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVrsForDeptWeb_Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetAllVrsForDeptWeb_Info" message="tns:IVRDetailsService_GetAllVrsForDeptWeb_Info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetAllVrsForDeptWeb_InfoResponse" message="tns:IVRDetailsService_GetAllVrsForDeptWeb_Info_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetAllVrsForDeptWeb_InfoPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetAllVrsForDeptWeb_Info_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateVR">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/DeactivateVR" message="tns:IVRDetailsService_DeactivateVR_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/DeactivateVRResponse" message="tns:IVRDetailsService_DeactivateVR_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/DeactivateVRPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_DeactivateVR_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftVRDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetDraftVRDetails" message="tns:IVRDetailsService_GetDraftVRDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetDraftVRDetailsResponse" message="tns:IVRDetailsService_GetDraftVRDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetDraftVRDetailsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetDraftVRDetails_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrCount" message="tns:IVRDetailsService_GetVrCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrCountResponse" message="tns:IVRDetailsService_GetVrCount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrCountPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVrCount_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrStatusCountForDept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrStatusCountForDept" message="tns:IVRDetailsService_GetVrStatusCountForDept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrStatusCountForDeptResponse" message="tns:IVRDetailsService_GetVrStatusCountForDept_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrStatusCountForDeptPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVrStatusCountForDept_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrReconcilation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrReconcilation" message="tns:IVRDetailsService_GetVrReconcilation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrReconcilationResponse" message="tns:IVRDetailsService_GetVrReconcilation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrReconcilationPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVrReconcilation_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrReconcilationFlightDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrReconcilationFlightDetails" message="tns:IVRDetailsService_GetVrReconcilationFlightDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrReconcilationFlightDetailsResponse" message="tns:IVRDetailsService_GetVrReconcilationFlightDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrReconcilationFlightDetailsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVrReconcilationFlightDetails_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrForDepartmentByTimeline">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrForDepartmentByTimeline" message="tns:IVRDetailsService_GetVrForDepartmentByTimeline_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrForDepartmentByTimelineResponse" message="tns:IVRDetailsService_GetVrForDepartmentByTimeline_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrForDepartmentByTimelinePrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVrForDepartmentByTimeline_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightDelayByTimeline">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetFlightDelayByTimeline" message="tns:IVRDetailsService_GetFlightDelayByTimeline_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetFlightDelayByTimelineResponse" message="tns:IVRDetailsService_GetFlightDelayByTimeline_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetFlightDelayByTimelinePrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetFlightDelayByTimeline_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentPerformanceReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetDepartmentPerformanceReport" message="tns:IVRDetailsService_GetDepartmentPerformanceReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetDepartmentPerformanceReportResponse" message="tns:IVRDetailsService_GetDepartmentPerformanceReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetDepartmentPerformanceReportPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetDepartmentPerformanceReport_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVrBreakDownByRptAbt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrBreakDownByRptAbt" message="tns:IVRDetailsService_GetVrBreakDownByRptAbt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrBreakDownByRptAbtResponse" message="tns:IVRDetailsService_GetVrBreakDownByRptAbt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVrBreakDownByRptAbtPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVrBreakDownByRptAbt_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsVRModified">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/IsVRModified" message="tns:IVRDetailsService_IsVRModified_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/IsVRModifiedResponse" message="tns:IVRDetailsService_IsVRModified_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/IsVRModifiedPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_IsVRModified_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CriticalVRSendMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/CriticalVRSendMail" message="tns:IVRDetailsService_CriticalVRSendMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/CriticalVRSendMailResponse" message="tns:IVRDetailsService_CriticalVRSendMail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/CriticalVRSendMailPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_CriticalVRSendMail_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMonthlyWiseData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getMonthlyWiseData" message="tns:IVRDetailsService_getMonthlyWiseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getMonthlyWiseDataResponse" message="tns:IVRDetailsService_getMonthlyWiseData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getMonthlyWiseDataPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getMonthlyWiseData_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMonthlyWiseDataParm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getMonthlyWiseDataParm" message="tns:IVRDetailsService_getMonthlyWiseDataParm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getMonthlyWiseDataParmResponse" message="tns:IVRDetailsService_getMonthlyWiseDataParm_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getMonthlyWiseDataParmPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getMonthlyWiseDataParm_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDayWiseDataParm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataParm" message="tns:IVRDetailsService_getDayWiseDataParm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataParmResponse" message="tns:IVRDetailsService_getDayWiseDataParm_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataParmPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getDayWiseDataParm_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDayWiseData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseData" message="tns:IVRDetailsService_getDayWiseData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataResponse" message="tns:IVRDetailsService_getDayWiseData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getDayWiseData_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDayWiseDataMon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataMon" message="tns:IVRDetailsService_getDayWiseDataMon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataMonResponse" message="tns:IVRDetailsService_getDayWiseDataMon_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataMonPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getDayWiseDataMon_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDayWiseDataMonParm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataMonParm" message="tns:IVRDetailsService_getDayWiseDataMonParm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataMonParmResponse" message="tns:IVRDetailsService_getDayWiseDataMonParm_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getDayWiseDataMonParmPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getDayWiseDataMonParm_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVROnSpecificDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getVROnSpecificDay" message="tns:IVRDetailsService_getVROnSpecificDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getVROnSpecificDayResponse" message="tns:IVRDetailsService_getVROnSpecificDay_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getVROnSpecificDayPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getVROnSpecificDay_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVROnSpecificDayParam">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getVROnSpecificDayParam" message="tns:IVRDetailsService_getVROnSpecificDayParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getVROnSpecificDayParamResponse" message="tns:IVRDetailsService_getVROnSpecificDayParam_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getVROnSpecificDayParamPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getVROnSpecificDayParam_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesParam">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getCategoriesParam" message="tns:IVRDetailsService_getCategoriesParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getCategoriesParamResponse" message="tns:IVRDetailsService_getCategoriesParam_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getCategoriesParamPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getCategoriesParam_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVROnSpecificReportabout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getVROnSpecificReportabout" message="tns:IVRDetailsService_getVROnSpecificReportabout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getVROnSpecificReportaboutResponse" message="tns:IVRDetailsService_getVROnSpecificReportabout_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getVROnSpecificReportaboutPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getVROnSpecificReportabout_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSubCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getSubCategory" message="tns:IVRDetailsService_getSubCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getSubCategoryResponse" message="tns:IVRDetailsService_getSubCategory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getSubCategoryPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getSubCategory_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVRDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getVRDetails" message="tns:IVRDetailsService_getVRDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getVRDetailsResponse" message="tns:IVRDetailsService_getVRDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getVRDetailsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getVRDetails_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSubCategoriesParam">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getSubCategoriesParam" message="tns:IVRDetailsService_getSubCategoriesParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getSubCategoriesParamResponse" message="tns:IVRDetailsService_getSubCategoriesParam_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getSubCategoriesParamPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getSubCategoriesParam_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVRDetailsParam">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/getVRDetailsParam" message="tns:IVRDetailsService_getVRDetailsParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/getVRDetailsParamResponse" message="tns:IVRDetailsService_getVRDetailsParam_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/getVRDetailsParamPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_getVRDetailsParam_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVRActionCountDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRActionCountDetails" message="tns:IVRDetailsService_GetVRActionCountDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRActionCountDetailsResponse" message="tns:IVRDetailsService_GetVRActionCountDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IVRDetailsService/GetVRActionCountDetailsPrismFaultExceptionFault" name="PrismFaultExceptionFault" message="tns:IVRDetailsService_GetVRActionCountDetails_PrismFaultExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IVRDetailsService" type="tns:IVRDetailsService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IVRDetailsService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddIVRSAttachment">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/AddIVRSAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIVRSAttachment">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/DeleteIVRSAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailCrew">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVRDetailCrew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailEnterVR">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVRDetailEnterVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailActionVR">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVRDetailActionVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailAssignVR">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVRDetailAssignVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailAdmin">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVRDetailAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsActionVREligible">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/IsActionVREligible" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsAssigned">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/IsAssigned" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchVR">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/SearchVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetActionResolutions">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetActionResolutions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchVRDept">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/SearchVRDept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AdvanceSearchVR">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/AdvanceSearchVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AdvanceSearchVRPass">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/AdvanceSearchVRPass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AdvanceSearchVRForComments">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/AdvanceSearchVRForComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCriticalVRForAlerts">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetCriticalVRForAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleSetFailingAlerts">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetRuleSetFailingAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRejectedVRAlerts">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetRejectedVRAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuddenSurgeVRAlerts">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetSuddenSurgeVRAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightDelayCSAlerts">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetFlightDelayCSAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLessCrewVRAlerts">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetLessCrewVRAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchVRToAssign">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/SearchVRToAssign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftVRForUser">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetDraftVRForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptForSubCategory">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetDeptForSubCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersForFlight">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetUsersForFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherDepartments">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetOtherDepartments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertVoyageReport">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/InsertVoyageReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVR">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/DeleteVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVoyageReport">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/UpdateVoyageReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrsForFlight">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVrsForFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CloseVR">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/CloseVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="OverRideCommentsVisibility">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/OverRideCommentsVisibility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrsForDept">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVrsForDept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrsForDeptWeb_Info">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVrsForDeptWeb_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrsForDeptWeb_Action">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVrsForDeptWeb_Action" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextVRID">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetNextVRID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVRDetailForDept">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVRDetailForDept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVRAtDept">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/UpdateVRAtDept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVRAtDept">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/SaveVRAtDept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestdDeptCmmtsForDept">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetRestdDeptCmmtsForDept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CloseVRAtAssign">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/CloseVRAtAssign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AssignVoyageReport">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/AssignVoyageReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsEnterVrForFlight">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/IsEnterVrForFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPassengerLoad">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetPassengerLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSectionForUser">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetSectionForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSectionComments">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetAllSectionComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsRejectionTimeExceeded">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/IsRejectionTimeExceeded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchActingCrew">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/SearchActingCrew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateActingCrew">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/UpdateActingCrew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InsertActingCrew">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/InsertActingCrew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActingCrew">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/DeleteActingCrew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReAssignVR">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/ReAssignVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVRLastTenFlight">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVRLastTenFlight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastTenVRs">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetLastTenVRs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClosedVRComments">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/UpdateClosedVRComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsGroomingUser">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/IsGroomingUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVrsForDeptWeb_Action">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetAllVrsForDeptWeb_Action" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllVrsForDeptWeb_Info">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetAllVrsForDeptWeb_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeactivateVR">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/DeactivateVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftVRDetails">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetDraftVRDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrCount">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVrCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrStatusCountForDept">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVrStatusCountForDept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrReconcilation">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVrReconcilation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrReconcilationFlightDetails">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVrReconcilationFlightDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrForDepartmentByTimeline">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVrForDepartmentByTimeline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightDelayByTimeline">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetFlightDelayByTimeline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentPerformanceReport">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetDepartmentPerformanceReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVrBreakDownByRptAbt">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVrBreakDownByRptAbt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsVRModified">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/IsVRModified" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CriticalVRSendMail">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/CriticalVRSendMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMonthlyWiseData">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getMonthlyWiseData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMonthlyWiseDataParm">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getMonthlyWiseDataParm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDayWiseDataParm">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getDayWiseDataParm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDayWiseData">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getDayWiseData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDayWiseDataMon">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getDayWiseDataMon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDayWiseDataMonParm">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getDayWiseDataMonParm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVROnSpecificDay">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getVROnSpecificDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVROnSpecificDayParam">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getVROnSpecificDayParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriesParam">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getCategoriesParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVROnSpecificReportabout">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getVROnSpecificReportabout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSubCategory">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getSubCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVRDetails">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getVRDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSubCategoriesParam">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getSubCategoriesParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVRDetailsParam">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/getVRDetailsParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVRActionCountDetails">
+      <soap12:operation soapAction="http://tempuri.org/IVRDetailsService/GetVRActionCountDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PrismFaultExceptionFault">
+        <soap12:fault use="literal" name="PrismFaultExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VRDetailsService">
+    <wsdl:port name="WSHttpBinding_IVRDetailsService" binding="tns:WSHttpBinding_IVRDetailsService">
+      <soap12:address location="http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://dohqdprm15.qr.qrgrp.local:88/VRDetailsService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

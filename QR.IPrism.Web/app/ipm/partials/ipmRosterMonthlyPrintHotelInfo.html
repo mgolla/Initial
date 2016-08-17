@@ -1,0 +1,14 @@
+﻿<div class="prtscHtlInfTbl" ng-controller="ipm.printhotelinfo.controller">
+    <table width="100%" border="1" cellpadding="5" cellspacing="5">
+        <tr>
+            <td width="70%"><b>Hotel Name / Address </b></td>
+            <td><b>Contact No</b></td>
+        </tr>
+        <tr ng-repeat="item in hotelInfoViewModel">
+            <td><b>{{item.HotelName }} </b><br />{{item.Address }}</td>
+            <td><span ng-bind-html="item.Telephone"></span></td>
+        </tr>
+
+    </table>
+
+</div>

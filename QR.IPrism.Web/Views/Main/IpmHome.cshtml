@@ -1,0 +1,31 @@
+﻿@section scripts{
+
+    @Scripts.Render("~/bundles/ipmdependency")
+    @QR.IPrism.Web.Helper.SharedBundleHelper.Render("~/bundles/messages", true)
+}
+@functions{
+    public string TokenHeader()
+    {
+        QR.IPrism.Security.Authentication.ITokenManager tokenManager = DependencyResolver.Current.GetService<QR.IPrism.Security.Authentication.TokenManager>();
+        string context = tokenManager.GetAntiForgeryToken();
+        if (context != null)
+        {
+            return context;
+        }
+        else
+        { 
+            return string.Empty; 
+        }
+    }
+}
+<div data-ng-app="app.ipm.module">
+    <appheader></appheader>
+    <div id="homeUIViewDiv" ui-view="homeview">
+
+    </div>
+    <a href="#" class="scrollup">Scroll</a> <a href="#" class="scrollupWindow">Scroll</a>
+    <appfooter></appfooter>
+   
+</div>
+<input type="hidden" value="@TokenHeader()" name="_MN_A" />
+

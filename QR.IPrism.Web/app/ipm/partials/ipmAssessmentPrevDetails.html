@@ -1,0 +1,118 @@
+﻿<div class="container-fluid pull-left">
+    <div class="content_wrapper Mob_margZero">
+        <div class="col-lg-12 col-md-12 col-sm-12 Mob_padZero">
+            <h1 class="page-tittle">
+                <button class="btn pull-right default_backbtn" title="back to previous page" ng-click="goBack()">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+                <span>View Assessment</span>
+                
+            </h1>
+            <div class="col-lg-12 col-md-12 col-sm-12 formStyles old_ass_fonts">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Assessment Details
+                                </h3>
+                            </div>
+                            <div class="panel-body mob_padLeftZero mob_padRightZero">
+                                <div class="col-lg-12 col-md-12 col-sm-12 padZero Mob_padZero readForm globalfontbold">
+
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                        Flight Number
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                        {{headerDetails.FlightNumber ? headerDetails.FlightNumber : "NA"}}
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                        Flight Date
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                        {{headerDetails.FlightDate ? (headerDetails.FlightDate | date:"dd-MMM-yyyy"): "NA" }}
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                        Sector
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                        {{headerDetails.SectorFrom }} - {{ headerDetails.SectorTo}}
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                        Assessment Status
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                        {{headerDetails.AssessmentStatus ? headerDetails.AssessmentStatus : "NA"}}
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                        Date of Assessment
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                        {{headerDetails.AssessmentDate ? (headerDetails.AssessmentDate | date:"dd-MMM-yyyy") : "NA"}}
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                        Assessor Crew
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                        {{ headerDetails.AssessorStaffName ? headerDetails.AssessorStaffName : "NA" }}
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                        Assessee Crew
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                        {{headerDetails.AssesseeStaffName ? headerDetails.AssesseeStaffName : "NA" }}
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                        Assessor Grade
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                        {{headerDetails.AssessorGradeSince ? headerDetails.AssessorGradeSince : "NA" }}
+                                    </div>
+                                    <label class="control-label col-lg-2 col-md-2 col-sm-3">
+                                        Assessee Grade
+                                    </label>
+                                    <div class="col-lg-2 col-md-4 col-sm-9 read_field_fix">
+                                        {{headerDetails.AssesseeGradeSince ? headerDetails.AssesseeGradeSince : "NA" }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-include src="partialPage"></div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form_inputs">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">
+                                    Additional Comments & Attachments <i class="pull-right"></i>
+                                </h3>
+                            </div>
+                            <div class="panel-body mob_padLeftZero mob_padRightZero">
+                                <div class="row ReadRow marLeft15">
+                                    <label class="control-label col-lg-1 col-md-3 col-sm-3 txtLeft">
+                                        Comments
+                                    </label>
+                                    <div class="col-lg-11 col-md-9 col-sm-9" ng-bind-html="to_trusted(headerDetails.AdditionalComments)">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button type="button" class="btn btn-primary pull-right martop10" ng-click="goBack()">Back</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setContainerHeight();
+    });
+</script>

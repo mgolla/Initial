@@ -1,0 +1,17 @@
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.DataAccess.csprojResolveAssemblyReference.cache
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\obj\Debug\QR.PRISM.BusinessObjects.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.BusinessObjects.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Enterprise.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\log4net.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.Utility.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.EntityObjects.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Enterprise.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\QR.PRISM.Utility.pdb
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\log4net.xml
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\CREW\WorkSpace\Development\SourceCode\QR.PRISM.Services\BusinessObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
