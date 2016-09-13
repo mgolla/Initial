@@ -31,3 +31,14 @@ D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Caching\bin\
 D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Caching\obj\Release\QR.IPrism.Caching.csprojResolveAssemblyReference.cache
 D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Caching\obj\Release\QR.IPrism.Caching.dll
 D:\CREW\WorkSpace\Development\SourceCode\IPRISM\QR.IPrism\QR.IPrism.Caching\obj\Release\QR.IPrism.Caching.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\bin\Release\QR.IPrism.Caching.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\bin\Release\QR.IPrism.Caching.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\bin\Release\Microsoft.ApplicationServer.Caching.Client.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\bin\Release\Microsoft.ApplicationServer.Caching.Core.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\bin\Release\QR.IPrism.Logging.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\bin\Release\log4net.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\bin\Release\QR.IPrism.Logging.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\bin\Release\log4net.xml
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\obj\Release\QR.IPrism.Caching.csprojResolveAssemblyReference.cache
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\obj\Release\QR.IPrism.Caching.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Caching\obj\Release\QR.IPrism.Caching.pdb

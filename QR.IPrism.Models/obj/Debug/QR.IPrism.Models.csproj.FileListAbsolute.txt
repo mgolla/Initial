@@ -13,3 +13,8 @@ D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Models\bin\Debug\QR.I
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.csprojResolveAssemblyReference.cache
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.dll
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Models\bin\Debug\QR.IPrism.Models.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Models\bin\Debug\QR.IPrism.Models.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.csprojResolveAssemblyReference.cache
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Models\obj\Debug\QR.IPrism.Models.pdb

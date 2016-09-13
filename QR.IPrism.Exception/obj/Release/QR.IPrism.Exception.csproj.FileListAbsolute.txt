@@ -46,3 +46,15 @@ D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Exception\bin\Release
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Exception\obj\Release\QR.IPrism.Exception.csprojResolveAssemblyReference.cache
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Exception\obj\Release\QR.IPrism.Exception.dll
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Exception\obj\Release\QR.IPrism.Exception.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Release\QR.IPrism.Exception.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Release\QR.IPrism.Exception.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Release\Elmah.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Release\Newtonsoft.Json.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Release\System.Net.Http.Formatting.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Release\System.Web.Http.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Release\Newtonsoft.Json.xml
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Release\System.Net.Http.Formatting.xml
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Release\System.Web.Http.xml
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\obj\Release\QR.IPrism.Exception.csprojResolveAssemblyReference.cache
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\obj\Release\QR.IPrism.Exception.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\obj\Release\QR.IPrism.Exception.pdb

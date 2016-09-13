@@ -31,3 +31,14 @@ D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Logging\bin\Debug\Sys
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Logging\obj\Debug\QR.IPrism.Logging.csprojResolveAssemblyReference.cache
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Logging\obj\Debug\QR.IPrism.Logging.dll
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Logging\obj\Debug\QR.IPrism.Logging.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\bin\Debug\QR.IPrism.Logging.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\bin\Debug\QR.IPrism.Logging.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\bin\Debug\log4net.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\bin\Debug\Newtonsoft.Json.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\bin\Debug\System.Net.Http.Formatting.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\bin\Debug\log4net.xml
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\bin\Debug\Newtonsoft.Json.xml
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\bin\Debug\System.Net.Http.Formatting.xml
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\obj\Debug\QR.IPrism.Logging.csprojResolveAssemblyReference.cache
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\obj\Debug\QR.IPrism.Logging.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Logging\obj\Debug\QR.IPrism.Logging.pdb

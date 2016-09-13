@@ -15,3 +15,9 @@ D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Utility\bin\Debug\ora
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Utility\obj\Debug\QR.IPrism.Utility.csprojResolveAssemblyReference.cache
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Utility\obj\Debug\QR.IPrism.Utility.dll
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Utility\obj\Debug\QR.IPrism.Utility.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\bin\Debug\QR.IPrism.Utility.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\bin\Debug\QR.IPrism.Utility.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\bin\Debug\oracle.dataaccess.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\obj\Debug\QR.IPrism.Utility.csprojResolveAssemblyReference.cache
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\obj\Debug\QR.IPrism.Utility.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\obj\Debug\QR.IPrism.Utility.pdb

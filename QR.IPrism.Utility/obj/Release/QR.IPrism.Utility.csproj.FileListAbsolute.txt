@@ -22,3 +22,8 @@ D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Utility\bin\Release\Q
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Utility\obj\Release\QR.IPrism.Utility.csprojResolveAssemblyReference.cache
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Utility\obj\Release\QR.IPrism.Utility.dll
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Utility\obj\Release\QR.IPrism.Utility.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\bin\Release\QR.IPrism.Utility.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\bin\Release\QR.IPrism.Utility.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\obj\Release\QR.IPrism.Utility.csprojResolveAssemblyReference.cache
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\obj\Release\QR.IPrism.Utility.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Utility\obj\Release\QR.IPrism.Utility.pdb

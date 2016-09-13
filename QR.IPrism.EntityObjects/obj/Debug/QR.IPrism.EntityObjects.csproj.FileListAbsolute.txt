@@ -12,3 +12,8 @@ D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.EntityObjects\bin\Deb
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.EntityObjects\obj\Debug\QR.IPrism.EntityObjects.csprojResolveAssemblyReference.cache
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.EntityObjects\obj\Debug\QR.IPrism.EntityObjects.dll
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.EntityObjects\obj\Debug\QR.IPrism.EntityObjects.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.EntityObjects\bin\Debug\QR.IPrism.EntityObjects.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.EntityObjects\bin\Debug\QR.IPrism.EntityObjects.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.EntityObjects\obj\Debug\QR.IPrism.EntityObjects.csprojResolveAssemblyReference.cache
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.EntityObjects\obj\Debug\QR.IPrism.EntityObjects.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.EntityObjects\obj\Debug\QR.IPrism.EntityObjects.pdb

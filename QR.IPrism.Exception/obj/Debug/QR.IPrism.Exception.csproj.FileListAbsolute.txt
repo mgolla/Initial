@@ -34,3 +34,15 @@ D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Exception\bin\Debug\S
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Exception\obj\Debug\QR.IPrism.Exception.csprojResolveAssemblyReference.cache
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Exception\obj\Debug\QR.IPrism.Exception.dll
 D:\CREW\ContinuesIntegration\IPrismGit\QR.IPrism\QR.IPrism.Exception\obj\Debug\QR.IPrism.Exception.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Debug\QR.IPrism.Exception.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Debug\QR.IPrism.Exception.pdb
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Debug\Elmah.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Debug\Newtonsoft.Json.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Debug\System.Net.Http.Formatting.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Debug\System.Web.Http.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Debug\Newtonsoft.Json.xml
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Debug\System.Net.Http.Formatting.xml
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\bin\Debug\System.Web.Http.xml
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\obj\Debug\QR.IPrism.Exception.csprojResolveAssemblyReference.cache
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\obj\Debug\QR.IPrism.Exception.dll
+D:\CREW\DevApps\GitHub\Initial\QR.IPrism.Exception\obj\Debug\QR.IPrism.Exception.pdb
