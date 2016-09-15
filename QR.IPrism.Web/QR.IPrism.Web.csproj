@@ -865,7 +865,6 @@
     <Content Include="Scripts\angular-toastr.min.js.map">
       <DependentUpon>angular-toastr.min.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\android\.DS_Store" />
     <None Include="Scripts\angular.intellisense.js" />
     <Content Include="Content\ui-grid.woff" />
     <Content Include="Content\ui-grid.ttf" />
