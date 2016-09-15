@@ -844,7 +844,6 @@
     <Content Include="Content\video\styles\themes\default\videogular.scss" />
     <Content Include="Content\css\styles\fonts\icomoon.ttf" />
     <Content Include="Content\css\styles\fonts\icomoon.woff" />
-    <Content Include="Content\css\styles\images\Thumbs.db" />
     <Content Include="Content\css\styles\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\css\styles\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\css\styles\fonts\fontawesome-webfont.woff" />
